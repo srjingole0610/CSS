@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Types Explanation</title>
+    <link
+      rel="shortcut icon"
+      href="../images/css_favicon.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../CSS/stylesheet-type.css" />
+  </head>
+  <body>
+    <a href="../index.html" class="back-button">Back to Home</a>
+    
+    <h2>🔸 1. Inline CSS</h2>
+
+    <h3>Definition:</h3>
+    <p>
+      Inline CSS is used to apply a unique style directly to a single HTML
+      element using the <code>style</code> attribute.
+    </p>
+
+    <div class="theory-box">
+      <h4>Deep Dive into Inline CSS:</h4>
+      <p>Inline CSS works by directly injecting styles into HTML elements through the style attribute. It has the highest specificity in the CSS cascade, meaning it will override any other CSS rules targeting the same element. The specificity value for inline styles is 1000, compared to 100 for IDs and 10 for classes.</p>
+      <p class="important-note">Important: Inline styles are parsed and applied immediately during HTML rendering, which can impact initial page load performance if overused.</p>
+    </div>
+
+    <h3>Syntax:</h3>
+    <pre><code>&lt;p style="color: blue; font-size: 16px;"&gt;This is an inline styled paragraph.&lt;/p&gt;</code></pre>
+
+    <div class="example-box">
+      <p>Common Inline CSS Properties:</p>
+      <ul>
+        <li>style="display: none;" - Hides an element</li>
+        <li>style="visibility: hidden;" - Makes element invisible but preserves space</li>
+        <li>style="position: absolute;" - Removes from normal document flow</li>
+      </ul>
+    </div>
+
+    <h3>Use Cases:</h3>
+    <ul>
+      <li>Quick styling</li>
+      <li>Dynamic styling via JavaScript</li>
+      <li>Email templates (due to limited CSS support)</li>
+    </ul>
+
+    <h3>Pros:</h3>
+    <ul>
+      <li>Quick and easy for small changes</li>
+      <li>High specificity (overrides internal and external styles)</li>
+    </ul>
+
+    <h3>Cons:</h3>
+    <ul>
+      <li>Not reusable</li>
+      <li>Clutters HTML</li>
+      <li>Difficult to maintain</li>
+    </ul>
+
+    <hr />
+
+    <h2>🔸 2. Internal CSS</h2>
+
+    <h3>Definition:</h3>
+    <p>
+      Internal CSS is defined within a <code>&lt;style&gt;</code> tag in the
+      <code>&lt;head&gt;</code> section of an HTML document.
+    </p>
+
+    <div class="theory-box">
+      <h4>Deep Dive into Internal CSS:</h4>
+      <p>Internal CSS follows the standard CSS cascade rules and specificity calculations. It allows for the use of all CSS selectors, pseudo-classes, and media queries. The styles are parsed when the HTML document loads and remain in the browser's memory for that page only.</p>
+      <p>Internal CSS supports advanced CSS features like:</p>
+      <ul>
+        <li>CSS Variables (Custom Properties)</li>
+        <li>@keyframes animations</li>
+        <li>@media queries for responsive design</li>
+        <li>CSS Grid and Flexbox layouts</li>
+      </ul>
+    </div>
+
+    <h3>Syntax:</h3>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    p {
+      color: green;
+      font-size: 18px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p&gt;This paragraph is styled using internal CSS.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <h3>Use Cases:</h3>
+    <ul>
+      <li>Single-page websites</li>
+      <li>Styling unique to that specific HTML file</li>
+    </ul>
+
+    <h3>Pros:</h3>
+    <ul>
+      <li>Keeps styles centralized within the document</li>
+      <li>Better than inline for reusability</li>
+    </ul>
+
+    <h3>Cons:</h3>
+    <ul>
+      <li>Cannot be reused across multiple HTML files</li>
+      <li>Adds to page size if used on many pages</li>
+    </ul>
+
+    <hr />
+
+    <h2>🔸 3. External CSS</h2>
+
+    <h3>Definition:</h3>
+    <p>
+      External CSS is defined in a separate <code>.css</code> file and linked to
+      the HTML document using the <code>&lt;link&gt;</code> tag.
+    </p>
+
+    <div class="theory-box">
+      <h4>Deep Dive into External CSS:</h4>
+      <p>External CSS represents the most scalable approach to styling web applications. It implements the separation of concerns principle by completely separating structure (HTML) from presentation (CSS).</p>
+      <p>Key concepts:</p>
+      <ul>
+        <li>Browser Caching: External CSS files can be cached by browsers, improving load times for returning visitors</li>
+        <li>CSS Modules: Multiple CSS files can be organized by functionality</li>
+        <li>Build Process: External CSS can be minified and optimized during deployment</li>
+        <li>CDN Distribution: CSS files can be served from Content Delivery Networks for better performance</li>
+      </ul>
+    </div>
+
+    <h3>Syntax (HTML):</h3>
+    <pre><code>&lt;head&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;</code></pre>
+
+    <h3>Syntax (styles.css):</h3>
+    <pre><code>p {
+  color: red;
+  font-size: 20px;
+}</code></pre>
+
+    <h3>Use Cases:</h3>
+    <ul>
+      <li>Multi-page websites</li>
+      <li>Large-scale projects</li>
+    </ul>
+
+    <h3>Pros:</h3>
+    <ul>
+      <li>Fully separates content (HTML) from presentation (CSS)</li>
+      <li>Reusable across multiple pages</li>
+      <li>Easier to maintain</li>
+    </ul>
+
+    <h3>Cons:</h3>
+    <ul>
+      <li>Requires an additional HTTP request (unless cached)</li>
+    </ul>
+
+    <hr />
+
+    <h2>🔹 Comparison Table</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Inline CSS</th>
+          <th>Internal CSS</th>
+          <th>External CSS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Location</td>
+          <td>Inside HTML element</td>
+          <td>Inside &lt;style&gt; tag in &lt;head&gt;</td>
+          <td>Separate .css file</td>
+        </tr>
+        <tr>
+          <td>Reusability</td>
+          <td>❌ No</td>
+          <td>❌ No</td>
+          <td>✅ Yes</td>
+        </tr>
+        <tr>
+          <td>Maintainability</td>
+          <td>❌ Poor</td>
+          <td>⚠️ Medium</td>
+          <td>✅ Good</td>
+        </tr>
+        <tr>
+          <td>Overrides</td>
+          <td>✅ Highest</td>
+          <td>⚠️ Medium</td>
+          <td>❌ Lowest</td>
+        </tr>
+        <tr>
+          <td>Use Case</td>
+          <td>Quick fixes, JS apps</td>
+          <td>Single-page apps</td>
+          <td>Large websites</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
