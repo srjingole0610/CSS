@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn CSS from scratch">
+    <meta name="author" content="Suraj Ingole">
+    <meta name="keywords" content="css, css tutorial,units,css units,css learning">
+    <link rel="stylesheet" href="../CSS/units.css">
+    <meta name="robots" content="index, follow">
+    <link rel="shortcut icon" href="../images/css_favicon.png" type="image/x-icon">
+    <title>CSS Units Tutorial</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Understanding CSS Units</h1>
+
+        <div class="unit-section">
+            <h2>Pixels (px)</h2>
+            <div class="theory-section">
+                <p>Pixels are the most fundamental unit in digital design. Key points:</p>
+                <ul>
+                    <li>One pixel represents the smallest unit of a digital display</li>
+                    <li>Pixels are absolute units - they remain the same size regardless of device or parent element</li>
+                    <li>Best used for: borders, small precise adjustments, and fixed-size elements</li>
+                    <li>Not recommended for responsive design as they don't scale with screen size</li>
+                </ul>
+            </div>
+            <div class="code-example">
+                .box { width: 200px; height: 100px; }
+            </div>
+            <div class="demo-box pixel-demo-box">
+                200px × 100px box
+            </div>
+        </div>
+
+        <div class="unit-section">
+            <h2>Percentages (%)</h2>
+            <div class="theory-section">
+                <p>Percentages are fundamental to responsive design. Important aspects:</p>
+                <ul>
+                    <li>Always relative to the parent element's corresponding dimension</li>
+                    <li>Width percentages are based on parent's width</li>
+                    <li>Height percentages require parent to have a defined height</li>
+                    <li>Perfect for creating fluid layouts that adapt to different screen sizes</li>
+                </ul>
+            </div>
+            <div class="code-example">
+                .box { width: 50%; height: 100px; }
+            </div>
+            <div class="demo-box percentage-demo-box">
+                50% width box
+            </div>
+        </div>
+
+        <div class="unit-section">
+            <h2>Root EM (rem)</h2>
+            <div class="theory-section">
+                <p>REM units provide consistent scaling across the entire document:</p>
+                <ul>
+                    <li>Always relative to the root (html) element's font-size</li>
+                    <li>Default root font-size is typically 16px</li>
+                    <li>Ideal for maintaining consistent spacing and typography</li>
+                    <li>Enables easy global scaling by adjusting root font-size</li>
+                </ul>
+            </div>
+            <div class="code-example">
+                .text { font-size: 2rem; } /* 2 times the root font-size */
+            </div>
+            <p class="rem-text">This text is 2rem</p>
+        </div>
+
+        <div class="unit-section">
+            <h2>EM</h2>
+            <div class="theory-section">
+                <p>EM units offer contextual scaling based on parent elements:</p>
+                <ul>
+                    <li>Relative to the immediate parent's font-size</li>
+                    <li>Can compound when nested (careful with multiple levels)</li>
+                    <li>Useful for creating modular, component-based designs</li>
+                    <li>Great for maintaining proportional relationships within components</li>
+                </ul>
+            </div>
+            <div class="code-example">
+                .parent { font-size: 20px; }
+                .child { font-size: 1.5em; } /* 1.5 times parent's font-size */
+            </div>
+            <div class="em-parent">
+                Parent text (20px)
+                <div class="em-child">Child text (1.5em = 30px)</div>
+            </div>
+        </div>
+
+        <div class="unit-section">
+            <h2>Viewport Units (vh, vw)</h2>
+            <div class="theory-section">
+                <p>Viewport units are modern and powerful units for responsive design:</p>
+                <ul>
+                    <li>vh: 1% of viewport height</li>
+                    <li>vw: 1% of viewport width</li>
+                    <li>vmin: 1% of viewport's smaller dimension</li>
+                    <li>vmax: 1% of viewport's larger dimension</li>
+                    <li>Perfect for full-screen layouts and hero sections</li>
+                </ul>
+            </div>
+            <div class="code-example">
+                .box { height: 50vh; width: 50vw; }
+            </div>
+            <div class="viewport-demo">
+                This box is 50vh high
+            </div>
+        </div>
+
+        <p class="interactive-note">Hover over sections to see interactive effects!</p>
+
+        <a href="../index.html" class="back-button">← Back to Index</a>
+    </div>
+</body>
+</html>
