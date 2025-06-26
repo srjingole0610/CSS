@@ -1,0 +1,160 @@
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 2.5em;
+}
+
+.intro {
+    font-size: 1.2em;
+    color: #7f8c8d;
+}
+
+h2 {
+    color: #2c3e50;
+    font-size: 2em;
+    margin: 30px auto 20px;
+    font-weight: 600;
+    line-height: 1.3;
+    text-align: center;
+}
+/* Timeline section */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.timeline-item {
+    border-left: 3px solid #3498db;
+    padding: 20px;
+    margin: 20px 0;
+    position: relative;
+}
+
+.timeline-item h3 {
+    color: #3498db;
+    margin: 0;
+}
+
+.timeline-item p {
+    margin: 10px 0 0;
+}
+
+/* Features section */
+.features ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.features li {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+/* Code example section */
+.code-container {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+pre {
+    margin: 0;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Selectors table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+}
+
+footer a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.back-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.back-button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    
+    .timeline-item {
+        padding: 10px;
+    }
+    
+    table {
+        font-size: 0.9em;
+    }
+    
+    th, td {
+        padding: 8px;
+    }
+}
