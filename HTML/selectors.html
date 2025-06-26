@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn CSS Selectors">
+    <meta name="author" content="Suraj Ingole">
+    <meta name="keywords" content="css, css tutorial css selectors, css learning">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="../CSS/selectors.css">
+    <link rel="shortcut icon" href="../images/css_favicon.png" type="image/x-icon">
+    <title>CSS Selectors Guide</title>
+</head>
+<body>
+    <a href="../index.html" class="back-btn">Back</a>
+    
+    <div id="header">
+        <h1>CSS Selectors Guide</h1>
+        <p class="intro">Understanding CSS Selectors and Their Specificity</p>
+    </div>
+
+    <div class="section">
+        <h2>Universal Selector (*)</h2>
+        <p>Selects all elements on the page. Used for global styles.</p>
+        <div class="theory">
+            <p><span class="specificity">Specificity: 0-0-0</span></p>
+            <p>The universal selector is often used for CSS resets and applying base styles. It has the lowest specificity and will be overridden by any other selector. Use with caution as it can impact performance when overused.</p>
+        </div>
+        <code>* { margin: 0; padding: 0; }</code>
+    </div>
+
+    <div class="section">
+        <h2>Type Selector</h2>
+        <p>Selects all elements of specified type.</p>
+        <div class="theory">
+            <p><span class="specificity">Specificity: 0-0-1</span></p>
+            <p>Element selectors target HTML elements directly by their tag name. They have low specificity but are useful for setting default styles for particular elements across your website.</p>
+        </div>
+        <code>p { color: blue; }</code>
+    </div>
+
+    <div class="section">
+        <h2>Class Selector (.)</h2>
+        <p class="special">Selects elements with specific class.</p>
+        <div class="theory">
+            <p><span class="specificity">Specificity: 0-1-0</span></p>
+            <p>Class selectors are reusable and can be applied to multiple elements. They're the most flexible way to style elements and are fundamental to maintaining clean, modular CSS. Multiple classes can be applied to a single element.</p>
+        </div>
+        <code>.special { color: green; }</code>
+    </div>
+
+    <div class="section">
+        <h2>ID Selector (#)</h2>
+        <p>Selects element with specific ID. Should be unique.</p>
+        <div class="theory">
+            <p><span class="specificity">Specificity: 1-0-0</span></p>
+            <p>ID selectors have the highest specificity among simple selectors. They should be used sparingly as they can make styles difficult to override and maintain. Best reserved for unique elements that appear once on a page.</p>
+        </div>
+        <code>#header { background: black; }</code>
+    </div>
+
+    <div class="section">
+        <h2>Pseudo-Class Selector (:)</h2>
+        <a href="#">Hover over me!</a>
+        <div class="theory">
+            <p><span class="specificity">Specificity: 0-1-0</span></p>
+            <p>Pseudo-classes target special states of elements like :hover, :focus, :first-child, etc. They're crucial for creating interactive and dynamic interfaces without JavaScript.</p>
+        </div>
+        <code>a:hover { color: red; }</code>
+    </div>
+
+    <div class="section">
+        <h2>Pseudo-Element Selector (::)</h2>
+        <p>Notice the first letter styling.</p>
+        <div class="theory">
+            <p><span class="specificity">Specificity: 0-0-1</span></p>
+            <p>Pseudo-elements create artificial elements in the document tree, allowing you to style specific parts of an element like ::first-letter, ::before, ::after. They're powerful for adding decorative content.</p>
+        </div>
+        <code>p::first-letter { font-size: 2em; }</code>
+    </div>
+
+    <div class="section">
+        <h2>Combinators</h2>
+        <div class="theory">
+            <p>CSS combinators define relationships between selectors:</p>
+            <ul>
+                <li>
+                    <strong>Descendant (space):</strong> Matches nested elements at any depth
+                    <div class="combinator-demo">
+                        <div class="parent">Parent
+                            <div class="child">Child
+                                <span class="highlight">Descendant</span>
+                            </div>
+                        </div>
+                        <code>div span { color: blue; }</code>
+                    </div>
+                </li>
+                <li>
+                    <strong>Child (>):</strong> Matches direct children only
+                    <div class="combinator-demo">
+                        <div class="parent">Parent
+                            <div class="child highlight">Direct Child</div>
+                            <div class="child">Child
+                                <div>Not Selected</div>
+                            </div>
+                        </div>
+                        <code>div > div { border-color: red; }</code>
+                    </div>
+                </li>
+                <li>
+                    <strong>Adjacent Sibling (+):</strong> Matches the next sibling
+                    <div class="combinator-demo">
+                        <div class="sibling">First</div>
+                        <div class="sibling highlight">Adjacent to First</div>
+                        <div class="sibling">Not Selected</div>
+                        <code>div + div { background-color: #ffeb3b; }</code>
+                    </div>
+                </li>
+                <li>
+                    <strong>General Sibling (~):</strong> Matches all following siblings
+                    <div class="combinator-demo">
+                        <div class="sibling">First</div>
+                        <div class="sibling highlight">Selected Sibling</div>
+                        <div class="sibling highlight">Also Selected</div>
+                        <code>div ~ div { background-color: #ffeb3b; }</code>
+                    </div>
+                </li>
+            </ul>
+            <div class="theory-details">
+                <p><span class="specificity">Specificity: Varies based on selectors used</span></p>
+                <p>Combinators are powerful tools for creating specific styling rules based on element relationships:</p>
+                <ul>
+                    <li>Descendant combinators (space) are the most flexible but can affect performance if too broad</li>
+                    <li>Child combinators (>) provide better performance and more precise targeting</li>
+                    <li>Sibling combinators (+, ~) are useful for styling sequential elements without adding classes</li>
+                </ul>
+                <p>Best Practices:</p>
+                <ul>
+                    <li>Use child combinators over descendant when possible for better performance</li>
+                    <li>Avoid deeply nested descendant selectors</li>
+                    <li>Consider using classes for complex selections instead of multiple combinators</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <!-- <h2>Attribute Selector</h2>
+        <input type="text" placeholder="Type here...">
+        <div class="theory">
+            <p><span class="specificity">Specificity: 0-1-0</span></p>
+            <p>Attribute selectors target elements based on their attributes or attribute values. They support pattern matching with prefixes (^=), suffixes ($=), contains (*=), and more.</p>
+        </div> -->
+          <h2>Attribute Selector</h2>
+
+  <!-- Example Input Element -->
+  <input type="text" placeholder="Type here...">
+
+  <!-- Theory Section -->
+  <div class="theory">
+    <p><span class="specificity">Specificity: 0-1-0</span></p>
+    <p>
+      Attribute selectors target elements based on their attributes or attribute values.
+      They support pattern matching using:
+    </p>
+    <ul>
+      <li><code>[attr]</code> — Elements with the attribute</li>
+      <li><code>[attr="value"]</code> — Attribute equals specific value</li>
+      <li><code>[attr^="value"]</code> — Attribute starts with value</li>
+      <li><code>[attr$="value"]</code> — Attribute ends with value</li>
+      <li><code>[attr*="value"]</code> — Attribute contains value</li>
+    </ul>
+  </div>
+        <code>input[type="text"] { padding: 5px; }</code>
+    </div>
+
+    <div class="section">
+        <h2>Compound Selector</h2>
+        <p class="special highlighted">Combined multiple classes</p>
+        <div class="theory">
+            <p><span class="specificity">Specificity: Cumulative</span></p>
+            <p>Compound selectors combine multiple simple selectors without a combinator. They're useful for targeting specific elements that meet multiple criteria. The specificity is the sum of all included selectors.</p>
+        </div>
+        <code>p.special.highlighted { background: yellow; }</code>
+    </div>
+
+    <div class="nested-parent section">
+        <h2>CSS Nesting</h2>
+        <div class="nested-child">Nested element styling</div>
+        <div class="theory">
+            <p>Modern CSS supports nesting, similar to preprocessors like Sass. This helps maintain cleaner, more organized stylesheets by grouping related styles together.</p>
+        </div>
+        <code>.nested-parent { .nested-child { color: purple; } }</code>
+    </div>
+</body>
+</html>
