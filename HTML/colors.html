@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn CSS from scratch">
+    <meta name="author" content="Suraj Ingole">
+    <meta name="keywords" content="css, css tutorial, css learning">
+    <link rel="stylesheet" href="../CSS/colors.css">
+    <meta name="robots" content="index, follow">
+    <link rel="shortcut icon" href="../images/css_favicon.png" type="image/x-icon">
+    <title>CSS Colors Tutorial</title>
+
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">← Back to Index</a>
+        
+        <h1>Understanding CSS Colors</h1>
+
+        <div class="color-section">
+            <h2>RGB and RGBA Colors</h2>
+            <div class="theory-section">
+                <p>RGB (Red, Green, Blue) is an additive color model where colors are created by combining different intensities of red, green, and blue light:</p>
+                <ul>
+                    <li>Each component ranges from 0 to 255</li>
+                    <li>rgb(255,0,0) is pure red</li>
+                    <li>rgb(0,255,0) is pure green</li>
+                    <li>rgb(0,0,255) is pure blue</li>
+                    <li>rgb(255,255,255) is white</li>
+                    <li>rgb(0,0,0) is black</li>
+                </ul>
+                <p>RGBA adds an alpha channel for transparency (0 = fully transparent, 1 = fully opaque)</p>
+            </div>
+            <div class="color-demo pure-red-bg"><!-- Red --></div>
+            <code>background: rgb(255, 0, 0);</code>
+            <div class="color-demo semi-transparent-blue-bg"><!-- Semi-transparent Blue --></div>
+            <code>background: rgba(0, 0, 255, 0.5);</code>
+        </div>
+
+        <div class="color-section">
+            <h2>Hexadecimal Colors</h2>
+            <div class="theory-section">
+                <p>Hexadecimal colors are a way to represent RGB values using base-16 numbers:</p>
+                <ul>
+                    <li>Values range from 00 to FF (0-255 in decimal)</li>
+                    <li>#FF0000 is pure red</li>
+                    <li>#00FF00 is pure green</li>
+                    <li>#0000FF is pure blue</li>
+                    <li>Can be shortened to 3 digits if each pair is the same (#FF0000 → #F00)</li>
+                </ul>
+            </div>
+            <div class="color-demo orange-bg"><!-- Orange --></div>
+            <code>background: #FF5733;</code>
+            <div class="color-demo light-green-bg"><!-- Light Green --></div>
+            <code>background: #33FF57;</code>
+        </div>
+
+        <div class="color-section">
+            <h2>HSL and HSLA Colors</h2>
+            <div class="theory-section">
+                <p>HSL (Hue, Saturation, Lightness) is a more intuitive way to specify colors:</p>
+                <ul>
+                    <li>Hue: Color wheel degree (0-360)</li>
+                    <li>Saturation: Color intensity (0% = gray, 100% = full color)</li>
+                    <li>Lightness: Brightness (0% = black, 100% = white)</li>
+                    <li>Common hue values: 0/360° = red, 120° = green, 240° = blue</li>
+                </ul>
+            </div>
+            <div class="color-demo pure-green-bg"><!-- Pure Green --></div>
+            <code>background: hsl(120, 100%, 50%);</code>
+            <div class="color-demo semi-transparent-purple-bg"><!-- Semi-transparent Purple --></div>
+            <code>background: hsla(300, 100%, 50%, 0.5);</code>
+        </div>
+
+        <div class="color-section">
+            <h2>Special Color Keywords</h2>
+            <div class="theory-section">
+                <p><strong>currentColor:</strong> A dynamic value that represents the current color value of an element:</p>
+                <ul>
+                    <li>Inherits the color property value from its parent or own color property</li>
+                    <li>Useful for maintaining color consistency across properties</li>
+                    <li>Can be used in borders, backgrounds, and other color properties</li>
+                </ul>
+                <p><strong>transparent:</strong> Represents a fully transparent color:</p>
+                <ul>
+                    <li>Equivalent to rgba(0, 0, 0, 0)</li>
+                    <li>Commonly used for creating invisible backgrounds or borders</li>
+                    <li>Useful in animations and transitions</li>
+                </ul>
+            </div>
+            <div class="color-demo current-color-demo"><!-- currentColor demo --></div>
+            <code>border: 5px solid currentColor;</code>
+            <div class="color-demo transparent-demo"><!-- transparent demo --></div>
+            <code>background: transparent;</code>
+        </div>
+
+        <div class="color-section">
+            <h2>Color Properties in CSS</h2>
+            <div class="theory-section">
+                <p>CSS provides various properties to apply colors to different aspects of elements:</p>
+                <ul>
+                    <li><strong>color:</strong> Sets text color</li>
+                    <li><strong>background-color:</strong> Sets background color</li>
+                    <li><strong>border-color:</strong> Sets border color</li>
+                    <li><strong>outline-color:</strong> Sets outline color</li>
+                    <li><strong>box-shadow:</strong> Can include color values</li>
+                    <li><strong>text-shadow:</strong> Can include color values</li>
+                </ul>
+            </div>
+            <h3>Try it yourself:</h3>
+            <div class="interactive-demo">
+                <input type="color" class="color-input" value="#4CAF50" oninput="this.nextElementSibling.style.backgroundColor = this.value">
+                <div class="color-preview default-color-preview"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
