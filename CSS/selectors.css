@@ -1,0 +1,183 @@
+/* Universal Selector (*) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Type Selector */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  padding: 2.5rem 1.25rem;
+  background-color: #f5f5f5;
+  color: #333;
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+/* Class Selector */
+.section {
+  margin: 1.875rem 0;
+  padding: 1.5625rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.section:hover {
+  transform: translateY(-0.125rem);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+}
+
+/* ID Selector */
+#header {
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+  color: white;
+  padding: 2.5rem 1.25rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Headings */
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.625rem;
+  text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  color: #2c3e50;
+  margin-bottom: 0.9375rem;
+  font-size: 1.8em;
+}
+
+/* Code blocks */
+code {
+  display: block;
+  background-color: #f8f9fa;
+  padding: 0.9375rem;
+  border-radius: 0.375rem;
+  border-left: 0.25rem solid #3498db;
+  margin: 0.9375rem 0;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.9em;
+}
+
+/* Links and buttons */
+.back-btn {
+  position: fixed;
+  top: 1.25rem;
+  left: 1.25rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #2c3e50;
+  color: white;
+  text-decoration: none;
+  border-radius: 1.5625rem;
+  font-weight: 500;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #3498db;
+  transform: translateY(-0.125rem);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+/* Paragraphs */
+p {
+  color: #555;
+  margin-bottom: 0.9375rem;
+  font-size: 1.1em;
+}
+.intro {
+  margin-bottom: 0.9375rem;
+  font-size: 1.1em;
+  color: #f4f4f4f4;
+}
+
+/* Input fields */
+input[type="text"] {
+  padding: 0.625rem;
+  border: 0.125rem solid #ddd;
+  border-radius: 0.25rem;
+  width: 100%;
+  max-width: 18.75rem;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+/* Special elements */
+.child {
+  padding: 0.9375rem;
+  background-color: #e8f4f8;
+  border-radius: 0.375rem;
+}
+
+.nested-child {
+  padding: 0.9375rem;
+  background-color: #f8e8f8;
+  border-radius: 0.375rem;
+  margin-top: 0.625rem;
+}
+
+/* Highlighted elements */
+p.special.highlighted {
+  background-color: #fff3cd;
+  padding: 0.9375rem;
+  border-radius: 0.375rem;
+  border-left: 0.25rem solid #ffc107;
+}
+
+/* Demo links */
+a:not(.back-btn) {
+  color: #3498db;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:not(.back-btn):hover {
+  color: #2c3e50;
+  text-decoration: underline;
+}
+
+/* Theory section styles */
+.theory {
+  background-color: #f0f7ff;
+  padding: 0.9375rem;
+  padding-left: 2rem;
+  margin-top: 0.625rem;
+  border-radius: 0.375rem;
+  border-left: 0.25rem solid #2196f3;
+}
+
+.specificity {
+  font-weight: bold;
+  color: #e91e63;
+}
+
+.combinator-demo .parent {
+  border: 0.125rem solid #333;
+  padding: 0.625rem;
+  margin: 0.625rem 0;
+}
+.combinator-demo .child {
+  background: #f0f0f0;
+  padding: 0.3125rem;
+  margin: 0.3125rem;
+}
+.combinator-demo .sibling {
+  border: 0.0625rem dashed #666;
+  padding: 0.3125rem;
+  margin: 0.3125rem;
+}
+.combinator-demo .highlight {
+  background: #ffeb3b;
+}
