@@ -1,142 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn CSS from scratch">
-    <meta name="author" content="Suraj Ingole">
-    <meta name="keywords" content="css, css tutorial, css learning">
-    <meta name="robots" content="index, follow">
-    <link rel="shortcut icon" href="../images/css_favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="../CSS/background.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Learn CSS from scratch" />
+    <meta name="author" content="Suraj Ingole" />
+    <meta name="keywords" content="css, css tutorial, css learning" />
+    <meta name="robots" content="index, follow" />
+    <link
+      rel="icon"
+      href="../images/css_favicon.png"
+      type="image/png"
+      sizes="32x32"
+    />
+    <link rel="stylesheet" href="../CSS/background.css" />
     <title>CSS Backgrounds Tutorial</title>
-</head>
-<body>
+  </head>
+  <body>
     <a href="../index.html" class="back-btn">← Back to Index</a>
-    
-    <h1>CSS Backgrounds Tutorial</h1>
 
-    <div class="theory-section">
+    <main>
+      <h1>CSS Backgrounds Tutorial</h1>
+
+      <section class="theory-section">
         <h2>Understanding CSS Backgrounds</h2>
-        <p>CSS backgrounds are fundamental to web design, providing various ways to enhance the visual presentation of elements. They can be used to create depth, establish visual hierarchy, and improve the overall user experience.</p>
-        
+        <p>
+          CSS backgrounds are fundamental to web design, providing various ways
+          to enhance the visual presentation of elements. They can be used to
+          create depth, establish visual hierarchy, and improve the overall user
+          experience.
+        </p>
+
         <div class="property-description">
-            <h3>Key Concepts:</h3>
-            <ul>
-                <li>Backgrounds can be layered using multiple background images</li>
-                <li>The background shorthand property combines multiple background properties</li>
-                <li>Background properties affect the painting area behind an element's content, padding, and border</li>
-                <li>Background images are painted in layers, with the first declared image being closest to the viewer</li>
-            </ul>
+          <h3>Key Concepts:</h3>
+          <ul>
+            <li>Backgrounds can be layered using multiple background images</li>
+            <li>
+              The background shorthand property combines multiple background
+              properties
+            </li>
+            <li>
+              Background properties affect the painting area behind an element's
+              content, padding, and border
+            </li>
+            <li>
+              Background images are painted in layers, with the first declared
+              image being closest to the viewer
+            </li>
+          </ul>
         </div>
-    </div>
+      </section>
 
-    <div class="example-section">
+      <section class="example-section">
         <h2>1. Background Color</h2>
-        <p>The background-color property supports various color formats including hexadecimal, RGB, RGBA, HSL, and color keywords.</p>
-        <div class="code-block">
-            background-color: #ff0000; /* Hexadecimal */
-            background-color: rgb(255, 0, 0); /* RGB */
-            background-color: rgba(255, 0, 0, 0.5); /* RGBA with opacity */
-            background-color: hsl(0, 100%, 50%); /* HSL */
-            background-color: red; /* Color keyword */
-        </div>
+        <p>
+          The background-color property supports various color formats including
+          hexadecimal, RGB, RGBA, HSL, and color keywords.
+        </p>
+        <pre class="code-block"><code>
+background-color: #ff0000; /* Hexadecimal */
+background-color: rgb(255, 0, 0); /* RGB */
+background-color: rgba(255, 0, 0, 0.5); /* RGBA with opacity */
+background-color: hsl(0, 100%, 50%); /* HSL */
+background-color: red; /* Color keyword */
+            </code></pre>
         <div class="interactive-demo">
-            <div class="color-demo color-demo-red"></div>
-            <div class="color-demo color-demo-red-transparent"></div>
-            <div class="color-demo color-demo-red-hsl"></div>
+          <div class="color-demo color-demo-red"></div>
+          <div class="color-demo color-demo-red-transparent"></div>
+          <div class="color-demo color-demo-red-hsl"></div>
         </div>
-    </div>
+      </section>
 
-    <div class="example-section">
+      <section class="example-section">
         <h2>2. Background Image</h2>
-        <p>Background images can be used to add texture, patterns, or visual content to elements.</p>
-        <div class="code-block">
-            background-image: url('image.jpg');
-            background-image: linear-gradient(to right, red, blue);
-            background-image: radial-gradient(circle, red, blue);
-            background-image: url('image1.jpg'), url('image2.jpg'); /* Multiple backgrounds */
-        </div>
+        <p>
+          Background images can be used to add texture, patterns, or visual
+          content to elements.
+        </p>
+        <pre class="code-block"><code>
+background-image: url('image.jpg');
+background-image: linear-gradient(to right, red, blue);
+background-image: radial-gradient(circle, red, blue);
+background-image: url('image1.jpg'), url('image2.jpg'); /* Multiple backgrounds */
+            </code></pre>
         <div class="demo-box gradient-demo-box"></div>
-    </div>
+      </section>
 
-    <div class="example-section">
+      <section class="example-section">
         <h2>3. Background Repeat</h2>
-        <p>Controls how background images repeat when they don't cover the entire container.</p>
-        <div class="code-block">
-            background-repeat: repeat; /* Default */
-            background-repeat: no-repeat;
-            background-repeat: repeat-x;
-            background-repeat: repeat-y;
-            background-repeat: space;
-            background-repeat: round;
-        </div>
+        <p>
+          Controls how background images repeat when they don't cover the entire
+          container.
+        </p>
+        <pre class="code-block"><code>
+background-repeat: repeat; /* Default */
+background-repeat: no-repeat;
+background-repeat: repeat-x;
+background-repeat: repeat-y;
+background-repeat: space;
+background-repeat: round;
+            </code></pre>
         <div class="demo-box repeat-demo-box"></div>
-    </div>
+      </section>
 
-    <div class="example-section">
+      <section class="example-section">
         <h2>4. Background Size</h2>
         <p>Controls how background images are sized within their container.</p>
-        <div class="code-block">
-            background-size: cover; /* Scales image to cover container */
-            background-size: contain; /* Scales image to fit within container */
-            background-size: 100% 100%; /* Stretches image */
-            background-size: auto 50%; /* Maintains aspect ratio */
-        </div>
+        <pre class="code-block"><code>
+background-size: cover; /* Scales image to cover container */
+background-size: contain; /* Scales image to fit within container */
+background-size: 100% 100%; /* Stretches image */
+background-size: auto 50%; /* Maintains aspect ratio */
+            </code></pre>
         <div class="demo-box cover-demo-box"></div>
-    </div>
+      </section>
 
-    <div class="example-section">
+      <section class="example-section">
         <h2>5. Background Position</h2>
-        <p>Determines where the background image is placed within its container.</p>
-        <div class="code-block">
-            background-position: center center;
-            background-position: top left;
-            background-position: 50% 50%;
-            background-position: right 20px bottom 10px;
-        </div>
+        <p>
+          Determines where the background image is placed within its container.
+        </p>
+        <pre class="code-block"><code>
+background-position: center center;
+background-position: top left;
+background-position: 50% 50%;
+background-position: right 20px bottom 10px;
+            </code></pre>
         <div class="demo-box position-demo-box"></div>
-    </div>
+      </section>
 
-    <div class="example-section">
+      <section class="example-section">
         <h2>6. Background Attachment</h2>
         <p>Controls how the background image behaves when scrolling.</p>
-        <div class="code-block">
-            background-attachment: scroll; /* Scrolls with content */
-            background-attachment: fixed; /* Stays fixed relative to viewport */
-            background-attachment: local; /* Scrolls with element's contents */
-        </div>
+        <pre class="code-block"><code>
+background-attachment: scroll; /* Scrolls with content */
+background-attachment: fixed; /* Stays fixed relative to viewport */
+background-attachment: local; /* Scrolls with element's contents */
+            </code></pre>
         <div class="scroll-container">
-            <div class="fixed-bg-content">
-                <p class="fixed-bg-text">Scroll to see the fixed background effect</p>
-            </div>
+          <div class="fixed-bg-content">
+            <p class="fixed-bg-text">
+              Scroll to see the fixed background effect
+            </p>
+          </div>
         </div>
-    </div>
+      </section>
 
-    <div class="example-section">
+      <section class="example-section">
         <h2>7. Background Blend Mode</h2>
         <p>Controls how background layers blend with each other.</p>
-        <div class="code-block">
-            background-blend-mode: normal;
-            background-blend-mode: multiply;
-            background-blend-mode: screen;
-            background-blend-mode: overlay;
-        </div>
+        <pre class="code-block"><code>
+background-blend-mode: normal;
+background-blend-mode: multiply;
+background-blend-mode: screen;
+background-blend-mode: overlay;
+            </code></pre>
         <div class="blend-mode-demo"></div>
-    </div>
+      </section>
 
-    <div class="theory-section">
+      <section class="theory-section">
         <h2>Best Practices</h2>
         <ul>
-            <li>Always provide a background-color as fallback for background-images</li>
-            <li>Optimize background images for web use to reduce loading time</li>
-            <li>Consider using multiple backgrounds for complex designs</li>
-            <li>Use appropriate background-size values for responsive designs</li>
-            <li>Test background attachments on mobile devices</li>
-            <li>Consider using CSS gradients instead of image files when possible</li>
-            <li>Use relative units for background positioning in responsive designs</li>
-            <li>Implement progressive enhancement for advanced background properties</li>
+          <li>
+            Always provide a background-color as fallback for background-images
+          </li>
+          <li>Optimize background images for web use to reduce loading time</li>
+          <li>Consider using multiple backgrounds for complex designs</li>
+          <li>Use appropriate background-size values for responsive designs</li>
+          <li>Test background attachments on mobile devices</li>
+          <li>
+            Consider using CSS gradients instead of image files when possible
+          </li>
+          <li>
+            Use relative units for background positioning in responsive designs
+          </li>
+          <li>
+            Implement progressive enhancement for advanced background properties
+          </li>
         </ul>
-    </div>
-</body>
+      </section>
+    </main>
+  </body>
 </html>

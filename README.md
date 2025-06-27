@@ -211,6 +211,6 @@ For any inquiries or assistance, please contact [srjingole0610@gmail.com](mailto
 
 ---
 
-**Happy styling! 🎨**
+## Happy styling! 🎨
 
 > Remember, CSS is powerful but takes practice. Don’t get discouraged if something doesn’t work right away — experimentation is key to mastering CSS.

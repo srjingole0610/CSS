@@ -1,0 +1,106 @@
+<!-- text properties : Text alignment, text decoration, text transform, text spacing, text shadow,letter spacing, line height,word spacing -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn CSS text properties: alignment, decoration, transform, spacing, shadow, letter spacing, line height, word spacing.">
+  <title>CSS Text Properties Explained</title>
+  <link rel="shortcut icon" href="../images/css_favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../CSS/text.css">
+</head>
+<body>
+  <nav>
+    <button class="back-btn" onclick="window.location.href='../index.html'">&larr; Back to Home</button>
+  </nav>
+  <main>
+    <h1>CSS Text Properties: In-Depth Guide</h1>
+    <section class="theory">
+      <h2>Text Alignment (<code>text-align</code>)</h2>
+      <p>Controls the horizontal alignment of text within its container. Common values: <code>left</code>, <code>right</code>, <code>center</code>, <code>justify</code>.</p>
+    </section>
+    <section class="code-example">
+      <pre><code>.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-justify { text-align: justify; }</code></pre>
+      <p class="demo-text text-left">This text is left aligned.</p>
+      <p class="demo-text text-center">This text is center aligned.</p>
+      <p class="demo-text text-right">This text is right aligned.</p>
+      <p class="demo-text text-justify">This text is justified. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, nec dictum urna.</p>
+    </section>
+
+    <section class="theory">
+      <h2>Text Decoration (<code>text-decoration</code>)</h2>
+      <p>Adds lines to text: underline, overline, line-through, or none. Can combine multiple values.</p>
+    </section>
+    <section class="code-example">
+      <pre><code>.underline { text-decoration: underline; }
+.overline { text-decoration: overline; }
+.line-through { text-decoration: line-through; }
+.underline-overline { text-decoration: underline overline; }</code></pre>
+      <p class="demo-text underline">This text is underlined.</p>
+      <p class="demo-text overline">This text has an overline.</p>
+      <p class="demo-text line-through">This text is struck through.</p>
+      <p class="demo-text underline-overline">This text is underlined and overlined.</p>
+    </section>
+
+    <section class="theory">
+      <h2>Text Transform (<code>text-transform</code>)</h2>
+      <p>Controls capitalization: <code>uppercase</code>, <code>lowercase</code>, <code>capitalize</code>, or <code>none</code>.</p>
+    </section>
+    <section class="code-example">
+      <pre><code>.uppercase { text-transform: uppercase; }
+.lowercase { text-transform: lowercase; }
+.capitalize { text-transform: capitalize; }</code></pre>
+      <p class="demo-text uppercase">this text is uppercase.</p>
+      <p class="demo-text lowercase">THIS TEXT IS LOWERCASE.</p>
+      <p class="demo-text capitalize">this text is capitalized.</p>
+    </section>
+
+    <section class="theory">
+      <h2>Letter Spacing (<code>letter-spacing</code>)</h2>
+      <p>Adjusts the space between characters. Useful for headings or stylistic effects.</p>
+    </section>
+    <section class="code-example">
+      <pre><code>.letter-spacing-wide { letter-spacing: 0.2em; }
+.letter-spacing-tight { letter-spacing: -0.05em; }</code></pre>
+      <p class="demo-text letter-spacing-wide">Wider letter spacing</p>
+      <p class="demo-text letter-spacing-tight">Tighter letter spacing</p>
+    </section>
+
+    <section class="theory">
+      <h2>Word Spacing (<code>word-spacing</code>)</h2>
+      <p>Adjusts the space between words. Can improve readability or create stylistic effects.</p>
+    </section>
+    <section class="code-example">
+      <pre><code>.word-spacing-wide { word-spacing: 1.5em; }
+.word-spacing-tight { word-spacing: -0.3em; }</code></pre>
+      <p class="demo-text word-spacing-wide">This has wide word spacing.</p>
+      <p class="demo-text word-spacing-tight">This has tight word spacing.</p>
+    </section>
+
+    <section class="theory">
+      <h2>Line Height (<code>line-height</code>)</h2>
+      <p>Controls the vertical space between lines of text. Use unitless values for best scalability.</p>
+    </section>
+    <section class="code-example">
+      <pre><code>.line-height-loose { line-height: 2; }
+.line-height-tight { line-height: 1; }</code></pre>
+      <p class="demo-text line-height-loose">This paragraph has loose line height.<br>Second line for demo.</p>
+      <p class="demo-text line-height-tight">This paragraph has tight line height.<br>Second line for demo.</p>
+    </section>
+
+    <section class="theory">
+      <h2>Text Shadow (<code>text-shadow</code>)</h2>
+      <p>Adds shadow to text for emphasis or stylistic effect. Syntax: <code>text-shadow: offset-x offset-y blur color;</code></p>
+    </section>
+    <section class="code-example">
+      <pre><code>.text-shadow-basic { text-shadow: 2px 2px 4px #888; }
+.text-shadow-color { text-shadow: 1px 1px 6px #3498db; }</code></pre>
+      <p class="demo-text text-shadow-basic">This text has a basic shadow.</p>
+      <p class="demo-text text-shadow-color">This text has a colored shadow.</p>
+    </section>
+  </main>
+</body>
+</html>

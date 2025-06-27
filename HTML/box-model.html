@@ -1,0 +1,204 @@
+<!-- Box Model : Margin, Border, Padding, Content -->
+<!-- borders: border-width, border-style, border-color, border-radius and shorthand properties -->
+<!-- padding: padding-top, padding-right, padding-bottom, padding-left and shorthand properties -->
+<!-- margin: margin-top, margin-right, margin-bottom, margin-left margin: auto, negative margin, margin collapse and shorthand properties -->
+<!-- content: content-width, content-height, content-box, border-box, padding-box, margin-box  -->
+<!-- box-sizing: border-box, content-box -->
+<!-- box model rules  -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Learn CSS Box Model: margin, border, padding, content, box-sizing, and related properties."
+    />
+    <meta name="author" content="Suraj Ingole" />
+    <meta
+      name="keywords"
+      content="CSS, Box Model, Margin, Border, Padding, Content, Box Sizing"
+    />
+    <link
+      rel="shortcut icon"
+      href="../images/css_favicon.png"
+      type="image/x-icon"
+    />
+    <title>CSS Box Model Explained</title>
+    <link rel="stylesheet" href="../CSS/box-model.css" />
+  </head>
+  <body>
+    <nav>
+      <button class="back-btn" onclick="window.location.href='../index.html'">
+        &larr; Back to Home
+      </button>
+    </nav>
+    <main>
+      <h1>CSS Box Model: In-Depth Guide</h1>
+      <section class="theory">
+        <h2>What is the Box Model?</h2>
+        <p>
+          The CSS <strong>Box Model</strong> is the foundation of web layout. Every element is a box, and understanding how these boxes interact is crucial for building responsive, visually appealing designs. The box model consists of four main parts:
+        </p>
+        <ul>
+          <li>
+            <strong>Content:</strong> The actual text, image, or media inside the box. This is what you see and interact with.
+          </li>
+          <li>
+            <strong>Padding:</strong> The transparent space between the content and the border. Padding increases the space inside the box without affecting the border or margin.
+          </li>
+          <li>
+            <strong>Border:</strong> The visible line that wraps the padding and content. Borders can be styled, colored, and rounded for emphasis or separation.
+          </li>
+          <li>
+            <strong>Margin:</strong> The transparent space outside the border, separating the element from other elements. Margins control spacing between boxes.
+          </li>
+        </ul>
+        <p>
+          <strong>Visualizing the box model</strong> helps you debug layout issues. Use browser DevTools to inspect and experiment with box properties in real time.
+        </p>
+        <p>
+          <strong>Tip:</strong> The total size of an element is calculated as: <br>
+          <code>Total width = margin + border + padding + content</code>
+        </p>
+      </section>
+      <section class="code-example">
+        <pre><code>.box-demo {
+  width: 200px;
+  padding: 20px;
+  border: 4px solid #3498db;
+  margin: 30px;
+  background: #e6f0fa;
+}</code></pre>
+        <div class="box-demo">Box Model Demo</div>
+      </section>
+
+      <section class="theory">
+        <h2>Borders</h2>
+        <p>
+          Borders are the visible outlines of a box. You can control their width, style, color, and radius. Borders are great for highlighting, separating, or decorating elements. The <code>border</code> shorthand lets you set all border properties in one line. You can also style each side individually (e.g., <code>border-top</code>, <code>border-right</code>).
+        </p>
+        <ul>
+          <li><code>border-width</code>: Thickness of the border (e.g., 2px, 0.2em).</li>
+          <li><code>border-style</code>: Solid, dashed, dotted, double, groove, ridge, etc.</li>
+          <li><code>border-color</code>: Any valid color value.</li>
+          <li><code>border-radius</code>: Rounds the corners of the border for a softer look.</li>
+        </ul>
+        <p><strong>Tip:</strong> Use <code>border-radius: 50%</code> for perfect circles on square elements.</p>
+      </section>
+      <section class="code-example">
+        <pre><code>.border-demo {
+  border-width: 3px;
+  border-style: dashed;
+  border-color: #e67e22;
+  border-radius: 12px;
+}
+.border-shorthand {
+  border: 2px solid #2ecc71;
+}</code></pre>
+        <div class="box-demo border-demo">Dashed & rounded border</div>
+        <div class="box-demo border-shorthand">Shorthand border</div>
+      </section>
+
+      <section class="theory">
+        <h2>Padding</h2>
+        <p>
+          Padding creates breathing room inside your box, pushing the content away from the border. It’s useful for making buttons, cards, and containers feel less cramped. You can set padding for each side or use the shorthand for quick layouts.
+        </p>
+        <ul>
+          <li>Padding does not affect the background color, which always extends to the border edge.</li>
+          <li>Use <code>padding: 1em 2em;</code> for vertical/horizontal padding in one line.</li>
+        </ul>
+        <p><strong>Tip:</strong> Increasing padding can make clickable areas (like buttons) more user-friendly.</p>
+      </section>
+      <section class="code-example">
+        <pre><code>.padding-demo {
+  padding-top: 30px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-left: 40px;
+}
+.padding-shorthand {
+  padding: 10px 30px;
+}</code></pre>
+        <div class="box-demo padding-demo">Custom padding</div>
+        <div class="box-demo padding-shorthand">Shorthand padding</div>
+      </section>
+
+      <section class="theory">
+        <h2>Margin</h2>
+        <p>
+          Margins control the space outside your box, separating it from other elements. Margins are essential for creating whitespace and preventing elements from crowding each other. You can use negative margins to create overlapping effects, and <code>margin: auto</code> to center block elements horizontally.
+        </p>
+        <ul>
+          <li>Vertical margins between block elements may collapse into a single margin (margin collapse).</li>
+          <li>Negative margins can pull elements closer or even overlap them.</li>
+        </ul>
+        <p><strong>Tip:</strong> Use <code>margin: 0 auto;</code> to center fixed-width elements.</p>
+      </section>
+      <section class="code-example">
+        <pre><code>.margin-demo {
+  margin-top: 40px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  margin-left: 40px;
+}
+.margin-auto {
+  margin: 0 auto;
+}
+.negative-margin {
+  margin-top: -20px;
+}</code></pre>
+        <div class="box-demo margin-demo">Custom margin</div>
+        <div class="box-demo margin-auto">Centered with auto margin</div>
+        <div class="box-demo negative-margin">
+          Negative margin (overlaps above)
+        </div>
+      </section>
+
+      <section class="theory">
+        <h2>Content Area & Sizing</h2>
+        <p>
+          The <strong>content area</strong> is where your text, images, or other media live. You control its size with <code>width</code> and <code>height</code>. The <code>box-sizing</code> property changes how the total size of the box is calculated:
+        </p>
+        <ul>
+          <li><code>content-box</code> (default): width/height apply only to the content. Padding and border are added outside.</li>
+          <li><code>border-box</code>: width/height include padding and border, making layouts easier to manage.</li>
+        </ul>
+        <p><strong>Tip:</strong> Set <code>* { box-sizing: border-box; }</code> globally for more predictable layouts.</p>
+      </section>
+      <section class="code-example">
+        <pre><code>.content-box-demo {
+  width: 200px;
+  padding: 20px;
+  border: 4px solid #3498db;
+  box-sizing: content-box;
+}
+.border-box-demo {
+  width: 200px;
+  padding: 20px;
+  border: 4px solid #e67e22;
+  box-sizing: border-box;
+}</code></pre>
+        <div class="content-box-demo">
+          content-box (width excludes padding & border)
+        </div>
+        <div class="border-box-demo">
+          border-box (width includes padding & border)
+        </div>
+      </section>
+
+      <section class="theory">
+        <h2>Box Model Rules & Best Practices</h2>
+        <ul>
+          <li>Use <code>box-sizing: border-box</code> for easier layout control and to avoid unexpected sizing issues.</li>
+          <li>Margin collapse only affects vertical margins between block elements.</li>
+          <li>Use shorthand properties for cleaner, more maintainable code.</li>
+          <li>Visualize the box model using browser DevTools for debugging and learning.</li>
+          <li>Combine margin, border, and padding creatively for modern card, button, and layout designs.</li>
+        </ul>
+        <p><strong>Pro Tip:</strong> Try experimenting with different border, margin, and padding values to see how the box model changes in real time!</p>
+      </section>
+    </main>
+  </body>
+</html>

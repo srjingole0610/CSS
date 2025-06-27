@@ -1,0 +1,127 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f8fafc;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  padding: 2rem 2.5rem;
+}
+
+h1 {
+  text-align: center;
+  color: #3a3a7a;
+  margin-bottom: 2rem;
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+.theory {
+  background: #e6f0fa;
+  border-left: 5px solid #3498db;
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.code-example {
+  background: #23272e;
+  color: #f8f8f2;
+  border-radius: 6px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(52,152,219,0.07);
+}
+
+.code-example pre {
+  background: #181a20;
+  color: #e6db74;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.demo-text {
+  background: #f4f8fb;
+  color: #23272e;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  font-size: 1.1em;
+  transition: background 0.2s;
+}
+
+.demo-text:hover {
+  background: #d6eaff;
+}
+
+nav {
+  background: #e6f0fa;
+  padding: 1rem 0;
+  text-align: left;
+  border-bottom: 1px solid #d0e2f2;
+}
+
+.back-btn {
+  background: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(52,152,219,0.07);
+}
+
+.back-btn:hover, .back-btn:focus {
+  background: #217dbb;
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 1rem 0.5rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Text property demo classes */
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-justify { text-align: justify; }
+
+.underline { text-decoration: underline; }
+.overline { text-decoration: overline; }
+.line-through { text-decoration: line-through; }
+.underline-overline { text-decoration: underline overline; }
+
+.uppercase { text-transform: uppercase; }
+.lowercase { text-transform: lowercase; }
+.capitalize { text-transform: capitalize; }
+
+.letter-spacing-wide { letter-spacing: 0.2em; }
+.letter-spacing-tight { letter-spacing: -0.05em; }
+
+.word-spacing-wide { word-spacing: 1.5em; }
+.word-spacing-tight { word-spacing: -0.3em; }
+
+.line-height-loose { line-height: 2; }
+.line-height-tight { line-height: 1; }
+
+.text-shadow-basic { text-shadow: 2px 2px 4px #888; }
+.text-shadow-color { text-shadow: 1px 1px 6px #3498db; }
