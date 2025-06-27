@@ -252,6 +252,70 @@ h1 {
 
 ---
 
+## 9. Text Properties in CSS
+
+CSS text properties allow you to control the appearance, alignment, spacing, and effects of text content. Mastery of these properties is essential for creating visually appealing and readable web pages.
+
+### Text Alignment (`text-align`)
+Controls horizontal alignment of text within its container. Values: `left`, `right`, `center`, `justify`.
+
+```css
+.text-center { text-align: center; }
+.text-justify { text-align: justify; }
+```
+
+### Text Decoration (`text-decoration`)
+Adds lines to text: `underline`, `overline`, `line-through`, or `none`. Can combine multiple values.
+
+```css
+.underline { text-decoration: underline; }
+.line-through { text-decoration: line-through; }
+```
+
+### Text Transform (`text-transform`)
+Controls capitalization: `uppercase`, `lowercase`, `capitalize`, or `none`.
+
+```css
+.uppercase { text-transform: uppercase; }
+.capitalize { text-transform: capitalize; }
+```
+
+### Letter Spacing (`letter-spacing`)
+Adjusts space between characters. Useful for headings or stylistic effects.
+
+```css
+.letter-spacing-wide { letter-spacing: 0.2em; }
+```
+
+### Word Spacing (`word-spacing`)
+Adjusts space between words. Can improve readability or create stylistic effects.
+
+```css
+.word-spacing-wide { word-spacing: 1.5em; }
+```
+
+### Line Height (`line-height`)
+Controls vertical space between lines of text. Use unitless values for best scalability.
+
+```css
+.line-height-loose { line-height: 2; }
+```
+
+### Text Shadow (`text-shadow`)
+Adds shadow to text for emphasis or stylistic effect. Syntax: `text-shadow: offset-x offset-y blur color;`
+
+```css
+.text-shadow-basic { text-shadow: 2px 2px 4px #888; }
+.text-shadow-color { text-shadow: 1px 1px 6px #3498db; }
+```
+
+### Best Practices
+- Use text properties to improve readability and visual hierarchy.
+- Combine properties for creative effects (e.g., uppercase + letter-spacing for headings).
+- Avoid excessive decoration or shadow for body text.
+
+---
+
 ## ✅ Summary Tips
 - Use an **external CSS** file for scalability.
 - Organize your CSS with **clear comments** and **consistent naming conventions**.
