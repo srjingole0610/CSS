@@ -316,6 +316,74 @@ Adds shadow to text for emphasis or stylistic effect. Syntax: `text-shadow: offs
 
 ---
 
+## 10. Box Model in CSS
+
+The CSS Box Model is fundamental to understanding layout and spacing in web design. Every element is a rectangular box made up of content, padding, border, and margin.
+
+### Box Model Structure
+- **Content:** The actual text, image, or media inside the box.
+- **Padding:** Space between the content and the border.
+- **Border:** The line surrounding the padding and content.
+- **Margin:** Space outside the border, separating the element from others.
+
+### Borders
+Borders can be customized with `border-width`, `border-style`, `border-color`, and `border-radius`. The `border` shorthand sets all at once.
+
+```css
+.box-demo {
+  border: 4px solid #3498db;
+  border-radius: 8px;
+}
+```
+
+### Padding
+Padding is the space between the content and the border. Set each side individually or use the `padding` shorthand.
+
+```css
+.padding-demo {
+  padding-top: 30px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-left: 40px;
+}
+.padding-shorthand {
+  padding: 10px 30px;
+}
+```
+
+### Margin
+Margin is the space outside the border. You can set each side, use `auto` for centering, negative values, and the `margin` shorthand. Vertical margins between block elements may collapse.
+
+```css
+.margin-auto {
+  margin: 0 auto;
+}
+.negative-margin {
+  margin-top: -20px;
+}
+```
+
+### Content Area & Sizing
+The content area is sized with `width` and `height`. The `box-sizing` property determines if padding and border are included in the element's total width and height.
+- `content-box` (default): width/height apply to content only.
+- `border-box`: width/height include padding and border.
+
+```css
+.content-box-demo {
+  box-sizing: content-box;
+}
+.border-box-demo {
+  box-sizing: border-box;
+}
+```
+
+### Best Practices
+- Use `box-sizing: border-box` for easier layout control.
+- Use shorthand properties for cleaner code.
+- Visualize the box model using browser DevTools.
+
+---
+
 ## ✅ Summary Tips
 - Use an **external CSS** file for scalability.
 - Organize your CSS with **clear comments** and **consistent naming conventions**.
