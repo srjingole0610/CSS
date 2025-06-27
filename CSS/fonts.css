@@ -1,0 +1,165 @@
+/* CSS Fonts Demo Styles */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f8fafc;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  padding: 2rem 2.5rem;
+}
+
+h1 {
+  text-align: center;
+  color: #3a3a7a;
+  margin-bottom: 2rem;
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+.theory {
+  background: #e6f0fa;
+  border-left: 5px solid #3498db;
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.code-example {
+  background: #23272e;
+  color: #f8f8f2;
+  border-radius: 6px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(52,152,219,0.07);
+}
+
+.code-example pre {
+  background: #181a20;
+  color: #e6db74;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.code-example .demo-text {
+  background: #f4f8fb;
+  color: #23272e;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  font-size: 1.1em;
+  transition: background 0.2s;
+}
+
+.code-example .demo-text:hover {
+  background: #d6eaff;
+}
+
+nav {
+  background: #e6f0fa;
+  padding: 1rem 0;
+  text-align: left;
+  border-bottom: 1px solid #d0e2f2;
+}
+
+.back-btn {
+  background: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(52,152,219,0.07);
+}
+
+.back-btn:hover, .back-btn:focus {
+  background: #217dbb;
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 1rem 0.5rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Demo for @font-face (no actual font file, just for code example) */
+@font-face {
+  font-family: 'MyFont';
+  src: url('MyFont.woff2') format('woff2');
+}
+.custom-font {
+  font-family: 'MyFont', sans-serif;
+}
+
+.font-family-demo {
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+.heading-serif {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+.code-mono {
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  background: #eaeaea;
+  padding: 0.2em 0.5em;
+  border-radius: 3px;
+  font-size: 1.1em;
+}
+
+.font-size-large {
+  font-size: 2.5rem;
+}
+.font-size-small {
+  font-size: 0.8em;
+}
+.font-size-keyword {
+  font-size: large;
+}
+
+.font-weight-bold {
+  font-weight: bold;
+}
+.font-weight-light {
+  font-weight: 300;
+}
+.font-weight-bolder {
+  font-weight: bolder;
+}
+
+.font-style-italic {
+  font-style: italic;
+}
+.font-style-oblique {
+  font-style: oblique;
+}
+
+.font-variant-smallcaps {
+  font-variant: small-caps;
+}
+
+.custom-font-demo {
+  font-family: 'MyFont', Arial, sans-serif;
+}
+
+.fallback-cursive {
+  font-family: 'Pacifico', cursive;
+}

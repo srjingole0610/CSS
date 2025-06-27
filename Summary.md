@@ -205,6 +205,53 @@ CSS uses units to define sizes, spacing, and other length-related properties.
 
 ---
 
+## 8. Fonts in CSS
+
+CSS provides powerful tools to control typography, which is essential for readability, branding, and user experience.
+
+### Font Properties:
+- **font-family:** Specifies the typeface. Always provide fallback fonts and end with a generic family (e.g., serif, sans-serif).
+- **font-size:** Sets the size of the text. Use relative units (em, rem, %) for accessibility and responsiveness.
+- **font-weight:** Controls the thickness of the text. Values: normal, bold, or numeric (100–900).
+- **font-style:** Used for italic or oblique text.
+- **font-variant:** Enables typographic features like small-caps.
+- **@font-face:** Allows you to use custom fonts by specifying a font file.
+
+### Fallback Fonts:
+Always list multiple fonts in font-family to ensure text remains readable if a preferred font fails to load.
+
+### Example:
+```css
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.italic {
+  font-style: italic;
+}
+.small-caps {
+  font-variant: small-caps;
+}
+@font-face {
+  font-family: 'MyFont';
+  src: url('MyFont.woff2') format('woff2');
+}
+.custom-font {
+  font-family: 'MyFont', sans-serif;
+}
+```
+
+### Best Practices:
+- Use web-safe fonts or host custom fonts with @font-face.
+- Prefer relative units for font-size.
+- Always provide fallbacks in font-family.
+- Use font-weight and font-style for emphasis and hierarchy.
+
+---
+
 ## ✅ Summary Tips
 - Use an **external CSS** file for scalability.
 - Organize your CSS with **clear comments** and **consistent naming conventions**.

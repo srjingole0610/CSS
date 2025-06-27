@@ -1,0 +1,215 @@
+<!-- Font-family, font-size, font-weight,font-style,font-variant, @font-face rule, fallback font  -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Learn CSS fonts: font-family, font-size, font-weight, font-style, font-variant, @font-face rule, and fallback fonts."
+    />
+    <meta name="author" content="Suraj Ingole" />
+    <link
+      rel="shortcut icon"
+      href="../images/css_favicon.png"
+      type="image/x-icon"
+    />
+    <title>CSS Fonts Explained</title>
+    <link rel="stylesheet" href="../CSS/fonts.css" />
+  </head>
+  <body>
+    <nav>
+      <button class="back-btn" onclick="window.location.href='../index.html'">
+        &larr; Back to Home
+      </button>
+    </nav>
+    <main>
+      <h1>CSS Fonts: In-Depth Guide</h1>
+      <section class="theory">
+        <h2>Font Family</h2>
+        <p>
+          The <code>font-family</code> property defines the typeface for text. You
+          can specify a prioritized list of font names and generic family names.
+          This ensures your text is displayed in the best available font on the
+          user's system. Common generic families include
+          <code>serif</code>, <code>sans-serif</code>, <code>monospace</code>,
+          <code>cursive</code>, and <code>fantasy</code>.
+        </p>
+        <ul>
+          <li>Always provide multiple fonts for better compatibility.</li>
+          <li>Font names with spaces must be quoted.</li>
+          <li>Generic family should always be last.</li>
+        </ul>
+      </section>
+      <section class="code-example">
+        <pre><code>body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+.heading-serif {
+  font-family: 'Times New Roman', Times, serif;
+}
+.code-mono {
+  font-family: 'Fira Mono', 'Consolas', monospace;
+}</code></pre>
+        <p class="demo-text font-family-demo">
+          This is a sans-serif font-family demo.
+        </p>
+        <h2 class="demo-text heading-serif">This is a serif heading</h2>
+        <code class="demo-text code-mono">This is monospace code text.</code>
+      </section>
+
+      <section class="theory">
+        <h2>Font Size</h2>
+        <p>
+          The <code>font-size</code> property sets the size of the text. Use
+          relative units (<code>em</code>, <code>rem</code>, <code>%</code>) for
+          accessibility and responsiveness. Absolute units (<code>px</code>,
+          <code>pt</code>) are less flexible. You can also use keywords like
+          <code>small</code>, <code>medium</code>, <code>large</code>.
+        </p>
+        <ul>
+          <li><code>em</code>: Relative to the font-size of the element.</li>
+          <li><code>rem</code>: Relative to the root element (<code>html</code>).</li>
+          <li><code>%</code>: Relative to the parent element's font-size.</li>
+        </ul>
+      </section>
+      <section class="code-example">
+        <pre><code>.font-size-large {
+  font-size: 2.5rem;
+}
+.font-size-small {
+  font-size: 0.8em;
+}
+.font-size-keyword {
+  font-size: large;
+}</code></pre>
+        <p class="demo-text font-size-large">This is large text (2.5rem).</p>
+        <p class="demo-text font-size-small">This is small text (0.8em).</p>
+        <p class="demo-text font-size-keyword">This is large keyword text.</p>
+      </section>
+
+      <section class="theory">
+        <h2>Font Weight</h2>
+        <p>
+          The <code>font-weight</code> property controls the thickness of the
+          text. It accepts keywords (<code>normal</code>, <code>bold</code>,
+          <code>lighter</code>, <code>bolder</code>) and numeric values
+          (100–900). Not all fonts support all weights.
+        </p>
+        <ul>
+          <li>Use numeric values for precise control.</li>
+          <li>Font weights may render differently across browsers and fonts.</li>
+        </ul>
+      </section>
+      <section class="code-example">
+        <pre><code>.font-weight-bold {
+  font-weight: bold;
+}
+.font-weight-light {
+  font-weight: 300;
+}
+.font-weight-bolder {
+  font-weight: bolder;
+}</code></pre>
+        <p class="demo-text font-weight-bold">This is bold text.</p>
+        <p class="demo-text font-weight-light">This is light text (300).</p>
+        <p class="demo-text font-weight-bolder">This is bolder text.</p>
+      </section>
+
+      <section class="theory">
+        <h2>Font Style</h2>
+        <p>
+          The <code>font-style</code> property is used for italicizing or slanting
+          text. Values: <code>normal</code>, <code>italic</code>,
+          <code>oblique</code>. Italic uses a designed italic font, while oblique
+          slants the normal font.
+        </p>
+        <ul>
+          <li>Use <code>italic</code> for emphasis or citations.</li>
+          <li>Oblique is less common and may look similar to italic.</li>
+        </ul>
+      </section>
+      <section class="code-example">
+        <pre><code>.font-style-italic {
+  font-style: italic;
+}
+.font-style-oblique {
+  font-style: oblique;
+}</code></pre>
+        <p class="demo-text font-style-italic">This is italic text.</p>
+        <p class="demo-text font-style-oblique">This is oblique text.</p>
+      </section>
+
+      <section class="theory">
+        <h2>Font Variant</h2>
+        <p>
+          The <code>font-variant</code> property enables typographic features like
+          small-caps. Most common value: <code>small-caps</code>. Some fonts
+          support additional variants (e.g., oldstyle-nums, lining-nums).
+        </p>
+        <ul>
+          <li>Small-caps displays lowercase letters as smaller uppercase letters.</li>
+          <li>Font variants are useful for headings, acronyms, or stylistic emphasis.</li>
+        </ul>
+      </section>
+      <section class="code-example">
+        <pre><code>.font-variant-smallcaps {
+  font-variant: small-caps;
+}</code></pre>
+        <p class="demo-text font-variant-smallcaps">This is small-caps text.</p>
+      </section>
+
+      <section class="theory">
+        <h2>@font-face Rule</h2>
+        <p>
+          The <code>@font-face</code> rule lets you use custom fonts by
+          specifying a font file. This increases design flexibility and
+          branding. You can host fonts yourself or use services like Google
+          Fonts.
+        </p>
+        <ul>
+          <li>Always provide a fallback font-family.</li>
+          <li>Use <code>font-display: swap;</code> for better performance.</li>
+        </ul>
+      </section>
+      <section class="code-example">
+        <pre><code>@font-face {
+  font-family: 'MyFont';
+  src: url('MyFont.woff2') format('woff2');
+  font-display: swap;
+}
+.custom-font-demo {
+  font-family: 'MyFont', Arial, sans-serif;
+}</code></pre>
+        <p class="demo-text custom-font-demo">
+          This would use a custom font if available (demo only).
+        </p>
+      </section>
+
+      <section class="theory">
+        <h2>Fallback Fonts</h2>
+        <p>
+          Always provide fallback fonts in your <code>font-family</code> list to
+          ensure text remains readable if a preferred font fails to load. This is
+          essential for accessibility and cross-platform consistency.
+        </p>
+        <ul>
+          <li>List fonts in order of preference.</li>
+          <li>End with a generic family.</li>
+        </ul>
+      </section>
+      <section class="code-example">
+        <pre><code>body {
+  font-family: 'Roboto', Arial, sans-serif;
+}
+.fallback-cursive {
+  font-family: 'Pacifico', cursive;
+}</code></pre>
+        <p class="demo-text fallback-cursive">
+          This text will use Pacifico if available, otherwise a generic cursive
+          font.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
