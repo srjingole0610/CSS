@@ -1,0 +1,214 @@
+<!-- Gradient : linear-gradient, radial-gradient, conic-gradient, repeating-gradient, multiple-gradient, angle-gradient, color-stop -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn CSS gradients: linear, radial, conic, repeating, multiple, angle, color-stop.">
+  <title>CSS Gradients Explained</title>
+  <link rel="stylesheet" href="../CSS/gradient.css">
+</head>
+<body>
+  <nav>
+    <button class="back-btn" onclick="window.location.href='../index.html'">&larr; Back to Home</button>
+  </nav>
+  <main>
+    <h1>CSS Gradients: In-Depth Guide</h1>
+    <section class="theory">
+      <h2>What are CSS Gradients?</h2>
+      <p>CSS gradients allow you to create smooth transitions between two or more colors, without using images. Gradients can be linear, radial, conic, or even repeating, and are highly customizable for backgrounds, buttons, borders, and more.</p>
+      <ul>
+        <li><strong>Color stops</strong> define where each color starts and ends.</li>
+        <li>Gradients can be combined, angled, and animated for creative effects.</li>
+        <li>They are resolution-independent and render smoothly at any size.</li>
+      </ul>
+    </section>
+
+    <section class="theory">
+      <h2>Linear Gradient</h2>
+      <p>Creates a gradient along a straight line. You can set the direction (angle or to side/corner) and as many color stops as you want. Linear gradients are great for backgrounds, buttons, borders, and overlays. You can use keywords like <code>to right</code>, <code>to bottom left</code>, or angles like <code>45deg</code>.</p>
+      <ul>
+        <li>Multiple color stops create smooth transitions between several colors.</li>
+        <li>Use transparency in color stops for overlay effects.</li>
+      </ul>
+    </section>
+    <section class="code-example">
+      <pre><code>.linear-gradient-demo {
+  background: linear-gradient(90deg, #3498db, #8e44ad);
+}
+.linear-gradient-diagonal {
+  background: linear-gradient(45deg, #ff6a00, #ffd200, #8e44ad);
+}
+.linear-gradient-transparent {
+  background: linear-gradient(to right, #3498db 70%, transparent);
+}</code></pre>
+      <div class="gradient-demo linear-gradient-demo">Linear Gradient (90°)</div>
+      <div class="gradient-demo linear-gradient-diagonal">Diagonal Linear Gradient (45°)</div>
+      <div class="gradient-demo linear-gradient-transparent">Linear Gradient with Transparency</div>
+    </section>
+
+    <section class="theory">
+      <h2>Radial Gradient</h2>
+      <p>Radiates from an origin (center by default) outward in a circle or ellipse. You can control the shape (<code>circle</code> or <code>ellipse</code>), size, and position. Radial gradients are useful for spotlight effects, buttons, and backgrounds.</p>
+      <ul>
+        <li>Use <code>ellipse</code> for oval shapes.</li>
+        <li>Change the position with <code>at x% y%</code> or <code>at left top</code>.</li>
+      </ul>
+    </section>
+    <section class="code-example">
+      <pre><code>.radial-gradient-demo {
+  background: radial-gradient(circle at 60% 40%, #f7971e, #ffd200 70%, #f7971e 100%);
+}
+.radial-gradient-ellipse {
+  background: radial-gradient(ellipse at center, #8e44ad 0%, #ffd200 100%);
+}</code></pre>
+      <div class="gradient-demo radial-gradient-demo">Radial Gradient (Circle)</div>
+      <div class="gradient-demo radial-gradient-ellipse">Radial Gradient (Ellipse)</div>
+    </section>
+
+    <section class="theory">
+      <h2>Conic Gradient</h2>
+      <p>Colors sweep around a center point, like a pie chart. You can control the starting angle and add color stops for segments. Conic gradients are great for pie charts, color wheels, and decorative backgrounds.</p>
+      <ul>
+        <li>Use <code>from angle</code> to set the starting point.</li>
+        <li>Color stops can create hard edges for pie slices.</li>
+      </ul>
+    </section>
+    <section class="code-example">
+      <pre><code>.conic-gradient-demo {
+  background: conic-gradient(from 45deg, #f7971e, #ffd200, #f7971e, #8e44ad);
+}
+.conic-gradient-segments {
+  background: conic-gradient(
+    #3498db 0 25%, #ffd200 0 50%, #8e44ad 0 75%, #f7971e 0 100%
+  );
+}</code></pre>
+      <div class="gradient-demo conic-gradient-demo">Conic Gradient</div>
+      <div class="gradient-demo conic-gradient-segments">Conic Gradient (Segments)</div>
+    </section>
+
+    <section class="theory">
+      <h2>Repeating Gradients</h2>
+      <p>Repeats a gradient pattern infinitely. Useful for stripes, patterns, and backgrounds. You can use <code>repeating-linear-gradient</code> or <code>repeating-radial-gradient</code>.</p>
+      <ul>
+        <li>Adjust the size of the pattern by changing color stop positions.</li>
+        <li>Combine with other gradients for creative effects.</li>
+      </ul>
+    </section>
+    <section class="code-example">
+      <pre><code>.repeating-gradient-demo {
+  background: repeating-linear-gradient(45deg, #3498db, #3498db 10px, #fff 10px, #fff 20px);
+}
+.repeating-radial-demo {
+  background: repeating-radial-gradient(circle, #8e44ad, #8e44ad 10px, #fff 10px, #fff 20px);
+}</code></pre>
+      <div class="gradient-demo repeating-gradient-demo">Repeating Linear Gradient</div>
+      <div class="gradient-demo repeating-radial-demo">Repeating Radial Gradient</div>
+    </section>
+
+    <section class="theory">
+      <h2>Multiple Gradients</h2>
+      <p>You can layer multiple gradients for complex effects by separating them with commas. Each layer can have its own type, direction, and color stops. The first gradient is on top.</p>
+      <ul>
+        <li>Use transparency to let lower layers show through.</li>
+        <li>Great for overlays, highlights, and decorative backgrounds.</li>
+      </ul>
+    </section>
+    <section class="code-example">
+      <pre><code>.multiple-gradient-demo {
+  background:
+    linear-gradient(135deg, #8e44ad 40%, transparent 60%),
+    radial-gradient(circle at 80% 20%, #ffd200 20%, transparent 60%),
+    linear-gradient(90deg, #3498db, #8e44ad);
+}
+.multiple-gradient-overlay {
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.3), transparent),
+    linear-gradient(90deg, #3498db, #8e44ad);
+}</code></pre>
+      <div class="gradient-demo multiple-gradient-demo">Multiple Gradients</div>
+      <div class="gradient-demo multiple-gradient-overlay">Multiple Gradients (Overlay)</div>
+    </section>
+
+    <section class="theory">
+      <h2>Angle & Color Stops</h2>
+      <p>Gradients can be angled and have custom color stops for precise control. Color stops can use any CSS color and can be positioned with percentages or lengths. This allows for sharp transitions or smooth blends.</p>
+      <ul>
+        <li>Use more color stops for rainbow or multi-band effects.</li>
+        <li>Mix solid and transparent stops for highlights or fades.</li>
+      </ul>
+    </section>
+    <section class="code-example">
+      <pre><code>.angle-gradient-demo {
+  background: linear-gradient(120deg, #3498db 10%, #fff 50%, #8e44ad 90%);
+}
+.gradient-rainbow {
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+}</code></pre>
+      <div class="gradient-demo angle-gradient-demo">Angle & Color Stops</div>
+      <div class="gradient-demo gradient-rainbow">Rainbow Gradient</div>
+    </section>
+
+    <section class="theory">
+      <h2>Gradient Text</h2>
+      <p>You can apply gradients to text using <code>background-clip: text</code> and <code>color: transparent</code>. This creates eye-catching headlines and effects.</p>
+      <ul>
+        <li>Works best with bold, large text.</li>
+        <li>Requires <code>-webkit-background-clip: text</code> for Chrome/Safari.</li>
+      </ul>
+    </section>
+    <section class="code-example">
+      <pre><code>.gradient-text {
+  background: linear-gradient(90deg, #3498db, #8e44ad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}</code></pre>
+      <div class="gradient-text-demo gradient-text">Gradient Text Example</div>
+    </section>
+
+    <section class="theory">
+      <h2>Animated Gradient</h2>
+      <p>Gradients can be animated using CSS keyframes for dynamic backgrounds and effects. Animate the background position, angle, or color stops for a lively UI.</p>
+      <ul>
+        <li>Use <code>background-size</code> and <code>background-position</code> for moving gradients.</li>
+        <li>Combine with transitions for smooth effects.</li>
+      </ul>
+    </section>
+    <section class="code-example">
+      <pre><code>.animated-gradient-demo {
+  background: linear-gradient(270deg, #3498db, #8e44ad, #ffd200, #3498db);
+  background-size: 600% 600%;
+  animation: gradientMove 4s ease-in-out infinite;
+}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+</code></pre>
+      <div class="gradient-demo animated-gradient-demo">Animated Gradient</div>
+    </section>
+
+    <section class="theory">
+      <h2>Gradient with Background Image</h2>
+      <p>You can combine gradients with background images to create overlays, enhance readability, or add visual depth. The gradient is listed first in the <code>background</code> property, so it appears above the image. Use transparency in the gradient to let the image show through.</p>
+      <ul>
+        <li>Great for hero sections, cards, and banners.</li>
+        <li>Use <code>background-blend-mode</code> for creative effects (e.g., <code>multiply</code>, <code>overlay</code>).</li>
+      </ul>
+    </section>
+    <section class="code-example">
+      <pre><code>.gradient-image-demo {
+  background:
+    linear-gradient(rgba(52,152,219,0.7), rgba(142,68,173,0.7)),
+    url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80') center/cover no-repeat;
+  color: #fff;
+  background-blend-mode: overlay;
+}</code></pre>
+      <div class="gradient-demo gradient-image-demo">Gradient + Background Image</div>
+    </section>
+  </main>
+</body>
+</html>
