@@ -384,6 +384,51 @@ The content area is sized with `width` and `height`. The `box-sizing` property d
 
 ---
 
+## 11. Gradients in CSS
+
+CSS gradients allow you to create smooth transitions between two or more colors, without using images. Gradients are resolution-independent, highly customizable, and can be used for backgrounds, buttons, borders, overlays, and more.
+
+### Types of Gradients
+- **Linear Gradient:** Colors transition along a straight line. You can set the angle or direction and as many color stops as you want.
+- **Radial Gradient:** Colors radiate outward from a center point in a circle or ellipse.
+- **Conic Gradient:** Colors sweep around a center point, like a pie chart.
+- **Repeating Gradients:** Any gradient type can be repeated to create patterns.
+- **Multiple Gradients:** You can layer gradients for complex effects.
+- **Angle & Color Stops:** Control the direction and exact position of each color.
+
+### Example:
+```css
+.linear-gradient-demo {
+  background: linear-gradient(90deg, #3498db, #8e44ad);
+}
+.radial-gradient-demo {
+  background: radial-gradient(circle at 60% 40%, #f7971e, #ffd200 70%, #f7971e 100%);
+}
+.conic-gradient-demo {
+  background: conic-gradient(from 45deg, #f7971e, #ffd200, #f7971e, #8e44ad);
+}
+.repeating-gradient-demo {
+  background: repeating-linear-gradient(45deg, #3498db, #3498db 10px, #fff 10px, #fff 20px);
+}
+.multiple-gradient-demo {
+  background:
+    linear-gradient(135deg, #8e44ad 40%, transparent 60%),
+    radial-gradient(circle at 80% 20%, #ffd200 20%, transparent 60%),
+    linear-gradient(90deg, #3498db, #8e44ad);
+}
+.angle-gradient-demo {
+  background: linear-gradient(120deg, #3498db 10%, #fff 50%, #8e44ad 90%);
+}
+```
+
+### Best Practices
+- Use gradients to add depth, highlight, or visual interest.
+- Combine gradients with transparency for overlays.
+- Use multiple gradients for creative backgrounds.
+- Test gradients on different devices for color consistency.
+
+---
+
 ## ✅ Summary Tips
 - Use an **external CSS** file for scalability.
 - Organize your CSS with **clear comments** and **consistent naming conventions**.
