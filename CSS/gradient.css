@@ -193,6 +193,8 @@ nav {
 }
 
 .back-btn {
+  display: inline-block;
+  text-decoration: none;
   background: linear-gradient(90deg, #8e44ad 60%, #3498db 100%);
   color: #fff;
   border: none;
@@ -204,13 +206,15 @@ nav {
   box-shadow: 0 2px 8px #8e44ad22;
   font-weight: 500;
   letter-spacing: 0.03em;
+  outline: none;
 }
 
 .back-btn:hover, .back-btn:focus {
   background: linear-gradient(90deg, #3498db 60%, #8e44ad 100%);
-  outline: none;
   box-shadow: 0 4px 16px #8e44ad33;
   transform: scale(1.06);
+  color: #fff;
+  text-decoration: none;
 }
 
 .gradient-image-demo {
