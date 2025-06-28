@@ -421,6 +421,9 @@ CSS gradients allow you to create smooth transitions between two or more colors,
 }
 ```
 
+### Browser Compatibility
+CSS gradients are supported in all modern browsers (Chrome, Firefox, Edge, Safari, Opera). However, very old browsers (such as Internet Explorer 9 and below) may require vendor prefixes (e.g., `-webkit-`, `-moz-`) or may not support certain gradient types like conic gradients. For best results, test your gradients and consider using prefixes if you need to support legacy browsers.
+
 ### Best Practices
 - Use gradients to add depth, highlight, or visual interest.
 - Combine gradients with transparency for overlays.
