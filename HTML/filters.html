@@ -1,0 +1,87 @@
+<!-- filters: grayscale(),blur(),brightness(),contrast(),saturate(),hue-rotate(),invert(), opacity(),sepia() -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="CSS Filters: grayscale, blur, brightness, contrast, saturate, hue-rotate, invert, opacity, sepia - Theory, Examples, and Demos">
+  <title>CSS Filters</title>
+  <link rel="icon" type="image/png" href="../images/css_favicon.png">
+  <link rel="stylesheet" href="../CSS/filters.css">
+</head>
+<body>
+  <div class="container">
+    <h1>CSS <code>filter</code> Property</h1>
+    <section class="theory-section">
+      <h2>Theory & Explanation</h2>
+      <p>The <strong>CSS filter</strong> property provides graphical effects like blurring, color shifting, and more, directly to images, backgrounds, and any HTML element. Filters are functions that modify the rendering of an element, and can be combined for creative effects. They are widely used for image manipulation, hover effects, and UI polish.</p>
+      <p><strong>How Filters Work:</strong> Filters are applied after the element is rendered, meaning they affect the final pixels on the screen. This allows you to visually transform images, backgrounds, SVGs, and even text without changing the underlying content. Filters can be stacked in a single <code>filter</code> property, and the order of filters matters—each filter is applied in sequence to the result of the previous one.</p>
+      <p><strong>Performance & Use Cases:</strong> CSS filters are hardware-accelerated in most modern browsers, making them efficient for UI effects and transitions. However, excessive or complex filters (especially on large images or many elements) can impact performance. Use filters for creative image effects, focus/blur transitions, color adjustments for accessibility, and dynamic UI feedback (e.g., dimming a button on hover).</p>
+      <p><strong>Creative Tips:</strong> Try combining multiple filters for unique effects, such as <code>grayscale()</code> with <code>blur()</code> for a frosted glass look, or <code>hue-rotate()</code> with <code>brightness()</code> for vibrant color shifts. Filters can also be animated with CSS transitions for smooth, interactive experiences.</p>
+      <ul>
+        <li><strong>Syntax:</strong> <code>filter: function(value) function2(value2) ...;</code></li>
+        <li>Multiple filters can be chained in a single <code>filter</code> property.</li>
+        <li>Common filter functions: <code>grayscale()</code>, <code>blur()</code>, <code>brightness()</code>, <code>contrast()</code>, <code>saturate()</code>, <code>hue-rotate()</code>, <code>invert()</code>, <code>opacity()</code>, <code>sepia()</code>.</li>
+      </ul>
+      <p>Filters can be animated and combined for advanced effects. They work on images, backgrounds, SVGs, and even text.</p>
+    </section>
+
+    <section class="code-section">
+      <h2>Code Examples</h2>
+      <div class="code-block">
+        <pre><code>.grayscale-demo {
+  filter: grayscale(100%);
+}
+.blur-demo {
+  filter: blur(4px);
+}
+.brightness-demo {
+  filter: brightness(1.5);
+}
+.contrast-demo {
+  filter: contrast(200%);
+}
+.saturate-demo {
+  filter: saturate(300%);
+}
+.hue-rotate-demo {
+  filter: hue-rotate(120deg);
+}
+.invert-demo {
+  filter: invert(1);
+}
+.opacity-demo {
+  filter: opacity(0.5);
+}
+.sepia-demo {
+  filter: sepia(100%);
+}
+.combined-demo {
+  filter: grayscale(60%) blur(2px) brightness(1.2) contrast(120%) hue-rotate(60deg);
+}
+</code></pre>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>Live Demos</h2>
+      <div class="demo-row">
+        <div class="demo-card"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80" alt="Demo" class="demo-img grayscale-demo"><span>grayscale()</span></div>
+        <div class="demo-card"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80" alt="Demo" class="demo-img blur-demo"><span>blur()</span></div>
+        <div class="demo-card"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80" alt="Demo" class="demo-img brightness-demo"><span>brightness()</span></div>
+        <div class="demo-card"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80" alt="Demo" class="demo-img contrast-demo"><span>contrast()</span></div>
+        <div class="demo-card"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80" alt="Demo" class="demo-img saturate-demo"><span>saturate()</span></div>
+        <div class="demo-card"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80" alt="Demo" class="demo-img hue-rotate-demo"><span>hue-rotate()</span></div>
+        <div class="demo-card"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80" alt="Demo" class="demo-img invert-demo"><span>invert()</span></div>
+        <div class="demo-card"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80" alt="Demo" class="demo-img opacity-demo"><span>opacity()</span></div>
+        <div class="demo-card"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80" alt="Demo" class="demo-img sepia-demo"><span>sepia()</span></div>
+        <div class="demo-card"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80" alt="Demo" class="demo-img combined-demo"><span>Combined</span></div>
+      </div>
+    </section>
+
+    <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+  </div>
+</body>
+</html>
+
