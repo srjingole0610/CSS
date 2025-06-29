@@ -532,6 +532,53 @@ filter: drop-shadow(h-offset v-offset blur color);
 
 ---
 
+## 14. CSS Filters
+
+CSS **filters** are functions that visually modify the rendering of an element, such as images, backgrounds, or even text. Filters can be used to blur, adjust brightness, change colors, and more—directly in the browser, without editing the source image.
+
+### Common Filter Functions
+- **grayscale()**: Converts the image to grayscale.
+- **blur()**: Applies a Gaussian blur.
+- **brightness()**: Adjusts the brightness.
+- **contrast()**: Adjusts the contrast.
+- **saturate()**: Increases or decreases color intensity.
+- **hue-rotate()**: Rotates the color hue.
+- **invert()**: Inverts the colors.
+- **opacity()**: Adjusts the transparency.
+- **sepia()**: Applies a warm, brownish tone.
+
+### Syntax
+```css
+filter: grayscale(100%) blur(4px) brightness(1.2) contrast(120%) saturate(150%) hue-rotate(90deg) invert(1) opacity(0.5) sepia(100%);
+```
+- Multiple filters can be chained together.
+
+### Examples
+```css
+.grayscale-demo { filter: grayscale(100%); }
+.blur-demo { filter: blur(4px); }
+.brightness-demo { filter: brightness(1.5); }
+.contrast-demo { filter: contrast(200%); }
+.saturate-demo { filter: saturate(300%); }
+.hue-rotate-demo { filter: hue-rotate(120deg); }
+.invert-demo { filter: invert(1); }
+.opacity-demo { filter: opacity(0.5); }
+.sepia-demo { filter: sepia(100%); }
+.combined-demo { filter: grayscale(60%) blur(2px) brightness(1.2) contrast(120%) hue-rotate(60deg); }
+```
+
+### Best Practices
+- Use filters for creative effects, image manipulation, and UI polish.
+- Combine filters for advanced effects.
+- Use transitions for smooth filter changes on hover/focus.
+- Test filters on different backgrounds and devices.
+
+### Browser Compatibility
+- Supported in all modern browsers (Chrome, Firefox, Edge, Safari, Opera).
+- Not supported in Internet Explorer.
+
+---
+
 ## ✅ Summary Tips
 - Use an **external CSS** file for scalability.
 - Organize your CSS with **clear comments** and **consistent naming conventions**.
