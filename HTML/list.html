@@ -1,0 +1,131 @@
+<!-- list : list-style-type, list-style-position, list-style-image, list-style shorthand property -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="CSS Lists: list-style-type, list-style-position, list-style-image, list-style - Theory, Examples, and Demos">
+  <title>CSS Lists</title>
+  <link rel="icon" type="image/png" href="../images/css_favicon.png">
+  <link rel="stylesheet" href="../CSS/list.css">
+</head>
+<body>
+  <div class="container">
+    <h1>CSS List Properties</h1>
+    <section class="theory-section">
+      <h2>Theory & Explanation</h2>
+      <p>CSS provides several properties to control the appearance of HTML lists. You can change the bullet or numbering style, use custom images, and control the position of the marker. These properties work for both ordered (<code>&lt;ol&gt;</code>) and unordered (<code>&lt;ul&gt;</code>) lists, as well as <code>&lt;li&gt;</code> elements.</p>
+      <p><strong>How List Markers Work:</strong> The marker (bullet, number, or image) is rendered by the browser before each <code>&lt;li&gt;</code> item. The <code>list-style-type</code> property lets you choose from built-in marker types (disc, square, decimal, lower-alpha, etc.), while <code>list-style-image</code> allows you to use a custom image. <code>list-style-position</code> controls whether the marker is inside the content box (flows with text) or outside (default, aligns with the list edge).</p>
+      <p><strong>Accessibility & Best Practices:</strong> Always ensure your list markers are visible and meaningful. Custom images should be clear and high-contrast. For navigation menus, consider using ARIA roles and semantic HTML. Avoid removing list markers for important content, as they help users scan and understand structure.</p>
+      <p><strong>Advanced Tips:</strong> You can combine list properties for creative effects, such as using emojis or SVGs as markers, or styling <code>::marker</code> in modern browsers for even more control. The <code>list-style</code> shorthand lets you set all three properties at once.</p>
+      <ul>
+        <li><strong>list-style-type</strong>: Sets the marker type (disc, circle, square, decimal, lower-alpha, etc.).</li>
+        <li><strong>list-style-position</strong>: Sets whether the marker is inside or outside the list item's content box.</li>
+        <li><strong>list-style-image</strong>: Uses a custom image as the marker.</li>
+        <li><strong>list-style</strong>: Shorthand for all three properties.</li>
+      </ul>
+      <p>Lists are essential for structuring content, navigation menus, and more. Customizing list styles improves readability and visual appeal.</p>
+    </section>
+
+    <section class="code-section">
+      <h2>Code Examples</h2>
+      <div class="code-block">
+        <pre><code>ul.disc-list {
+  list-style-type: disc;
+}
+ul.square-list {
+  list-style-type: square;
+}
+ul.circle-list {
+  list-style-type: circle;
+}
+ol.lower-alpha-list {
+  list-style-type: lower-alpha;
+}
+ul.inside-list {
+  list-style-position: inside;
+}
+ul.outside-list {
+  list-style-position: outside;
+}
+ul.image-list {
+  list-style-image: url('https://img.icons8.com/color/32/super-mario.png');
+}
+ul.shorthand-list {
+  list-style: square inside url('https://img.icons8.com/color/32/super-mario.png');
+}
+</code></pre>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>Live Demos</h2>
+      <div class="demo-row">
+        <div class="demo-card">
+          <span>disc (default)</span>
+          <ul class="demo-list disc-list">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+          </ul>
+        </div>
+        <div class="demo-card">
+          <span>square</span>
+          <ul class="demo-list square-list">
+            <li>Apple</li>
+            <li>Banana</li>
+            <li>Cherry</li>
+          </ul>
+        </div>
+        <div class="demo-card">
+          <span>circle</span>
+          <ul class="demo-list circle-list">
+            <li>Dog</li>
+            <li>Cat</li>
+            <li>Bird</li>
+          </ul>
+        </div>
+        <div class="demo-card">
+          <span>lower-alpha</span>
+          <ol class="demo-list lower-alpha-list">
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+          </ol>
+        </div>
+        <div class="demo-card">
+          <span>inside</span>
+          <ul class="demo-list inside-list">
+            <li>This marker is inside</li>
+            <li>Second item</li>
+          </ul>
+        </div>
+        <div class="demo-card">
+          <span>outside</span>
+          <ul class="demo-list outside-list">
+            <li>This marker is outside</li>
+            <li>Second item</li>
+          </ul>
+        </div>
+        <div class="demo-card">
+          <span>image</span>
+          <ul class="demo-list image-list">
+            <li>Super Mario marker</li>
+            <li>Another item</li>
+          </ul>
+        </div>
+        <div class="demo-card">
+          <span>shorthand</span>
+          <ul class="demo-list shorthand-list">
+            <li>All in one</li>
+            <li>Shorthand style</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+  </div>
+</body>
+</html>
