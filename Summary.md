@@ -534,18 +534,18 @@ filter: drop-shadow(h-offset v-offset blur color);
 
 ## 14. CSS Filters
 
-CSS <strong>filters</strong> are functions that visually modify the rendering of an element, such as images, backgrounds, or even text. Filters can be used to blur, adjust brightness, change colors, and more—directly in the browser, without editing the source image.
+CSS **filters** are functions that visually modify the rendering of an element, such as images, backgrounds, or even text. Filters can be used to blur, adjust brightness, change colors, and more—directly in the browser, without editing the source image.
 
 ### Common Filter Functions
-- <strong>grayscale()</strong>: Converts the image to grayscale.
-- <strong>blur()</strong>: Applies a Gaussian blur.
-- <strong>brightness()</strong>: Adjusts the brightness.
-- <strong>contrast()</strong>: Adjusts the contrast.
-- <strong>saturate()</strong>: Increases or decreases color intensity.
-- <strong>hue-rotate()</strong>: Rotates the color hue.
-- <strong>invert()</strong>: Inverts the colors.
-- <strong>opacity()</strong>: Adjusts the transparency.
-- <strong>sepia()</strong>: Applies a warm, brownish tone.
+- **grayscale()**: Converts the image to grayscale.
+- **blur()**: Applies a Gaussian blur.
+- **brightness()**: Adjusts the brightness.
+- **contrast()**: Adjusts the contrast.
+- **saturate()**: Increases or decreases color intensity.
+- **hue-rotate()**: Rotates the color hue.
+- **invert()**: Inverts the colors.
+- **opacity()**: Adjusts the transparency.
+- **sepia()**: Applies a warm, brownish tone.
 
 ### Syntax
 ```css

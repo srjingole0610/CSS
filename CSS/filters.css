@@ -81,12 +81,11 @@ h1 {
 }
 .demo-img {
   width: 180px;
-  height: 180px
+  height: 180px;
   border-radius: 12px;
   object-fit: cover;
   margin-bottom: 10px;
   transition: filter 0.3s, transform 0.2s;
-  outline: none;
   cursor: pointer;
 }
 .demo-card span {
@@ -112,7 +111,6 @@ h1 {
   background: linear-gradient(90deg, #3498db 0%, #8e44ad 100%);
   box-shadow: 0 4px 16px 0 #8e44ad44;
   transform: translateY(-2px) scale(1.03);
-  outline: none;
 }
 .grayscale-demo {
   filter: grayscale(100%);
