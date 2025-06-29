@@ -1,0 +1,124 @@
+<!-- box-shadow : horizontal-offset, vertical-offset, blur-radius, spread-radius,color, inset-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="Learn CSS box-shadow: create shadows around elements, control color, blur, spread, and inset effects."
+    />
+    <meta name="author" content="Suraj Ingole" />
+    <meta name="keywords" content="css, css tutorial, css learning" />
+    <link rel="icon" href="../images/css_favicon.png" type="image/png" />
+    <title>CSS Box Shadow</title>
+    <link rel="stylesheet" href="../CSS/box-shadow.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>CSS <code>box-shadow</code> Property</h1>
+      <section class="theory-section">
+        <h2>Theory & Explanation</h2>
+        <p>
+          <strong>box-shadow</strong> is a CSS property that adds shadow effects
+          around an element's frame. It can create depth, highlight elements,
+          and add visual interest. You can apply multiple shadows, control their
+          color, blur, spread, and even make them appear inside the element
+          (inset).
+        </p>
+        <p>
+          The <strong>box-shadow</strong> property is not limited to
+          rectangles—when used on elements with <code>border-radius</code> (such
+          as circles or rounded cards), the shadow follows the shape of the
+          element, enabling effects like glows, soft drop shadows, and even
+          simulating natural phenomena like a lunar eclipse. Shadows can be
+          layered for realism, and inset shadows can create the illusion of
+          depth within the element itself. Experimenting with color, blur, and
+          spread can help you achieve subtle or dramatic effects, making
+          <strong>box-shadow</strong> a versatile tool for modern UI design.
+        </p>
+        <ul>
+          <li>
+            <strong>Syntax:</strong>
+            <code
+              >box-shadow: h-offset v-offset blur spread color [inset];</code
+            >
+          </li>
+          <li>
+            <strong>h-offset:</strong> Horizontal shadow position (required)
+          </li>
+          <li>
+            <strong>v-offset:</strong> Vertical shadow position (required)
+          </li>
+          <li><strong>blur:</strong> Blur radius (optional, default: 0)</li>
+          <li>
+            <strong>spread:</strong> Size of the shadow (optional, default: 0)
+          </li>
+          <li>
+            <strong>color:</strong> Shadow color (optional, default: current
+            color)
+          </li>
+          <li>
+            <strong>inset:</strong> Changes shadow from outer to inner
+            (optional)
+          </li>
+        </ul>
+        <p>
+          Multiple shadows can be added by separating each with a comma. Shadows
+          are rendered front-to-back (first is on top).
+        </p>
+      </section>
+
+      <section class="code-section">
+        <h2>Code Examples</h2>
+        <div class="code-block">
+          <pre><code>.basic-shadow {
+  box-shadow: 4px 4px 12px #888;
+}
+
+.colored-shadow {
+  box-shadow: 0 8px 24px 0 rgba(52, 152, 219, 0.4);
+}
+
+.inset-shadow {
+  box-shadow: inset 0 2px 8px 0 #8e44ad;
+}
+
+.multiple-shadow {
+  box-shadow: 2px 2px 8px #3498db, 0 0 0 4px #fff, 0 8px 24px 0 rgba(52,152,219,0.2);
+}
+
+.interactive-shadow:hover {
+  box-shadow: 0 8px 32px 0 #f7971e, 0 0 0 4px #ffd200;
+}
+
+.eclipse-shadow {
+  border-radius: 50%;
+  box-shadow: 24px 0 40px -8px #23272e, -8px 0 24px 0 #ffd200;
+}
+</code></pre>
+        </div>
+      </section>
+
+      <section class="demo-section">
+        <h2>Live Demos</h2>
+        <div class="demo-row">
+          <div class="demo-box basic-shadow">Basic Shadow</div>
+          <div class="demo-box colored-shadow">Colored Shadow</div>
+          <div class="demo-box inset-shadow">Inset Shadow</div>
+          <div class="demo-box multiple-shadow">Multiple Shadows</div>
+          <div class="demo-box interactive-shadow" tabindex="0">
+            Interactive (Hover/Focus)
+          </div>
+          <div class="demo-box eclipse-shadow" tabindex="0">
+            <span class="eclipse-circle"></span>
+            Lunar Eclipse
+          </div>
+        </div>
+      </section>
+
+      <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+    </div>
+  </body>
+</html>
