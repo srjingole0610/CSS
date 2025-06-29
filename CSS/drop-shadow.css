@@ -1,0 +1,140 @@
+/* drop-shadow.css: Styles for the drop-shadow demo page */
+
+body {
+  background: linear-gradient(120deg, #f0f4f8 0%, #e0e7ef 100%);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px 0 rgba(52, 152, 219, 0.10);
+  padding: 32px 24px 24px 24px;
+}
+
+h1 {
+  text-align: center;
+  color: #8e44ad;
+  margin-bottom: 16px;
+}
+
+.theory-section, .code-section, .demo-section {
+  margin-bottom: 32px;
+  padding: 18px 20px;
+  border-radius: 12px;
+  background: #f8fafc;
+  box-shadow: 0 2px 8px 0 rgba(52, 152, 219, 0.04);
+}
+
+.code-section {
+  background: #23272e;
+  color: #f8f8f2;
+}
+
+.code-block {
+  background: #181a20;
+  border-radius: 8px;
+  padding: 16px;
+  overflow-x: auto;
+  margin-top: 10px;
+}
+
+.code-block code {
+  color: #ffd200;
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  font-size: 1rem;
+}
+
+.demo-section {
+  background: #f7f9fb;
+}
+
+.demo-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.demo-img, .demo-svg {
+  width: 90px;
+  height: 90px;
+  border-radius: 12px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  transition: filter 0.3s, transform 0.2s;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px 0 rgba(52, 152, 219, 0.08);
+}
+
+.basic-drop-shadow {
+  filter: drop-shadow(4px 4px 8px #888);
+}
+
+.colored-drop-shadow {
+  filter: drop-shadow(0 8px 16px #8e44ad);
+}
+
+.multiple-drop-shadow {
+  filter: drop-shadow(2px 2px 4px #3498db) drop-shadow(-2px -2px 4px #ffd200);
+}
+
+.interactive-drop-shadow {
+  filter: drop-shadow(0 2px 8px #ffd200);
+  background: linear-gradient(90deg, #fffbe6 60%, #fff 100%);
+  transition: filter 0.3s, background 0.3s, transform 0.2s;
+}
+.interactive-drop-shadow:hover, .interactive-drop-shadow:focus {
+  filter: drop-shadow(0 8px 24px #f7971e) drop-shadow(0 0 8px #ffd200);
+  background: linear-gradient(90deg, #fffbe6 0%, #ffe9c7 100%);
+  transform: translateY(-4px) scale(1.04);
+}
+
+.transparent-drop-shadow {
+  filter: drop-shadow(0 8px 16px #3498db);
+  background: transparent;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 10px 22px;
+  background: linear-gradient(90deg, #8e44ad 60%, #3498db 100%);
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px 0 rgba(52, 152, 219, 0.12);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.back-btn:hover, .back-btn:focus {
+  background: linear-gradient(90deg, #3498db 0%, #8e44ad 100%);
+  box-shadow: 0 4px 16px 0 #8e44ad44;
+  transform: translateY(-2px) scale(1.03);
+  outline: none;
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding: 10px 2vw;
+  }
+  .demo-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .demo-img, .demo-svg {
+    min-width: 0;
+    width: 100%;
+  }
+}
