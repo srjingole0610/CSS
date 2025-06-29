@@ -159,17 +159,6 @@ h1 {
   box-shadow: 0 0 24px 8px #ffd20088;
   pointer-events: none;
 }
-.eclipse-shadow span + span,
-.eclipse-shadow span {
-  display: none;
-}
-.eclipse-shadow:hover, .eclipse-shadow:focus {
-  box-shadow: 32px 0 56px -4px #23272e, -12px 0 32px 0 #ffd200;
-  background: #ffd200;
-  color: #23272e;
-  transform: scale(1.07) rotate(-2deg);
-}
-
 @media (max-width: 700px) {
   .container {
     padding: 10px 2vw;

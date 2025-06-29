@@ -437,7 +437,9 @@ CSS gradients are supported in all modern browsers (Chrome, Firefox, Edge, Safar
 The <strong>box-shadow</strong> property in CSS adds shadow effects around an element's frame, creating depth and visual emphasis. It is highly customizable, allowing for multiple shadows, different colors, blur, spread, and even inner (inset) shadows.
 
 ### Syntax
-<pre><code>box-shadow: h-offset v-offset blur spread color [inset];</code></pre>
+```css
+box-shadow: h-offset v-offset blur spread color [inset];
+```
 - <strong>h-offset</strong>: Horizontal shadow position (required)
 - <strong>v-offset</strong>: Vertical shadow position (required)
 - <strong>blur</strong>: Blur radius (optional)
