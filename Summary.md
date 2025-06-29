@@ -579,6 +579,58 @@ filter: grayscale(100%) blur(4px) brightness(1.2) contrast(120%) saturate(150%) 
 
 ---
 
+## 15. CSS Lists
+
+CSS provides several properties to control the appearance of HTML lists, including the marker type, position, and even custom images. These properties help you create visually appealing navigation menus, checklists, and more.
+
+### List Properties
+- **list-style-type**: Sets the marker type (e.g., disc, circle, square, decimal, lower-alpha, upper-roman, etc.).
+- **list-style-position**: Sets whether the marker is inside or outside the list item's content box.
+- **list-style-image**: Uses a custom image as the marker.
+- **list-style**: Shorthand for all three properties.
+
+### Syntax
+```css
+ul {
+  list-style-type: disc;
+  list-style-position: outside;
+  list-style-image: none;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+ul.custom {
+  list-style: square inside url('star.png');
+}
+```
+
+### Examples
+```css
+ul.disc-list { list-style-type: disc; }
+ul.square-list { list-style-type: square; }
+ul.circle-list { list-style-type: circle; }
+ol.lower-alpha-list { list-style-type: lower-alpha; }
+ul.inside-list { list-style-position: inside; }
+ul.outside-list { list-style-position: outside; }
+ul.image-list { list-style-image: url('custom-marker.png'); }
+ul.shorthand-list { list-style: square inside url('custom-marker.png'); }
+```
+
+### Best Practices
+- Use `list-style-type` for simple marker changes.
+- Use `list-style-image` for branding or custom icons, but provide a fallback.
+- Use `list-style-position: inside` for checklists or when you want the marker to be part of the content flow.
+- Use the `list-style` shorthand for concise code.
+- Test list styles for accessibility and readability.
+
+### Browser Compatibility
+- All list properties are supported in all modern browsers (Chrome, Firefox, Edge, Safari, Opera).
+- Custom images may not display if the URL is incorrect or the image is missing.
+
+---
+
 ## ✅ Summary Tips
 - Use an **external CSS** file for scalability.
 - Organize your CSS with **clear comments** and **consistent naming conventions**.
