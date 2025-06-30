@@ -1,0 +1,177 @@
+/* anchor-state.css: Styles for the CSS anchor state demo page */
+
+body {
+  background: linear-gradient(120deg, #f0f4f8 0%, #e0e7ef 100%);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px 0 rgba(52, 152, 219, 0.10);
+  padding: 32px 24px 24px 24px;
+}
+
+h1 {
+  text-align: center;
+  color: #3498db;
+  margin-bottom: 16px;
+}
+
+.theory-section, .code-section, .demo-section {
+  margin-bottom: 32px;
+  padding: 18px 20px;
+  border-radius: 12px;
+  background: #f8fafc;
+  box-shadow: 0 2px 8px 0 rgba(52, 152, 219, 0.04);
+}
+
+.code-section {
+  background: #23272e;
+  color: #f8f8f2;
+}
+
+.code-block {
+  background: #181a20;
+  border-radius: 8px;
+  padding: 16px;
+  overflow-x: auto;
+  margin-top: 10px;
+}
+
+.code-block code {
+  color: #ffd200;
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  font-size: 1rem;
+}
+
+.demo-section {
+  background: #f7f9fb;
+}
+
+.demo-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.demo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px 0 rgba(52, 152, 219, 0.08);
+  padding: 12px 10px 10px 10px;
+  min-width: 180px;
+  min-height: 120px;
+  transition: box-shadow 0.3s, transform 0.2s;
+  margin-bottom: 8px;
+}
+.demo-card:hover, .demo-card:focus {
+  box-shadow: 0 8px 32px 0 #3498db44;
+  transform: translateY(-4px) scale(1.04);
+}
+.demo-label {
+  font-weight: 600;
+  color: #8e44ad;
+  margin-bottom: 8px;
+}
+.demo-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+.demo-links a {
+  font-size: 1.1rem;
+  padding: 6px 14px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #3498db;
+  background: #eaf7ff;
+  transition: color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+.demo-links a:link {
+  color: #3498db;
+  background: #eaf7ff;
+}
+.demo-links a:visited {
+  color: #8e44ad;
+  background: #f7eaff;
+}
+.demo-links a:hover, .demo-links a:focus {
+  color: #fff;
+  background: #3498db;
+  text-decoration: underline;
+  box-shadow: 0 2px 8px 0 #3498db33;
+}
+.demo-links a:active {
+  color: #ffd200;
+  background: #23272e;
+}
+.back-btn {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 10px 22px;
+  background: linear-gradient(90deg, #3498db 60%, #8e44ad 100%);
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px 0 rgba(52, 152, 219, 0.12);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.back-btn:hover, .back-btn:focus {
+  background: linear-gradient(90deg, #8e44ad 0%, #3498db 100%);
+  box-shadow: 0 4px 16px 0 #8e44ad44;
+  transform: translateY(-2px) scale(1.03);
+}
+.button-link:link, .button-link:visited {
+  display: inline-block;
+  background: linear-gradient(90deg, #3498db 60%, #8e44ad 100%);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.button-link:hover, .button-link:focus {
+  background: linear-gradient(90deg, #8e44ad 0%, #3498db 100%);
+  color: #ffd200;
+  box-shadow: 0 4px 16px 0 #8e44ad44;
+  text-decoration: underline;
+}
+.button-link:active {
+  background: #23272e;
+  color: #ffd200;
+}
+.demo-notes {
+  margin-top: 18px;
+  color: #888;
+  font-size: 0.98rem;
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .container {
+    padding: 10px 2vw;
+  }
+  .demo-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .demo-card {
+    min-width: 0;
+    width: 100%;
+  }
+}

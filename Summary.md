@@ -631,6 +631,92 @@ ul.shorthand-list { list-style: square inside url('https://img.icons8.com/color/
 
 ---
 
+## 16. CSS Display Property
+
+The `display` property in CSS is fundamental for controlling how elements are rendered and participate in the document layout. It determines whether an element behaves as a block, inline, inline-block, or is removed from the flow entirely.
+
+### Common Display Values
+
+- **block**: The element starts on a new line and stretches to fill the container's width. Examples: `<div>`, `<h1>`, `<p>`.
+- **inline**: The element flows within the current line, only taking up as much width as its content. Examples: `<span>`, `<a>`, `<strong>`.
+- **inline-block**: Like `inline`, but allows width and height to be set. Elements sit inline but behave like blocks.
+- **none**: The element is not rendered at all (removed from layout and accessibility tree).
+
+Other values include `flex`, `grid`, `table`, etc., but the above are the most common for basic layout control.
+
+### Example:
+```css
+.block-demo .demo-box {
+  display: block;
+}
+.inline-demo .demo-box {
+  display: inline;
+}
+.inline-block-demo .demo-box {
+  display: inline-block;
+}
+.none-demo .demo-box {
+  display: none;
+}
+```
+
+### Usage & Best Practices
+
+- Use `display` to control layout and stacking of elements.
+- Prefer semantic HTML elements (e.g., use `<nav>`, `<main>`, `<section>` for structure).
+- Hiding elements with `display: none` removes them from both the visual flow and assistive technology.
+- `inline-block` is useful for horizontal alignment with block-like control.
+- Inspect the [display.html](./HTML/display.html) page for live, interactive demos and code.
+
+### Reference
+See the updated [display.html](./HTML/display.html) page for a live example of the CSS display property, theory, and interactive demos.
+
+---
+
+## 17. CSS Anchor States (Links)
+
+CSS anchors (links) are styled using pseudo-classes to reflect their different states: normal, visited, hover, active, and focus. Understanding and styling these states is essential for usability, accessibility, and visual feedback.
+
+### Anchor States
+
+- `a:link` — Unvisited link (default state)
+- `a:visited` — Link the user has already visited
+- `a:hover` — Link when the mouse is over it
+- `a:active` — Link when being clicked
+- `a:focus` — Link when focused (e.g., via keyboard navigation)
+
+### Example
+
+```css
+a:link {
+  color: #3498db;
+}
+a:visited {
+  color: #8e44ad;
+}
+a:hover, a:focus {
+  color: #fff;
+  background: #3498db;
+  text-decoration: underline;
+}
+a:active {
+  color: #ffd200;
+}
+```
+
+### Usage & Best Practices
+
+- Always provide a visible focus style for accessibility.
+- Use `:hover` and `:focus` together for consistent mouse and keyboard experience.
+- Style `:visited` to help users distinguish visited links.
+- Avoid removing underline unless you provide another clear indicator.
+- Anchor states can be combined with classes for custom buttons (see the back button on the [Anchor States Example Page](./HTML/anchor-state.html)).
+
+### Reference
+See the updated [anchor-state.html](./HTML/anchor-state.html) page for a live example of anchor styling and interactive navigation.
+
+---
+
 ## ✅ Summary Tips
 - Use an **external CSS** file for scalability.
 - Organize your CSS with **clear comments** and **consistent naming conventions**.

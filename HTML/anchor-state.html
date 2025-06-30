@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="CSS Anchor States: :link, :hover, :visited, :active - Theory, Examples, and Demos">
+  <title>CSS Anchor States</title>
+  <link rel="icon" type="image/png" href="../images/css_favicon.png">
+  <link rel="stylesheet" href="../CSS/anchor-state.css">
+</head>
+<body>
+  <div class="container">
+    <h1>CSS Anchor States</h1>
+    <section class="theory-section">
+      <h2>Theory & Explanation</h2>
+      <p>Anchor elements (<code>&lt;a&gt;</code>) are used to create hyperlinks in HTML. CSS provides pseudo-classes to style links based on their state, improving usability and accessibility. The five main anchor states are:</p>
+      <ul>
+        <li><strong>:link</strong> — Unvisited links (default state). Applies to all <code>&lt;a&gt;</code> elements with an <code>href</code> that haven't been visited.</li>
+        <li><strong>:visited</strong> — Links the user has already visited. Browsers limit which properties can be styled for privacy.</li>
+        <li><strong>:hover</strong> — When the mouse pointer is over the link. Use for visual feedback.</li>
+        <li><strong>:active</strong> — When the link is being clicked (between mousedown and mouseup).</li>
+        <li><strong>:focus</strong> — When the link is focused (e.g., via keyboard navigation or mouse click). Essential for accessibility.</li>
+      </ul>
+      <p><strong>Order matters:</strong> Always use the LVHAF order in your CSS: <code>:link</code>, <code>:visited</code>, <code>:hover</code>, <code>:active</code>, <code>:focus</code>. This ensures all states are styled as expected.</p>
+      <h3>How Anchor States Work</h3>
+      <ul>
+        <li><strong>Unvisited links</strong> are styled with <code>:link</code> until the user clicks them.</li>
+        <li><strong>Visited links</strong> change to <code>:visited</code> after the user visits the URL (if allowed by browser privacy).</li>
+        <li><strong>Hover</strong> and <strong>focus</strong> provide visual feedback for mouse and keyboard users.</li>
+        <li><strong>Active</strong> is a brief state while the link is being clicked.</li>
+        <li>Browsers restrict <code>:visited</code> styling to color, background-color, border-color, and outline-color for privacy.</li>
+      </ul>
+      <h3>Accessibility & Best Practices</h3>
+      <ul>
+        <li>Always provide a visible <code>:focus</code> style for keyboard users.</li>
+        <li>Use <code>:hover</code> and <code>:focus</code> together for consistent experience.</li>
+        <li>Style <code>:visited</code> to help users distinguish visited links, but avoid using sensitive color cues.</li>
+        <li>Don't remove underline unless you provide another clear indicator (e.g., color, background, or border).</li>
+        <li>Use semantic <code>&lt;a&gt;</code> elements for navigation and actions that change the page or context.</li>
+      </ul>
+    </section>
+    <section class="code-section">
+      <h2>Code Examples</h2>
+      <div class="code-block">
+        <pre><code>/* Basic anchor states */
+a:link {
+  color: #3498db;
+}
+a:visited {
+  color: #8e44ad;
+}
+a:hover, a:focus {
+  color: #fff;
+  background: #3498db;
+  text-decoration: underline;
+}
+a:active {
+  color: #ffd200;
+}
+
+/* Custom button-style link */
+.button-link:link, .button-link:visited {
+  display: inline-block;
+  background: linear-gradient(90deg, #3498db 60%, #8e44ad 100%);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.button-link:hover, .button-link:focus {
+  background: linear-gradient(90deg, #8e44ad 0%, #3498db 100%);
+  color: #ffd200;
+  box-shadow: 0 4px 16px 0 #8e44ad44;
+  text-decoration: underline;
+}
+.button-link:active {
+  background: #23272e;
+  color: #ffd200;
+}
+</code></pre>
+      </div>
+    </section>
+    <section class="demo-section">
+      <h2>Live Demos</h2>
+      <div class="demo-row">
+        <div class="demo-card">
+          <span class="demo-label">Anchor States Demo</span>
+          <div class="demo-links">
+            <a href="https://www.example.com" target="_blank" rel="noopener">Unvisited Link</a>
+            <a href="https://www.wikipedia.org" target="_blank" rel="noopener">Visit Me (Wikipedia)</a>
+            <a href="#" tabindex="0">Focusable Link</a>
+            <a href="https://www.example.com#anchor" target="_blank" rel="noopener">Active/Visited Demo</a>
+          </div>
+        </div>
+        <div class="demo-card">
+          <span class="demo-label">Button-Style Link</span>
+          <a href="https://www.css-tricks.com" class="button-link" target="_blank" rel="noopener">CSS-Tricks (Button Link)</a>
+        </div>
+        <div class="demo-card">
+          <span class="demo-label">Navigation Example</span>
+          <nav class="demo-links">
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:link" target="_blank" rel="noopener">MDN :link</a>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:visited" target="_blank" rel="noopener">MDN :visited</a>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:hover" target="_blank" rel="noopener">MDN :hover</a>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:active" target="_blank" rel="noopener">MDN :active</a>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:focus" target="_blank" rel="noopener">MDN :focus</a>
+          </nav>
+        </div>
+      </div>
+      <p class="demo-notes">Try clicking, hovering, tabbing, and visiting the links above to see the different anchor states in action. Button-style links and navigation links demonstrate advanced styling and accessibility.</p>
+    </section>
+    <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+  </div>
+</body>
+</html>
