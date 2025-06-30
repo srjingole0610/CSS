@@ -103,7 +103,7 @@
           <p class="demo-desc">Block starts on a new line, inline flows, inline-block is inline but sized.</p>
         </div>
       </div>
-      <p style="margin-top:18px; color:#888; font-size:0.98rem;">Try toggling the display type of each demo using the buttons, or inspect the elements to see how <code>display</code> changes their layout and visibility.</p>
+      <p class="demo-desc">Try toggling the display type of each demo using the buttons, or inspect the elements to see how <code>display</code> changes their layout and visibility.</p>
     </section>
 
     <a href="../index.html" class="back-btn">&larr; Back to Home</a>
@@ -116,27 +116,28 @@ document.querySelectorAll('.toggle-btn').forEach(function(btn) {
     const target = btn.getAttribute('data-target');
     const boxes = card.querySelectorAll('.demo-box');
     boxes.forEach(function(box) {
-      // Toggle display property based on the demo type
+      // Use computed style for accurate current display
+      const computedDisplay = window.getComputedStyle(box).display;
       if (target === 'block') {
-        if (box.style.display === 'inline') {
+        if (computedDisplay === 'inline') {
           box.style.display = '';
         } else {
           box.style.display = 'inline';
         }
       } else if (target === 'inline') {
-        if (box.style.display === 'block' || box.style.display === '') {
+        if (computedDisplay === 'block') {
           box.style.display = 'inline';
         } else {
           box.style.display = 'block';
         }
       } else if (target === 'inline-block') {
-        if (box.style.display === 'block' || box.style.display === '') {
+        if (computedDisplay === 'block') {
           box.style.display = 'inline-block';
         } else {
           box.style.display = 'block';
         }
       } else if (target === 'none') {
-        if (box.style.display === 'none') {
+        if (computedDisplay === 'none') {
           box.style.display = 'block';
         } else {
           box.style.display = 'none';

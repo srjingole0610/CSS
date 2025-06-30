@@ -631,7 +631,7 @@ ul.shorthand-list { list-style: square inside url('https://img.icons8.com/color/
 
 ---
 
-## 15. CSS Display Property
+## 16. CSS Display Property
 
 The `display` property in CSS is fundamental for controlling how elements are rendered and participate in the document layout. It determines whether an element behaves as a block, inline, inline-block, or is removed from the flow entirely.
 
@@ -673,7 +673,7 @@ See the updated [display.html](./HTML/display.html) page for a live example of t
 
 ---
 
-## 16. CSS Anchor States (Links)
+## 17. CSS Anchor States (Links)
 
 CSS anchors (links) are styled using pseudo-classes to reflect their different states: normal, visited, hover, active, and focus. Understanding and styling these states is essential for usability, accessibility, and visual feedback.
 

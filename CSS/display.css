@@ -143,9 +143,9 @@ h1 {
   min-height: 32px;
 }
 .demo-desc {
+  margin-top: 18px;
   color: #888;
   font-size: 0.98rem;
-  margin-top: 8px;
   text-align: center;
 }
 .demo-flex {
