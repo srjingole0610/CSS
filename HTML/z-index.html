@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="In-depth CSS z-index theory, interactive examples, and best practices.">
+  <title>CSS z-index: Theory & Interactive Examples</title>
+  <link rel="icon" type="image/png" href="../images/css_favicon.png">
+  <link rel="stylesheet" href="../CSS/z-index.css">
+</head>
+<body>
+  <div class="container">
+    <h1>CSS <code>z-index</code></h1>
+    <section class="theory-section">
+      <h2>Theory & Explanation</h2>
+      <p><strong>z-index</strong> is a CSS property that controls the vertical stacking order of positioned elements (those with <code>position</code> set to <code>relative</code>, <code>absolute</code>, <code>fixed</code>, or <code>sticky</code>). Elements with a higher <code>z-index</code> value appear in front of those with a lower value. <code>z-index</code> only works on elements that create a stacking context.</p>
+      <ul>
+        <li><strong>Default stacking:</strong> Elements are stacked in the order they appear in the HTML (later elements on top).</li>
+        <li><strong>z-index:</strong> Assigns a stacking level. Higher values are closer to the viewer.</li>
+        <li><strong>Stacking context:</strong> Created by elements with <code>position</code> (not static) and a <code>z-index</code> value, <code>opacity &lt; 1</code>, <code>transform</code>, <code>filter</code>, <code>will-change</code>, <code>mix-blend-mode</code>, etc.</li>
+        <li><strong>Nested stacking:</strong> Each stacking context is independent; child z-index values are relative to their parent context.</li>
+      </ul>
+      <h3>When to Use z-index</h3>
+      <ul>
+        <li>To control which overlay, modal, tooltip, or dropdown appears above others.</li>
+        <li>To resolve stacking issues with positioned elements.</li>
+        <li>To create layered UI effects (cards, popups, sticky headers, etc.).</li>
+      </ul>
+      <h3>Best Practices</h3>
+      <ul>
+        <li>Use the smallest z-index values needed to avoid confusion.</li>
+        <li>Minimize the number of stacking contexts for easier debugging.</li>
+        <li>Document z-index values in your codebase for maintainability.</li>
+      </ul>
+    </section>
+    <section class="code-section">
+      <h2>Code Examples</h2>
+      <div class="code-block">
+<pre><code>/* Basic z-index */
+.box1 { z-index: 1; }
+.box2 { z-index: 2; }
+
+/* Stacking context */
+.parent {
+  position: relative;
+  z-index: 10;
+}
+.child {
+  position: absolute;
+  z-index: 2;
+}
+</code></pre>
+      </div>
+    </section>
+    <section class="demo-section">
+      <h2>Interactive Demos</h2>
+      <div class="z-demo-row">
+        <div class="z-demo-card">
+          <span class="z-demo-label">Default stacking (no z-index)</span>
+          <div class="z-stack-demo default-stack">
+            <div class="z-box z1">Box 1</div>
+            <div class="z-box z2">Box 2</div>
+            <div class="z-box z3">Box 3</div>
+          </div>
+          <div class="z-demo-desc">Later elements appear on top by default.</div>
+        </div>
+        <div class="z-demo-card">
+          <span class="z-demo-label">z-index stacking</span>
+          <div class="z-stack-demo zindex-stack">
+            <div class="z-box z1" style="z-index:1;">z-index: 1</div>
+            <div class="z-box z2" style="z-index:3;">z-index: 3</div>
+            <div class="z-box z3" style="z-index:2;">z-index: 2</div>
+          </div>
+          <div class="z-demo-desc">Box with higher z-index appears on top, regardless of HTML order.</div>
+        </div>
+        <div class="z-demo-card">
+          <span class="z-demo-label">Stacking context (nested)</span>
+          <div class="z-stack-demo parent-context">
+            <div class="z-parent">
+              <span class="z-parent-label">Parent (z-index: 10)</span>
+              <div class="z-child" style="z-index: 2;">Child (z-index: 2)</div>
+            </div>
+            <div class="z-box z-outside" style="z-index: 5;">Outside (z-index: 5)</div>
+          </div>
+          <div class="z-demo-desc">Child's z-index is relative to its parent stacking context, not the page.</div>
+        </div>
+      </div>
+      <p class="z-demo-desc">Hover over the boxes to see their stacking visually. Try changing the z-index values in the code for different effects.</p>
+    </section>
+    <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+  </div>
+</body>
+</html>

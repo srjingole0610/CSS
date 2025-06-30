@@ -717,6 +717,108 @@ See the updated [anchor-state.html](./HTML/anchor-state.html) page for a live ex
 
 ---
 
+## 18. CSS Position Property
+
+The <strong>position</strong> property in CSS controls how elements are placed in the document flow. It enables you to move, layer, and fix elements in place, making it essential for layouts, overlays, tooltips, sticky headers, and more.
+
+### Position Values
+
+- <strong>static</strong>: Default. Elements are positioned according to the normal document flow. <em>Offsets (top, right, bottom, left, z-index) have no effect.</em>
+- <strong>relative</strong>: The element is positioned relative to its normal position. Offsets move it visually, but its original space is preserved.
+- <strong>absolute</strong>: The element is removed from the normal flow and positioned relative to the nearest ancestor with a position other than static. If none, it uses the viewport.
+- <strong>fixed</strong>: The element is removed from the flow and positioned relative to the viewport. It stays fixed when scrolling.
+- <strong>sticky</strong>: The element toggles between relative and fixed, depending on the scroll position. It "sticks" to a given offset as you scroll.
+
+### Example
+
+```css
+.static-demo .demo-box {
+  position: static;
+}
+.relative-demo .demo-box {
+  position: relative;
+  left: 24px;
+  top: 10px;
+}
+.absolute-demo {
+  position: relative;
+}
+.absolute-demo .demo-box {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+.fixed-demo .demo-box {
+  position: fixed;
+  top: 32px;
+  right: 32px;
+}
+.sticky-demo .demo-box {
+  position: sticky;
+  top: 8px;
+}
+```
+
+### Usage & Best Practices
+
+- Use <code>position: relative</code> for fine-tuning layout without removing elements from the flow.
+- Use <code>absolute</code> and <code>fixed</code> for overlays, tooltips, or UI elements that must float.
+- <code>sticky</code> is great for headers, menus, or call-to-action boxes that should remain visible while scrolling.
+- Always test on different screen sizes and with keyboard navigation.
+- Avoid overusing <code>absolute</code> and <code>fixed</code> as they can break responsive layouts.
+
+### Reference
+See the updated [positions.html](./HTML/positions.html) page for a live example of the CSS position property, theory, and interactive demos.
+
+---
+
+## 19. z-index in CSS
+
+The <strong>z-index</strong> property controls the vertical stacking order of positioned elements (those with <code>position: relative</code>, <code>absolute</code>, <code>fixed</code>, or <code>sticky</code>). Elements with a higher <code>z-index</code> value appear in front of those with a lower value. <code>z-index</code> only works on elements that create a stacking context.
+
+### How z-index Works
+- <strong>Default stacking:</strong> Elements are stacked in the order they appear in the HTML (later elements on top).
+- <strong>z-index:</strong> Assigns a stacking level. Higher values are closer to the viewer.
+- <strong>Stacking context:</strong> Created by elements with <code>position</code> (not static) and a <code>z-index</code> value, <code>opacity &lt; 1</code>, <code>transform</code>, <code>filter</code>, <code>will-change</code>, <code>mix-blend-mode</code>, etc.
+- <strong>Nested stacking:</strong> Each stacking context is independent; child z-index values are relative to their parent context.
+
+### Usage & Best Practices
+- Use <code>z-index</code> to control overlays, modals, tooltips, dropdowns, and layered UI effects.
+- Use the smallest values needed to avoid confusion.
+- Minimize stacking contexts for easier debugging.
+- Document z-index values in your codebase for maintainability.
+
+### Example:
+```css
+/* Basic z-index */
+.box1 { z-index: 1; }
+.box2 { z-index: 2; }
+
+/* Stacking context */
+.parent {
+  position: relative;
+  z-index: 10;
+}
+.child {
+  position: absolute;
+  z-index: 2;
+}
+```
+
+### Interactive Example
+See <strong>z-index.html</strong> for interactive demos:
+- Default stacking (no z-index): later elements appear on top.
+- z-index stacking: higher z-index appears on top, regardless of HTML order.
+- Stacking context: child z-index is relative to its parent context, not the page.
+
+[View the interactive z-index demo page &rarr;](HTML/z-index.html)
+
+### Browser Compatibility
+- <strong>z-index</strong> is supported in all modern browsers (Chrome, Firefox, Edge, Safari, Opera).
+- For best results, always use <code>position</code> (not static) with <code>z-index</code>.
+
+---
+
 ## ✅ Summary Tips
 - Use an **external CSS** file for scalability.
 - Organize your CSS with **clear comments** and **consistent naming conventions**.

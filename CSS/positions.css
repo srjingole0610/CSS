@@ -1,0 +1,522 @@
+/* positions.css: Styles for the CSS position property demo page */
+
+body {
+  background: linear-gradient(120deg, #f0f4f8 0%, #e0e7ef 100%);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px 0 rgba(52, 152, 219, 0.10);
+  padding: 32px 24px 24px 24px;
+}
+
+h1 {
+  text-align: center;
+  color: #3498db;
+  margin-bottom: 16px;
+}
+
+.theory-section, .code-section, .demo-section {
+  margin-bottom: 32px;
+  padding: 18px 20px;
+  border-radius: 12px;
+  background: #f8fafc;
+  box-shadow: 0 2px 8px 0 rgba(52, 152, 219, 0.04);
+}
+
+.code-section {
+  background: #23272e;
+  color: #f8f8f2;
+}
+
+/* Theory Diagrams */
+.theory-diagrams {
+  display: flex;
+  gap: 1.2rem;
+  margin: 1.5rem 0 2rem 0;
+  flex-wrap: wrap;
+}
+.diagram-card {
+  background: #f6f8fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(52,152,219,0.08);
+  padding: 0.7rem 1.2rem 1.2rem 1.2rem;
+  min-width: 110px;
+  text-align: center;
+  flex: 1 1 120px;
+}
+.diagram-label {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #3498db;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.diagram-static, .diagram-relative, .diagram-absolute, .diagram-fixed, .diagram-sticky {
+  width: 60px; height: 40px;
+  margin: 0 auto;
+  border-radius: 6px;
+  background: #e1eafc;
+  position: relative;
+}
+.diagram-static::after {
+  content: '';
+  display: block;
+  width: 30px; height: 18px;
+  background: #3498db;
+  border-radius: 4px;
+  margin: 10px auto 0 auto;
+}
+.diagram-relative::after {
+  content: '';
+  display: block;
+  width: 30px; height: 18px;
+  background: #27ae60;
+  border-radius: 4px;
+  margin: 10px 0 0 15px;
+  position: relative;
+  left: 10px;
+}
+.diagram-absolute::after {
+  content: '';
+  display: block;
+  width: 30px; height: 18px;
+  background: #e67e22;
+  border-radius: 4px;
+  margin: 0;
+  position: absolute;
+  top: 5px; right: 5px;
+}
+.diagram-fixed::after {
+  content: '';
+  display: block;
+  width: 30px; height: 18px;
+  background: #8e44ad;
+  border-radius: 4px;
+  margin: 0;
+  position: absolute;
+  top: 5px; left: 5px;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #8e44ad33;
+}
+.diagram-sticky::after {
+  content: '';
+  display: block;
+  width: 30px; height: 18px;
+  background: #f39c12;
+  border-radius: 4px;
+  margin: 0;
+  position: absolute;
+  top: 0; left: 15px;
+  box-shadow: 0 2px 8px #f39c1233;
+}
+
+/* Demos Layout */
+.demo-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.demo-card {
+  background: #fafdff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(52,152,219,0.10);
+  padding: 1.2rem 1.2rem 1.5rem 1.2rem;
+  min-width: 220px;
+  flex: 1 1 260px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.demo-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3498db;
+  margin-bottom: 0.5rem;
+}
+.demo-box {
+  background: #e1eafc;
+  border-radius: 8px;
+  padding: 1.1rem 1.5rem;
+  font-size: 1.08rem;
+  margin-bottom: 0.7rem;
+  min-width: 120px;
+  text-align: center;
+}
+.demo-desc {
+  font-size: 0.98rem;
+  color: #555;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+/* Static Demo */
+.static-demo .demo-box {
+  background: #e1eafc;
+}
+
+/* Relative Demo */
+.relative-demo .demo-box {
+  background: #d4efdf;
+  position: relative;
+  left: 18px;
+  top: 8px;
+}
+
+/* Absolute Demo */
+.absolute-demo {
+  position: relative;
+}
+.absolute-demo .demo-box {
+  background: #fdebd0;
+}
+.absolute-demo .overlay-btn {
+  margin: 0.5rem 0 0.2rem 0;
+  padding: 0.4rem 1.1rem;
+  border-radius: 6px;
+  border: none;
+  background: #3498db;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.absolute-demo .overlay-btn:focus,
+.absolute-demo .overlay-btn:hover {
+  background: #217dbb;
+  outline: 2px solid #217dbb;
+}
+.absolute-demo .overlay {
+  display: none;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(52,152,219,0.15);
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  flex-direction: column;
+}
+.absolute-demo .overlay span {
+  background: #3498db;
+  color: #fff;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  margin-bottom: 0.7rem;
+}
+.absolute-demo .close-overlay {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 2rem; height: 2rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.absolute-demo .close-overlay:focus,
+.absolute-demo .close-overlay:hover {
+  background: #c0392b;
+  outline: 2px solid #c0392b;
+}
+
+/* Absolute Demo Improvements */
+.abs-parent {
+  position: relative;
+  background: #f6f8fa;
+  border: 2px solid #b2bec3;
+  border-radius: 8px;
+  margin: 0.7rem 0 0.3rem 0;
+  min-height: 70px;
+  width: 210px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+.abs-parent-label {
+  position: absolute;
+  left: 10px; top: 6px;
+  font-size: 0.92rem;
+  color: #636e72;
+  background: #fff;
+  padding: 0 6px;
+  z-index: 2;
+  border-radius: 4px;
+}
+.abs-parent-rel {
+  position: relative;
+}
+.abs-parent-static {
+  position: static;
+}
+.abs-child {
+  position: absolute;
+  padding: 0.5rem 1.1rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  box-shadow: 0 2px 8px #e67e2244;
+}
+.abs-child-1 {
+  background: #ffd200;
+  color: #222;
+  top: 12px;
+  right: 12px;
+}
+.abs-child-2 {
+  background: #ff9800;
+  color: #fff;
+  top: 12px;
+  left: 12px;
+}
+.abs-desc {
+  font-size: 0.95rem;
+  color: #888;
+  margin-bottom: 0.7rem;
+  margin-top: 0.1rem;
+  text-align: left;
+}
+
+/* Fixed Demo */
+.fixed-demo .demo-box {
+  background: #e8daef;
+}
+.fixed-demo .notify-btn {
+  margin: 0.5rem 0 0.2rem 0;
+  padding: 0.4rem 1.1rem;
+  border-radius: 6px;
+  border: none;
+  background: #8e44ad;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.fixed-demo .notify-btn:focus,
+.fixed-demo .notify-btn:hover {
+  background: #5e3370;
+  outline: 2px solid #5e3370;
+}
+.fixed-demo .fixed-notification {
+  display: none;
+  position: fixed;
+  top: 1.5rem; right: 1.5rem;
+  background: #8e44ad;
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px #8e44ad33;
+  z-index: 100;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: row;
+}
+.fixed-demo .close-notify {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 2rem; height: 2rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.fixed-demo .close-notify:focus,
+.fixed-demo .close-notify:hover {
+  background: #c0392b;
+  outline: 2px solid #c0392b;
+}
+
+/* Sticky Demo */
+.sticky-demo {
+  max-height: 220px;
+  overflow-y: auto;
+  background: #f9e79f;
+}
+.sticky-demo .sticky-header {
+  position: sticky;
+  top: 0;
+  background: #f39c12;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  font-weight: bold;
+  z-index: 10;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 2px 8px #f39c1233;
+}
+.sticky-demo .demo-box {
+  background: #f7dc6f;
+}
+
+/* Sticky Demo Improvements */
+.sticky-demo {
+  max-height: 320px;
+  overflow-y: auto;
+  background: #f9e79f;
+  position: relative;
+}
+.sticky-scroll-content {
+  padding: 0.7rem 0.5rem 1.2rem 0.5rem;
+}
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background: #f39c12;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  font-weight: bold;
+  z-index: 10;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 2px 8px #f39c1233;
+  transition: box-shadow 0.2s, background 0.2s;
+}
+.sticky-header.stuck {
+  background: #d35400;
+  box-shadow: 0 4px 16px #d3540033;
+}
+
+/* Tooltip Demo */
+.tooltip-demo {
+  position: relative;
+  outline: none;
+}
+.tooltip-demo .tooltip-btn {
+  margin: 0.5rem 0 0.2rem 0;
+  padding: 0.4rem 1.1rem;
+  border-radius: 6px;
+  border: none;
+  background: #23272e;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.tooltip-demo .tooltip-btn:focus,
+.tooltip-demo .tooltip-btn:hover {
+  background: #444b58;
+  outline: 2px solid #23272e;
+}
+.tooltip-demo .tooltip {
+  position: absolute;
+  bottom: 120%; left: 50%;
+  transform: translateX(-50%);
+  background: #23272e;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.98rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  z-index: 3;
+  white-space: nowrap;
+}
+.tooltip-demo:focus-within .tooltip,
+.tooltip-demo:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Z-Index Demo */
+.zindex-demo .z-stack {
+  position: relative;
+  width: 120px; height: 90px;
+  margin: 0 auto 0.7rem auto;
+}
+.zindex-demo .z-box {
+  position: absolute;
+  width: 80px; height: 40px;
+  left: 20px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.85;
+  transition: box-shadow 0.2s, opacity 0.2s;
+  cursor: pointer;
+}
+.zindex-demo .z1 {
+  top: 0;
+  background: #3498db;
+  z-index: 1;
+}
+.zindex-demo .z2 {
+  top: 20px;
+  background: #e67e22;
+  z-index: 2;
+}
+zindex-demo .z3 {
+  top: 40px;
+  background: #8e44ad;
+  z-index: 3;
+}
+.zindex-demo .z-box:hover {
+  box-shadow: 0 0 0 4px #fff, 0 0 0 8px #3498db33;
+  opacity: 1;
+}
+
+/* Code Block Styling */
+.code-block {
+  background: #23272e;
+  color: #f8f8f2;
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  margin: 1.2rem 0;
+  overflow-x: auto;
+  font-size: 1.01rem;
+}
+.code-block code {
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  color: #f8f8f2;
+}
+
+/* Back Button */
+.back-btn {
+  display: inline-block;
+  margin: 2.5rem 0 0 0;
+  padding: 0.6rem 1.3rem;
+  background: linear-gradient(90deg, #3498db 60%, #8e44ad 100%);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.08rem;
+  box-shadow: 0 2px 8px #3498db22;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.back-btn:focus, .back-btn:hover {
+  background: linear-gradient(90deg, #217dbb 60%, #5e3370 100%);
+  box-shadow: 0 4px 16px #8e44ad33;
+  outline: 2px solid #217dbb;
+}
+
+/* Accessibility */
+:focus {
+  outline: 2px solid #3498db;
+  outline-offset: 2px;
+}
+
+@media (max-width: 900px) {
+  .demo-row, .theory-diagrams {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .demo-card, .diagram-card {
+    min-width: 0;
+    width: 100%;
+  }
+}
