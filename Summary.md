@@ -614,8 +614,8 @@ ul.circle-list { list-style-type: circle; }
 ol.lower-alpha-list { list-style-type: lower-alpha; }
 ul.inside-list { list-style-position: inside; }
 ul.outside-list { list-style-position: outside; }
-ul.image-list { list-style-image: url('custom-marker.png'); }
-ul.shorthand-list { list-style: square inside url('custom-marker.png'); }
+ul.image-list { list-style-image: url('https://img.icons8.com/color/32/super-mario.png'); }
+ul.shorthand-list { list-style: square inside url('https://img.icons8.com/color/32/super-mario.png'); }
 ```
 
 ### Best Practices

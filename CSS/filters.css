@@ -86,7 +86,6 @@ h1 {
   object-fit: cover;
   margin-bottom: 10px;
   transition: filter 0.3s, transform 0.2s;
-  cursor: pointer;
 }
 .demo-card span {
   font-size: 1rem;
