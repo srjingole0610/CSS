@@ -459,7 +459,7 @@ h1 {
   background: #e67e22;
   z-index: 2;
 }
-zindex-demo .z3 {
+.zindex-demo .z3 {
   top: 40px;
   background: #8e44ad;
   z-index: 3;
@@ -467,6 +467,8 @@ zindex-demo .z3 {
 .zindex-demo .z-box:hover {
   box-shadow: 0 0 0 4px #fff, 0 0 0 8px #3498db33;
   opacity: 1;
+  z-index: 99;
+  outline: 2px solid #ffd200;
 }
 
 /* Code Block Styling */

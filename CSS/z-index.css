@@ -107,7 +107,12 @@ h1 {
   box-shadow: 0 0 0 4px #fff, 0 0 0 8px #8e44ad33;
   opacity: 1;
   outline: 2px solid #ffd200;
-  z-index: 99 !important;
+}
+.default-stack .z-box:hover,
+.zindex-stack .z-box:hover,
+.parent-context .z-box:hover,
+.parent-context .z-child:hover {
+  z-index: 99;
 }
 /* z-index stacking demo: override z-index for demo */
 .zindex-stack .z1 { z-index: 1; }
