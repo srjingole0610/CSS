@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Learn CSS drop-shadow filter: apply shadows to images, shapes, and elements with transparency."
+    />
+    <meta
+      name="keywords"
+      content="CSS, drop-shadow, filter, shadow effect, transparency, images, SVG, icons"
+    />
+    <meta name="author" content="Suraj Ingole" />
+    <meta name="copyright" content="Suraj Ingole" />
+    <link rel="icon" href="../images/css_favicon.png" type="image/png" />
+    <title>CSS drop-shadow Filter</title>
+    <link rel="stylesheet" href="../CSS/drop-shadow.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>CSS <code>drop-shadow()</code> Filter</h1>
+      <section class="theory-section">
+        <h2>Theory & Explanation</h2>
+        <p>
+          <strong>drop-shadow()</strong> is a CSS filter function that applies a
+          shadow effect to the rendered image, shape, or element, including its
+          alpha (transparency) channel. Unlike <code>box-shadow</code>, which is
+          applied to the element's box, <code>drop-shadow()</code> follows the
+          visible shape, making it ideal for images with transparency, SVGs, and
+          icons.
+        </p>
+        <ul>
+          <li>
+            <strong>Syntax:</strong>
+            <code>filter: drop-shadow(h-offset v-offset blur color);</code>
+          </li>
+          <li>
+            <strong>h-offset:</strong> Horizontal shadow position (required)
+          </li>
+          <li>
+            <strong>v-offset:</strong> Vertical shadow position (required)
+          </li>
+          <li><strong>blur:</strong> Blur radius (optional, default: 0)</li>
+          <li>
+            <strong>color:</strong> Shadow color (optional, default: black)
+          </li>
+        </ul>
+        <p><strong>Key differences from box-shadow:</strong></p>
+        <ul>
+          <li>
+            <code>drop-shadow()</code> works on the rendered shape (including
+            transparency), not just the box.
+          </li>
+          <li>
+            It is used via the <code>filter</code> property, not as a standalone
+            property.
+          </li>
+          <li>
+            Multiple <code>drop-shadow()</code> filters can be chained for
+            layered effects.
+          </li>
+          <li>Great for PNGs, SVGs, icons, and non-rectangular images.</li>
+        </ul>
+        <p>
+          Use <strong>drop-shadow()</strong> to create realistic shadows for
+          images, icons, and custom shapes, especially when transparency is
+          involved. Experiment with color and blur for creative effects. For UI
+          elements like cards or buttons, <code>box-shadow</code> is usually
+          preferred.
+        </p>
+      </section>
+
+      <section class="code-section">
+        <h2>Code Examples</h2>
+        <div class="code-block">
+          <pre><code>.basic-drop-shadow {
+  filter: drop-shadow(4px 4px 8px #888);
+}
+
+.colored-drop-shadow {
+  filter: drop-shadow(0 8px 16px #8e44ad);
+}
+
+.multiple-drop-shadow {
+  filter: drop-shadow(2px 2px 4px #3498db) drop-shadow(-2px -2px 4px #ffd200);
+}
+
+.interactive-drop-shadow:hover {
+  filter: drop-shadow(0 8px 24px #f7971e) drop-shadow(0 0 8px #ffd200);
+}
+
+.transparent-drop-shadow {
+  filter: drop-shadow(0 8px 16px #3498db);
+}
+</code></pre>
+        </div>
+      </section>
+
+      <section class="demo-section">
+        <h2>Live Demos</h2>
+        <div class="demo-row">
+          <img
+            src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80"
+            alt="Image with a basic drop-shadow effect"
+            class="demo-img basic-drop-shadow"
+            title="Basic drop-shadow"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80"
+            alt="Unsplash Portrait PNG"
+            class="demo-img colored-drop-shadow"
+            title="Colored drop-shadow"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80"
+            alt="Unsplash Portrait PNG"
+            class="demo-img multiple-drop-shadow"
+            title="Multiple drop-shadow"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=facearea&w=256&h=256&facepad=2&q=80"
+            alt="Unsplash Portrait PNG"
+            class="demo-img interactive-drop-shadow"
+            tabindex="0"
+            title="Interactive (hover/focus)"
+          />
+          <svg
+            class="demo-svg transparent-drop-shadow"
+            viewBox="0 0 100 100"
+            width="90"
+            height="90"
+            title="SVG drop-shadow"
+          >
+            <circle cx="50" cy="50" r="40" fill="#8e44ad" />
+          </svg>
+        </div>
+      </section>
+
+      <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+    </div>
+  </body>
+</html>
