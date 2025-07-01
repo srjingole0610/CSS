@@ -871,4 +871,60 @@ See **overflow.html** for interactive demos:
 
 ---
 
+## 21. Pseudo-elements in CSS
+
+**Pseudo-elements** allow you to style specific parts of an element or insert content before or after it, without extra HTML. They are written with a double colon (`::`) (e.g., `::before`), though single colon syntax is still supported for backward compatibility.
+
+### Common Pseudo-elements
+- `::before` / `::after`: Insert content before/after the element's content.
+- `::first-letter`: Style the first letter of a block element.
+- `::first-line`: Style the first line of a block element.
+- `::selection`: Style the portion of text selected by the user.
+- `::placeholder`: Style placeholder text in form fields.
+- `::marker`: Style the marker box of list items.
+- `::backdrop`: Style the background of modal elements.
+- `::file-selector-button`: Style the button of file input fields.
+- `::cue`: Style WebVTT cues in media elements.
+- `::part()`: Style shadow DOM parts (advanced).
+
+### Structural Pseudo-classes (for reference)
+- `:first-child`, `:last-child`, `:nth-child()`, `:nth-of-type()`, `:only-child`, `:empty` — Select elements based on their position or content in the DOM.
+
+### Usage & Best Practices
+- Use pseudo-elements to add icons, highlights, or effects without extra markup.
+- Use `::selection` for custom highlight colors.
+- Use `::placeholder` to style form hints.
+- Combine with transitions for interactive effects.
+
+### Example
+```css
+.button::before { content: '🚀 '; }
+.button::after { content: ' →'; }
+.intro::first-letter { font-size: 2rem; color: #8e44ad; }
+.intro::first-line { font-weight: bold; }
+p::selection { background: #ffd200; color: #222; }
+input::placeholder { color: #888; font-style: italic; }
+li:first-child { color: #3498db; }
+li:last-child { color: #e67e22; }
+li:nth-child(2) { font-weight: bold; }
+li:only-child { color: #27ae60; }
+li:empty { background: #f7e9ff; }
+```
+
+### Interactive Example
+See **psuedo-elements.html** for interactive demos:
+- `::before`/`::after` — add icons to a button.
+- `::first-letter`/`::first-line` — style the first letter/line of a paragraph.
+- `::selection` — custom highlight color.
+- `::placeholder` — style form placeholder text.
+- Structural pseudo-classes — style list items based on position/content.
+
+[View the interactive pseudo-elements demo page &rarr;](HTML/psuedo-elements.html)
+
+### Browser Compatibility
+- Most pseudo-elements are supported in all modern browsers (Chrome, Firefox, Edge, Safari, Opera).
+- Some advanced pseudo-elements (e.g., `::backdrop`, `::part()`) may have limited support.
+
+---
+
 _Keep updating this summary as you explore more advanced CSS concepts like animations, transitions, Flexbox, Grid, media queries, and preprocessors (like SASS)._ 🚀

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="In-depth CSS pseudo-elements theory, interactive examples, and best practices.">
+  <title>CSS Pseudo-elements: Theory & Interactive Examples</title>
+  <link rel="icon" type="image/png" href="../images/css_favicon.png">
+  <link rel="stylesheet" href="../CSS/psuedo-elements.css">
+</head>
+<body>
+  <div class="container">
+    <h1>CSS <code>Pseudo-elements</code></h1>
+    <section class="theory-section">
+      <h2>Theory & Deep Explanation</h2>
+      <p><strong>Pseudo-elements</strong> in CSS are powerful tools that let you style specific parts of an element or insert content before or after it, without extra HTML. They enable advanced effects, custom highlights, and creative UI patterns, all while keeping your markup clean and semantic.</p>
+      <ul>
+        <li><strong>::before</strong> / <strong>::after</strong>: Insert generated content before/after the element's content. Great for icons, badges, or decorative elements.</li>
+        <li><strong>::first-letter</strong>: Style the first letter of a block element. Used for drop caps or magazine-style intros.</li>
+        <li><strong>::first-line</strong>: Style the first line of a block element. Useful for headlines or emphasis.</li>
+        <li><strong>::selection</strong>: Style the portion of text selected by the user. Enhances accessibility and branding.</li>
+        <li><strong>::placeholder</strong>: Style placeholder text in form fields. Improves form UX and branding.</li>
+        <li><strong>::marker</strong>: Style the bullet or number of list items. Allows for custom list styles.</li>
+        <li><strong>::backdrop</strong>: Style the background of modal elements (e.g., dialogs, popups).</li>
+        <li><strong>::file-selector-button</strong>: Style the button of file input fields for custom file upload UIs.</li>
+        <li><strong>::cue</strong>: Style WebVTT cues in media elements (advanced, for subtitles/captions).</li>
+        <li><strong>::part()</strong>: Style shadow DOM parts (advanced, for web components).</li>
+      </ul>
+      <h3>How Pseudo-elements Work</h3>
+      <ul>
+        <li>Pseudo-elements are not real DOM elements—they are rendered by the browser and cannot be selected with JavaScript.</li>
+        <li>They can be animated and transitioned for interactive effects.</li>
+        <li>They inherit styles from their parent unless overridden.</li>
+        <li>Some pseudo-elements (like <code>::before</code> and <code>::after</code>) require a <code>content</code> property to display.</li>
+      </ul>
+      <h3>Advanced Use Cases</h3>
+      <ul>
+        <li>Custom checkboxes, toggles, and switches using <code>::before</code> and <code>::after</code>.</li>
+        <li>Animated highlights, tooltips, and badges.</li>
+        <li>Accessible focus indicators and custom selection colors.</li>
+        <li>Decorative list markers and progress bars.</li>
+        <li>Styling form placeholders and file upload buttons for a consistent look.</li>
+      </ul>
+      <h3>Accessibility & Best Practices</h3>
+      <ul>
+        <li>Use pseudo-elements for decoration, not for essential content (screen readers may ignore them).</li>
+        <li>Always provide sufficient color contrast for <code>::selection</code> and <code>::placeholder</code>.</li>
+        <li>Test on different browsers for compatibility, especially with advanced pseudo-elements.</li>
+      </ul>
+    </section>
+    <section class="code-section">
+      <h2>Code Examples</h2>
+      <div class="code-block">
+<pre><code>/* Animated badge with ::after */
+.badge::after {
+  content: '●';
+  color: #e74c3c;
+  margin-left: 8px;
+  font-size: 1.2em;
+  animation: pulse 1.2s infinite alternate;
+}
+
+/* Custom list marker */
+ul.custom-list li::marker {
+  color: #3498db;
+  font-size: 1.2em;
+}
+
+/* Progress bar using ::before */
+.progress-bar {
+  position: relative;
+  background: #eee;
+  border-radius: 8px;
+  height: 18px;
+  width: 180px;
+  margin: 10px 0;
+}
+.progress-bar::before {
+  content: '';
+  display: block;
+  background: linear-gradient(90deg, #3498db 60%, #8e44ad 100%);
+  height: 100%;
+  border-radius: 8px 0 0 8px;
+  width: 60%;
+  transition: width 0.5s;
+}
+
+/* Custom placeholder and selection */
+input::placeholder {
+  color: #8e44ad;
+  font-style: italic;
+  opacity: 0.8;
+}
+input:focus::placeholder {
+  color: #3498db;
+  opacity: 1;
+}
+input::selection {
+  background: #ffd200;
+  color: #222;
+}
+</code></pre>
+      </div>
+    </section>
+    <section class="demo-section">
+      <h2>Interactive Demos</h2>
+      <div class="pseudo-demo-row">
+        <div class="pseudo-demo-card">
+          <span class="pseudo-demo-label">Animated badge (::after)</span>
+          <span class="badge pseudo-badge">Notifications</span>
+          <div class="pseudo-demo-desc">A pulsing badge is added after the text using <code>::after</code>.</div>
+        </div>
+        <div class="pseudo-demo-card">
+          <span class="pseudo-demo-label">Custom list marker (::marker)</span>
+          <ul class="custom-list">
+            <li>Blue marker</li>
+            <li>Another item</li>
+          </ul>
+          <div class="pseudo-demo-desc">List markers are styled with color and size.</div>
+        </div>
+        <div class="pseudo-demo-card">
+          <span class="pseudo-demo-label">Progress bar (::before)</span>
+          <div class="progress-bar"></div>
+          <div class="pseudo-demo-desc">A progress bar is created using <code>::before</code>.</div>
+        </div>
+        <div class="pseudo-demo-card">
+          <span class="pseudo-demo-label">::before &amp; ::after</span>
+          <button class="button pseudo-btn">Button</button>
+          <div class="pseudo-demo-desc">Decorative icons added before and after the button text.</div>
+        </div>
+        <div class="pseudo-demo-card">
+          <span class="pseudo-demo-label">::first-letter &amp; ::first-line</span>
+          <p class="intro pseudo-intro">This paragraph demonstrates how you can style the <b>first letter</b> and <b>first line</b> of a block of text using pseudo-elements. Try resizing the box to see the effect.</p>
+          <div class="pseudo-demo-desc">First letter is large and colored, first line is bold.</div>
+        </div>
+        <div class="pseudo-demo-card">
+          <span class="pseudo-demo-label">::selection</span>
+          <p class="pseudo-selection">Select some of this text to see a custom highlight color using <code>::selection</code>.</p>
+          <div class="pseudo-demo-desc">Try selecting the text above.</div>
+        </div>
+        <div class="pseudo-demo-card">
+          <span class="pseudo-demo-label">::placeholder</span>
+          <input class="pseudo-placeholder" type="text" placeholder="Type here...">
+          <div class="pseudo-demo-desc">Placeholder text is styled with color and italics.</div>
+        </div>
+        <div class="pseudo-demo-card">
+          <span class="pseudo-demo-label">Structural pseudo-classes</span>
+          <ul class="pseudo-list">
+            <li>First item</li>
+            <li>Second item</li>
+            <li>Third item</li>
+            <li></li>
+          </ul>
+          <div class="pseudo-demo-desc">First, last, nth, only, and empty list items are styled differently.</div>
+        </div>
+      </div>
+      <p class="pseudo-demo-desc">Try interacting with the demos above to see how pseudo-elements and structural pseudo-classes work in practice.</p>
+    </section>
+    <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+  </div>
+</body>
+</html>
