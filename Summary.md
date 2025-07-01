@@ -819,6 +819,49 @@ See <strong>z-index.html</strong> for interactive demos:
 
 ---
 
+## 20. Overflow in CSS
+
+The **overflow** property in CSS controls what happens when content exceeds the bounds of its container. It is essential for managing scrollbars, hiding excess content, and creating scrollable areas.
+
+### Overflow Values
+- **visible** (default): Content is not clipped and may overflow outside the box.
+- **hidden**: Content is clipped and the rest is invisible (no scrollbars).
+- **scroll**: Content is clipped, but scrollbars are always shown (even if not needed).
+- **auto**: Content is clipped, and scrollbars appear only when needed.
+
+You can also control horizontal and vertical overflow separately with `overflow-x` and `overflow-y`.
+
+### Usage & Best Practices
+- Use `overflow: auto` for scrollbars only when needed.
+- Use `overflow: hidden` to crop content, but ensure important info isn't lost.
+- Combine with `max-width` or `max-height` for responsive layouts.
+- Test on different devices and browsers for consistent scrollbar behavior.
+
+### Example:
+```css
+.overflow-visible { overflow: visible; }
+.overflow-hidden { overflow: hidden; }
+.overflow-scroll { overflow: scroll; }
+.overflow-auto { overflow: auto; }
+.overflow-x-scroll { overflow-x: scroll; }
+.overflow-y-auto { overflow-y: auto; }
+```
+
+### Interactive Example
+See **overflow.html** for interactive demos:
+- `overflow: visible` — content spills out of the box.
+- `overflow: hidden` — overflowing content is not visible.
+- `overflow: scroll` — scrollbars are always shown.
+- `overflow: auto` — scrollbars appear only if content overflows.
+
+[View the interactive overflow demo page &rarr;](HTML/overflow.html)
+
+### Browser Compatibility
+- **overflow** is supported in all modern browsers (Chrome, Firefox, Edge, Safari, Opera).
+- Scrollbar appearance may vary by OS and browser.
+
+---
+
 ## ✅ Summary Tips
 - Use an **external CSS** file for scalability.
 - Organize your CSS with **clear comments** and **consistent naming conventions**.
