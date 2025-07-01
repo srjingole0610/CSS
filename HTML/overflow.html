@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="In-depth CSS overflow theory, interactive examples, and best practices.">
+  <title>CSS Overflow: Theory & Interactive Examples</title>
+  <link rel="icon" type="image/png" href="../images/css_favicon.png">
+  <link rel="stylesheet" href="../CSS/overflow.css">
+</head>
+<body>
+  <div class="container">
+    <h1>CSS <code>overflow</code></h1>
+    <section class="theory-section">
+      <h2>Theory & Explanation</h2>
+      <p>The <strong>overflow</strong> property in CSS controls what happens when content overflows the bounds of its container. It is essential for managing scrollbars, hiding excess content, and creating scrollable areas. The main values are:</p>
+      <ul>
+        <li><strong>visible</strong> (default): Content is not clipped and may overflow outside the box.</li>
+        <li><strong>hidden</strong>: Content is clipped and the rest is invisible (no scrollbars).</li>
+        <li><strong>scroll</strong>: Content is clipped, but scrollbars are always shown (even if not needed).</li>
+        <li><strong>auto</strong>: Content is clipped, and scrollbars appear only when needed.</li>
+      </ul>
+      <h3>When to Use overflow</h3>
+      <ul>
+        <li>To create scrollable containers or cards.</li>
+        <li>To hide overflowing content for clean layouts.</li>
+        <li>To prevent layout breaking from long words or images.</li>
+        <li>To enable horizontal or vertical scrolling (with <code>overflow-x</code> and <code>overflow-y</code>).</li>
+      </ul>
+      <h3>Best Practices</h3>
+      <ul>
+        <li>Use <code>overflow: auto</code> for scrollbars only when needed.</li>
+        <li>Use <code>overflow: hidden</code> to crop content, but ensure important info isn't lost.</li>
+        <li>Combine with <code>max-width</code> or <code>max-height</code> for responsive layouts.</li>
+        <li>Test on different devices and browsers for consistent scrollbar behavior.</li>
+      </ul>
+    </section>
+    <section class="code-section">
+      <h2>Code Examples</h2>
+      <div class="code-block">
+<pre><code>/* Basic overflow */
+.overflow-visible { overflow: visible; }
+.overflow-hidden { overflow: hidden; }
+.overflow-scroll { overflow: scroll; }
+.overflow-auto { overflow: auto; }
+
+/* Overflow X/Y */
+.overflow-x-scroll { overflow-x: scroll; }
+.overflow-y-auto { overflow-y: auto; }
+</code></pre>
+      </div>
+    </section>
+    <section class="demo-section">
+      <h2>Interactive Demos</h2>
+      <div class="overflow-demo-row">
+        <div class="overflow-demo-card">
+          <span class="overflow-demo-label">overflow: visible (default)</span>
+          <div class="overflow-box overflow-visible">
+            <div class="overflow-content">This content overflows the box and is still visible outside the border. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur.</div>
+          </div>
+          <div class="overflow-demo-desc">Content spills out of the box.</div>
+        </div>
+        <div class="overflow-demo-card">
+          <span class="overflow-demo-label">overflow: hidden</span>
+          <div class="overflow-box overflow-hidden">
+            <div class="overflow-content">This content is clipped and anything outside the box is hidden. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur.</div>
+          </div>
+          <div class="overflow-demo-desc">Overflowing content is not visible.</div>
+        </div>
+        <div class="overflow-demo-card">
+          <span class="overflow-demo-label">overflow: scroll</span>
+          <div class="overflow-box overflow-scroll">
+            <div class="overflow-content">This content is clipped, but scrollbars are always visible. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur.</div>
+          </div>
+          <div class="overflow-demo-desc">Scrollbars are always shown, even if not needed.</div>
+        </div>
+        <div class="overflow-demo-card">
+          <span class="overflow-demo-label">overflow: auto</span>
+          <div class="overflow-box overflow-auto">
+            <div class="overflow-content">This content is clipped, and scrollbars appear only when needed. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur.</div>
+          </div>
+          <div class="overflow-demo-desc">Scrollbars appear only if content overflows.</div>
+        </div>
+      </div>
+      <p class="overflow-demo-desc">Try resizing your browser or adding more content to see how each overflow value behaves.</p>
+    </section>
+    <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+  </div>
+</body>
+</html>
