@@ -181,23 +181,6 @@
   <script>
     // Overlay demo
     document.addEventListener('DOMContentLoaded', function() {
-      var overlayBtn = document.querySelector('.absolute-demo .overlay-btn');
-      var overlay = document.getElementById('abs-overlay');
-      var closeOverlay = document.querySelector('.absolute-demo .close-overlay');
-      if (overlayBtn && overlay && closeOverlay) {
-        overlayBtn.addEventListener('click', function() {
-          overlay.style.display = 'flex';
-          overlay.setAttribute('aria-hidden', 'false');
-          overlayBtn.setAttribute('aria-expanded', 'true');
-          overlay.focus();
-        });
-        closeOverlay.addEventListener('click', function() {
-          overlay.style.display = 'none';
-          overlay.setAttribute('aria-hidden', 'true');
-          overlayBtn.setAttribute('aria-expanded', 'false');
-          overlayBtn.focus();
-        });
-      }
       // Fixed notification demo
       var notifyBtn = document.querySelector('.fixed-demo .notify-btn');
       var notify = document.getElementById('fixed-notify');

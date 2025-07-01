@@ -77,19 +77,14 @@ code {
   margin-bottom: 0.5em;
   box-shadow: 0 2px 8px rgba(52, 152, 219, 0.08);
 }
-.demo-btn:hover,
-.demo-btn:focus {
-  background: #8e44ad;
-  color: #fff;
-  outline: 2px solid #f7971e;
-  outline-offset: 2px;
-}
 .demo-btn:active {
   background: #3498db;
 }
  .back-btn{
   margin-top: 2rem;
  }
+ .demo-btn:hover,
+.demo-btn:focus,
 .back-btn:hover,
 .back-btn:focus {
   background: #8e44ad;

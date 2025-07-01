@@ -161,7 +161,7 @@ h1 {
 .button::after { content: ' →'; }
 .intro::first-letter { font-size: 2rem; color: #8e44ad; }
 .intro::first-line { font-weight: bold; }
-pseudo-selection::selection, .pseudo-selection::selection { background: #ffd200; color: #222; }
+.pseudo-selection::selection{ background: #ffd200; color: #222; }
 input::placeholder, .pseudo-placeholder::placeholder { color: #888; font-style: italic; }
 .pseudo-list li:first-child { color: #3498db; }
 .pseudo-list li:last-child { color: #e67e22; }

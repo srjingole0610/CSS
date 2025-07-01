@@ -919,7 +919,7 @@ See **psuedo-elements.html** for interactive demos:
 - `::placeholder` — style form placeholder text.
 - Structural pseudo-classes — style list items based on position/content.
 
-[View the interactive pseudo-elements demo page &rarr;](HTML/psuedo-elements.html)
+[View the interactive pseudo-elements demo page &rarr;](HTML/pseudo-elements.html)
 
 ### Browser Compatibility
 - Most pseudo-elements are supported in all modern browsers (Chrome, Firefox, Edge, Safari, Opera).
@@ -968,13 +968,9 @@ table tr:nth-child(even) { background: #f0e6fa; }
 - Test pseudo-class behavior across browsers and devices.
 
 ### Reference Example
-See <a href="HTML/pseudo-class.html">pseudo-class.html</a> for a comprehensive, interactive demo and code examples of all major CSS pseudo-classes in action.
+See [pseudo-class.html](HTML/pseudo-class.html) for a comprehensive, interactive demo and code examples of all major CSS pseudo-classes in action.
 
 ---
-
-
-
-_Keep updating this summary as you explore more advanced CSS concepts like animations, transitions, Flexbox, Grid, media queries, and preprocessors (like SASS)._ 🚀
 
 ---
 
@@ -1025,6 +1021,9 @@ The <strong>CSS multi-column layout</strong> module allows you to flow content i
 - Combine with other layout techniques (Flexbox, Grid) for advanced designs.
 
 ### Reference Example
-See <a href="HTML/column-layout.html">column-layout.html</a> for a comprehensive, interactive demo and code examples of all major CSS multi-column layout properties in action.
+See [column-layout.html](HTML/column-layout.html) for a comprehensive, interactive demo and code examples of all major CSS multi-column layout properties in action.
 
 ---
+
+
+_Keep updating this summary as you explore more advanced CSS concepts like animations, transitions, Flexbox, Grid, media queries, and preprocessors (like SASS)._ 🚀

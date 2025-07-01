@@ -75,7 +75,7 @@ h1 {
   transition: box-shadow 0.3s, transform 0.2s;
   margin-bottom: 8px;
 }
-.demo-card:hover, .demo-card:focus {
+.demo-card:hover, .demo-card:focus-within {
   box-shadow: 0 8px 32px 0 #3498db44;
   transform: translateY(-4px) scale(1.04);
 }
