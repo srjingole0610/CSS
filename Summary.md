@@ -972,4 +972,59 @@ See <a href="HTML/pseudo-class.html">pseudo-class.html</a> for a comprehensive, 
 
 ---
 
+
+
 _Keep updating this summary as you explore more advanced CSS concepts like animations, transitions, Flexbox, Grid, media queries, and preprocessors (like SASS)._ 🚀
+
+---
+
+## 23. CSS Multi-Column Layout
+
+The <strong>CSS multi-column layout</strong> module allows you to flow content into multiple columns, similar to newspapers or magazines. It is useful for improving readability, making better use of horizontal space, and creating visually engaging layouts.
+
+### Key Properties
+- <code>column-count</code>: Number of columns
+- <code>column-gap</code>: Space between columns
+- <code>column-rule</code>: Line between columns (shorthand for style, width, color)
+- <code>column-width</code>: Ideal width of each column
+- <code>column-span</code>: Make an element span across all columns
+- <code>columns</code>: Shorthand for <code>column-width</code> and <code>column-count</code>
+
+### Example Usage
+```css
+.columns-count {
+  column-count: 3;
+}
+.columns-gap {
+  column-count: 3;
+  column-gap: 2.5em;
+}
+.columns-rule {
+  column-count: 3;
+  column-rule: 3px dashed #8e44ad;
+}
+.columns-width {
+  column-width: 180px;
+}
+.columns-span {
+  column-count: 3;
+}
+.span-all {
+  column-span: all;
+}
+.columns-shorthand {
+  columns: 180px 3;
+}
+```
+
+### Usage & Best Practices
+- Use multi-column layout for text-heavy content to improve readability.
+- Test column layouts on different screen sizes for responsiveness.
+- Use <code>column-span</code> for headings or elements that should stretch across all columns.
+- Be cautious with interactive elements (forms, buttons) inside columns—they may break across columns.
+- Combine with other layout techniques (Flexbox, Grid) for advanced designs.
+
+### Reference Example
+See <a href="HTML/column-layout.html">column-layout.html</a> for a comprehensive, interactive demo and code examples of all major CSS multi-column layout properties in action.
+
+---
