@@ -1,0 +1,120 @@
+<!-- pseudo-class : hover, first-child, last-child,nth-child,first-of-type,last-of-type,nth-of-type,only-child,empty -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="In-depth guide to CSS pseudo-classes: theory, interactive examples, and best practices.">
+  <meta name="keywords" content="CSS, pseudo-class, hover, first-child, last-child, nth-child, only-child, empty, focus, active, web design, selectors, examples">
+  <meta name="author" content="Full Stack Mastery">
+  <link rel="icon" type="image/png" href="../images/css_favicon.png">
+  <link rel="stylesheet" href="../CSS/pseudo-class.css">
+  <title>CSS Pseudo-Classes: Theory & Interactive Examples</title>
+</head>
+<body>
+  <header class="page-header">
+    <h1>CSS Pseudo-Classes</h1>
+    <p class="subtitle">Deep Dive: Theory, Usage, and Interactive Demos</p>
+  </header>
+  <main>
+    <section class="theory-section">
+      <h2>What are CSS Pseudo-Classes?</h2>
+      <p><strong>Pseudo-classes</strong> are special keywords added to selectors that specify a special state of the selected elements. They allow you to style elements based on user interaction, position in the DOM, or other dynamic conditions, without adding extra classes or JavaScript.</p>
+      <ul>
+        <li><strong>User Interaction:</strong> <code>:hover</code>, <code>:focus</code>, <code>:active</code></li>
+        <li><strong>Structural:</strong> <code>:first-child</code>, <code>:last-child</code>, <code>:nth-child()</code>, <code>:only-child</code>, <code>:empty</code></li>
+        <li><strong>Form State:</strong> <code>:checked</code>, <code>:disabled</code>, <code>:required</code>, <code>:valid</code>, <code>:invalid</code></li>
+        <li><strong>Negation:</strong> <code>:not()</code></li>
+      </ul>
+      <p>Pseudo-classes are written after a selector, prefixed with a colon. Example: <code>a:hover</code> styles links when hovered.</p>
+    </section>
+    <section class="demo-section">
+      <h2>Interactive Examples</h2>
+      <div class="demo-block">
+        <h3>:hover, :focus, :active</h3>
+        <p>Style elements based on user interaction:</p>
+        <div class="button-demo">
+          <a href="#" class="demo-btn" tabindex="0">Hover, Focus, or Click Me</a>
+        </div>
+        <pre><code>.demo-btn:hover { background: #8e44ad; color: #fff; }
+.demo-btn:focus { outline: 2px solid #f7971e; }
+.demo-btn:active { background: #3498db; }</code></pre>
+      </div>
+      <div class="demo-block">
+        <h3>:first-child, :last-child, :only-child</h3>
+        <p>Target elements based on their position in the parent:</p>
+        <ul class="child-demo">
+          <li>First Child</li>
+          <li>Middle Child</li>
+          <li>Last Child</li>
+        </ul>
+        <ul class="child-demo single">
+          <li>Only Child</li>
+        </ul>
+        <pre><code>.child-demo li:first-child { color: #8e44ad; font-weight: bold; }
+.child-demo li:last-child { color: #3498db; }
+.child-demo.single li:only-child { background: #ffd200; }</code></pre>
+      </div>
+      <div class="demo-block">
+        <h3>:nth-child(), :nth-of-type()</h3>
+        <p>Style elements based on their index (1-based):</p>
+        <ol class="nth-demo">
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+          <li>Item 4</li>
+          <li>Item 5</li>
+        </ol>
+        <pre><code>.nth-demo li:nth-child(odd) { background: #f0e6fa; }
+.nth-demo li:nth-child(3) { color: #f7971e; font-weight: bold; }
+.nth-demo li:nth-child(2n) { background: #e3f6fd; }
+</code></pre>
+      </div>
+      <div class="demo-block">
+        <h3>:empty</h3>
+        <p>Target elements with no children (including text):</p>
+        <div class="empty-demo">
+          <div class="empty-box"></div>
+          <div class="empty-box">Not Empty</div>
+        </div>
+        <pre><code>.empty-box:empty { border: 2px dashed #8e44ad; background: #f0e6fa; min-height: 2em; }</code></pre>
+      </div>
+      <div class="demo-block">
+        <h3>:not()</h3>
+        <p>Exclude elements from a selection:</p>
+        <ul class="not-demo">
+          <li>Apple</li>
+          <li class="exclude">Banana</li>
+          <li>Cherry</li>
+        </ul>
+        <pre><code>.not-demo li:not(.exclude) { color: #3498db; font-weight: bold; }</code></pre>
+      </div>
+      <div class="demo-block">
+        <h3>Form State Pseudo-Classes</h3>
+        <form class="form-demo" autocomplete="off">
+          <input type="text" placeholder="Required" required>
+          <input type="email" placeholder="Email" required>
+          <input type="checkbox" id="check" required>
+          <label for="check">Check me</label>
+          <button type="submit">Submit</button>
+        </form>
+        <pre><code>.form-demo input:required { border-color: #f7971e; }
+.form-demo input:valid { border-color: #3498db; }
+.form-demo input:invalid { border-color: #e74c3c; }
+.form-demo input:checked + label { color: #8e44ad; font-weight: bold; }</code></pre>
+      </div>
+    </section>
+    <section class="best-practices">
+      <h2>Best Practices & Accessibility</h2>
+      <ul>
+        <li>Use <code>:focus</code> styles for keyboard accessibility.</li>
+        <li>Combine pseudo-classes for advanced effects (e.g., <code>a:hover:active</code>).</li>
+        <li>Test pseudo-class behavior across browsers and devices.</li>
+        <li>Use <code>:not()</code> to simplify complex selectors.</li>
+        <li>Prefer semantic HTML for better selector targeting.</li>
+      </ul>
+    </section>
+    <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+  </main>
+</body>
+</html>

@@ -927,4 +927,49 @@ See **psuedo-elements.html** for interactive demos:
 
 ---
 
+## 22. CSS Pseudo-Classes
+
+CSS <strong>pseudo-classes</strong> are special selectors that target elements in a specific state, such as when a user hovers over a link, when an input is focused, or when an element is the first child of its parent. Pseudo-classes enable dynamic, interactive, and context-aware styling without extra classes or JavaScript.
+
+### Common Pseudo-Classes
+- <code>:hover</code> – Styles elements when hovered by a pointer.
+- <code>:focus</code> – Styles elements when focused (e.g., via keyboard/tab).
+- <code>:active</code> – Styles elements when activated (e.g., clicked).
+- <code>:first-child</code> – Targets the first child of a parent.
+- <code>:last-child</code> – Targets the last child of a parent.
+- <code>:nth-child(n)</code> – Targets the nth child (e.g., <code>:nth-child(2n)</code> for even items).
+- <code>:only-child</code> – Targets an element that is the only child of its parent.
+- <code>:empty</code> – Targets elements with no children (including text).
+- <code>:not(selector)</code> – Excludes elements matching a selector.
+- <code>:checked</code>, <code>:disabled</code>, <code>:required</code>, <code>:valid</code>, <code>:invalid</code> – Target form states.
+
+### Example Usage
+```css
+/* Highlight a button on hover and focus */
+.button:hover, .button:focus {
+  background: #8e44ad;
+  color: #fff;
+}
+/* Style the first and last list items */
+ul li:first-child { color: #8e44ad; }
+ul li:last-child { color: #3498db; }
+/* Alternate row colors */
+table tr:nth-child(even) { background: #f0e6fa; }
+/* Only child styling */
+.card:only-child { border: 2px solid #ffd200; }
+/* Exclude certain items */
+.menu li:not(.active) { opacity: 0.7; }
+```
+
+### Best Practices
+- Always provide <code>:focus</code> styles for accessibility.
+- Combine pseudo-classes for advanced effects (e.g., <code>a:hover:active</code>).
+- Use <code>:not()</code> to simplify complex selectors.
+- Test pseudo-class behavior across browsers and devices.
+
+### Reference Example
+See <a href="HTML/pseudo-class.html">pseudo-class.html</a> for a comprehensive, interactive demo and code examples of all major CSS pseudo-classes in action.
+
+---
+
 _Keep updating this summary as you explore more advanced CSS concepts like animations, transitions, Flexbox, Grid, media queries, and preprocessors (like SASS)._ 🚀
