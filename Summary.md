@@ -929,19 +929,19 @@ See **psuedo-elements.html** for interactive demos:
 
 ## 22. CSS Pseudo-Classes
 
-CSS <strong>pseudo-classes</strong> are special selectors that target elements in a specific state, such as when a user hovers over a link, when an input is focused, or when an element is the first child of its parent. Pseudo-classes enable dynamic, interactive, and context-aware styling without extra classes or JavaScript.
+CSS **pseudo-classes** are special selectors that target elements in a specific state, such as when a user hovers over a link, when an input is focused, or when an element is the first child of its parent. Pseudo-classes enable dynamic, interactive, and context-aware styling without extra classes or JavaScript.
 
 ### Common Pseudo-Classes
-- <code>:hover</code> – Styles elements when hovered by a pointer.
-- <code>:focus</code> – Styles elements when focused (e.g., via keyboard/tab).
-- <code>:active</code> – Styles elements when activated (e.g., clicked).
-- <code>:first-child</code> – Targets the first child of a parent.
-- <code>:last-child</code> – Targets the last child of a parent.
-- <code>:nth-child(n)</code> – Targets the nth child (e.g., <code>:nth-child(2n)</code> for even items).
-- <code>:only-child</code> – Targets an element that is the only child of its parent.
-- <code>:empty</code> – Targets elements with no children (including text).
-- <code>:not(selector)</code> – Excludes elements matching a selector.
-- <code>:checked</code>, <code>:disabled</code>, <code>:required</code>, <code>:valid</code>, <code>:invalid</code> – Target form states.
+- `:hover` – Styles elements when hovered by a pointer.
+- `:focus` – Styles elements when focused (e.g., via keyboard/tab).
+- `:active` – Styles elements when activated (e.g., clicked).
+- `:first-child` – Targets the first child of a parent.
+- `:last-child` – Targets the last child of a parent.
+- `:nth-child(n)` – Targets the nth child (e.g., `:nth-child(2n)` for even items).
+- `:only-child` – Targets an element that is the only child of its parent.
+- `:empty` – Targets elements with no children (including text).
+- `:not(selector)` – Excludes elements matching a selector.
+- `:checked`, `:disabled`, `:required`, `:valid`, `:invalid` – Target form states.
 
 ### Example Usage
 ```css
