@@ -1,0 +1,142 @@
+/* overflow.css: Styles for the CSS overflow demo page */
+body {
+  background: linear-gradient(120deg, #f0f4f8 0%, #e0e7ef 100%);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px 0 rgba(52, 152, 219, 0.10);
+  padding: 32px 24px 24px 24px;
+}
+h1 {
+  text-align: center;
+  color: #3498db;
+  margin-bottom: 16px;
+}
+.theory-section, .code-section, .demo-section {
+  margin-bottom: 32px;
+  padding: 18px 20px;
+  border-radius: 12px;
+  background: #f8fafc;
+  box-shadow: 0 2px 8px 0 rgba(52, 152, 219, 0.04);
+}
+.code-section {
+  background: #23272e;
+  color: #f8f8f2;
+}
+.code-block {
+  background: #181a20;
+  border-radius: 8px;
+  padding: 16px;
+  overflow-x: auto;
+  margin-top: 10px;
+}
+.code-block code {
+  color: #ffd200;
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  font-size: 1rem;
+}
+.demo-section {
+  background: #f7f9fb;
+}
+.overflow-demo-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 18px;
+}
+.overflow-demo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px 0 rgba(52, 152, 219, 0.08);
+  padding: 12px 10px 10px 10px;
+  min-width: 260px;
+  min-height: 200px;
+  transition: box-shadow 0.3s, transform 0.2s;
+  margin-bottom: 8px;
+  position: relative;
+}
+.overflow-demo-card:hover, .overflow-demo-card:focus-within {
+  box-shadow: 0 8px 32px 0 #3498db44;
+  transform: translateY(-4px) scale(1.04);
+}
+.overflow-demo-label {
+  font-weight: 600;
+  color: #3498db;
+  margin-bottom: 8px;
+  font-size: 1.08rem;
+}
+.overflow-box {
+  width: 200px;
+  height: 70px;
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  background: #eaf7ff;
+  margin-bottom: 10px;
+  margin-top: 4px;
+  position: relative;
+  overflow: visible;
+  transition: box-shadow 0.2s;
+  box-shadow: 0 2px 8px #3498db22;
+}
+.overflow-content {
+  padding: 10px 16px;
+  font-size: 1.01rem;
+  color: #222;
+  min-width: 220px;
+}
+.overflow-visible { overflow: visible; }
+.overflow-hidden { overflow: hidden; }
+.overflow-scroll { overflow: scroll; }
+.overflow-auto { overflow: auto; }
+.overflow-demo-desc {
+  color: #888;
+  font-size: 0.98rem;
+  margin-top: 8px;
+  text-align: center;
+}
+.back-btn {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 10px 22px;
+  background: linear-gradient(90deg, #3498db 60%, #8e44ad 100%);
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px 0 rgba(52, 152, 219, 0.12);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.back-btn:hover, .back-btn:focus {
+  background: linear-gradient(90deg, #8e44ad 0%, #3498db 100%);
+  box-shadow: 0 4px 16px 0 #8e44ad44;
+  transform: translateY(-2px) scale(1.03);
+}
+@media (max-width: 700px) {
+  .container {
+    padding: 10px 2vw;
+  }
+  .overflow-demo-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .overflow-demo-card {
+    min-width: 0;
+    width: 100%;
+  }
+}
+:focus {
+  outline: 2px solid #3498db;
+  outline-offset: 2px;
+}

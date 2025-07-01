@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="In-depth guide to CSS multi-column layout: theory, interactive examples, and best practices.">
+  <meta name="keywords" content="CSS, columns, column-count, column-gap, column-rule, column-span, column-width, multi-column, layout, web design, examples">
+  <meta name="author" content="Full Stack Mastery">
+  <link rel="icon" type="image/png" href="../images/css_favicon.png">
+  <link rel="stylesheet" href="../CSS/column-layout.css">
+  <title>CSS Multi-Column Layout: Theory & Interactive Examples</title>
+</head>
+<body>
+  <header class="page-header">
+    <h1>CSS Multi-Column Layout</h1>
+    <p class="subtitle">Theory, Properties, and Interactive Demos</p>
+  </header>
+  <main>
+    <section class="theory-section">
+      <h2>What is CSS Multi-Column Layout?</h2>
+      <p>The <strong>CSS multi-column layout</strong> module allows you to flow content into multiple columns, similar to newspapers or magazines. It is useful for improving readability, making better use of horizontal space, and creating visually engaging layouts.</p>
+      <ul>
+        <li><strong>column-count</strong>: Number of columns</li>
+        <li><strong>column-gap</strong>: Space between columns</li>
+        <li><strong>column-rule</strong>: Line between columns (shorthand for style, width, color)</li>
+        <li><strong>column-width</strong>: Ideal width of each column</li>
+        <li><strong>column-span</strong>: Make an element span across all columns</li>
+        <li><strong>columns</strong>: Shorthand for <code>column-width</code> and <code>column-count</code></li>
+      </ul>
+      <p>Columns are responsive and will adjust based on available space and the properties you set.</p>
+    </section>
+    <section class="demo-section">
+      <h2>Interactive Examples</h2>
+      <div class="demo-block">
+        <h3>Basic Multi-Column Layout (<code>column-count</code>)</h3>
+        <div class="columns-demo columns-count">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisi eu velit. Suspendisse potenti. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisi eu velit.</p>
+        </div>
+        <pre><code>.columns-count {
+  column-count: 3;
+}</code></pre>
+      </div>
+      <div class="demo-block">
+        <h3>Column Gap (<code>column-gap</code>)</h3>
+        <div class="columns-demo columns-gap">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisi eu velit. Suspendisse potenti. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisi eu velit.</p>
+        </div>
+        <pre><code>.columns-gap {
+  column-count: 3;
+  column-gap: 2.5em;
+}</code></pre>
+      </div>
+      <div class="demo-block">
+        <h3>Column Rule (<code>column-rule</code>)</h3>
+        <div class="columns-demo columns-rule">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisi eu velit. Suspendisse potenti. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisi eu velit.</p>
+        </div>
+        <pre><code>.columns-rule {
+  column-count: 3;
+  column-rule: 3px dashed #8e44ad;
+}</code></pre>
+      </div>
+      <div class="demo-block">
+        <h3>Column Width (<code>column-width</code>)</h3>
+        <div class="columns-demo columns-width">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisi eu velit. Suspendisse potenti. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisi eu velit.</p>
+        </div>
+        <pre><code>.columns-width {
+  column-width: 180px;
+}</code></pre>
+      </div>
+      <div class="demo-block">
+        <h3>Column Span (<code>column-span</code>)</h3>
+        <div class="columns-demo columns-span">
+          <h4 class="span-all">This heading spans all columns</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisi eu velit. Suspendisse potenti. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisi eu velit.</p>
+        </div>
+        <pre><code>.columns-span {
+  column-count: 3;
+}
+.span-all {
+  column-span: all;
+}</code></pre>
+      </div>
+      <div class="demo-block">
+        <h3>Columns Shorthand (<code>columns</code>)</h3>
+        <div class="columns-demo columns-shorthand">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisi eu velit. Suspendisse potenti. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisi eu velit.</p>
+        </div>
+        <pre><code>.columns-shorthand {
+  columns: 180px 3;
+}</code></pre>
+      </div>
+    </section>
+    <section class="best-practices">
+      <h2>Best Practices & Accessibility</h2>
+      <ul>
+        <li>Use multi-column layout for text-heavy content to improve readability.</li>
+        <li>Test column layouts on different screen sizes for responsiveness.</li>
+        <li>Use <code>column-span</code> for headings or elements that should stretch across all columns.</li>
+        <li>Be cautious with interactive elements (forms, buttons) inside columns—they may break across columns.</li>
+        <li>Combine with other layout techniques (Flexbox, Grid) for advanced designs.</li>
+      </ul>
+    </section>
+    <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+  </main>
+</body>
+</html>

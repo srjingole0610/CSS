@@ -1,0 +1,139 @@
+/* Basic layout and typography */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(120deg, #f0e6fa 0%, #e3f6fd 100%);
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+.page-header {
+  background: #8e44ad;
+  color: #fff;
+  padding: 2rem 1rem 1rem 1rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.08);
+}
+.subtitle {
+  font-size: 1.2rem;
+  color: #ffd200;
+  margin-top: 0.5rem;
+}
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(52, 152, 219, 0.10);
+  padding: 2rem 1.5rem 3rem 1.5rem;
+}
+.theory-section, .best-practices {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e3f6fd;
+}
+.theory-section h2, .demo-section h2, .best-practices h2 {
+  color: #8e44ad;
+}
+.demo-section {
+  margin-bottom: 2.5rem;
+}
+.demo-block {
+  margin-bottom: 2rem;
+  padding: 1.2rem 1rem;
+  background: #f9f6ff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(52, 152, 219, 0.06);
+}
+.demo-block h3 {
+  margin-top: 0;
+  color: #3498db;
+}
+pre {
+  background: #222;
+  color: #ffd200;
+  padding: 0.8em 1em;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 0.98em;
+  margin-top: 1em;
+}
+code {
+  background: #f0e6fa;
+  color: #8e44ad;
+  padding: 0.1em 0.3em;
+  border-radius: 4px;
+  font-size: 1em;
+}
+.columns-demo {
+  margin: 1em 0;
+  padding: 1em;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(52, 152, 219, 0.04);
+}
+.columns-count {
+  column-count: 3;
+}
+.columns-gap {
+  column-count: 3;
+  column-gap: 2.5em;
+}
+.columns-rule {
+  column-count: 3;
+  column-rule: 3px dashed #8e44ad;
+}
+.columns-width {
+  column-width: 180px;
+}
+.columns-span {
+  column-count: 3;
+}
+.span-all {
+  column-span: all;
+  background: #ffd200;
+  color: #8e44ad;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  margin-bottom: 1em;
+}
+.columns-shorthand {
+  columns: 180px 3;
+}
+.back-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  background: #ffd200;
+  color: #8e44ad;
+  padding: 0.7em 1.5em;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s;
+  margin-bottom: 0.5em;
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.08);
+}
+.back-btn:hover,
+.back-btn:focus {
+  background: #8e44ad;
+  color: #fff;
+  outline: 2px solid #f7971e;
+  outline-offset: 2px;
+}
+.back-btn:active {
+  background: #3498db;
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 1rem 0.5rem 2rem 0.5rem;
+  }
+  .page-header {
+    padding: 1.2rem 0.5rem 0.7rem 0.5rem;
+  }
+  .demo-block {
+    padding: 0.7rem 0.5rem;
+  }
+  .columns-demo {
+    padding: 0.7em;
+  }
+}

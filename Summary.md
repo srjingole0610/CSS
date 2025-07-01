@@ -631,6 +631,237 @@ ul.shorthand-list { list-style: square inside url('https://img.icons8.com/color/
 
 ---
 
+## 16. CSS Display Property
+
+The `display` property in CSS is fundamental for controlling how elements are rendered and participate in the document layout. It determines whether an element behaves as a block, inline, inline-block, or is removed from the flow entirely.
+
+### Common Display Values
+
+- **block**: The element starts on a new line and stretches to fill the container's width. Examples: `<div>`, `<h1>`, `<p>`.
+- **inline**: The element flows within the current line, only taking up as much width as its content. Examples: `<span>`, `<a>`, `<strong>`.
+- **inline-block**: Like `inline`, but allows width and height to be set. Elements sit inline but behave like blocks.
+- **none**: The element is not rendered at all (removed from layout and accessibility tree).
+
+Other values include `flex`, `grid`, `table`, etc., but the above are the most common for basic layout control.
+
+### Example:
+```css
+.block-demo .demo-box {
+  display: block;
+}
+.inline-demo .demo-box {
+  display: inline;
+}
+.inline-block-demo .demo-box {
+  display: inline-block;
+}
+.none-demo .demo-box {
+  display: none;
+}
+```
+
+### Usage & Best Practices
+
+- Use `display` to control layout and stacking of elements.
+- Prefer semantic HTML elements (e.g., use `<nav>`, `<main>`, `<section>` for structure).
+- Hiding elements with `display: none` removes them from both the visual flow and assistive technology.
+- `inline-block` is useful for horizontal alignment with block-like control.
+- Inspect the [display.html](./HTML/display.html) page for live, interactive demos and code.
+
+### Reference
+See the updated [display.html](./HTML/display.html) page for a live example of the CSS display property, theory, and interactive demos.
+
+---
+
+## 17. CSS Anchor States (Links)
+
+CSS anchors (links) are styled using pseudo-classes to reflect their different states: normal, visited, hover, active, and focus. Understanding and styling these states is essential for usability, accessibility, and visual feedback.
+
+### Anchor States
+
+- `a:link` — Unvisited link (default state)
+- `a:visited` — Link the user has already visited
+- `a:hover` — Link when the mouse is over it
+- `a:active` — Link when being clicked
+- `a:focus` — Link when focused (e.g., via keyboard navigation)
+
+### Example
+
+```css
+a:link {
+  color: #3498db;
+}
+a:visited {
+  color: #8e44ad;
+}
+a:hover, a:focus {
+  color: #fff;
+  background: #3498db;
+  text-decoration: underline;
+}
+a:active {
+  color: #ffd200;
+}
+```
+
+### Usage & Best Practices
+
+- Always provide a visible focus style for accessibility.
+- Use `:hover` and `:focus` together for consistent mouse and keyboard experience.
+- Style `:visited` to help users distinguish visited links.
+- Avoid removing underline unless you provide another clear indicator.
+- Anchor states can be combined with classes for custom buttons (see the back button on the [Anchor States Example Page](./HTML/anchor-state.html)).
+
+### Reference
+See the updated [anchor-state.html](./HTML/anchor-state.html) page for a live example of anchor styling and interactive navigation.
+
+---
+
+## 18. CSS Position Property
+
+The <strong>position</strong> property in CSS controls how elements are placed in the document flow. It enables you to move, layer, and fix elements in place, making it essential for layouts, overlays, tooltips, sticky headers, and more.
+
+### Position Values
+
+- <strong>static</strong>: Default. Elements are positioned according to the normal document flow. <em>Offsets (top, right, bottom, left, z-index) have no effect.</em>
+- <strong>relative</strong>: The element is positioned relative to its normal position. Offsets move it visually, but its original space is preserved.
+- <strong>absolute</strong>: The element is removed from the normal flow and positioned relative to the nearest ancestor with a position other than static. If none, it uses the viewport.
+- <strong>fixed</strong>: The element is removed from the flow and positioned relative to the viewport. It stays fixed when scrolling.
+- <strong>sticky</strong>: The element toggles between relative and fixed, depending on the scroll position. It "sticks" to a given offset as you scroll.
+
+### Example
+
+```css
+.static-demo .demo-box {
+  position: static;
+}
+.relative-demo .demo-box {
+  position: relative;
+  left: 24px;
+  top: 10px;
+}
+.absolute-demo {
+  position: relative;
+}
+.absolute-demo .demo-box {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+.fixed-demo .demo-box {
+  position: fixed;
+  top: 32px;
+  right: 32px;
+}
+.sticky-demo .demo-box {
+  position: sticky;
+  top: 8px;
+}
+```
+
+### Usage & Best Practices
+
+- Use <code>position: relative</code> for fine-tuning layout without removing elements from the flow.
+- Use <code>absolute</code> and <code>fixed</code> for overlays, tooltips, or UI elements that must float.
+- <code>sticky</code> is great for headers, menus, or call-to-action boxes that should remain visible while scrolling.
+- Always test on different screen sizes and with keyboard navigation.
+- Avoid overusing <code>absolute</code> and <code>fixed</code> as they can break responsive layouts.
+
+### Reference
+See the updated [positions.html](./HTML/positions.html) page for a live example of the CSS position property, theory, and interactive demos.
+
+---
+
+## 19. z-index in CSS
+
+The <strong>z-index</strong> property controls the vertical stacking order of positioned elements (those with <code>position: relative</code>, <code>absolute</code>, <code>fixed</code>, or <code>sticky</code>). Elements with a higher <code>z-index</code> value appear in front of those with a lower value. <code>z-index</code> only works on elements that create a stacking context.
+
+### How z-index Works
+- <strong>Default stacking:</strong> Elements are stacked in the order they appear in the HTML (later elements on top).
+- <strong>z-index:</strong> Assigns a stacking level. Higher values are closer to the viewer.
+- <strong>Stacking context:</strong> Created by elements with <code>position</code> (not static) and a <code>z-index</code> value, <code>opacity &lt; 1</code>, <code>transform</code>, <code>filter</code>, <code>will-change</code>, <code>mix-blend-mode</code>, etc.
+- <strong>Nested stacking:</strong> Each stacking context is independent; child z-index values are relative to their parent context.
+
+### Usage & Best Practices
+- Use <code>z-index</code> to control overlays, modals, tooltips, dropdowns, and layered UI effects.
+- Use the smallest values needed to avoid confusion.
+- Minimize stacking contexts for easier debugging.
+- Document z-index values in your codebase for maintainability.
+
+### Example:
+```css
+/* Basic z-index */
+.box1 { z-index: 1; }
+.box2 { z-index: 2; }
+
+/* Stacking context */
+.parent {
+  position: relative;
+  z-index: 10;
+}
+.child {
+  position: absolute;
+  z-index: 2;
+}
+```
+
+### Interactive Example
+See <strong>z-index.html</strong> for interactive demos:
+- Default stacking (no z-index): later elements appear on top.
+- z-index stacking: higher z-index appears on top, regardless of HTML order.
+- Stacking context: child z-index is relative to its parent context, not the page.
+
+[View the interactive z-index demo page &rarr;](HTML/z-index.html)
+
+### Browser Compatibility
+- <strong>z-index</strong> is supported in all modern browsers (Chrome, Firefox, Edge, Safari, Opera).
+- For best results, always use <code>position</code> (not static) with <code>z-index</code>.
+
+---
+
+## 20. Overflow in CSS
+
+The **overflow** property in CSS controls what happens when content exceeds the bounds of its container. It is essential for managing scrollbars, hiding excess content, and creating scrollable areas.
+
+### Overflow Values
+- **visible** (default): Content is not clipped and may overflow outside the box.
+- **hidden**: Content is clipped and the rest is invisible (no scrollbars).
+- **scroll**: Content is clipped, but scrollbars are always shown (even if not needed).
+- **auto**: Content is clipped, and scrollbars appear only when needed.
+
+You can also control horizontal and vertical overflow separately with `overflow-x` and `overflow-y`.
+
+### Usage & Best Practices
+- Use `overflow: auto` for scrollbars only when needed.
+- Use `overflow: hidden` to crop content, but ensure important info isn't lost.
+- Combine with `max-width` or `max-height` for responsive layouts.
+- Test on different devices and browsers for consistent scrollbar behavior.
+
+### Example:
+```css
+.overflow-visible { overflow: visible; }
+.overflow-hidden { overflow: hidden; }
+.overflow-scroll { overflow: scroll; }
+.overflow-auto { overflow: auto; }
+.overflow-x-scroll { overflow-x: scroll; }
+.overflow-y-auto { overflow-y: auto; }
+```
+
+### Interactive Example
+See **overflow.html** for interactive demos:
+- `overflow: visible` — content spills out of the box.
+- `overflow: hidden` — overflowing content is not visible.
+- `overflow: scroll` — scrollbars are always shown.
+- `overflow: auto` — scrollbars appear only if content overflows.
+
+[View the interactive overflow demo page &rarr;](HTML/overflow.html)
+
+### Browser Compatibility
+- **overflow** is supported in all modern browsers (Chrome, Firefox, Edge, Safari, Opera).
+- Scrollbar appearance may vary by OS and browser.
+
+---
+
 ## ✅ Summary Tips
 - Use an **external CSS** file for scalability.
 - Organize your CSS with **clear comments** and **consistent naming conventions**.
@@ -639,5 +870,160 @@ ul.shorthand-list { list-style: square inside url('https://img.icons8.com/color/
 - Use tools like **DevTools** to debug and experiment.
 
 ---
+
+## 21. Pseudo-elements in CSS
+
+**Pseudo-elements** allow you to style specific parts of an element or insert content before or after it, without extra HTML. They are written with a double colon (`::`) (e.g., `::before`), though single colon syntax is still supported for backward compatibility.
+
+### Common Pseudo-elements
+- `::before` / `::after`: Insert content before/after the element's content.
+- `::first-letter`: Style the first letter of a block element.
+- `::first-line`: Style the first line of a block element.
+- `::selection`: Style the portion of text selected by the user.
+- `::placeholder`: Style placeholder text in form fields.
+- `::marker`: Style the marker box of list items.
+- `::backdrop`: Style the background of modal elements.
+- `::file-selector-button`: Style the button of file input fields.
+- `::cue`: Style WebVTT cues in media elements.
+- `::part()`: Style shadow DOM parts (advanced).
+
+### Structural Pseudo-classes (for reference)
+- `:first-child`, `:last-child`, `:nth-child()`, `:nth-of-type()`, `:only-child`, `:empty` — Select elements based on their position or content in the DOM.
+
+### Usage & Best Practices
+- Use pseudo-elements to add icons, highlights, or effects without extra markup.
+- Use `::selection` for custom highlight colors.
+- Use `::placeholder` to style form hints.
+- Combine with transitions for interactive effects.
+
+### Example
+```css
+.button::before { content: '🚀 '; }
+.button::after { content: ' →'; }
+.intro::first-letter { font-size: 2rem; color: #8e44ad; }
+.intro::first-line { font-weight: bold; }
+p::selection { background: #ffd200; color: #222; }
+input::placeholder { color: #888; font-style: italic; }
+li:first-child { color: #3498db; }
+li:last-child { color: #e67e22; }
+li:nth-child(2) { font-weight: bold; }
+li:only-child { color: #27ae60; }
+li:empty { background: #f7e9ff; }
+```
+
+### Interactive Example
+See **psuedo-elements.html** for interactive demos:
+- `::before`/`::after` — add icons to a button.
+- `::first-letter`/`::first-line` — style the first letter/line of a paragraph.
+- `::selection` — custom highlight color.
+- `::placeholder` — style form placeholder text.
+- Structural pseudo-classes — style list items based on position/content.
+
+[View the interactive pseudo-elements demo page &rarr;](HTML/pseudo-elements.html)
+
+### Browser Compatibility
+- Most pseudo-elements are supported in all modern browsers (Chrome, Firefox, Edge, Safari, Opera).
+- Some advanced pseudo-elements (e.g., `::backdrop`, `::part()`) may have limited support.
+
+---
+
+## 22. CSS Pseudo-Classes
+
+CSS **pseudo-classes** are special selectors that target elements in a specific state, such as when a user hovers over a link, when an input is focused, or when an element is the first child of its parent. Pseudo-classes enable dynamic, interactive, and context-aware styling without extra classes or JavaScript.
+
+### Common Pseudo-Classes
+- `:hover` – Styles elements when hovered by a pointer.
+- `:focus` – Styles elements when focused (e.g., via keyboard/tab).
+- `:active` – Styles elements when activated (e.g., clicked).
+- `:first-child` – Targets the first child of a parent.
+- `:last-child` – Targets the last child of a parent.
+- `:nth-child(n)` – Targets the nth child (e.g., `:nth-child(2n)` for even items).
+- `:only-child` – Targets an element that is the only child of its parent.
+- `:empty` – Targets elements with no children (including text).
+- `:not(selector)` – Excludes elements matching a selector.
+- `:checked`, `:disabled`, `:required`, `:valid`, `:invalid` – Target form states.
+
+### Example Usage
+```css
+/* Highlight a button on hover and focus */
+.button:hover, .button:focus {
+  background: #8e44ad;
+  color: #fff;
+}
+/* Style the first and last list items */
+ul li:first-child { color: #8e44ad; }
+ul li:last-child { color: #3498db; }
+/* Alternate row colors */
+table tr:nth-child(even) { background: #f0e6fa; }
+/* Only child styling */
+.card:only-child { border: 2px solid #ffd200; }
+/* Exclude certain items */
+.menu li:not(.active) { opacity: 0.7; }
+```
+
+### Best Practices
+- Always provide <code>:focus</code> styles for accessibility.
+- Combine pseudo-classes for advanced effects (e.g., <code>a:hover:active</code>).
+- Use <code>:not()</code> to simplify complex selectors.
+- Test pseudo-class behavior across browsers and devices.
+
+### Reference Example
+See [pseudo-class.html](HTML/pseudo-class.html) for a comprehensive, interactive demo and code examples of all major CSS pseudo-classes in action.
+
+---
+
+---
+
+## 23. CSS Multi-Column Layout
+
+The <strong>CSS multi-column layout</strong> module allows you to flow content into multiple columns, similar to newspapers or magazines. It is useful for improving readability, making better use of horizontal space, and creating visually engaging layouts.
+
+### Key Properties
+- <code>column-count</code>: Number of columns
+- <code>column-gap</code>: Space between columns
+- <code>column-rule</code>: Line between columns (shorthand for style, width, color)
+- <code>column-width</code>: Ideal width of each column
+- <code>column-span</code>: Make an element span across all columns
+- <code>columns</code>: Shorthand for <code>column-width</code> and <code>column-count</code>
+
+### Example Usage
+```css
+.columns-count {
+  column-count: 3;
+}
+.columns-gap {
+  column-count: 3;
+  column-gap: 2.5em;
+}
+.columns-rule {
+  column-count: 3;
+  column-rule: 3px dashed #8e44ad;
+}
+.columns-width {
+  column-width: 180px;
+}
+.columns-span {
+  column-count: 3;
+}
+.span-all {
+  column-span: all;
+}
+.columns-shorthand {
+  columns: 180px 3;
+}
+```
+
+### Usage & Best Practices
+- Use multi-column layout for text-heavy content to improve readability.
+- Test column layouts on different screen sizes for responsiveness.
+- Use <code>column-span</code> for headings or elements that should stretch across all columns.
+- Be cautious with interactive elements (forms, buttons) inside columns—they may break across columns.
+- Combine with other layout techniques (Flexbox, Grid) for advanced designs.
+
+### Reference Example
+See [column-layout.html](HTML/column-layout.html) for a comprehensive, interactive demo and code examples of all major CSS multi-column layout properties in action.
+
+---
+
 
 _Keep updating this summary as you explore more advanced CSS concepts like animations, transitions, Flexbox, Grid, media queries, and preprocessors (like SASS)._ 🚀

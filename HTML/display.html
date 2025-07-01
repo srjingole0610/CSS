@@ -1,0 +1,151 @@
+<!-- display: block-level element,inline-level element,inline-block element, none -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="CSS Display Property: block, inline, inline-block, none - Theory, Examples, and Demos">
+  <title>CSS Display Property</title>
+  <link rel="icon" type="image/png" href="../images/css_favicon.png">
+  <link rel="stylesheet" href="../CSS/display.css">
+</head>
+<body>
+  <div class="container">
+    <h1>CSS <code>display</code> Property</h1>
+    <section class="theory-section">
+      <h2>Theory & Explanation</h2>
+      <p>The <strong>display</strong> property in CSS is the foundation of layout and rendering. It controls how elements are visually formatted, how they participate in the document flow, and how they interact with other elements. Mastery of <code>display</code> is essential for building any web layout, from simple pages to complex applications.</p>
+      <ul>
+        <li><strong>block</strong>: Starts on a new line, stretches to fill the container's width, and can have width, height, margin, and padding. Block elements stack vertically. <br><em>Examples:</em> <code>&lt;div&gt;</code>, <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;ul&gt;</code></li>
+        <li><strong>inline</strong>: Flows within the current line, only as wide as its content. Width/height/margin-top/margin-bottom are ignored. <br><em>Examples:</em> <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code></li>
+        <li><strong>inline-block</strong>: Behaves like <code>inline</code> (flows in line), but you can set width, height, margin, and padding. Useful for buttons, badges, and custom controls.</li>
+        <li><strong>none</strong>: The element is completely removed from the layout and accessibility tree. It is as if it does not exist in the DOM.</li>
+      </ul>
+      <p><strong>Other values:</strong> <code>flex</code> (for flexible box layouts), <code>grid</code> (for grid layouts), <code>table</code> (for table-like layouts), and more. These advanced values enable powerful, responsive designs.</p>
+      <h3>How <code>display</code> Affects Layout</h3>
+      <ul>
+        <li><strong>Block formatting context:</strong> Block elements create a new line and stack vertically. They can contain other block or inline elements.</li>
+        <li><strong>Inline formatting context:</strong> Inline elements flow horizontally, wrapping as needed. They cannot have width/height set.</li>
+        <li><strong>Inline-block:</strong> Inline placement, but block-like sizing and box model.</li>
+        <li><strong>None:</strong> Element is not rendered and does not take up space.</li>
+      </ul>
+      <h3>Accessibility & Best Practices</h3>
+      <ul>
+        <li>Use semantic HTML elements for structure, then use <code>display</code> to adjust layout as needed.</li>
+        <li>Be careful with <code>display: none</code>—it hides content from all users, including screen readers.</li>
+        <li>For interactive UI, prefer <code>inline-block</code> or <code>flex</code> for custom controls and layouts.</li>
+        <li>Test your layout with different content lengths and screen sizes.</li>
+      </ul>
+    </section>
+
+    <section class="code-section">
+      <h2>Code Examples</h2>
+      <div class="code-block">
+        <pre><code>/* Block-level */
+.block-demo .demo-box {
+  display: block;
+}
+
+/* Inline-level */
+.inline-demo .demo-box {
+  display: inline;
+}
+
+/* Inline-block */
+.inline-block-demo .demo-box {
+  display: inline-block;
+}
+
+/* None */
+.none-demo .demo-box {
+  display: none;
+}
+</code></pre>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>Live Demos & Interactive Examples</h2>
+      <div class="demo-row">
+        <div class="demo-card block-demo">
+          <span class="demo-label">block</span>
+          <div class="demo-box">Block 1</div>
+          <div class="demo-box">Block 2</div>
+          <button class="toggle-btn" data-target="block">Toggle Block/Inline</button>
+        </div>
+        <div class="demo-card inline-demo">
+          <span class="demo-label">inline</span>
+          <div class="demo-box">Inline 1</div>
+          <div class="demo-box">Inline 2</div>
+          <button class="toggle-btn" data-target="inline">Toggle Inline/Block</button>
+        </div>
+        <div class="demo-card inline-block-demo">
+          <span class="demo-label">inline-block</span>
+          <div class="demo-box">Inline-block 1</div>
+          <div class="demo-box">Inline-block 2</div>
+          <button class="toggle-btn" data-target="inline-block">Toggle Inline-block/Block</button>
+        </div>
+        <div class="demo-card none-demo">
+          <span class="demo-label">none</span>
+          <div class="demo-box">You can't see me!</div>
+          <button class="toggle-btn" data-target="none">Toggle None/Block</button>
+        </div>
+      </div>
+      <div class="demo-row">
+        <div class="demo-card">
+          <span class="demo-label">Mixed Example</span>
+          <div class="demo-mixed">
+            <span class="demo-box mixed-block">Block</span>
+            <span class="demo-box mixed-inline">Inline</span>
+            <span class="demo-box mixed-inline-block">Inline-block</span>
+          </div>
+          <p class="demo-desc">Block starts on a new line, inline flows, inline-block is inline but sized.</p>
+        </div>
+      </div>
+      <p class="demo-desc">Try toggling the display type of each demo using the buttons, or inspect the elements to see how <code>display</code> changes their layout and visibility.</p>
+    </section>
+
+    <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+  </div>
+
+  <script>
+document.querySelectorAll('.toggle-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    const card = btn.closest('.demo-card');
+    const target = btn.getAttribute('data-target');
+    const boxes = card.querySelectorAll('.demo-box');
+    boxes.forEach(function(box) {
+      // Use computed style for accurate current display
+      const computedDisplay = window.getComputedStyle(box).display;
+      if (target === 'block') {
+        if (computedDisplay === 'inline') {
+          box.style.display = '';
+        } else {
+          box.style.display = 'inline';
+        }
+      } else if (target === 'inline') {
+        if (computedDisplay === 'block') {
+          box.style.display = 'inline';
+        } else {
+          box.style.display = 'block';
+        }
+      } else if (target === 'inline-block') {
+        if (computedDisplay === 'block') {
+          box.style.display = 'inline-block';
+        } else {
+          box.style.display = 'block';
+        }
+      } else if (target === 'none') {
+        if (computedDisplay === 'none') {
+          box.style.display = 'block';
+        } else {
+          box.style.display = 'none';
+        }
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>

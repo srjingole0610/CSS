@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="CSS Position Property: static, relative, absolute, fixed, sticky - Theory, Examples, and Demos">
+  <title>CSS Position Property</title>
+  <link rel="icon" type="image/png" href="../images/css_favicon.png">
+  <link rel="stylesheet" href="../CSS/positions.css">
+</head>
+<body>
+  <div class="container">
+    <h1>CSS <code>position</code> Property</h1>
+    <section class="theory-section">
+      <h2>Theory & Deep Explanation</h2>
+      <p>The <strong>position</strong> property in CSS is fundamental for controlling layout, stacking, and advanced UI effects. It determines how an element is placed in the document, how it interacts with other elements, and how it responds to scrolling and resizing. Understanding each value is key to mastering modern web design.</p>
+      <ul class="position-types-list">
+        <li><strong>static</strong>: <span class="theory-highlight">Default</span>. Element follows the normal document flow. <em>Offsets (top/right/bottom/left) and z-index have no effect.</em></li>
+        <li><strong>relative</strong>: Element is positioned relative to its normal spot. Offsets move it visually, but its original space is preserved. Useful for fine-tuning or as a reference for absolutely positioned children.</li>
+        <li><strong>absolute</strong>: Removed from the normal flow and positioned relative to the nearest ancestor with a position other than static. Great for overlays, tooltips, and dropdowns.</li>
+        <li><strong>fixed</strong>: Removed from flow and positioned relative to the viewport. Stays visible during scroll. Used for sticky navbars, notifications, or floating buttons.</li>
+        <li><strong>sticky</strong>: Acts as relative until a scroll threshold, then becomes fixed at the specified offset. Perfect for sticky headers, menus, or call-to-action boxes.</li>
+      </ul>
+      <div class="theory-diagrams">
+        <div class="diagram-card">
+          <span class="diagram-label">static</span>
+          <div class="diagram-static"></div>
+        </div>
+        <div class="diagram-card">
+          <span class="diagram-label">relative</span>
+          <div class="diagram-relative"></div>
+        </div>
+        <div class="diagram-card">
+          <span class="diagram-label">absolute</span>
+          <div class="diagram-absolute"></div>
+        </div>
+        <div class="diagram-card">
+          <span class="diagram-label">fixed</span>
+          <div class="diagram-fixed"></div>
+        </div>
+        <div class="diagram-card">
+          <span class="diagram-label">sticky</span>
+          <div class="diagram-sticky"></div>
+        </div>
+      </div>
+      <h3>Real-World Use Cases</h3>
+      <ul>
+        <li><strong>static</strong>: Most content blocks, paragraphs, and lists.</li>
+        <li><strong>relative</strong>: Nudge icons, badges, or create a reference for absolutely positioned children.</li>
+        <li><strong>absolute</strong>: Dropdown menus, popovers, tooltips, modals, and image overlays.</li>
+        <li><strong>fixed</strong>: Sticky navbars, floating action buttons, persistent notifications.</li>
+        <li><strong>sticky</strong>: Section headers, table headers, floating call-to-action bars.</li>
+      </ul>
+      <h3>Accessibility & Best Practices</h3>
+      <ul>
+        <li>Use <code>position: relative</code> for layout tweaks and as a positioning context for children.</li>
+        <li>Use <code>absolute</code> and <code>fixed</code> for overlays, tooltips, and UI elements that must float above content.</li>
+        <li>Test on different screen sizes and with keyboard navigation. Ensure overlays and tooltips are accessible.</li>
+        <li>Use <code>z-index</code> to manage stacking order, but avoid excessive stacking contexts.</li>
+      </ul>
+    </section>
+    <section class="code-section">
+      <h2>Code Examples</h2>
+      <div class="code-block"><pre><code>/* Overlay Example */
+.overlay-demo {
+  position: relative;
+}
+.overlay-demo .overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(52,152,219,0.15);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 2;
+}
+
+/* Tooltip Example */
+.tooltip-demo {
+  position: relative;
+}
+.tooltip-demo .tooltip {
+  position: absolute;
+  bottom: 120%; left: 50%;
+  transform: translateX(-50%);
+  background: #23272e; color: #fff;
+  padding: 6px 14px; border-radius: 6px;
+  font-size: 0.98rem;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.2s;
+  z-index: 3;
+}
+.tooltip-demo:focus-within .tooltip,
+.tooltip-demo:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Sticky Header Example */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background: #3498db;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  font-weight: bold;
+  z-index: 10;
+}
+</code></pre></div>
+    </section>
+    <section class="demo-section">
+      <h2>Interactive Demos</h2>
+      <div class="demo-row">
+        <div class="demo-card static-demo">
+          <span class="demo-label">static</span>
+          <div class="demo-box">Static (default)</div>
+          <div class="demo-desc">Follows normal flow. No offset or stacking.</div>
+        </div>
+        <div class="demo-card relative-demo">
+          <span class="demo-label">relative</span>
+          <div class="demo-box">Relative (moved)</div>
+          <div class="demo-desc">Moved visually, but space is preserved.</div>
+        </div>
+        <div class="demo-card absolute-demo">
+          <span class="demo-label">absolute</span>
+          <div class="abs-parent abs-parent-rel">
+            <span class="abs-parent-label">Parent (relative)</span>
+            <div class="abs-child abs-child-1">Child (absolute)</div>
+          </div>
+          <div class="abs-desc">The yellow child is <b>position: absolute</b> inside a <b>position: relative</b> parent. It is placed at <b>top: 12px; right: 12px</b> of the parent.</div>
+          <div class="abs-parent abs-parent-static">
+            <span class="abs-parent-label">Parent (static)</span>
+            <div class="abs-child abs-child-2">Child (absolute)</div>
+          </div>
+          <div class="abs-desc">The orange child is <b>position: absolute</b> inside a <b>static</b> parent. It is placed at <b>top: 12px; left: 12px</b> of the <b>page</b> (initial containing block).</div>
+        </div>
+        <div class="demo-card fixed-demo">
+          <span class="demo-label">fixed</span>
+          <div class="demo-box">Fixed (scroll me!)</div>
+          <button class="notify-btn" aria-controls="fixed-notify" aria-expanded="false">Show Notification</button>
+          <div class="fixed-notification" id="fixed-notify" tabindex="-1" aria-hidden="true">
+            <span>This is a fixed notification!</span>
+            <button class="close-notify" aria-label="Close notification">×</button>
+          </div>
+          <div class="demo-desc">Stays visible on scroll. Try the notification.</div>
+        </div>
+        <div class="demo-card sticky-demo">
+          <span class="demo-label">sticky</span>
+          <div class="sticky-header sticky-indicator" id="sticky-header">Sticky Header (scroll this card)</div>
+          <div class="demo-box">Sticky (scroll inside)</div>
+          <div class="sticky-scroll-content">
+            <p>Scroll down to see the header stick to the top of this card. The sticky header will highlight when it becomes fixed.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur.</p>
+            <p>Aliquam erat volutpat. Etiam nec velit nec nulla dictum dictum. Suspendisse potenti.</p>
+            <p>Vivamus euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam nisl nunc eu nisl.</p>
+            <p>More content to enable scrolling...</p>
+            <p>Even more content to enable scrolling...</p>
+          </div>
+          <div class="demo-desc">Scroll this card to see sticky in action. The header will highlight when sticky.</div>
+        </div>
+        <div class="demo-card tooltip-demo" tabindex="0">
+          <span class="demo-label">tooltip</span>
+          <button class="tooltip-btn">Hover or focus me</button>
+          <div class="tooltip">Tooltip using <code>position: absolute</code></div>
+          <div class="demo-desc">Accessible tooltip appears on hover/focus.</div>
+        </div>
+        <div class="demo-card zindex-demo">
+          <span class="demo-label">z-index</span>
+          <div class="z-stack">
+            <div class="z-box z1">z-index: 1</div>
+            <div class="z-box z2">z-index: 2</div>
+            <div class="z-box z3">z-index: 3</div>
+          </div>
+          <div class="demo-desc">Stacking context demo. Hover to highlight.</div>
+        </div>
+      </div>
+      <p class="demo-desc">Try scrolling, resizing, and interacting with the demos to see how <code>position</code> changes layout and behavior.</p>
+    </section>
+    <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+  </div>
+  <script>
+    // Overlay demo
+    document.addEventListener('DOMContentLoaded', function() {
+      // Fixed notification demo
+      var notifyBtn = document.querySelector('.fixed-demo .notify-btn');
+      var notify = document.getElementById('fixed-notify');
+      var closeNotify = document.querySelector('.fixed-demo .close-notify');
+      if (notifyBtn && notify && closeNotify) {
+        notifyBtn.addEventListener('click', function() {
+          notify.style.display = 'flex';
+          notify.setAttribute('aria-hidden', 'false');
+          notifyBtn.setAttribute('aria-expanded', 'true');
+          notify.focus();
+        });
+        closeNotify.addEventListener('click', function() {
+          notify.style.display = 'none';
+          notify.setAttribute('aria-hidden', 'true');
+          notifyBtn.setAttribute('aria-expanded', 'false');
+          notifyBtn.focus();
+        });
+      }
+      // Sticky header highlight
+      var stickyDemo = document.querySelector('.sticky-demo');
+      var stickyHeader = document.getElementById('sticky-header');
+      if (stickyDemo && stickyHeader) {
+        stickyDemo.addEventListener('scroll', function() {
+          var rect = stickyHeader.getBoundingClientRect();
+          var parentRect = stickyDemo.getBoundingClientRect();
+          if (rect.top <= parentRect.top) {
+            stickyHeader.classList.add('stuck');
+          } else {
+            stickyHeader.classList.remove('stuck');
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
