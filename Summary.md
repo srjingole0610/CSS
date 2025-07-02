@@ -1,6 +1,40 @@
 # CSS Summary for Revision
 
-A concise reference to revise the essential CSS concepts and best practices while building web projects.
+## Introduction
+
+Welcome to the **CSS Summary for Revision**!
+This document is a concise, revision-friendly reference to the essential CSS concepts, best practices, and code examples you need while building web projects or preparing for interviews.
+
+Whether you're a beginner or an experienced developer, use this summary to quickly review key CSS topics, syntax, and real-world tips.
+
+---
+
+## Table of Contents
+
+- [What is CSS?](#1-what-is-css)
+- [Types of Stylesheets](#2-types-of-stylesheets)
+- [CSS Selectors](#3-css-selectors)
+- [Comments in CSS](#4-comments-in-css)
+- [Colors in CSS](#5-colors-in-css)
+- [Backgrounds in CSS](#6-backgrounds-in-css)
+- [Units in CSS](#7-units-in-css)
+- [Fonts in CSS](#8-fonts-in-css)
+- [Text Properties in CSS](#9-text-properties-in-css)
+- [Box Model in CSS](#10-box-model-in-css)
+- [Gradients in CSS](#11-gradients-in-css)
+- [Box Shadow in CSS](#12-box-shadow-in-css)
+- [drop-shadow Filter in CSS](#13-drop-shadow-filter-in-css)
+- [CSS Filters](#14-css-filters)
+- [CSS Lists](#15-css-lists)
+- [CSS Display Property](#16-css-display-property)
+- [CSS Anchor States (Links)](#17-css-anchor-states-links)
+- [CSS Position Property](#18-css-position-property)
+- [z-index in CSS](#19-z-index-in-css)
+- [Overflow in CSS](#20-overflow-in-css)
+- [ Pseudo-Elements in CSS](#21-pseudo-elements-in-css)
+- [CSS Pseudo-Classes](#22-css-pseudo-classes)
+- [CSS Multi-Column Layout](#23-css-multi-column-layout)
+- [CSS Flexbox](#24-css-flexbox)
 
 ---
 
@@ -976,7 +1010,7 @@ See [pseudo-class.html](HTML/pseudo-class.html) for a comprehensive, interactive
 
 ## 23. CSS Multi-Column Layout
 
-The <strong>CSS multi-column layout</strong> module allows you to flow content into multiple columns, similar to newspapers or magazines. It is useful for improving readability, making better use of horizontal space, and creating visually engaging layouts.
+The **CSS multi-column layout** module allows you to flow content into multiple columns, similar to newspapers or magazines. It is useful for improving readability, making better use of horizontal space, and creating visually engaging layouts.
 
 ### Key Properties
 - <code>column-count</code>: Number of columns
@@ -1024,6 +1058,85 @@ The <strong>CSS multi-column layout</strong> module allows you to flow content i
 See [column-layout.html](HTML/column-layout.html) for a comprehensive, interactive demo and code examples of all major CSS multi-column layout properties in action.
 
 ---
+## 24. CSS Flexbox
 
+CSS **Flexbox (Flexible Box Layout)** is a powerful layout model that makes it easy to design flexible, responsive layouts. Flexbox allows you to align, distribute, and order space among items in a container—even when their size is unknown or dynamic.
+
+### Key Concepts
+- <code>flex-container</code>: The parent element with <code>display: flex</code> or <code>display: inline-flex</code>.
+- <code>flex-item</code>: The direct children of a flex container.
+- <code>main axis</code>: The primary axis (horizontal by default).
+- <code>cross axis</code>: The perpendicular axis (vertical by default).
+
+### Main Properties
+- <code>display: flex</code> / <code>inline-flex</code>: Defines a flex container.
+- <code>flex-direction</code>: Sets the direction of the main axis (row, row-reverse, column, column-reverse).
+- <code>justify-content</code>: Aligns items along the main axis.
+- <code>align-items</code>: Aligns items along the cross axis.
+- <code>flex-wrap</code>: Allows items to wrap onto multiple lines.
+- <code>gap</code>: Sets spacing between items.
+- <code>flex-grow</code>, <code>flex-shrink</code>, <code>flex-basis</code>, <code>flex</code>: Control item sizing and flexibility.
+- <code>align-content</code>: Aligns lines of items in a multi-line flex container.
+- <code>align-self</code>: Allows individual items to override <code>align-items</code>.
+- <code>order</code>: Controls the order of items.
+- <code>flex-flow</code>: Shorthand for <code>flex-direction</code> and <code>flex-wrap</code>.
+
+### Example Usage
+```css
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.flex-justify {
+  display: flex;
+  justify-content: space-between;
+}
+.flex-align {
+  display: flex;
+  align-items: flex-end;
+}
+.flex-wrap-demo {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-gap {
+  display: flex;
+  gap: 24px;
+}
+.flex-grow-demo .grow1 { flex: 1; }
+.flex-grow-demo .grow2 { flex: 2; }
+.flex-grow-demo .grow3 { flex: 3; }
+.flex-align-self .flex-item[style] { /* Inline align-self for demo only */ }
+.flex-order .order1 { order: 1; }
+.flex-order .order2 { order: 2; }
+.flex-order .order3 { order: 3; }
+.flex-align-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  height: 180px;
+}
+.flex-flow-demo {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 12px;
+}
+```
+
+### Usage & Best Practices
+- Use Flexbox for one-dimensional layouts (row or column).
+- Combine with media queries for responsive design.
+- Use <code>gap</code> for spacing instead of margins.
+- Test layouts on different screen sizes and browsers.
+- Use semantic HTML for better accessibility and maintainability.
+
+### Reference Example
+See <a href="HTML/flexbox.html">flexbox.html</a> for a comprehensive, interactive demo and code examples of all major CSS Flexbox properties in action.
+
+---
 
 _Keep updating this summary as you explore more advanced CSS concepts like animations, transitions, Flexbox, Grid, media queries, and preprocessors (like SASS)._ 🚀
