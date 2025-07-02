@@ -301,25 +301,19 @@
             <code>flex</code> is shorthand for all three.
           </p>
           <div class="flex-demo flex-grow-demo">
-            <div class="flex-item grow1">flex: 1</div>
-            <div class="flex-item grow2">flex: 2</div>
-            <div class="flex-item grow3">flex: 3</div>
+            <div class="flex-item flex-grow1">flex: 1</div>
+            <div class="flex-item flex-grow2">flex: 2</div>
+            <div class="flex-item flex-grow3">flex: 3</div>
           </div>
           <div class="flex-demo flex-shrink-demo">
-            <div class="flex-item" style="flex-shrink: 1; width: 200px">
-              shrink: 1
-            </div>
-            <div class="flex-item" style="flex-shrink: 3; width: 200px">
-              shrink: 3
-            </div>
-            <div class="flex-item" style="flex-shrink: 5; width: 200px">
-              shrink: 5
-            </div>
+            <div class="flex-item flex-shrink1">shrink: 1</div>
+            <div class="flex-item flex-shrink3">shrink: 3</div>
+            <div class="flex-item flex-shrink5">shrink: 5</div>
           </div>
           <div class="flex-demo flex-basis-demo">
-            <div class="flex-item" style="flex-basis: 100px">basis: 100px</div>
-            <div class="flex-item" style="flex-basis: 200px">basis: 200px</div>
-            <div class="flex-item" style="flex-basis: 50px">basis: 50px</div>
+            <div class="flex-item flex-basis100">basis: 100px</div>
+            <div class="flex-item flex-basis200">basis: 200px</div>
+            <div class="flex-item flex-basis50">basis: 50px</div>
           </div>
           <pre><code>.grow1 { flex: 1; }
 .grow2 { flex: 2; }
@@ -357,9 +351,9 @@
             regardless of their source order.
           </p>
           <div class="flex-demo flex-order">
-            <div class="flex-item order1">order: 1</div>
-            <div class="flex-item order2">order: 2</div>
-            <div class="flex-item order3">order: 3</div>
+            <div class="flex-item flex-order-1">order: 1</div>
+            <div class="flex-item flex-order-2">order: 2</div>
+            <div class="flex-item flex-order-3">order: 3</div>
           </div>
           <pre><code>.order1 { order: 3; }
 .order2 { order: 1; }

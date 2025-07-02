@@ -1113,9 +1113,9 @@ CSS **Flexbox (Flexible Box Layout)** is a powerful layout model that makes it e
 .flex-grow-demo .grow2 { flex: 2; }
 .flex-grow-demo .grow3 { flex: 3; }
 .flex-align-self .flex-item[style] { /* Inline align-self for demo only */ }
-.flex-order .order1 { order: 1; }
-.flex-order .order2 { order: 2; }
-.flex-order .order3 { order: 3; }
+.flex-order .order1 { order: 3; }
+.flex-order .order2 { order: 1; }
+.flex-order .order3 { order: 2; }
 .flex-align-content {
   display: flex;
   flex-wrap: wrap;

@@ -1,3 +1,15 @@
+/* Align Self Demo Container */
+.flex-align-self {
+  display: flex;
+  gap: 16px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(52, 152, 219, 0.04);
+  padding: 1em;
+  margin: 1em 0;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
 /* Basic layout and typography */
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
@@ -64,6 +76,7 @@ code {
   border-radius: 4px;
   font-size: 1em;
 }
+/* Default flex-demo styles */
 .flex-demo {
   display: flex;
   gap: 16px;
@@ -73,6 +86,7 @@ code {
   padding: 1em;
   margin: 1em 0;
   flex-wrap: wrap;
+  flex-direction: row;
 }
 /* Height utility classes for flex alignment demos */
 .tall {
@@ -95,12 +109,6 @@ code {
   box-shadow: 0 1px 4px #3498db11;
   transition: background 0.2s, color 0.2s, transform 0.2s;
 }
-.tall {
-  height: 72px;
-}
-.short {
-  height: 32px;
-}
 .flex-item:hover {
   background: #3498db;
   color: #fff;
@@ -114,13 +122,12 @@ code {
 }
 .flex-row-reverse { flex-direction: row-reverse; }
 .flex-column-reverse { flex-direction: column-reverse; }
-.flex-justify {
+.flex-justify, .flex-justify-between {
   justify-content: space-between;
 }
 .flex-justify-start { justify-content: flex-start; }
 .flex-justify-center { justify-content: center; }
 .flex-justify-end { justify-content: flex-end; }
-.flex-justify-between { justify-content: space-between; }
 .flex-justify-around { justify-content: space-around; }
 .flex-justify-evenly { justify-content: space-evenly; }
 .flex-align {
@@ -131,29 +138,27 @@ code {
 .flex-align-end { align-items: flex-end; }
 .flex-align-stretch { align-items: stretch; }
 .flex-align-baseline { align-items: baseline; }
-.flex-wrap-demo {
-  flex-wrap: wrap;
-}
 .flex-wrap-nowrap { flex-wrap: nowrap; }
 .flex-wrap-wrap { flex-wrap: wrap; }
 .flex-wrap-wrap-reverse { flex-wrap: wrap-reverse; }
 .flex-gap {
   gap: 24px;
 }
-.flex-grow-demo .grow1 { flex: 1; }
-.flex-grow-demo .grow2 { flex: 2; }
-.flex-grow-demo .grow3 { flex: 3; }
+.flex-grow-demo .flex-grow1 { flex: 1; }
+.flex-grow-demo .flex-grow2 { flex: 2; }
+.flex-grow-demo .flex-grow3 { flex: 3; }
+.flex-shrink1 { flex-shrink: 1; width: 200px; }
+.flex-shrink3 { flex-shrink: 3; width: 200px; }
+.flex-shrink5 { flex-shrink: 5; width: 200px; }
+.flex-basis100 { flex-basis: 100px; }
+.flex-basis200 { flex-basis: 200px; }
+.flex-basis50 { flex-basis: 50px; }
 .flex-shrink-demo .flex-item:nth-child(1) { flex-shrink: 1; width: 200px; }
 .flex-shrink-demo .flex-item:nth-child(2) { flex-shrink: 3; width: 200px; }
 .flex-shrink-demo .flex-item:nth-child(3) { flex-shrink: 5; width: 200px; }
 .flex-basis-demo .flex-item:nth-child(1) { flex-basis: 100px; }
 .flex-basis-demo .flex-item:nth-child(2) { flex-basis: 200px; }
 .flex-basis-demo .flex-item:nth-child(3) { flex-basis: 50px; }
-.flex-align-content {
-  flex-wrap: wrap;
-  align-content: space-between;
-  height: 180px;
-}
 .flex-align-content-start, 
 .flex-align-content-center, 
 .flex-align-content-end,
@@ -205,13 +210,13 @@ code {
   border-radius: 8px;
   box-shadow: 0 2px 8px #3498db22;
 }
-.order1{
+.flex-order-1{
     order: 3;
 }
-.order2{
+.flex-order-2{
     order: 1;
 }
-.order3{
+.flex-order-3{
     order: 2;
 }
 
@@ -227,8 +232,9 @@ code {
   .demo-block {
     padding: 0.7rem 0.5rem;
   }
-  .flex-demo {
-    flex-direction: column !important;
+  /* Increase specificity to override flex direction on small screens */
+  body .flex-demo {
+    flex-direction: column;
     gap: 10px;
     padding: 0.7em;
   }
