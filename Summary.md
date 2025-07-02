@@ -35,6 +35,7 @@ Whether you're a beginner or an experienced developer, use this summary to quick
 - [CSS Pseudo-Classes](#22-css-pseudo-classes)
 - [CSS Multi-Column Layout](#23-css-multi-column-layout)
 - [CSS Flexbox](#24-css-flexbox)
+- [CSS Grid](#25-css-grid)
 
 ---
 
@@ -1058,6 +1059,7 @@ The **CSS multi-column layout** module allows you to flow content into multiple 
 See [column-layout.html](HTML/column-layout.html) for a comprehensive, interactive demo and code examples of all major CSS multi-column layout properties in action.
 
 ---
+
 ## 24. CSS Flexbox
 
 CSS **Flexbox (Flexible Box Layout)** is a powerful layout model that makes it easy to design flexible, responsive layouts. Flexbox allows you to align, distribute, and order space among items in a container—even when their size is unknown or dynamic.
@@ -1138,5 +1140,76 @@ CSS **Flexbox (Flexible Box Layout)** is a powerful layout model that makes it e
 See <a href="HTML/flexbox.html">flexbox.html</a> for a comprehensive, interactive demo and code examples of all major CSS Flexbox properties in action.
 
 ---
+
+## 25. CSS Grid
+
+CSS **Grid Layout** is a powerful two-dimensional layout system that enables you to create complex, responsive web layouts with rows and columns. Unlike Flexbox (which is one-dimensional), Grid lets you control both axes simultaneously, making it ideal for page layouts, dashboards, galleries, and more.
+
+### Key Concepts
+- **Grid Container:** The parent element with `display: grid` or `display: inline-grid`.
+- **Grid Items:** The direct children of the grid container.
+- **Tracks:** Rows and columns in the grid.
+- **Grid Lines:** The dividing lines between tracks, referenced by number or name.
+- **Grid Areas:** Rectangular areas covering one or more cells, can be named for semantic placement.
+- **Explicit Grid:** Defined by `grid-template-rows` and `grid-template-columns`.
+- **Implicit Grid:** Created automatically when items are placed outside the explicit grid.
+
+### Main Properties
+- `display: grid | inline-grid` — Enables grid layout on the container.
+- `grid-template-columns`, `grid-template-rows` — Define the number and size of columns and rows.
+- `gap` (or `grid-gap`) — Sets spacing between rows and columns.
+- `grid-column`, `grid-row` — Control where an item starts/ends and how many tracks it spans.
+- `grid-area`, `grid-template-areas` — Name areas for semantic, maintainable layouts.
+- `justify-items`, `align-items`, `justify-content`, `align-content` — Align items and tracks within the grid.
+- `min-content`, `max-content`, `minmax()`, `fr`, `repeat()`, `auto-fill`, `auto-fit` — Advanced sizing and responsive features.
+
+### Example Usage
+```css
+.container {
+  display: grid;
+  grid-template-columns: 120px 1fr 2fr;
+  grid-template-rows: 60px 60px;
+  gap: 16px;
+}
+.item1 {
+  grid-column: 1 / span 2;
+}
+.item2 {
+  grid-row: 2 / span 2;
+}
+.area-layout {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  grid-template-columns: 120px 1fr;
+  grid-template-rows: 50px 120px 40px;
+}
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.main { grid-area: main; }
+.footer { grid-area: footer; }
+```
+
+### Responsive Grid Example
+```css
+.responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+}
+```
+
+### Best Practices
+- Use `fr` units for flexible, proportional columns.
+- Combine `auto-fit` or `auto-fill` with `minmax()` for responsive grids.
+- Use `grid-template-areas` for readable, maintainable layouts.
+- Test your grid layouts on different screen sizes for responsiveness.
+- Use browser DevTools to visualize and debug grid lines and areas.
+
+### Reference Example
+See the new [grid.html](./HTML/grid.html) page for a comprehensive, interactive guide to CSS Grid, including theory, property explanations, and live code demos.
+
 
 _Keep updating this summary as you explore more advanced CSS concepts like animations, transitions, Flexbox, Grid, media queries, and preprocessors (like SASS)._ 🚀
