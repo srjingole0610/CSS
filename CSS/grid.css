@@ -1,3 +1,36 @@
+/* Explicit/Implicit Grid Notice Paragraph */
+.explicit-implicit-notice {
+  margin-top: 1em;
+  font-size: 0.98em;
+}
+
+/* Responsive Grid Example Demo */
+.responsive-demo-grid {
+  grid-template-columns: repeat(4, minmax(60px, 1fr));
+  grid-template-rows: 40px 40px;
+}
+/* Explicit vs. Implicit Grid Section Layout */
+.explicit-implicit-grids {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.explicit-grid-block, .implicit-grid-block {
+  flex: 1;
+  min-width: 220px;
+}
+.grid-block-title {
+  margin-bottom: 0.5em;
+}
+.explicit-grid {
+  grid-template-columns: 100px 100px;
+  gap: 8px;
+}
+.implicit-grid {
+  grid-template-columns: 100px 100px;
+  grid-auto-rows: 40px;
+  gap: 8px;
+}
 /* Theory images in grid.html */
 .theory-img {
   max-width: 100%;
@@ -72,14 +105,14 @@ body {
   padding: 0 1rem 2rem 1rem;
 }
 
-.theory, .properties, .theory-section, .property-section, .best-practices-section {
+.theory, .properties {
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(80,120,200,0.07);
   margin-bottom: 2rem;
   padding: 1.5rem 1.2rem;
 }
-.theory h2, .properties h2, .theory-section h2, .property-section h2, .best-practices-section h2 {
+.theory h2, .properties h2 {
   margin-top: 0;
   color: #2563eb;
 }
@@ -121,7 +154,7 @@ body {
 }
 
 /* Grid Demo Styles */
-.demo-grid, .grid-demo {
+.demo-grid {
   display: grid;
   background: #e3eefd;
   border-radius: 8px;
@@ -130,7 +163,7 @@ body {
   gap: 10px;
   min-height: 60px;
 }
-.demo-grid > div, .grid-demo > div {
+.demo-grid > div{
   background: #4f8cff;
   color: #fff;
   font-weight: 600;
@@ -141,16 +174,17 @@ body {
   box-shadow: 0 1px 4px rgba(80,120,200,0.08);
   transition: background 0.2s, color 0.2s;
 }
-.demo-grid > div.header, .grid-demo-areas .header {
+.demo-grid > div.header, .area-grid .header {
   background: #2563eb;
 }
-.demo-grid > div.sidebar, .grid-demo-areas .sidebar {
+.demo-grid > div.sidebar, .area-grid .sidebar {
+
   background: #38b2ac;
 }
-.demo-grid > div.main, .grid-demo-areas .main {
+.demo-grid > div.main, .area-grid .main {
   background: #4f8cff;
 }
-.demo-grid > div.footer, .grid-demo-areas .footer {
+.demo-grid > div.footer, .area-grid .footer {
   background: #2d3748;
 }
 
@@ -236,7 +270,7 @@ body {
   .grid-main {
     margin-top: 0.5rem;
   }
-  .theory, .properties, .theory-section, .property-section, .best-practices-section {
+  .theory, .properties {
     padding: 0.7rem 0.3rem;
   }
 }

@@ -333,10 +333,10 @@
           the defined grid, and tracks are auto-generated using
           <code>grid-auto-rows</code> and <code>grid-auto-columns</code>.
         </p>
-        <div style="display: flex; gap: 2rem; flex-wrap: wrap">
-          <div style="flex: 1; min-width: 220px">
-            <h4 style="margin-bottom: 0.5em">Explicit Grid</h4>
-            <div class="demo-grid" style="grid-template-columns: 100px 100px">
+        <div class="explicit-implicit-grids">
+          <div class="explicit-grid-block">
+            <h4 class="grid-block-title">Explicit Grid</h4>
+            <div class="demo-grid explicit-grid">
               <div>1</div>
               <div>2</div>
               <div>3</div>
@@ -348,12 +348,9 @@
   gap: 8px;
 }</code></pre>
           </div>
-          <div style="flex: 1; min-width: 220px">
-            <h4 style="margin-bottom: 0.5em">Implicit Grid</h4>
-            <div
-              class="demo-grid"
-              style="grid-template-columns: 100px 100px; grid-auto-rows: 40px"
-            >
+          <div class="implicit-grid-block">
+            <h4 class="grid-block-title">Implicit Grid</h4>
+            <div class="demo-grid implicit-grid">
               <div>1</div>
               <div>2</div>
               <div>3</div>
@@ -368,7 +365,7 @@
 }</code></pre>
           </div>
         </div>
-        <p style="margin-top: 1em; font-size: 0.98em">
+        <p class="explicit-implicit-notice">
           <strong>Notice:</strong> The explicit grid only defines two columns
           and two rows, so items 5+ are placed in new, auto-generated (implicit)
           rows.
@@ -381,13 +378,7 @@
           Here's an example of a responsive grid using <code>minmax()</code> and
           <code>repeat()</code>.
         </p>
-        <div
-          class="demo-grid"
-          style="
-            grid-template-columns: repeat(4, minmax(60px, 1fr));
-            grid-template-rows: 40px 40px;
-          "
-        >
+        <div class="demo-grid responsive-demo-grid">
           <div>1</div>
           <div>2</div>
           <div>3</div>
