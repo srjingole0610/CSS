@@ -1,6 +1,40 @@
 # CSS Summary for Revision
 
-A concise reference to revise the essential CSS concepts and best practices while building web projects.
+## Introduction
+
+Welcome to the **CSS Summary for Revision**!
+This document is a concise, revision-friendly reference to the essential CSS concepts, best practices, and code examples you need while building web projects or preparing for interviews.
+
+Whether you're a beginner or an experienced developer, use this summary to quickly review key CSS topics, syntax, and real-world tips.
+
+---
+
+## Table of Contents
+
+- [What is CSS?](#1-what-is-css)
+- [Types of Stylesheets](#2-types-of-stylesheets)
+- [CSS Selectors](#3-css-selectors)
+- [Comments in CSS](#4-comments-in-css)
+- [Colors in CSS](#5-colors-in-css)
+- [Backgrounds in CSS](#6-backgrounds-in-css)
+- [Units in CSS](#7-units-in-css)
+- [Fonts in CSS](#8-fonts-in-css)
+- [Text Properties in CSS](#9-text-properties-in-css)
+- [Box Model in CSS](#10-box-model-in-css)
+- [Gradients in CSS](#11-gradients-in-css)
+- [Box Shadow in CSS](#12-box-shadow-in-css)
+- [drop-shadow Filter in CSS](#13-drop-shadow-filter-in-css)
+- [CSS Filters](#14-css-filters)
+- [CSS Lists](#15-css-lists)
+- [CSS Display Property](#16-css-display-property)
+- [CSS Anchor States (Links)](#17-css-anchor-states-links)
+- [CSS Position Property](#18-css-position-property)
+- [z-index in CSS](#19-z-index-in-css)
+- [Overflow in CSS](#20-overflow-in-css)
+- [ Pseudo-Elements in CSS](#21-pseudo-elements-in-css)
+- [CSS Pseudo-Classes](#22-css-pseudo-classes)
+- [CSS Multi-Column Layout](#23-css-multi-column-layout)
+- [CSS Flexbox](#24-css-flexbox)
 
 ---
 
@@ -1026,7 +1060,7 @@ See [column-layout.html](HTML/column-layout.html) for a comprehensive, interacti
 ---
 ## 24. CSS Flexbox
 
-CSS **Flexbox(Flexible Box Layout) is a powerful layout model that makes it easy to design flexible, responsive layouts. Flexbox allows you to align, distribute, and order space among items in a container—even when their size is unknown or dynamic.
+CSS **Flexbox (Flexible Box Layout)** is a powerful layout model that makes it easy to design flexible, responsive layouts. Flexbox allows you to align, distribute, and order space among items in a container—even when their size is unknown or dynamic.
 
 ### Key Concepts
 - <code>flex-container</code>: The parent element with <code>display: flex</code> or <code>display: inline-flex</code>.

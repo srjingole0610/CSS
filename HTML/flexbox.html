@@ -324,8 +324,12 @@
           <pre><code>.grow1 { flex: 1; }
 .grow2 { flex: 2; }
 .grow3 { flex: 3; }
-.flex-shrink-demo .flex-item { flex-shrink: 1/3/5; width: 200px; }
-.flex-basis-demo .flex-item { flex-basis: 100px/200px/50px; }</code></pre>
+.flex-shrink-demo .flex-item:nth-child(1) { flex-shrink: 1; width: 200px; }
+.flex-shrink-demo .flex-item:nth-child(2) { flex-shrink: 3; width: 200px; }
+.flex-shrink-demo .flex-item:nth-child(3) { flex-shrink: 5; width: 200px; }
+.flex-basis-demo .flex-item:nth-child(1) { flex-basis: 100px; }
+.flex-basis-demo .flex-item:nth-child(2) { flex-basis: 200px; }
+.flex-basis-demo .flex-item:nth-child(3) { flex-basis: 50px; }</code></pre>
         </div>
         <div class="demo-block">
           <h3>Align Self (<code>align-self</code>)</h3>
@@ -341,7 +345,10 @@
             <div class="flex-item" style="align-self: flex-end">flex-end</div>
             <div class="flex-item" style="align-self: stretch">stretch</div>
           </div>
-          <pre><code>.flex-align-self .flex-item[style] { align-self: flex-start/center/flex-end/stretch; }</code></pre>
+          <pre><code>.flex-align-self .flex-item[style] { align-self: flex-start/center/flex-end/stretch; }
+.flex-align-self .flex-item[style*="center"] { align-self: center; }
+.flex-align-self .flex-item[style*="flex-end"] { align-self: flex-end; }
+.flex-align-self .flex-item[style*="stretch"] { align-self: stretch; }</code></pre>
         </div>
         <div class="demo-block">
           <h3>Order (<code>order</code>)</h3>
@@ -350,13 +357,13 @@
             regardless of their source order.
           </p>
           <div class="flex-demo flex-order">
-            <div class="flex-item order3">order: 3</div>
             <div class="flex-item order1">order: 1</div>
             <div class="flex-item order2">order: 2</div>
+            <div class="flex-item order3">order: 3</div>
           </div>
-          <pre><code>.order1 { order: 1; }
-.order2 { order: 2; }
-.order3 { order: 3; }</code></pre>
+          <pre><code>.order1 { order: 3; }
+.order2 { order: 1; }
+.order3 { order: 2; }</code></pre>
         </div>
         <div class="demo-block">
           <h3>Align Content (<code>align-content</code>)</h3>
