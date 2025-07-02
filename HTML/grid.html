@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="In-depth, interactive guide to CSS Grid layout with theory, property explanations, and live code demos."
+    />
+    <meta
+      name="keywords"
+      content="CSS, Grid, Layout, Web Design, grid-template-columns, grid-template-rows, grid-gap, grid-area, fr, minmax, repeat, auto-fit, auto-fill"
+    />
+    <meta name="author" content="Full Stack Mastery" />
+    <title>CSS Grid: Complete Guide & Interactive Examples</title>
+    <link rel="icon" type="image/png" href="../images/css_favicon.png" />
+    <link rel="stylesheet" href="../CSS/grid.css" />
+  </head>
+  <body>
+    <header class="grid-header">
+      <h1>CSS Grid: Complete Guide & Interactive Examples</h1>
+      <p class="subtitle">Master two-dimensional layouts with CSS Grid</p>
+    </header>
+
+    <nav class="back-nav">
+      <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+    </nav>
+
+    <main class="grid-main">
+      <section class="theory">
+        <h2>What is CSS Grid?</h2>
+        <p>
+          <strong>CSS Grid Layout</strong> is a modern, two-dimensional layout
+          system for the web. It enables you to create complex, responsive
+          layouts by dividing a container into rows and columns, and placing
+          child elements (grid items) into these defined areas. Unlike Flexbox
+          (which is one-dimensional), Grid lets you control both rows and
+          columns simultaneously, making it ideal for web page layouts,
+          dashboards, galleries, and more.
+        </p>
+        <img
+          src="../images/grid-template.png"
+          alt="CSS Grid Template Visual"
+          class="theory-img"
+        />
+        <ul>
+          <li>
+            <strong>Grid Container:</strong> The parent element with
+            <code>display: grid</code> or <code>display: inline-grid</code>. It
+            establishes a new grid formatting context for its children.
+            <br /><em>Example:</em>
+            <pre><code>.container {
+  display: grid;
+}</code></pre>
+          </li>
+          <li>
+            <strong>Grid Items:</strong> The direct children of the grid
+            container. Each becomes a grid item and can be precisely placed
+            using grid properties.<br /><em>Example:</em>
+            <pre><code>&lt;div class="container"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </li>
+          <li>
+            <strong>Tracks:</strong> The horizontal (<strong>rows</strong>) and
+            vertical (<strong>columns</strong>) divisions of the grid. Tracks
+            are defined by <code>grid-template-rows</code> and
+            <code>grid-template-columns</code>.<br /><em>Example:</em>
+            <pre><code>.container {
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 80px 80px;
+}</code></pre>
+          </li>
+          <li>
+            <strong>Grid Lines:</strong> The dividing lines between tracks,
+            referenced by number or name. Lines are used to place and span grid
+            items.<br /><em>Example:</em>
+            <pre><code>.item {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}</code></pre>
+          </li>
+          <li>
+            <strong>Cells & Areas:</strong> A <strong>cell</strong> is a single
+            grid space; an <strong>area</strong> is a rectangular group of one
+            or more cells, optionally named for semantic placement.<br /><em
+              >Example:</em
+            >
+            <pre><code>.container {
+  grid-template-areas:
+    "header header"
+    "sidebar main";
+}
+.header { grid-area: header; }
+</code></pre>
+          </li>
+        </ul>
+        <div class="theory-highlight">
+          <strong>Explicit Grid:</strong> Defined by
+          <code>grid-template-rows</code> and
+          <code>grid-template-columns</code>.<br />
+          <strong>Implicit Grid:</strong> Created automatically when items are
+          placed outside the defined grid, using <code>grid-auto-rows</code> and
+          <code>grid-auto-columns</code>.<br />
+          <em>Example:</em>
+          <pre><code>.container {
+  grid-template-columns: 100px 100px;
+  grid-auto-rows: 40px;
+}</code></pre>
+        </div>
+      </section>
+
+      <section class="properties">
+        <h2>Key CSS Grid Properties</h2>
+        <ul>
+          <li><code>display: grid | inline-grid</code></li>
+          <li>
+            <code>grid-template-columns</code>, <code>grid-template-rows</code>
+          </li>
+          <li><code>grid-gap</code> / <code>gap</code></li>
+          <li>
+            <code>grid-column</code>, <code>grid-row</code>,
+            <code>grid-area</code>
+          </li>
+          <li><code>grid-template-areas</code></li>
+          <li>
+            <code>justify-items</code>, <code>align-items</code>,
+            <code>justify-content</code>, <code>align-content</code>
+          </li>
+          <li>
+            <code>min-content</code>, <code>max-content</code>,
+            <code>minmax()</code>, <code>fr</code>, <code>repeat()</code>,
+            <code>auto-fill</code>, <code>auto-fit</code>
+          </li>
+        </ul>
+      </section>
+
+      <section class="demo-block">
+        <h3>Basic Grid Container & Items</h3>
+        <p>
+          Set <code>display: grid</code> on a container to enable grid layout.
+          Direct children become grid items.
+        </p>
+        <div class="demo-grid basic-grid">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+        </div>
+        <pre><code>.basic-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}</code></pre>
+      </section>
+
+      <section class="demo-block">
+        <h3>Defining Columns & Rows</h3>
+        <p>
+          Use <code>grid-template-columns</code> and
+          <code>grid-template-rows</code> to define the structure.
+        </p>
+        <div class="demo-grid columns-rows-grid">
+          <div>A</div>
+          <div>B</div>
+          <div>C</div>
+          <div>D</div>
+        </div>
+        <pre><code>.columns-rows-grid {
+  display: grid;
+  grid-template-columns: 120px 1fr 2fr;
+  grid-template-rows: 60px 60px;
+  gap: 10px;
+}</code></pre>
+      </section>
+
+      <section class="demo-block">
+        <h3>Grid Gap (Spacing)</h3>
+        <p>
+          <code>gap</code> (or <code>grid-gap</code>) sets spacing between rows
+          and columns.
+        </p>
+        <div class="demo-grid gap-grid">
+          <div>One</div>
+          <div>Two</div>
+          <div>Three</div>
+          <div>Four</div>
+        </div>
+        <pre><code>.gap-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 8px;
+}</code></pre>
+      </section>
+
+      <section class="demo-block">
+        <h3>Grid Lines, Start/End, and Spanning</h3>
+        <p>
+          Use <code>grid-column</code> and <code>grid-row</code> to control
+          where items start/end and how many tracks they span.
+        </p>
+        <div class="demo-grid lines-grid">
+          <div class="span2">Span 2 cols</div>
+          <div>2</div>
+          <div>3</div>
+          <div class="row-span">Row Span</div>
+        </div>
+        <pre><code>.lines-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 50px 50px;
+  gap: 8px;
+}
+.lines-grid .span2 {
+  grid-column: 1 / span 2;
+}
+.lines-grid .row-span {
+  grid-row: 1 / span 2;
+}</code></pre>
+      </section>
+
+      <section class="demo-block">
+        <h3>Named Grid Areas</h3>
+        <p>
+          Use <code>grid-template-areas</code> and <code>grid-area</code> for
+          semantic layouts.
+        </p>
+        <img
+          src="../images/grid.webp"
+          alt="CSS Grid Template Visual"
+          class="theory-img"
+        />
+        <div class="demo-grid area-grid">
+          <div class="header">Header</div>
+          <div class="sidebar">Sidebar</div>
+          <div class="main">Main</div>
+          <div class="footer">Footer</div>
+        </div>
+        <pre><code>.area-grid {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  grid-template-columns: 120px 1fr;
+  grid-template-rows: 50px 120px 40px;
+  gap: 8px;
+}
+.area-grid .header { grid-area: header; }
+.area-grid .sidebar { grid-area: sidebar; }
+.area-grid .main { grid-area: main; }
+.area-grid .footer { grid-area: footer; }</code></pre>
+      </section>
+
+      <section class="demo-block">
+        <h3>
+          Flexible Sizing: <code>fr</code>, <code>minmax()</code>,
+          <code>auto-fit</code>, <code>auto-fill</code>
+        </h3>
+        <p>
+          Use <code>fr</code> for flexible tracks, <code>minmax()</code> for
+          min/max sizes, and <code>auto-fit</code>/<code>auto-fill</code> for
+          responsive grids.
+        </p>
+        <div class="demo-grid flexible-grid">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+        </div>
+        <pre><code>.flexible-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 12px;
+}</code></pre>
+      </section>
+
+      <section class="demo-block">
+        <h3>
+          Alignment: <code>justify-items</code>, <code>align-items</code>,
+          <code>justify-content</code>, <code>align-content</code>
+        </h3>
+        <p>Control alignment of items and tracks within the grid container.</p>
+        <div class="demo-grid align-grid">
+          <div>Item 1</div>
+          <div>Item 2</div>
+          <div>Item 3</div>
+          <div>Item 4</div>
+        </div>
+        <pre><code>.align-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 120px);
+  grid-template-rows: repeat(2, 60px);
+  justify-items: end;
+  align-items: center;
+  justify-content: space-between;
+  align-content: space-around;
+  gap: 10px;
+}</code></pre>
+      </section>
+
+      <section class="demo-block">
+        <h3>
+          Intrinsic Sizing: <code>min-content</code> & <code>max-content</code>
+        </h3>
+        <p>
+          Use <code>min-content</code> and <code>max-content</code> to size
+          tracks based on their content.
+        </p>
+        <div class="demo-grid intrinsic-grid">
+          <div>Short</div>
+          <div>Some much longer content</div>
+        </div>
+        <pre><code>.intrinsic-grid {
+  display: grid;
+  grid-template-columns: min-content max-content;
+  gap: 10px;
+}</code></pre>
+      </section>
+
+      <section class="theory">
+        <h2>Explicit vs. Implicit Grids</h2>
+        <p>
+          <strong>Explicit grid</strong> is defined by
+          <code>grid-template-rows</code> and
+          <code>grid-template-columns</code>.<br />
+          <strong>Implicit grid</strong> is created when you place items outside
+          the defined grid, and tracks are auto-generated using
+          <code>grid-auto-rows</code> and <code>grid-auto-columns</code>.
+        </p>
+        <div class="explicit-implicit-grids">
+          <div class="explicit-grid-block">
+            <h4 class="grid-block-title">Explicit Grid</h4>
+            <div class="demo-grid explicit-grid">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+            </div>
+            <pre><code>.explicit-grid {
+  display: grid;
+  grid-template-columns: 100px 100px;
+  gap: 8px;
+}</code></pre>
+          </div>
+          <div class="implicit-grid-block">
+            <h4 class="grid-block-title">Implicit Grid</h4>
+            <div class="demo-grid implicit-grid">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+            </div>
+            <pre><code>.implicit-grid {
+  display: grid;
+  grid-template-columns: 100px 100px;
+  grid-auto-rows: 40px;
+  gap: 8px;
+}</code></pre>
+          </div>
+        </div>
+        <p class="explicit-implicit-notice">
+          <strong>Notice:</strong> The explicit grid only defines two columns
+          and two rows, so items 5+ are placed in new, auto-generated (implicit)
+          rows.
+        </p>
+      </section>
+
+      <section class="demo-block">
+        <h3>Responsive Grid Example</h3>
+        <p>
+          Here's an example of a responsive grid using <code>minmax()</code> and
+          <code>repeat()</code>.
+        </p>
+        <div class="demo-grid responsive-demo-grid">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+        </div>
+        <pre><code>.responsive-demo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(60px, 1fr));
+  grid-template-rows: 40px 40px;
+}</code></pre>
+      </section>
+
+      <section class="theory">
+        <h2>Best Practices & Resources</h2>
+        <ul>
+          <li>
+            Use <strong>Grid</strong> for two-dimensional layouts, Flexbox for
+            one-dimensional.
+          </li>
+          <li>
+            Combine <code>fr</code>, <code>minmax()</code>, and
+            <code>auto-fit</code> for responsive designs.
+          </li>
+          <li>
+            Use <code>grid-template-areas</code> for semantic, maintainable
+            layouts.
+          </li>
+          <li>
+            Test your grid layouts on different screen sizes and browsers.
+          </li>
+          <li>
+            Reference:
+            <a
+              href="https://css-tricks.com/snippets/css/complete-guide-grid/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >CSS-Tricks: Complete Guide to Grid</a
+            >
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="grid-footer">
+      <p>&copy; 2025 Full Stack Mastery. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="In-depth guide to CSS Flexbox: theory, interactive examples, and best practices."
+    />
+    <meta
+      name="keywords"
+      content="CSS, flexbox, flex, flex-container, flex-item, flex-direction, justify-content, align-items, flex-wrap, flex-grow, flex-shrink, flex-basis, align-content, align-self, order, flex-flow, gap, web design, layout, examples"
+    />
+    <meta name="author" content="Full Stack Mastery" />
+    <link rel="icon" type="image/png" href="../images/css_favicon.png" />
+    <link rel="stylesheet" href="../CSS/flexbox.css" />
+    <title>CSS Flexbox: Theory & Interactive Examples</title>
+  </head>
+  <body>
+    <header class="page-header">
+      <h1>CSS Flexbox</h1>
+      <p class="subtitle">Theory, Properties, and Interactive Demos</p>
+    </header>
+    <main>
+      <section class="theory-section">
+        <h2>What is CSS Flexbox?</h2>
+        <p>
+          <strong>Flexbox</strong> (Flexible Box Layout) is a modern CSS layout
+          model for distributing space and aligning items in a container, even
+          when their size is unknown or dynamic. Flexbox is one-dimensional (row
+          or column), making it ideal for navigation bars, cards, toolbars, and
+          responsive layouts.
+        </p>
+        <ul>
+          <li>
+            <strong>Flex Container:</strong> The parent element with
+            <code>display: flex</code> or <code>display: inline-flex</code>. It
+            establishes a new flex formatting context for its children.
+          </li>
+          <li>
+            <strong>Flex Items:</strong> The direct children of a flex
+            container. Only direct children become flex items.
+          </li>
+          <li>
+            <strong>Main Axis:</strong> The primary axis along which flex items
+            are laid out (horizontal by default).
+          </li>
+          <li>
+            <strong>Cross Axis:</strong> The perpendicular axis to the main axis
+            (vertical by default).
+          </li>
+        </ul>
+        <h3>Flex Container Properties</h3>
+        <ul>
+          <li>
+            <strong>display: flex | inline-flex</strong> – Defines a flex
+            container and enables flex context for all its direct children.
+          </li>
+          <li>
+            <strong>flex-direction</strong> – Sets the direction of the main
+            axis: <code>row</code> (default), <code>row-reverse</code>,
+            <code>column</code>, <code>column-reverse</code>.
+          </li>
+          <li>
+            <strong>flex-wrap</strong> – Controls whether flex items wrap onto
+            multiple lines: <code>nowrap</code> (default), <code>wrap</code>,
+            <code>wrap-reverse</code>.
+          </li>
+          <li>
+            <strong>justify-content</strong> – Aligns items along the main axis:
+            <code>flex-start</code>, <code>flex-end</code>, <code>center</code>,
+            <code>space-between</code>, <code>space-around</code>,
+            <code>space-evenly</code>.
+          </li>
+          <li>
+            <strong>align-items</strong> – Aligns items along the cross axis:
+            <code>flex-start</code>, <code>flex-end</code>, <code>center</code>,
+            <code>stretch</code>, <code>baseline</code>.
+          </li>
+          <li>
+            <strong>align-content</strong> – Aligns multiple lines (when
+            wrapping): <code>flex-start</code>, <code>flex-end</code>,
+            <code>center</code>, <code>space-between</code>,
+            <code>space-around</code>, <code>stretch</code>.
+          </li>
+          <li>
+            <strong>gap</strong> – Sets the spacing between flex items (modern,
+            preferred over margins).
+          </li>
+          <li>
+            <strong>flex-flow</strong> – Shorthand for
+            <code>flex-direction</code> and <code>flex-wrap</code>.
+          </li>
+        </ul>
+        <h3>Flex Item Properties</h3>
+        <ul>
+          <li>
+            <strong>order</strong> – Controls the order in which flex items
+            appear (default: 0).
+          </li>
+          <li>
+            <strong>flex-grow</strong> – How much a flex item will grow relative
+            to the rest.
+          </li>
+          <li>
+            <strong>flex-shrink</strong> – How much a flex item will shrink
+            relative to the rest.
+          </li>
+          <li>
+            <strong>flex-basis</strong> – The initial main size of a flex item
+            before space is distributed.
+          </li>
+          <li>
+            <strong>flex</strong> – Shorthand for <code>flex-grow</code>,
+            <code>flex-shrink</code>, and <code>flex-basis</code>.
+          </li>
+          <li>
+            <strong>align-self</strong> – Allows a single item to override
+            <code>align-items</code> for itself.
+          </li>
+        </ul>
+        <h3>Axes Visualization</h3>
+        <img
+          src="../images/flexbox-axis.webp"
+          alt="Flexbox main axis and cross axis diagram"
+          class="axis-diagram"
+        />
+        <p>
+          <em
+            >Tip: The <strong>main axis</strong> is controlled by
+            <code>flex-direction</code>. The <strong>cross axis</strong> is
+            perpendicular to the main axis.</em
+          >
+        </p>
+      </section>
+      <section class="demo-section">
+        <h2>Interactive Examples</h2>
+        <div class="demo-block">
+          <h3>Flex Direction (<code>flex-direction</code>)</h3>
+          <p>
+            Controls the direction of the main axis. Try changing the direction
+            to see how items flow.
+          </p>
+          <div class="flex-demo flex-row">
+            <div class="flex-item">row</div>
+            <div class="flex-item">row</div>
+            <div class="flex-item">row</div>
+          </div>
+          <div class="flex-demo flex-row-reverse">
+            <div class="flex-item">row-reverse</div>
+            <div class="flex-item">row-reverse</div>
+            <div class="flex-item">row-reverse</div>
+          </div>
+          <div class="flex-demo flex-column">
+            <div class="flex-item">column</div>
+            <div class="flex-item">column</div>
+            <div class="flex-item">column</div>
+          </div>
+          <div class="flex-demo flex-column-reverse">
+            <div class="flex-item">column-reverse</div>
+            <div class="flex-item">column-reverse</div>
+            <div class="flex-item">column-reverse</div>
+          </div>
+          <pre><code>.flex-row { display: flex; flex-direction: row; }
+.flex-row-reverse { display: flex; flex-direction: row-reverse; }
+.flex-column { display: flex; flex-direction: column; }
+.flex-column-reverse { display: flex; flex-direction: column-reverse; }</code></pre>
+        </div>
+        <div class="demo-block">
+          <h3>Justify Content (<code>justify-content</code>)</h3>
+          <p>
+            Aligns items along the main axis. Useful for horizontal alignment in
+            rows or vertical in columns.
+          </p>
+          <div class="flex-demo flex-justify-start">
+            <div class="flex-item">flex-start</div>
+            <div class="flex-item">flex-start</div>
+            <div class="flex-item">flex-start</div>
+          </div>
+          <div class="flex-demo flex-justify-center">
+            <div class="flex-item">center</div>
+            <div class="flex-item">center</div>
+            <div class="flex-item">center</div>
+          </div>
+          <div class="flex-demo flex-justify-end">
+            <div class="flex-item">flex-end</div>
+            <div class="flex-item">flex-end</div>
+            <div class="flex-item">flex-end</div>
+          </div>
+          <div class="flex-demo flex-justify-between">
+            <div class="flex-item">space-between</div>
+            <div class="flex-item">space-between</div>
+            <div class="flex-item">space-between</div>
+          </div>
+          <div class="flex-demo flex-justify-around">
+            <div class="flex-item">space-around</div>
+            <div class="flex-item">space-around</div>
+            <div class="flex-item">space-around</div>
+          </div>
+          <div class="flex-demo flex-justify-evenly">
+            <div class="flex-item">space-evenly</div>
+            <div class="flex-item">space-evenly</div>
+            <div class="flex-item">space-evenly</div>
+          </div>
+          <pre><code>.flex-justify-start { justify-content: flex-start; }
+.flex-justify-center { justify-content: center; }
+.flex-justify-end { justify-content: flex-end; }
+.flex-justify-between { justify-content: space-between; }
+.flex-justify-around { justify-content: space-around; }
+.flex-justify-evenly { justify-content: space-evenly; }</code></pre>
+        </div>
+        <div class="demo-block">
+          <h3>Align Items (<code>align-items</code>)</h3>
+          <p>
+            Aligns items along the cross axis. Try different values to see how
+            items align vertically (in a row) or horizontally (in a column).
+          </p>
+          <div class="flex-demo flex-align-start">
+            <div class="flex-item tall">flex-start</div>
+            <div class="flex-item">flex-start</div>
+            <div class="flex-item short">flex-start</div>
+          </div>
+          <div class="flex-demo flex-align-center">
+            <div class="flex-item tall">center</div>
+            <div class="flex-item">center</div>
+            <div class="flex-item short">center</div>
+          </div>
+          <div class="flex-demo flex-align-end">
+            <div class="flex-item tall">flex-end</div>
+            <div class="flex-item">flex-end</div>
+            <div class="flex-item short">flex-end</div>
+          </div>
+          <div class="flex-demo flex-align-stretch">
+            <div class="flex-item tall">stretch</div>
+            <div class="flex-item">stretch</div>
+            <div class="flex-item short">stretch</div>
+          </div>
+          <div class="flex-demo flex-align-baseline">
+            <div class="flex-item" style="font-size: 2em">baseline</div>
+            <div class="flex-item">baseline</div>
+            <div class="flex-item" style="font-size: 0.8em">baseline</div>
+          </div>
+          <pre><code>.flex-align-start { align-items: flex-start; }
+.flex-align-center { align-items: center; }
+.flex-align-end { align-items: flex-end; }
+.flex-align-stretch { align-items: stretch; }
+.flex-align-baseline { align-items: baseline; }</code></pre>
+        </div>
+        <div class="demo-block">
+          <h3>Flex Wrap (<code>flex-wrap</code>)</h3>
+          <p>
+            Controls whether flex items wrap onto multiple lines. Useful for
+            responsive layouts.
+          </p>
+          <div class="flex-demo flex-wrap-nowrap">
+            <div class="flex-item">nowrap</div>
+            <div class="flex-item">nowrap</div>
+            <div class="flex-item">nowrap</div>
+            <div class="flex-item">nowrap</div>
+            <div class="flex-item">nowrap</div>
+          </div>
+          <div class="flex-demo flex-wrap-wrap">
+            <div class="flex-item">wrap</div>
+            <div class="flex-item">wrap</div>
+            <div class="flex-item">wrap</div>
+            <div class="flex-item">wrap</div>
+            <div class="flex-item">wrap</div>
+          </div>
+          <div class="flex-demo flex-wrap-wrap-reverse">
+            <div class="flex-item">wrap-reverse</div>
+            <div class="flex-item">wrap-reverse</div>
+            <div class="flex-item">wrap-reverse</div>
+            <div class="flex-item">wrap-reverse</div>
+            <div class="flex-item">wrap-reverse</div>
+          </div>
+          <pre><code>.flex-wrap-nowrap { flex-wrap: nowrap; }
+.flex-wrap-wrap { flex-wrap: wrap; }
+.flex-wrap-wrap-reverse { flex-wrap: wrap-reverse; }</code></pre>
+        </div>
+        <div class="demo-block">
+          <h3>Gap (<code>gap</code>)</h3>
+          <p>
+            Sets the spacing between flex items. Preferred over using margins
+            for consistent spacing.
+          </p>
+          <div class="flex-demo flex-gap">
+            <div class="flex-item">A</div>
+            <div class="flex-item">B</div>
+            <div class="flex-item">C</div>
+          </div>
+          <pre><code>.flex-gap { gap: 24px; }</code></pre>
+        </div>
+        <div class="demo-block">
+          <h3>
+            Flex Grow, Shrink, Basis, Flex (<code>flex-grow</code>,
+            <code>flex-shrink</code>, <code>flex-basis</code>,
+            <code>flex</code>)
+          </h3>
+          <p>
+            Control how flex items grow, shrink, and their initial size.
+            <code>flex</code> is shorthand for all three.
+          </p>
+          <div class="flex-demo flex-grow-demo">
+            <div class="flex-item flex-grow1">flex: 1</div>
+            <div class="flex-item flex-grow2">flex: 2</div>
+            <div class="flex-item flex-grow3">flex: 3</div>
+          </div>
+          <div class="flex-demo flex-shrink-demo">
+            <div class="flex-item flex-shrink1">shrink: 1</div>
+            <div class="flex-item flex-shrink3">shrink: 3</div>
+            <div class="flex-item flex-shrink5">shrink: 5</div>
+          </div>
+          <div class="flex-demo flex-basis-demo">
+            <div class="flex-item flex-basis100">basis: 100px</div>
+            <div class="flex-item flex-basis200">basis: 200px</div>
+            <div class="flex-item flex-basis50">basis: 50px</div>
+          </div>
+          <pre><code>.grow1 { flex: 1; }
+.grow2 { flex: 2; }
+.grow3 { flex: 3; }
+.flex-shrink-demo .flex-item:nth-child(1) { flex-shrink: 1; width: 200px; }
+.flex-shrink-demo .flex-item:nth-child(2) { flex-shrink: 3; width: 200px; }
+.flex-shrink-demo .flex-item:nth-child(3) { flex-shrink: 5; width: 200px; }
+.flex-basis-demo .flex-item:nth-child(1) { flex-basis: 100px; }
+.flex-basis-demo .flex-item:nth-child(2) { flex-basis: 200px; }
+.flex-basis-demo .flex-item:nth-child(3) { flex-basis: 50px; }</code></pre>
+        </div>
+        <div class="demo-block">
+          <h3>Align Self (<code>align-self</code>)</h3>
+          <p>
+            Allows a single flex item to override the
+            <code>align-items</code> value for itself.
+          </p>
+          <div class="flex-demo flex-align-self">
+            <div class="flex-item" style="align-self: flex-start">
+              flex-start
+            </div>
+            <div class="flex-item" style="align-self: center">center</div>
+            <div class="flex-item" style="align-self: flex-end">flex-end</div>
+            <div class="flex-item" style="align-self: stretch">stretch</div>
+          </div>
+          <pre><code>.flex-align-self .flex-item[style] { align-self: flex-start/center/flex-end/stretch; }
+.flex-align-self .flex-item[style*="center"] { align-self: center; }
+.flex-align-self .flex-item[style*="flex-end"] { align-self: flex-end; }
+.flex-align-self .flex-item[style*="stretch"] { align-self: stretch; }</code></pre>
+        </div>
+        <div class="demo-block">
+          <h3>Order (<code>order</code>)</h3>
+          <p>
+            Controls the order in which flex items appear in the flex container,
+            regardless of their source order.
+          </p>
+          <div class="flex-demo flex-order">
+            <div class="flex-item flex-order-1">order: 1</div>
+            <div class="flex-item flex-order-2">order: 2</div>
+            <div class="flex-item flex-order-3">order: 3</div>
+          </div>
+          <pre><code>.order1 { order: 3; }
+.order2 { order: 1; }
+.order3 { order: 2; }</code></pre>
+        </div>
+        <div class="demo-block">
+          <h3>Align Content (<code>align-content</code>)</h3>
+          <p>
+            Aligns multiple lines of flex items along the cross axis (only works
+            if items wrap onto multiple lines).
+          </p>
+          <div class="flex-demo flex-align-content-start">
+            <div class="flex-item">A</div>
+            <div class="flex-item">B</div>
+            <div class="flex-item">C</div>
+            <div class="flex-item">D</div>
+            <div class="flex-item">E</div>
+            <div class="flex-item">F</div>
+          </div>
+          <div class="flex-demo flex-align-content-center">
+            <div class="flex-item">A</div>
+            <div class="flex-item">B</div>
+            <div class="flex-item">C</div>
+            <div class="flex-item">D</div>
+            <div class="flex-item">E</div>
+            <div class="flex-item">F</div>
+          </div>
+          <div class="flex-demo flex-align-content-end">
+            <div class="flex-item">A</div>
+            <div class="flex-item">B</div>
+            <div class="flex-item">C</div>
+            <div class="flex-item">D</div>
+            <div class="flex-item">E</div>
+            <div class="flex-item">F</div>
+          </div>
+          <div class="flex-demo flex-align-content-between">
+            <div class="flex-item">A</div>
+            <div class="flex-item">B</div>
+            <div class="flex-item">C</div>
+            <div class="flex-item">D</div>
+            <div class="flex-item">E</div>
+            <div class="flex-item">F</div>
+          </div>
+          <div class="flex-demo flex-align-content-around">
+            <div class="flex-item">A</div>
+            <div class="flex-item">B</div>
+            <div class="flex-item">C</div>
+            <div class="flex-item">D</div>
+            <div class="flex-item">E</div>
+            <div class="flex-item">F</div>
+          </div>
+          <div class="flex-demo flex-align-content-stretch">
+            <div class="flex-item">A</div>
+            <div class="flex-item">B</div>
+            <div class="flex-item">C</div>
+            <div class="flex-item">D</div>
+            <div class="flex-item">E</div>
+            <div class="flex-item">F</div>
+          </div>
+          <pre><code>.flex-align-content-start { align-content: flex-start; }
+.flex-align-content-center { align-content: center; }
+.flex-align-content-end { align-content: flex-end; }
+.flex-align-content-between { align-content: space-between; }
+.flex-align-content-around { align-content: space-around; }
+.flex-align-content-stretch { align-content: stretch; }</code></pre>
+        </div>
+        <div class="demo-block">
+          <h3>Flex Flow (<code>flex-flow</code>)</h3>
+          <p>
+            Shorthand for <code>flex-direction</code> and
+            <code>flex-wrap</code>. Example: <code>flex-flow: row wrap;</code>
+          </p>
+          <div class="flex-demo flex-flow-demo">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+            <div class="flex-item">4</div>
+          </div>
+          <pre><code>.flex-flow-demo { flex-flow: row wrap; gap: 12px; }</code></pre>
+        </div>
+      </section>
+      <section class="best-practices">
+        <h2>Best Practices & Accessibility</h2>
+        <ul>
+          <li>Use Flexbox for one-dimensional layouts (row or column).</li>
+          <li>Combine with media queries for responsive design.</li>
+          <li>Use <code>gap</code> for spacing instead of margins.</li>
+          <li>Test layouts on different screen sizes and browsers.</li>
+          <li>
+            Use semantic HTML for better accessibility and maintainability.
+          </li>
+          <li>
+            Use <code>align-content</code> only when you have multiple lines of
+            flex items.
+          </li>
+          <li>
+            Prefer <code>order</code> for visual reordering, not for
+            logical/semantic order (for accessibility).
+          </li>
+        </ul>
+      </section>
+      <a href="../index.html" class="demo-btn back-btn">&larr; Back to Home</a>
+    </main>
+  </body>
+</html>
