@@ -36,6 +36,7 @@ Whether you're a beginner or an experienced developer, use this summary to quick
 - [CSS Multi-Column Layout](#23-css-multi-column-layout)
 - [CSS Flexbox](#24-css-flexbox)
 - [CSS Grid](#25-css-grid)
+- [CSS Transitions](#26-css-transitions)
 
 ---
 
@@ -1211,5 +1212,54 @@ CSS **Grid Layout** is a powerful two-dimensional layout system that enables you
 ### Reference Example
 See the new [grid.html](./HTML/grid.html) page for a comprehensive, interactive guide to CSS Grid, including theory, property explanations, and live code demos.
 
+---
 
-_Keep updating this summary as you explore more advanced CSS concepts like animations, transitions, Flexbox, Grid, media queries, and preprocessors (like SASS)._ 🚀
+## 26. CSS Transitions
+
+**CSS transitions** allow you to animate changes to CSS property values smoothly, enhancing user experience with visual feedback and interactivity—without JavaScript. Transitions are triggered by state changes (like <code>:hover</code>, <code>:focus</code>, or class changes) and are ideal for simple, one-step animations.
+
+### Transition Properties
+- <strong>transition-property</strong>: The CSS property to animate (e.g., <code>background-color</code>, <code>width</code>).
+- <strong>transition-duration</strong>: How long the transition takes (e.g., <code>0.5s</code>).
+- <strong>transition-timing-function</strong>: The speed curve of the transition (e.g., <code>ease</code>, <code>linear</code>, <code>ease-in</code>, <code>cubic-bezier</code>).
+- <strong>transition-delay</strong>: How long to wait before starting the transition (e.g., <code>0.2s</code>).
+- <strong>transition</strong>: Shorthand for all the above.
+
+### Syntax
+```css
+transition: property duration timing-function delay;
+```
+Example:
+```css
+transition: background-color 0.5s ease 0.2s;
+```
+
+### How Transitions Work
+When a property specified in <code>transition-property</code> changes (such as on <code>:hover</code>), the browser animates the change over the specified duration and timing function. Only animatable properties can be transitioned (e.g., <code>color</code>, <code>background</code>, <code>transform</code>, <code>opacity</code>).
+
+### Common Timing Functions
+- <strong>ease</strong>: Starts slow, speeds up, then slows down (default)
+- <strong>linear</strong>: Constant speed
+- <strong>ease-in</strong>: Starts slow, then speeds up
+- <strong>ease-out</strong>: Starts fast, then slows down
+- <strong>ease-in-out</strong>: Starts and ends slow
+- <strong>cubic-bezier</strong>: Custom curve
+
+### Example
+```css
+.box {
+  transition: background-color 0.5s, width 0.5s;
+}
+.box:hover {
+  background-color: #8e44ad;
+  width: 220px;
+}
+```
+
+### Best Practices
+- Use transitions for simple, state-based animations.
+- Keep transitions short and subtle for best user experience.
+- For complex, multi-step animations, use <code>@keyframes</code> and <code>animation</code>.
+
+### See Also
+- <a href="HTML/transitions.html">Interactive CSS Transitions Example</a>

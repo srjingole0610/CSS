@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="In-depth guide to CSS transitions: properties, duration, timing-function, delay, and interactive code examples.">
+  <meta name="keywords" content="CSS, transitions, property, duration, timing-function, delay, web design, animation, example">
+  <meta name="author" content="Full Stack Mastery">
+  <title>CSS Transitions Explained & Interactive Examples</title>
+  <link rel="stylesheet" href="../CSS/transitions.css">
+  <link rel="icon" type="image/png" href="../images/css_favicon.png">
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+  </nav>
+  <main>
+    <header>
+      <h1>CSS Transitions: Theory & Interactive Examples</h1>
+    </header>
+    <section class="theory">
+      <h2>What are CSS Transitions?</h2>
+      <p>
+        <strong>CSS transitions</strong> enable smooth, animated changes between property values, making web interfaces feel more dynamic and responsive. They are triggered by state changes (like <code>:hover</code>, <code>:focus</code>, or class changes) and are ideal for simple, one-step animations. Transitions are hardware-accelerated in modern browsers, making them efficient and performant.
+      </p>
+      <h3>How CSS Transitions Work</h3>
+      <ul>
+        <li><strong>transition-property</strong>: The CSS property to animate (e.g., <code>background-color</code>, <code>width</code>).</li>
+        <li><strong>transition-duration</strong>: How long the transition takes (e.g., <code>0.5s</code>).</li>
+        <li><strong>transition-timing-function</strong>: The speed curve of the transition (e.g., <code>ease</code>, <code>linear</code>, <code>ease-in</code>, <code>cubic-bezier</code>).</li>
+        <li><strong>transition-delay</strong>: How long to wait before starting the transition (e.g., <code>0.2s</code>).</li>
+        <li><strong>transition</strong>: Shorthand for all the above.</li>
+      </ul>
+      <p>
+        <strong>Shorthand:</strong> <code>transition: property duration timing-function delay;</code><br>
+        <strong>Example:</strong> <code>transition: background-color 0.5s ease 0.2s;</code>
+      </p>
+      <h3>Animatable Properties</h3>
+      <p>Not all CSS properties can be transitioned. Common animatable properties include <code>color</code>, <code>background</code>, <code>opacity</code>, <code>width</code>, <code>height</code>, <code>transform</code>, <code>box-shadow</code>, <code>border-radius</code>, and <code>margin</code>. Properties like <code>display</code> and <code>position</code> are not animatable.</p>
+      <h3>Transition Timing Functions</h3>
+      <ul>
+        <li><strong>ease</strong>: Starts slow, speeds up, then slows down (default)</li>
+        <li><strong>linear</strong>: Constant speed</li>
+        <li><strong>ease-in</strong>: Starts slow, then speeds up</li>
+        <li><strong>ease-out</strong>: Starts fast, then slows down</li>
+        <li><strong>ease-in-out</strong>: Starts and ends slow</li>
+        <li><strong>cubic-bezier</strong>: Custom curve for advanced control</li>
+        <li><strong>steps()</strong>: Jumps between steps for choppy effects</li>
+      </ul>
+      <p>Try using <code>cubic-bezier</code> for unique, custom motion curves!</p>
+    </section>
+    <section class="code-demo">
+      <h2>Interactive Examples</h2>
+      <div class="demo-grid">
+        <div class="demo-card">
+          <h3>1. Basic Color Transition</h3>
+          <div class="box basic-transition">Hover me!</div>
+          <pre><code>.box {
+  transition: background-color 0.5s;
+}
+.box:hover {
+  background-color: #8e44ad;
+}</code></pre>
+        </div>
+        <div class="demo-card">
+          <h3>2. Multiple Properties</h3>
+          <div class="box multi-transition">Hover me!</div>
+          <pre><code>.box {
+  transition: width 0.5s, background 0.5s;
+}
+.box:hover {
+  width: 220px;
+  background: #3498db;
+}</code></pre>
+        </div>
+        <div class="demo-card">
+          <h3>3. Timing Functions</h3>
+          <div class="timing-demo">
+            <div class="box timing-ease">ease</div>
+            <div class="box timing-linear">linear</div>
+            <div class="box timing-ease-in">ease-in</div>
+            <div class="box timing-ease-out">ease-out</div>
+            <div class="box timing-ease-in-out">ease-in-out</div>
+          </div>
+          <pre><code>.timing-ease { transition: transform 0.6s ease; }
+.timing-linear { transition: transform 0.6s linear; }
+.timing-ease-in { transition: transform 0.6s ease-in; }
+.timing-ease-out { transition: transform 0.6s ease-out; }
+.timing-ease-in-out { transition: transform 0.6s ease-in-out; }
+.box:hover { transform: scale(1.2); }</code></pre>
+        </div>
+        <div class="demo-card">
+          <h3>4. Transition Delay</h3>
+          <div class="box delay-demo">Hover me!</div>
+          <pre><code>.box {
+  transition: background 0.5s ease 0.5s;
+}
+.box:hover {
+  background: #f7971e;
+}</code></pre>
+        </div>
+        <div class="demo-card">
+          <h3>5. All Properties + Cubic Bezier</h3>
+          <div class="box all-demo">Hover me!</div>
+          <pre><code>.box {
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.box:hover {
+  background: #ffd200;
+  color: #222;
+  border-radius: 50px;
+  width: 220px;
+}</code></pre>
+        </div>
+        <div class="demo-card">
+          <h3>6. Opacity Fade</h3>
+          <div class="box fade-demo">Hover me!</div>
+          <pre><code>.fade-demo {
+  transition: opacity 0.6s;
+}
+.fade-demo:hover {
+  opacity: 0.3;
+}</code></pre>
+        </div>
+        <div class="demo-card">
+          <h3>7. Border Radius Morph</h3>
+          <div class="box radius-demo">Hover me!</div>
+          <pre><code>.radius-demo {
+  transition: border-radius 0.5s;
+}
+.radius-demo:hover {
+  border-radius: 50%;
+}</code></pre>
+        </div>
+        <div class="demo-card">
+          <h3>8. Box Shadow Transition</h3>
+          <div class="box shadow-demo">Hover me!</div>
+          <pre><code>.shadow-demo {
+  transition: box-shadow 0.4s;
+}
+.shadow-demo:hover {
+  box-shadow: 0 8px 32px 0 #8e44ad;
+}</code></pre>
+        </div>
+        <div class="demo-card">
+          <h3>9. Steps Timing Function</h3>
+          <div class="box steps-demo">Hover me!</div>
+          <pre><code>.steps-demo {
+  transition: background 1s steps(4);
+}
+.steps-demo:hover {
+  background: #e74c3c;
+}</code></pre>
+        </div>
+        <div class="demo-card">
+          <h3>10. Image Zoom & Brightness</h3>
+          <div class="img-demo-wrapper">
+            <img src="../images/fireman.webp" alt="Image of a man playing with fire" class="img-transition-demo" />
+          </div>
+          <pre><code>.img-transition-demo {
+  width: 100%;
+  max-width: 220px;
+  border-radius: 10px;
+  transition: transform 0.5s cubic-bezier(.4,1.6,.4,1), filter 0.5s;
+  filter: brightness(0.95) contrast(1);
+}
+.img-transition-demo:hover {
+  transform: scale(1.13) rotate(-2deg);
+  filter: brightness(1.15) contrast(1.1);
+}</code></pre>
+        </div>
+      </div>
+      <p class="note">Tip: Hover over the boxes to see the transitions in action! Try combining transitions for creative effects.</p>
+    </section>
+    <section class="theory">
+      <h2>Best Practices & Notes</h2>
+      <ul>
+        <li>Only animatable properties can be transitioned (e.g., <code>color</code>, <code>background</code>, <code>transform</code>, <code>opacity</code>).</li>
+        <li>Use <code>transition</code> for simple, state-based animations (e.g., <code>:hover</code>, <code>:focus</code>).</li>
+        <li>For complex, multi-step animations, consider <code>@keyframes</code> and <code>animation</code>.</li>
+        <li>Keep transitions short and subtle for best user experience.</li>
+        <li>Test transitions on different devices and browsers for consistency.</li>
+        <li>Use <code>will-change</code> for performance optimization on heavy transitions.</li>
+      </ul>
+      <h3>Further Exploration</h3>
+      <ul>
+        <li>Combine transitions with <code>:focus</code> and <code>:active</code> for accessibility.</li>
+        <li>Experiment with <code>cubic-bezier</code> and <code>steps()</code> for custom effects.</li>
+        <li>Use transitions to provide visual feedback for UI elements (buttons, cards, menus, etc.).</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
