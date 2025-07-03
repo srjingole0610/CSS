@@ -19,12 +19,13 @@ body {
   font-weight: 600;
   font-size: 1rem;
   box-shadow: 0 2px 8px 0 rgba(52, 152, 219, 0.12);
-  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  transition: color 0.2s, box-shadow 0.2s, transform 0.2s;
 }
 .back-btn:hover {
   color: #ffd200;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px 0 rgba(52, 152, 219, 0.2);
 }
-
 main {
   max-width: 900px;
   margin: 2rem auto;
@@ -88,27 +89,25 @@ section.code-demo {
   box-shadow: 0 2px 8px rgba(52,152,219,0.08);
   transition: none;
 }
-.translate-demo {
-  transition: transform 0.4s;
-}
-.translate-demo:hover {
-  transform: translate(40px, -20px);
-}
-.scale-demo {
-  transition: transform 0.4s;
-}
-.scale-demo:hover {
-  transform: scale(1.3);
-}
-.rotate-demo {
-  transition: transform 0.4s;
-}
-.rotate-demo:hover {
-  transform: rotate(-18deg);
-}
+.translate-demo,
+.scale-demo,
+.rotate-demo,
 .skew-demo {
   transition: transform 0.4s;
 }
+
+.translate-demo:hover {
+  transform: translate(40px, -20px);
+}
+
+.scale-demo:hover {
+  transform: scale(1.3);
+}
+
+.rotate-demo:hover {
+  transform: rotate(-18deg);
+}
+
 .skew-demo:hover {
   transform: skew(20deg, 5deg);
 }
