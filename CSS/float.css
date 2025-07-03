@@ -1,31 +1,28 @@
 /* Base Styles */
 :root {
     --primary-color: #3498db;
+    --primary-color-hover: #2980b9;
     --secondary-color: #2c3e50;
     --accent-color: #e74c3c;
     --light-color: #ecf0f1;
-    --dark-color: #2c3e50;
     --border-radius: 5px;
     --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
 }
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: var(--dark-color);
+    color: var(--secondary-color);
     background-color: #f8f9fa;
     margin: 0;
     padding: 0;
 }
-
 /* Layout */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
-
 /* Header & Footer */
 .page-header {
     background-color: var(--secondary-color);
@@ -34,7 +31,6 @@ body {
     text-align: center;
     position: relative;
 }
-
 .page-footer {
     background-color: var(--secondary-color);
     color: white;
@@ -42,7 +38,6 @@ body {
     padding: 15px;
     margin-top: 40px;
 }
-
 /* Back Button */
 .back-button {
     position: absolute;
@@ -56,11 +51,9 @@ body {
     border-radius: var(--border-radius);
     transition: var(--transition);
 }
-
 .back-button:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
-
 /* Section Styling */
 .theory-section, .example-section {
     background-color: white;
@@ -69,7 +62,6 @@ body {
     padding: 25px;
     margin-bottom: 30px;
 }
-
 .info-box {
     background-color: #f8f9fa;
     border-left: 4px solid var(--primary-color);
@@ -77,12 +69,10 @@ body {
     margin: 20px 0;
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
 }
-
 /* Interactive Demo Styling */
 .interactive-demo {
     margin: 30px 0;
 }
-
 .demo-container {
     background-color: #f8f9fa;
     border-radius: var(--border-radius);
@@ -90,34 +80,28 @@ body {
     margin: 15px 0;
     overflow: hidden;
 }
-
 .demo-box {
     margin-bottom: 20px;
 }
-
 .code-display {
-    background-color: var(--dark-color);
+    background-color: var(--secondary-color);
     border-radius: var(--border-radius);
     padding: 15px;
     overflow-x: auto;
 }
-
 .code-display pre {
     margin: 0;
 }
-
 .code-display code {
     color: var(--light-color);
     font-family: 'Courier New', Courier, monospace;
     font-size: 14px;
 }
-
 /* Float Examples */
 .float-example {
     overflow: hidden;
     margin-bottom: 20px;
 }
-
 .float-item {
     width: 120px;
     height: 80px;
@@ -127,74 +111,61 @@ body {
     line-height: 80px;
     border-radius: var(--border-radius);
 }
-
 .float-left {
     float: left;
     margin-right: 15px;
 }
-
 .float-right {
     float: right;
     margin-left: 15px;
 }
-
 /* Clear Examples */
 .clear-example {
     overflow: hidden;
 }
-
 .clear-left, .clear-right, .clear-both {
     background-color: #f1f1f1;
     padding: 10px;
     margin: 10px 0;
     border-radius: var(--border-radius);
 }
-
 .clear-left {
     clear: left;
     border-left: 4px solid var(--primary-color);
 }
-
 .clear-right {
     clear: right;
     border-left: 4px solid var(--accent-color);
 }
-
 .clear-both {
     clear: both;
     border-left: 4px solid var(--secondary-color);
 }
-
 /* Clearfix Examples */
 .collapsed-container {
     border: 2px dashed #ccc;
     padding: 10px;
     /* No clearfix applied */
 }
-
 .clearfix-container {
     border: 2px dashed #ccc;
     padding: 10px;
 }
-
 /* Modern clearfix using ::after pseudo-element */
 .clearfix-container::after {
     content: "";
     display: block;
     clear: both;
 }
-
 .demo-note {
     font-style: italic;
     color: #666;
     margin-top: 10px;
 }
-
 /* Practical Examples */
 .text-wrap-example {
     overflow: hidden;
 }
-
 .float-image {
     float: left;
     width: 150px;
@@ -207,11 +178,9 @@ body {
     background-repeat: no-repeat;
     border-radius: var(--border-radius);
 }
-
 .column-layout-example {
     overflow: hidden;
 }
-
 .float-column {
     float: left;
     width: 30%;
