@@ -1,0 +1,166 @@
+
+/* CSS Variables Interactive Example Styles */
+:root {
+  --main-bg: #f0f4ff;
+  --accent: #3498db;
+  --radius: 12px;
+  --theory-bg: #f9fafc;
+  --code-bg: #23272e;
+  --code-color: #e3e8ef;
+  --demo-bg: #fff;
+  --subtitle: #555;
+  --theme-bg: #f0f0f0;
+  --theme-text: #333;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--main-bg);
+  margin: 0;
+  color: #222;
+  line-height: 1.7;
+}
+
+nav {
+  margin: 0;
+  padding: 1rem 2rem 0 2rem;
+}
+
+.back-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.back-btn:hover {
+  background: #217dbb;
+}
+
+main {
+  max-width: 820px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 24px rgba(52,152,219,0.08);
+  padding: 2.5rem 2rem 2rem 2rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.subtitle {
+  color: var(--subtitle);
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+section.theory {
+  background: var(--theory-bg);
+  border-left: 4px solid var(--accent);
+  padding: 1.2rem 1.5rem 1.2rem 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+}
+section.theory h2 {
+  margin-top: 0;
+}
+
+section.example {
+  margin-bottom: 2.5rem;
+}
+.code-demo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+.code-block {
+  background: var(--code-bg);
+  color: var(--code-color);
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  min-width: 260px;
+  max-width: 350px;
+  overflow-x: auto;
+  flex: 1 1 260px;
+}
+.code-block code {
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  font-size: 1em;
+  color: inherit;
+}
+.live-demo {
+  background: var(--demo-bg);
+  border: 1px solid #e0e6ef;
+  border-radius: 8px;
+  padding: 1.2rem 1.5rem;
+  min-width: 220px;
+  flex: 1 1 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.box {
+  background: var(--main-bg);
+  border: 2px solid var(--accent);
+  border-radius: var(--radius);
+  color: var(--accent);
+  padding: 1rem 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.theme-light {
+  --theme-bg: #fff;
+  --theme-text: #222;
+}
+.theme-dark {
+  --theme-bg: #222;
+  --theme-text: #fff;
+}
+.card {
+  background: var(--theme-bg);
+  color: var(--theme-text);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 1px solid #dbeafe;
+  box-shadow: 0 2px 8px rgba(52,152,219,0.06);
+}
+.fallback-demo {
+  color: var(--not-set, #e74c3c);
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border: 1px dashed var(--not-set, #e74c3c);
+  border-radius: 6px;
+  background: #fff5f5;
+}
+.resources {
+  margin-top: 2.5rem;
+  padding: 1.2rem 1.5rem;
+  background: #f6fafd;
+  border-radius: 8px;
+  border-left: 4px solid #8e44ad;
+}
+.resources h2 {
+  margin-top: 0;
+}
+.resources ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+@media (max-width: 700px) {
+  main {
+    padding: 1rem 0.5rem;
+  }
+  .code-demo {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
