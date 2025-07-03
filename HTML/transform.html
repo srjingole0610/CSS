@@ -1,0 +1,185 @@
+<!-- transform: translate, scale, rotate, skew -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="In-depth guide to CSS transform: translate, scale, rotate, skew, and interactive code examples.">
+  <meta name="keywords" content="CSS, transform, translate, scale, rotate, skew, matrix, 3d, web design, animation, example">
+  <meta name="author" content="Full Stack Mastery">
+  <title>CSS Transform Explained & Interactive Examples</title>
+  <link rel="stylesheet" href="../CSS/transform.css">
+  <link rel="icon" type="image/png" href="../images/css_favicon.png">
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+  </nav>
+  <main>
+    <header>
+      <h1>CSS Transform: Theory & Interactive Examples</h1>
+    </header>
+    <section class="theory">
+      <h2>What is CSS Transform?</h2>
+      <p>
+        <strong>CSS <code>transform</code></strong> is a powerful property that lets you visually manipulate elements in 2D or 3D space. You can move, scale, rotate, skew, and combine these effects to create engaging, interactive interfaces—all with hardware acceleration and no JavaScript required.
+      </p>
+      <h3>How Does Transform Work?</h3>
+      <ul>
+        <li>Transforms are applied visually, without affecting the document flow or layout of other elements.</li>
+        <li>Multiple transform functions can be combined in a single <code>transform</code> property, and are applied from left to right.</li>
+        <li>Transforms are often paired with <code>transition</code> for smooth, animated effects.</li>
+        <li>Transforms can be 2D (default) or 3D (using functions like <code>rotateY</code>, <code>perspective</code>).</li>
+      </ul>
+      <h3>Common Transform Functions</h3>
+      <ul>
+        <li><strong>translate(x, y)</strong>: Moves an element along the X and/or Y axis.</li>
+        <li><strong>scale(x, y)</strong>: Resizes an element (width and/or height).</li>
+        <li><strong>rotate(angle)</strong>: Rotates an element clockwise or counterclockwise.</li>
+        <li><strong>skew(x-angle, y-angle)</strong>: Skews (shears) an element along the X and/or Y axis.</li>
+        <li><strong>matrix(a, b, c, d, e, f)</strong>: Combines all 2D transforms in one function.</li>
+        <li><strong>perspective()</strong>, <strong>rotate3d()</strong>, <strong>scale3d()</strong>, <strong>translate3d()</strong>: 3D transforms for advanced effects.</li>
+      </ul>
+      <h3>Transform Origin</h3>
+      <p>The <code>transform-origin</code> property sets the point around which a transformation is applied (default is the element's center). Example: <code>transform-origin: left bottom;</code></p>
+      <h3>Matrix & 3D Transforms</h3>
+      <ul>
+        <li><strong>matrix()</strong>: Allows you to combine multiple 2D transforms in a single function for advanced effects.</li>
+        <li><strong>matrix3d()</strong>: The 3D equivalent, for complex 3D transformations.</li>
+      </ul>
+    </section>
+    <section class="code-demo">
+      <h2>Interactive Examples</h2>
+      <div class="demo-grid">
+        <div class="demo-card">
+          <h3>1. Translate</h3>
+          <div class="box translate-demo">Hover me!</div>
+          <pre><code>.translate-demo {
+  transition: transform 0.4s;
+}
+.translate-demo:hover {
+  transform: translate(40px, -20px);
+}</code></pre>
+        </div>
+        <div class="demo-card">
+          <h3>2. Scale</h3>
+          <div class="box scale-demo">Hover me!</div>
+          <pre><code>.scale-demo {
+  transition: transform 0.4s;
+}
+.scale-demo:hover {
+  transform: scale(1.3);
+}</code></pre>
+        </div>
+        <div class="demo-card">
+          <h3>3. Rotate</h3>
+          <div class="box rotate-demo">Hover me!</div>
+          <pre><code>.rotate-demo {
+  transition: transform 0.4s;
+}
+.rotate-demo:hover {
+  transform: rotate(-18deg);
+}</code></pre>
+        </div>
+        <div class="demo-card">
+          <h3>4. Skew</h3>
+          <div class="box skew-demo">Hover me!</div>
+          <pre><code>.skew-demo {
+  transition: transform 0.4s;
+}
+.skew-demo:hover {
+  transform: skew(20deg, 5deg);
+}</code></pre>
+        </div>
+        <div class="demo-card">
+          <h3>5. Combined Transforms</h3>
+          <div class="box combo-demo">Hover me!</div>
+          <pre><code>.combo-demo {
+  transition: transform 0.5s cubic-bezier(.4,1.6,.4,1);
+}
+.combo-demo:hover {
+  transform: scale(1.2) rotate(8deg) translateY(-18px);
+}</code></pre>
+        </div>
+        <div class="demo-card">
+          <h3>6. 3D Perspective</h3>
+          <div class="box perspective-demo">Hover me!</div>
+          <pre><code>.perspective-demo {
+  transition: transform 0.6s cubic-bezier(.4,1.6,.4,1);
+  perspective: 300px;
+}
+.perspective-demo:hover {
+  transform: rotateY(40deg) scale(1.1);
+}</code></pre>
+        </div>
+        <div class="demo-card">
+          <h3>7. Transform Origin</h3>
+          <div class="box origin-demo">Hover me!</div>
+          <pre><code>.origin-demo {
+  transition: transform 0.5s;
+  transform-origin: left bottom;
+}
+.origin-demo:hover {
+  transform: rotate(-30deg) scale(1.1);
+}</code></pre>
+        </div>
+        <div class="demo-card">
+          <h3>8. Matrix Transform</h3>
+          <div class="box matrix-demo">Hover me!</div>
+          <pre><code>.matrix-demo {
+  transition: transform 0.5s;
+}
+.matrix-demo:hover {
+  transform: matrix(1, 0.3, 0.3, 1, 20, -10);
+}</code></pre>
+        </div>
+        <div class="demo-card">
+          <h3>9. 3D RotateX</h3>
+          <div class="box rotatex-demo">Hover me!</div>
+          <pre><code>.rotatex-demo {
+  transition: transform 0.6s cubic-bezier(.4,1.6,.4,1);
+  perspective: 300px;
+}
+.rotatex-demo:hover {
+  transform: rotateX(50deg) scale(1.1);
+}</code></pre>
+        </div>
+        <div class="demo-card">
+          <h3>10. Image Transform</h3>
+          <div class="img-demo-wrapper">
+            <img src="../images/fireman.webp" alt="Image of a man playing with fire" class="img-transform-demo" />
+          </div>
+          <pre><code>.img-transform-demo {
+  width: 100%;
+  max-width: 220px;
+  border-radius: 10px;
+  transition: transform 0.5s cubic-bezier(.4,1.6,.4,1), filter 0.5s;
+}
+.img-transform-demo:hover {
+  transform: scale(1.18) rotate(-6deg);
+  filter: brightness(1.1) contrast(1.1);
+}</code></pre>
+        </div>
+      </div>
+      <p class="note">Tip: Hover over the boxes and image to see the transforms in action! Try combining transforms for creative effects.</p>
+    </section>
+    <section class="theory">
+      <h2>Best Practices & Notes</h2>
+      <ul>
+        <li>Use <code>transform</code> for performant, hardware-accelerated animations.</li>
+        <li>Combine with <code>transition</code> for smooth effects.</li>
+        <li>Transforms do not affect document flow—use with care for layout.</li>
+        <li>Test transforms on different devices and browsers for consistency.</li>
+        <li>Use <code>will-change: transform</code> for performance optimization on heavy transforms.</li>
+      </ul>
+      <h3>Further Exploration</h3>
+      <ul>
+        <li>Try 3D transforms like <code>rotateY</code>, <code>rotateX</code>, <code>perspective</code>.</li>
+        <li>Combine transforms with transitions and filters for advanced UI effects.</li>
+        <li>Use transforms for interactive UI elements, loaders, cards, and more.</li>
+        <li>Explore <code>matrix()</code> and <code>matrix3d()</code> for complex effects.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
