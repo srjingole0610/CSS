@@ -1,7 +1,7 @@
 /* transitions.css - Styles for CSS Transitions Example Page */
 
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   background: #f8f9fa;
   color: #222;
   margin: 0;
@@ -19,10 +19,11 @@ body {
   font-weight: 600;
   font-size: 1rem;
   box-shadow: 0 2px 8px 0 rgba(52, 152, 219, 0.12);
-  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  transition: color 0.2s, transform 0.2s;
 }
 .back-btn:hover {
   color: #ffd200;
+  transform: translateY(-2px);
 }
 
 main {
@@ -30,7 +31,7 @@ main {
   margin: 2rem auto;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 24px rgba(52,152,219,0.08);
+  box-shadow: 0 4px 24px rgba(52, 152, 219, 0.08);
   padding: 2rem 2.5vw;
 }
 header h1 {
@@ -59,7 +60,7 @@ section.code-demo {
   border: 1px solid #e0e6ed;
   border-radius: 8px;
   padding: 1rem 1rem 1.5rem 1rem;
-  box-shadow: 0 2px 8px rgba(52,152,219,0.04);
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.04);
   margin-bottom: 1rem;
   transition: box-shadow 0.3s, transform 0.3s;
 }
@@ -85,7 +86,7 @@ section.code-demo {
   font-weight: 500;
   font-size: 1rem;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(52,152,219,0.08);
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.08);
   transition: none;
 }
 .basic-transition {
@@ -95,11 +96,11 @@ section.code-demo {
   background-color: #8e44ad;
 }
 .multi-transition {
-  transition: width 0.5s, background 0.5s;
+  transition: width 0.5s, background-color 0.5s;
 }
 .multi-transition:hover {
   width: 220px;
-  background: #3498db;
+  background: rgb(142, 68, 173, 0.6);
 }
 .timing-demo {
   display: flex;
@@ -112,11 +113,21 @@ section.code-demo {
   font-size: 0.95rem;
   margin: 0.2rem 0;
 }
-.timing-ease { transition: transform 0.6s ease; }
-.timing-linear { transition: transform 0.6s linear; }
-.timing-ease-in { transition: transform 0.6s ease-in; }
-.timing-ease-out { transition: transform 0.6s ease-out; }
-.timing-ease-in-out { transition: transform 0.6s ease-in-out; }
+.timing-ease {
+  transition: transform 0.6s ease;
+}
+.timing-linear {
+  transition: transform 0.6s linear;
+}
+.timing-ease-in {
+  transition: transform 0.6s ease-in;
+}
+.timing-ease-out {
+  transition: transform 0.6s ease-out;
+}
+.timing-ease-in-out {
+  transition: transform 0.6s ease-in-out;
+}
 .timing-demo .box:hover {
   transform: scale(1.2);
 }
@@ -186,7 +197,7 @@ pre {
   width: 100%;
   max-width: 220px;
   border-radius: 10px;
-  transition: transform 0.5s cubic-bezier(.4,1.6,.4,1), filter 0.5s;
+  transition: transform 0.5s cubic-bezier(0.4, 1.6, 0.4, 1), filter 0.5s,box-shadow 0.5s;
   filter: brightness(0.95) contrast(1);
   box-shadow: 0 2px 12px 0 #3498db22;
 }
