@@ -9,6 +9,7 @@
   --border-color: #e0e0e0;
   --primary-white: #fff;
   --shadow-color: rgba(0, 0, 0, 0.1);
+  --resources-accent: #4a90e2;
 }
 
 * {
@@ -172,7 +173,7 @@ div.box {
   padding: 1.2rem 1.5rem;
   background: #f6fafd;
   border-radius: 8px;
-  border-left: 4px solid var(--resources-accent);
+  border-left: 4px solid var(--resources-accent, var(--accent));
 }
 .resources h2 {
   margin-top: 0;
