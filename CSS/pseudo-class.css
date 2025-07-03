@@ -1,75 +1,4 @@
-/* --- New Pseudo-Classes: :is(), :where(), :has(), :not() (advanced), :focus-visible --- */
-.is-where-demo h2,
-.is-where-demo h3 {
-  color: #8e44ad;
-}
-.is-where-demo p {
-  background: #e3f6fd;
-  padding: 0.3em 0.7em;
-  border-radius: 4px;
-}
-.where-demo :where(p) {
-  background: #e3f6fd;
-}
-.has-demo {
-  display: flex;
-  gap: 1em;
-  margin: 0.5em 0 0.5em 0;
-}
-.has-demo .card {
-  background: #fff;
-  border-radius: 6px;
-  padding: 0.7em 1.2em;
-  box-shadow: 0 1px 4px rgba(52, 152, 219, 0.06);
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-  font-size: 1em;
-  color: #222;
-  border: 2px solid transparent;
-  transition: border 0.2s, background 0.2s;
-}
-.has-demo .card:has(img) {
-  border: 2px solid #ffd200;
-  background: #f0e6fa;
-}
-.not-advanced-demo {
-  display: flex;
-  gap: 1em;
-  list-style: none;
-  padding: 0;
-  margin: 0.5em 0 0.5em 0;
-}
-.not-advanced-demo li {
-  background: #e3f6fd;
-  padding: 0.5em 1em;
-  border-radius: 5px;
-  color: #222;
-  font-weight: normal;
-  transition: background 0.2s, color 0.2s;
-}
-.not-advanced-demo li:not(.exclude, [data-skip]) {
-  color: #8e44ad;
-  font-weight: bold;
-}
-.focus-visible-demo-btn {
-  background: #ffd200;
-  color: #8e44ad;
-  padding: 0.7em 1.5em;
-  border-radius: 6px;
-  border: none;
-  font-weight: bold;
-  font-size: 1em;
-  margin-bottom: 0.5em;
-  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.08);
-  transition: background 0.2s, color 0.2s;
-  outline: none;
-  cursor: pointer;
-}
-.focus-visible-demo-btn:focus-visible {
-  outline: 3px solid #3498db;
-  background: #e3f6fd;
-}
+
 /* Basic Reset & Layout */
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
@@ -325,6 +254,77 @@ code {
 .form-demo button:hover,
 .form-demo button:focus {
   background: #3498db;
+}
+/* --- New Pseudo-Classes: :is(), :where(), :has(), :not() (advanced), :focus-visible --- */
+.is-where-demo :is(h2, h3)  {
+  color: #8e44ad;
+}
+.is-where-demo p {
+  background-color: #e3f6fd;
+  padding: 0.3em 0.7em;
+  border-radius: 4px;
+}
+.is-where-demo :where(p) {
+  background-color:rgb(227, 246, 253);
+}
+.has-demo {
+  display: flex;
+  gap: 1em;
+  margin: 0.5em 0 0.5em 0;
+}
+.has-demo .card {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 0.7em 1.2em;
+  box-shadow: 0 1px 4px rgba(52, 152, 219, 0.06);
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 1em;
+  color: #222;
+  border: 2px solid transparent;
+  transition: border 0.2s, background 0.2s;
+}
+.has-demo .card:has(img) {
+  border: 2px solid #ffd200;
+  background: #f0e6fa;
+}
+.not-advanced-demo {
+  display: flex;
+  gap: 1em;
+  list-style: none;
+  padding: 0;
+  margin: 0.5em 0 0.5em 0;
+}
+.not-advanced-demo li {
+  background: #e3f6fd;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  color: #222;
+  font-weight: normal;
+  transition: background 0.2s, color 0.2s;
+}
+.not-advanced-demo li:not(.exclude, [data-skip]) {
+  color: #8e44ad;
+  font-weight: bold;
+}
+.focus-visible-demo-btn {
+  background: #ffd200;
+  color: #8e44ad;
+  padding: 0.7em 1.5em;
+  border-radius: 6px;
+  border: none;
+  font-weight: bold;
+  font-size: 1em;
+  margin-bottom: 0.5em;
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.08);
+  transition: background-color 0.2s, color 0.2s;
+  outline: 1px solid transparent;
+  cursor: pointer;
+}
+.focus-visible-demo-btn:focus-visible {
+  outline: 3px solid #3498db;
+  background: #e3f6fd;
 }
 @media (max-width: 600px) {
   main {
