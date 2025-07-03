@@ -1,0 +1,194 @@
+/* CSS Specificity Interactive Example Styles */
+:root {
+  --main-bg: #f4f7f6;
+  --accent: #4a90e2;
+  --theory-bg: #ffffff;
+  --code-bg: #2d2d2d;
+  --code-color: #f1f1f1;
+  --subtitle: #666;
+  --border-color: #e0e0e0;
+  --primary-white: #fff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--main-bg);
+  margin: 0;
+  color: #333;
+  line-height: 1.7;
+}
+
+nav {
+  padding: 1rem 2rem;
+  background-color: var(--primary-white);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.back-btn {
+  display: inline-block;
+  background-color: var(--accent);
+  color: var(--primary-white);
+  text-decoration: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.back-btn:hover {
+  background-color: #357abd;
+}
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.5rem;
+}
+
+.subtitle {
+  color: var(--subtitle);
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+/* Added styles for specificity chart */
+.specificity-chart {
+  background: var(--theory-bg);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 8px 24px var(--shadow-color);
+  transition: transform 0.3s ease;
+}
+
+.specificity-chart:hover {
+  transform: translateY(-5px);
+}
+
+.specificity-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+}
+
+section {
+    background: var(--theory-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+section.theory h2, section.example h2 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+.code-demo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.code-block {
+  background: var(--code-bg);
+  color: var(--code-color);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  overflow-x: auto;
+  flex: 1 1 400px;
+}
+
+.code-block code {
+  font-family: 'Fira Mono', 'Consolas', monospace;
+}
+
+.live-demo {
+  flex: 1 1 300px;
+  padding: 1rem;
+}
+
+/* Example 1 Styles */
+#text-red {
+  color: red;
+  font-weight: bold;
+}
+
+.text-green {
+  color: green;
+}
+
+p {
+  color: blue;
+}
+
+/* Example 2 Styles */
+div.box {
+  background-color: lightblue;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.box.dark {
+  background-color: navy;
+  color: white;
+}
+
+#unique-box {
+  border: 2px solid red;
+}
+
+/* Example 3 Styles */
+#important-demo {
+  background-color: red;
+  padding: 1rem;
+  color: white;
+  border-radius: 4px;
+}
+
+.important-override {
+  background-color: limegreen !important;
+}
+
+.resources {
+  margin-top: 2.5rem;
+  padding: 1.2rem 1.5rem;
+  background: #f6fafd;
+  border-radius: 8px;
+  border-left: 4px solid var(--resources-accent);
+}
+.resources h2 {
+  margin-top: 0;
+  color: var(--resources-accent);
+}
+.resources ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+@media (max-width: 768px) {
+  .code-demo {
+    flex-direction: column;
+  }
+  
+  .specificity-chart {
+    padding: 1rem;
+  }
+}
