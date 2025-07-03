@@ -19,10 +19,12 @@ body {
   font-weight: 600;
   font-size: 1rem;
   box-shadow: 0 2px 8px 0 rgba(52, 152, 219, 0.12);
-  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  transition: color 0.2s, box-shadow 0.2s, transform 0.2s;
 }
 .back-btn:hover {
   color: #ffd200;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px 0 rgba(52, 152, 219, 0.2);
 }
 
 main {
