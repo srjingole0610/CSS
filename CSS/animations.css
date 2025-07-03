@@ -316,13 +316,15 @@ pre {
 
   .back-btn,
   .demo-card,
+  .box,
   .flip-inner {
     transition: none;
   }
 
   /* Reset hover states that rely on transforms */
   .back-btn:hover,
-  .demo-card:hover {
+  .demo-card:hover,
+  .box:hover {
     transform: none;
   }
 }
