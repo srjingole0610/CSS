@@ -38,6 +38,7 @@ Whether you're a beginner or an experienced developer, use this summary to quick
 - [CSS Grid](#25-css-grid)
 - [CSS Transitions](#26-css-transitions)
 - [CSS Transform](#27-css-transform)
+- [CSS Animations](#28-css-animations)
 
 ---
 
@@ -1306,3 +1307,43 @@ When a property specified in <code>transition-property</code> changes (such as o
 
 ### See Also
 - <a href="HTML/transform.html">Interactive CSS Transform Example</a>
+
+---
+
+## 28. CSS Animations
+
+**CSS animations** allow you to animate CSS property values over time using `@keyframes`. Unlike transitions, animations can define multiple steps, loop, alternate, and run automatically.
+
+### Animation Properties
+- **animation-name:** The name of the `@keyframes` to use.
+- **animation-duration:** How long one cycle of the animation takes (e.g., `2s`).
+- **animation-timing-function:** The speed curve of the animation (e.g., `ease`, `linear`, `steps`, `cubic-bezier`).
+- **animation-delay:** How long to wait before starting the animation.
+- **animation-iteration-count:** How many times the animation repeats (`1`, `infinite`, or a number).
+- **animation-direction:** Whether the animation runs normal, reverse, alternate, or alternate-reverse.
+- **animation-fill-mode:** How styles are applied before/after animation (`none`, `forwards`, `backwards`, `both`).
+- **animation-play-state:** Whether the animation is running or paused.
+- **animation:** Shorthand for all the above.
+
+### Syntax & Usage
+```css
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-40px); }
+  100% { transform: translateY(0); }
+}
+.box {
+  animation: bounce 1s ease-in-out infinite;
+}
+```
+
+### Best Practices
+- Use `animation` for multi-step, automatic, or looping effects.
+- Keep animations short and meaningful for best user experience.
+- Combine with `transition` and `transform` for advanced UI effects.
+- Test animations on different devices and browsers for consistency.
+- Use `will-change` for performance optimization on heavy animations.
+- Respect user preferences for reduced motion (see `@media (prefers-reduced-motion)`).
+
+### See Also
+- <a href="HTML/animations.html">Interactive CSS Animations Example</a>
