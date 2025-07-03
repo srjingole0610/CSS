@@ -37,6 +37,7 @@ Whether you're a beginner or an experienced developer, use this summary to quick
 - [CSS Flexbox](#24-css-flexbox)
 - [CSS Grid](#25-css-grid)
 - [CSS Transitions](#26-css-transitions)
+- [CSS Transform](#27-css-transform)
 
 ---
 
@@ -1263,3 +1264,45 @@ When a property specified in <code>transition-property</code> changes (such as o
 
 ### See Also
 - <a href="HTML/transitions.html">Interactive CSS Transitions Example</a>
+
+---
+
+## 27. CSS Transform
+
+**CSS transform** is a versatile property that allows you to visually manipulate elements in 2D or 3D space. You can move, scale, rotate, skew, and combine these effects for engaging, interactive interfaces—all with hardware acceleration and no JavaScript required.
+
+### Transform Functions
+- **translate(x, y):** Moves an element along the X and/or Y axis.
+- **scale(x, y):** Resizes an element (width and/or height).
+- **rotate(angle):** Rotates an element clockwise or counterclockwise.
+- **skew(x-angle, y-angle):** Skews (shears) an element along the X and/or Y axis.
+- **matrix():** Combines all 2D transforms in one function.
+- **perspective(), rotate3d(), scale3d(), translate3d():** 3D transforms for advanced effects.
+
+### Syntax & Usage
+```css
+.box {
+  transform: scale(1.2) rotate(8deg) translateY(-18px);
+}
+```
+- Multiple transforms can be combined in a single property and are applied from left to right.
+- Combine with `transition` for smooth, animated effects.
+
+### Example
+```css
+.scale-demo {
+  transition: transform 0.4s;
+}
+.scale-demo:hover {
+  transform: scale(1.3);
+}
+```
+
+### Best Practices
+- Use `transform` for performant, hardware-accelerated animations.
+- Transforms do not affect document flow—use with care for layout.
+- Test transforms on different devices and browsers for consistency.
+- Use `will-change: transform` for performance optimization on heavy transforms.
+
+### See Also
+- <a href="HTML/transform.html">Interactive CSS Transform Example</a>
