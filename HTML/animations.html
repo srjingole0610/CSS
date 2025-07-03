@@ -1,0 +1,372 @@
+<!-- animations: name, duration, timing-function, delay, iteration-count, direction -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="In-depth guide to CSS animations: name, duration, timing-function, delay, iteration-count, direction, and interactive code examples."
+    />
+    <meta
+      name="keywords"
+      content="CSS, animations, keyframes, name, duration, timing-function, delay, iteration-count, direction, web design, example"
+    />
+    <meta name="author" content="Full Stack Mastery" />
+    <title>CSS Animations Explained & Interactive Examples</title>
+    <link rel="stylesheet" href="../CSS/animations.css" />
+    <link rel="icon" type="image/png" href="../images/css_favicon.png" />
+  </head>
+  <body>
+    <nav>
+      <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+    </nav>
+    <main>
+      <header>
+        <h1>CSS Animations: Theory & Interactive Examples</h1>
+      </header>
+      <section class="theory">
+        <h2>What are CSS Animations?</h2>
+        <p>
+          <strong>CSS animations</strong> allow you to animate the values of CSS
+          properties over time using <code>@keyframes</code>. Unlike
+          transitions, which animate between two states, animations can define
+          multiple steps and run automatically, loop, or alternate direction.
+        </p>
+        <h3>Animation Properties</h3>
+        <ul>
+          <li>
+            <strong>animation-name</strong>: The name of the
+            <code>@keyframes</code> to use.
+          </li>
+          <li>
+            <strong>animation-duration</strong>: How long one cycle of the
+            animation takes (e.g., <code>2s</code>).
+          </li>
+          <li>
+            <strong>animation-timing-function</strong>: The speed curve of the
+            animation (e.g., <code>ease</code>, <code>linear</code>,
+            <code>steps</code>, <code>cubic-bezier</code>).
+          </li>
+          <li>
+            <strong>animation-delay</strong>: How long to wait before starting
+            the animation.
+          </li>
+          <li>
+            <strong>animation-iteration-count</strong>: How many times the
+            animation repeats (<code>1</code>, <code>infinite</code>, or a
+            number).
+          </li>
+          <li>
+            <strong>animation-direction</strong>: Whether the animation runs
+            normal, reverse, alternate, or alternate-reverse.
+          </li>
+          <li>
+            <strong>animation-fill-mode</strong>: How styles are applied
+            before/after animation (<code>none</code>, <code>forwards</code>,
+            <code>backwards</code>, <code>both</code>).
+          </li>
+          <li>
+            <strong>animation-play-state</strong>: Whether the animation is
+            running or paused.
+          </li>
+          <li><strong>animation</strong>: Shorthand for all the above.</li>
+        </ul>
+        <p>
+          <strong>Shorthand:</strong>
+          <code
+            >animation: name duration timing-function delay iteration-count
+            direction fill-mode;</code
+          ><br />
+          <strong>Example:</strong>
+          <code>animation: bounce 1s ease-in-out 0.2s infinite alternate;</code>
+        </p>
+        <h3>@keyframes</h3>
+        <p>Define the animation steps using <code>@keyframes</code>:</p>
+        <pre><code>@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-40px); }
+  100% { transform: translateY(0); }
+}</code></pre>
+      </section>
+      <section class="theory">
+        <h2>How CSS Animations Work</h2>
+        <p>
+          CSS animations use <code>@keyframes</code> to define multiple steps of
+          an animation, allowing for complex, multi-stage effects. Animations
+          can run automatically, loop, alternate, or be triggered by user
+          interaction. Unlike transitions, which only animate between two
+          states, animations can have as many steps as you want.
+        </p>
+        <h3>Animation Lifecycle</h3>
+        <ol>
+          <li><strong>Start State:</strong> The element's initial style.</li>
+          <li>
+            <strong>Keyframes:</strong> Define the intermediate and end states.
+          </li>
+          <li>
+            <strong>Animation Properties:</strong> Control timing, repetition,
+            direction, and more.
+          </li>
+          <li>
+            <strong>End State:</strong> Determined by
+            <code>animation-fill-mode</code> and keyframes.
+          </li>
+        </ol>
+        <h3>Common Use Cases</h3>
+        <ul>
+          <li>Loading spinners and progress bars</li>
+          <li>Attention-grabbing UI feedback (e.g., shake, bounce, pulse)</li>
+          <li>Animated icons and illustrations</li>
+          <li>Background and color effects</li>
+          <li>Real-world simulations (e.g., pendulum, waves, clocks)</li>
+        </ul>
+      </section>
+      <section class="code-demo">
+        <h2>Interactive Examples</h2>
+        <div class="demo-grid">
+          <div class="demo-card">
+            <h3>1. Basic Animation</h3>
+            <div class="box anim-bounce">Bounce!</div>
+            <pre><code>@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-40px); }
+  100% { transform: translateY(0); }
+}
+.anim-bounce {
+  animation: bounce 1s ease-in-out infinite;
+}</code></pre>
+          </div>
+          <div class="demo-card">
+            <h3>2. Animation Delay</h3>
+            <div class="box anim-delay">Wait for it...</div>
+            <pre><code>@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.anim-delay {
+  animation: fadeIn 1.2s ease 1s forwards;
+}</code></pre>
+          </div>
+          <div class="demo-card">
+            <h3>3. Iteration Count</h3>
+            <div class="box anim-iterate">3x Loop</div>
+            <pre><code>@keyframes colorLoop {
+  0%   { background: #3498db; }
+  50%  { background: #8e44ad; }
+  100% { background: #3498db; }
+}
+.anim-iterate {
+  animation: colorLoop 1.2s linear 0s 3;
+}</code></pre>
+          </div>
+          <div class="demo-card">
+            <h3>4. Animation Direction</h3>
+            <div class="box anim-direction">Alternate</div>
+            <pre><code>@keyframes slideX {
+  from { transform: translateX(0); }
+  to   { transform: translateX(60px); }
+}
+.anim-direction {
+  animation: slideX 1.1s cubic-bezier(.4,1.6,.4,1) infinite alternate;
+}</code></pre>
+          </div>
+          <div class="demo-card">
+            <h3>5. Fill Mode</h3>
+            <div class="box anim-fill">Stay!</div>
+            <pre><code>@keyframes grow {
+  from { width: 120px; }
+  to   { width: 220px; }
+}
+.anim-fill {
+  animation: grow 1.2s ease-in 0s 1 forwards;
+}</code></pre>
+          </div>
+          <div class="demo-card">
+            <h3>6. Multiple Animations</h3>
+            <div class="box anim-multi">Combo</div>
+            <pre><code>@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 #8e44ad44; }
+  50% { box-shadow: 0 0 16px 8px #8e44ad44; }
+}
+.anim-multi {
+  animation: spin 1.2s linear infinite, pulse 1.2s ease-in-out infinite;
+}</code></pre>
+          </div>
+          <div class="demo-card">
+            <h3>7. Image Animation</h3>
+            <div class="img-demo-wrapper">
+              <img
+                src="../images/fireman.webp"
+                alt="Image of a man playing with fire"
+                class="img-anim-demo"
+              />
+            </div>
+            <pre><code>@keyframes imgPop {
+  0%   { transform: scale(1) rotate(0deg); }
+  50%  { transform: scale(1.13) rotate(-4deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+.img-anim-demo {
+  animation: imgPop 1.4s cubic-bezier(.4,1.6,.4,1) infinite;
+}</code></pre>
+          </div>
+          <div class="demo-card">
+            <h3>8. Pendulum Animation (Real-World Example)</h3>
+            <div class="pendulum-demo">
+              <div class="pendulum-arm">
+                <div class="pendulum-bob"></div>
+              </div>
+            </div>
+            <pre><code>@keyframes swing {
+  0%   { transform: rotate(-30deg); }
+  50%  { transform: rotate(30deg); }
+  100% { transform: rotate(-30deg); }
+}
+.pendulum-arm {
+  width: 6px;
+  height: 90px;
+  background: #8e44ad;
+  margin: 0 auto;
+  border-radius: 3px;
+  transform-origin: top center;
+  animation: swing 2s cubic-bezier(.4,1.6,.4,1) infinite;
+}
+.pendulum-bob {
+  width: 32px;
+  height: 32px;
+  background: #ffd200;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px #8e44ad44;
+  border: 3px solid #8e44ad;
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+}</code></pre>
+          </div>
+          <div class="demo-card">
+            <h3>9. Loader Dots</h3>
+            <div class="loader-demo">
+              <span class="dot dot1"></span>
+              <span class="dot dot2"></span>
+              <span class="dot dot3"></span>
+            </div>
+            <pre><code>@keyframes dotFlare {
+  0%, 80%, 100% { opacity: 0.3; }
+  40% { opacity: 1; }
+}
+.dot {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin: 0 4px;
+  background: #3498db;
+  border-radius: 50%;
+  animation: dotFlare 1.2s infinite both;
+}
+.dot2 { animation-delay: 0.2s; }
+.dot3 { animation-delay: 0.4s; }
+</code></pre>
+          </div>
+          <div class="demo-card">
+            <h3>10. Card Flip (Hover)</h3>
+            <div class="flip-card">
+              <div class="flip-inner">
+                <div class="flip-front">Front</div>
+                <div class="flip-back">Back</div>
+              </div>
+            </div>
+            <pre><code>.flip-card {
+  width: 120px;
+  height: 60px;
+  perspective: 600px;
+}
+.flip-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s cubic-bezier(.4,1.6,.4,1);
+  transform-style: preserve-3d;
+  position: relative;
+}
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+.flip-front, .flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 8px;
+}
+.flip-front {
+  background: #3498db;
+  color: #fff;
+}
+.flip-back {
+  background: #ffd200;
+  color: #222;
+  transform: rotateY(180deg);
+}
+</code></pre>
+          </div>
+        </div>
+        <p class="note">
+          Tip: Watch the pendulum swing, loader dots pulse, and flip the card by
+          hovering! Real-world and UI animation patterns are easy with CSS.
+        </p>
+      </section>
+      <section class="theory">
+        <h2>Best Practices & Notes</h2>
+        <ul>
+          <li>
+            Use <code>animation</code> for multi-step, automatic, or looping
+            effects.
+          </li>
+          <li>
+            Keep animations short and meaningful for best user experience.
+          </li>
+          <li>
+            Combine with <code>transition</code> and <code>transform</code> for
+            advanced UI effects.
+          </li>
+          <li>
+            Test animations on different devices and browsers for consistency.
+          </li>
+          <li>
+            Use <code>will-change</code> for performance optimization on heavy
+            animations.
+          </li>
+          <li>
+            Respect user preferences for reduced motion (see
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion" target="_blank" rel="noopener noreferrer"
+              ><code>@media (prefers-reduced-motion)</code></a
+            >).
+          </li>
+        </ul>
+        <h3>Further Exploration</h3>
+        <ul>
+          <li>
+            Try <code>animation-play-state</code> for pause/resume effects.
+          </li>
+          <li>
+            Experiment with <code>steps()</code> and
+            <code>cubic-bezier()</code> for custom timing.
+          </li>
+          <li>
+            Use animations for loaders, notifications, feedback, and more.
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

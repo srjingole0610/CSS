@@ -36,6 +36,10 @@ Whether you're a beginner or an experienced developer, use this summary to quick
 - [CSS Multi-Column Layout](#23-css-multi-column-layout)
 - [CSS Flexbox](#24-css-flexbox)
 - [CSS Grid](#25-css-grid)
+- [CSS Transitions](#26-css-transitions)
+- [CSS Transform](#27-css-transform)
+- [CSS Animations](#28-css-animations)
+- [CSS Variables](#29-css-variables)
 
 ---
 
@@ -1211,5 +1215,181 @@ CSS **Grid Layout** is a powerful two-dimensional layout system that enables you
 ### Reference Example
 See the new [grid.html](./HTML/grid.html) page for a comprehensive, interactive guide to CSS Grid, including theory, property explanations, and live code demos.
 
+---
 
-_Keep updating this summary as you explore more advanced CSS concepts like animations, transitions, Flexbox, Grid, media queries, and preprocessors (like SASS)._ 🚀
+## 26. CSS Transitions
+
+**CSS transitions** allow you to animate changes to CSS property values smoothly, enhancing user experience with visual feedback and interactivity—without JavaScript. Transitions are triggered by state changes (like <code>:hover</code>, <code>:focus</code>, or class changes) and are ideal for simple, one-step animations.
+
+### Transition Properties
+- <strong>transition-property</strong>: The CSS property to animate (e.g., <code>background-color</code>, <code>width</code>).
+- <strong>transition-duration</strong>: How long the transition takes (e.g., <code>0.5s</code>).
+- <strong>transition-timing-function</strong>: The speed curve of the transition (e.g., <code>ease</code>, <code>linear</code>, <code>ease-in</code>, <code>cubic-bezier</code>).
+- <strong>transition-delay</strong>: How long to wait before starting the transition (e.g., <code>0.2s</code>).
+- <strong>transition</strong>: Shorthand for all the above.
+
+### Syntax
+```css
+transition: property duration timing-function delay;
+```
+Example:
+```css
+transition: background-color 0.5s ease 0.2s;
+```
+
+### How Transitions Work
+When a property specified in <code>transition-property</code> changes (such as on <code>:hover</code>), the browser animates the change over the specified duration and timing function. Only animatable properties can be transitioned (e.g., <code>color</code>, <code>background</code>, <code>transform</code>, <code>opacity</code>).
+
+### Common Timing Functions
+- <strong>ease</strong>: Starts slow, speeds up, then slows down (default)
+- <strong>linear</strong>: Constant speed
+- <strong>ease-in</strong>: Starts slow, then speeds up
+- <strong>ease-out</strong>: Starts fast, then slows down
+- <strong>ease-in-out</strong>: Starts and ends slow
+- <strong>cubic-bezier</strong>: Custom curve
+
+### Example
+```css
+.box {
+  transition: background-color 0.5s, width 0.5s;
+}
+.box:hover {
+  background-color: #8e44ad;
+  width: 220px;
+}
+```
+
+### Best Practices
+- Use transitions for simple, state-based animations.
+- Keep transitions short and subtle for best user experience.
+- For complex, multi-step animations, use <code>@keyframes</code> and <code>animation</code>.
+
+### See Also
+- <a href="HTML/transitions.html">Interactive CSS Transitions Example</a>
+
+---
+
+## 27. CSS Transform
+
+**CSS transform** is a versatile property that allows you to visually manipulate elements in 2D or 3D space. You can move, scale, rotate, skew, and combine these effects for engaging, interactive interfaces—all with hardware acceleration and no JavaScript required.
+
+### Transform Functions
+- **translate(x, y):** Moves an element along the X and/or Y axis.
+- **scale(x, y):** Resizes an element (width and/or height).
+- **rotate(angle):** Rotates an element clockwise or counterclockwise.
+- **skew(x-angle, y-angle):** Skews (shears) an element along the X and/or Y axis.
+- **matrix():** Combines all 2D transforms in one function.
+- **perspective(), rotate3d(), scale3d(), translate3d():** 3D transforms for advanced effects.
+
+### Syntax & Usage
+```css
+.box {
+  transform: scale(1.2) rotate(8deg) translateY(-18px);
+}
+```
+- Multiple transforms can be combined in a single property and are applied from left to right.
+- Combine with `transition` for smooth, animated effects.
+
+### Example
+```css
+.scale-demo {
+  transition: transform 0.4s;
+}
+.scale-demo:hover {
+  transform: scale(1.3);
+}
+```
+
+### Best Practices
+- Use `transform` for performant, hardware-accelerated animations.
+- Transforms do not affect document flow—use with care for layout.
+- Test transforms on different devices and browsers for consistency.
+- Use `will-change: transform` for performance optimization on heavy transforms.
+
+### See Also
+- <a href="HTML/transform.html">Interactive CSS Transform Example</a>
+
+---
+
+## 28. CSS Animations
+
+**CSS animations** allow you to animate CSS property values over time using `@keyframes`. Unlike transitions, animations can define multiple steps, loop, alternate, and run automatically.
+
+### Animation Properties
+- **animation-name:** The name of the `@keyframes` to use.
+- **animation-duration:** How long one cycle of the animation takes (e.g., `2s`).
+- **animation-timing-function:** The speed curve of the animation (e.g., `ease`, `linear`, `steps`, `cubic-bezier`).
+- **animation-delay:** How long to wait before starting the animation.
+- **animation-iteration-count:** How many times the animation repeats (`1`, `infinite`, or a number).
+- **animation-direction:** Whether the animation runs normal, reverse, alternate, or alternate-reverse.
+- **animation-fill-mode:** How styles are applied before/after animation (`none`, `forwards`, `backwards`, `both`).
+- **animation-play-state:** Whether the animation is running or paused.
+- **animation:** Shorthand for all the above.
+
+### Syntax & Usage
+```css
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-40px); }
+  100% { transform: translateY(0); }
+}
+.box {
+  animation: bounce 1s ease-in-out infinite;
+}
+```
+
+### Best Practices
+- Use `animation` for multi-step, automatic, or looping effects.
+- Keep animations short and meaningful for best user experience.
+- Combine with `transition` and `transform` for advanced UI effects.
+- Test animations on different devices and browsers for consistency.
+- Use `will-change` for performance optimization on heavy animations.
+- Respect user preferences for reduced motion (see [`@media (prefers-reduced-motion)`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion)).
+
+### See Also
+- <a href="HTML/animations.html">Interactive CSS Animations Example</a>
+
+---
+
+## 29. CSS Variables
+
+**CSS Variables**, also known as **Custom Properties**, allow you to store reusable values in your stylesheet. They make your code more maintainable, readable, and dynamic, especially for theming and managing complex designs.
+
+### Syntax
+- **Declaration:** Define a variable using two dashes, e.g., `--main-color: #3498db;`.
+- **Usage:** Access the variable using the `var()` function, e.g., `color: var(--main-color);`.
+
+### Scope
+- **Global Scope:** Variables defined in the `:root` pseudo-class are available globally.
+- **Local Scope:** Variables defined within a selector (e.g., a class) are only available to that element and its descendants.
+
+### Key Features
+- **Fallback Values:** Provide a default if a variable isn't set: `var(--custom-color, black)`.
+- **Dynamic:** Can be updated with JavaScript or by changing classes, making them ideal for theming.
+- **Inheritance:** Variables are inherited by child elements.
+
+### ✅ Example:
+```css
+/* Global variables */
+:root {
+  --primary-color: #3498db;
+  --base-font-size: 16px;
+}
+
+body {
+  font-size: var(--base-font-size);
+}
+
+.button {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Local override */
+.button-danger {
+  --primary-color: #e74c3c; /* This overrides the global variable */
+}
+```
+
+### See Also
+- <a href="HTML/variables.html">Interactive CSS Variables Example</a>
