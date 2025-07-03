@@ -68,7 +68,7 @@ header {
 section.theory {
   background: var(--theory-bg);
   border-left: 4px solid var(--accent);
-  padding: 1.2rem 1.5rem 1.2rem 1.5rem;
+  padding: 1.2rem 1.5rem;
   margin-bottom: 2rem;
   border-radius: 8px;
 }

@@ -1389,8 +1389,7 @@ body {
 .button-danger {
   --primary-color: #e74c3c; /* This overrides the global variable */
 }
-
-
 ```
+
 ### See Also
 - <a href="HTML/variables.html">Interactive CSS Variables Example</a>
