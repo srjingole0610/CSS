@@ -88,8 +88,14 @@ section.code-demo {
   font-size: 1rem;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(52,152,219,0.08);
-  transition: none;
+  transition: background-color 0.3s, transform 0.3s;
 }
+.box:hover {
+  background: #8e44ad;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(52,152,219,0.2);
+}
+
 .img-demo-wrapper {
   display: flex;
   justify-content: center;
@@ -223,10 +229,12 @@ pre {
   height: 32px;
   background: #ffd200;
   border-radius: 50%;
-  margin: 0 auto;
-  margin-top: 80px;
   box-shadow: 0 4px 16px #8e44ad44;
   border: 3px solid #8e44ad;
+  position: absolute;
+  bottom: -16px; /* Hangs the bob off the arm by half its height */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* Loader Dots Animation */
@@ -290,4 +298,31 @@ pre {
   background: #ffd200;
   color: #222;
   transform: rotateY(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Stop all animations and transitions */
+  .anim-bounce,
+  .anim-delay,
+  .anim-iterate,
+  .anim-direction,
+  .anim-fill,
+  .anim-multi,
+  .img-anim-demo,
+  .pendulum-arm,
+  .dot {
+    animation: none;
+  }
+
+  .back-btn,
+  .demo-card,
+  .flip-inner {
+    transition: none;
+  }
+
+  /* Reset hover states that rely on transforms */
+  .back-btn:hover,
+  .demo-card:hover {
+    transform: none;
+  }
 }

@@ -1343,7 +1343,7 @@ When a property specified in <code>transition-property</code> changes (such as o
 - Combine with `transition` and `transform` for advanced UI effects.
 - Test animations on different devices and browsers for consistency.
 - Use `will-change` for performance optimization on heavy animations.
-- Respect user preferences for reduced motion (see `@media (prefers-reduced-motion)`).
+- Respect user preferences for reduced motion (see [`@media (prefers-reduced-motion)`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion)).
 
 ### See Also
 - <a href="HTML/animations.html">Interactive CSS Animations Example</a>
