@@ -40,6 +40,7 @@ Whether you're a beginner or an experienced developer, use this summary to quick
 - [CSS Transform](#27-css-transform)
 - [CSS Animations](#28-css-animations)
 - [CSS Variables](#29-css-variables)
+- [CSS Specificity](#30-css-specificity)
 
 ---
 
@@ -1391,5 +1392,42 @@ body {
 }
 ```
 
-### See Also
-- <a href="HTML/variables.html">Interactive CSS Variables Example</a>
+For a detailed, interactive guide, see the [CSS Variables Example Page](./HTML/variables.html).
+
+---
+
+## 30. CSS Specificity
+
+**CSS Specificity** is the set of rules browsers use to determine which style declaration is applied to an element when multiple conflicting rules exist. The more specific a selector is, the higher its precedence.
+
+### Specificity Hierarchy (Highest to Lowest)
+1.  **Inline Styles** - `style="..."`
+2.  **IDs** - `#my-id`
+3.  **Classes, Attributes, Pseudo-classes** - `.my-class`, `[type="text"]`, `:hover`
+4.  **Elements, Pseudo-elements** - `p`, `::before`
+
+### The `!important` Rule
+Adding `!important` to a style declaration makes it override all other declarations, regardless of specificity. It should be used with extreme caution as it can make debugging difficult.
+
+### ✅ Example:
+```css
+/* Low specificity */
+p {
+  color: blue;
+}
+
+/* Higher specificity */
+.my-paragraph {
+  color: green;
+}
+
+/* Highest specificity */
+#main-paragraph {
+  color: red;
+}
+
+/* This will be applied regardless of the ID selector */
+p.important {
+    color: purple !important;
+}
+```
