@@ -31,7 +31,7 @@ Whether you're a beginner or an experienced developer, use this summary to quick
 - [CSS Position Property](#18-css-position-property)
 - [z-index in CSS](#19-z-index-in-css)
 - [Overflow in CSS](#20-overflow-in-css)
-- [ Pseudo-Elements in CSS](#21-pseudo-elements-in-css)
+- [Pseudo-Elements in CSS](#21-pseudo-elements-in-css)
 - [CSS Pseudo-Classes](#22-css-pseudo-classes)
 - [CSS Multi-Column Layout](#23-css-multi-column-layout)
 - [CSS Flexbox](#24-css-flexbox)
@@ -41,6 +41,7 @@ Whether you're a beginner or an experienced developer, use this summary to quick
 - [CSS Animations](#28-css-animations)
 - [CSS Variables](#29-css-variables)
 - [CSS Specificity](#30-css-specificity)
+- [CSS Float](#31-css-float)
 
 ---
 
@@ -1429,5 +1430,40 @@ p {
 /* This will be applied regardless of the ID selector */
 p.important {
     color: purple !important;
+}
+```
+
+---
+
+## 31. CSS Float
+
+The **float** property is one of CSS's traditional layout mechanisms that specifies how an element should float, allowing text and inline elements to wrap around it. While modern layout techniques like Flexbox and Grid are now preferred for complex layouts, float remains useful for specific scenarios.
+
+### 🔑 Key Concepts:
+
+- **Float Values:** The float property can take values like `left`, `right`, `none`, and `inherit`.
+- **Document Flow:** Floated elements are removed from the normal document flow.
+- **Container Collapse:** Containers with only floated elements collapse to zero height.
+- **Clearing Floats:** The `clear` property controls how elements behave around floated items.
+
+### 🧹 The Clear Property:
+
+The `clear` property specifies which sides of an element cannot be adjacent to earlier floating elements:
+
+- `clear: left` - Element appears below left-floated elements
+- `clear: right` - Element appears below right-floated elements
+- `clear: both` - Element appears below both left and right-floated elements
+- `clear: none` - Default value, allows floating elements on both sides
+
+### 🛠️ The Clearfix Hack:
+
+When a container has only floated elements, it collapses to zero height. The "clearfix" is a common solution:
+
+```css
+/* Modern clearfix using ::after pseudo-element */
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 ```
