@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="In-depth guide to CSS variables with interactive code examples. Learn how to use, scope, and override CSS custom properties.">
+    <meta name="keywords" content="CSS, variables, custom properties, web development, examples, tutorial">
+    <meta name="author" content="Full Stack Mastery">
+    <title>CSS Variables (Custom Properties) – Interactive Guide</title>
+    <link rel="stylesheet" href="../CSS/variables.css">
+    <link rel="icon" type="image/png" href="../images/css_favicon.png">
+</head>
+<body>
+    <nav>
+        <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+    </nav>
+    <main>
+        <header>
+            <h1>CSS Variables (Custom Properties)</h1>
+            <p class="subtitle">Reusable, dynamic, and powerful: Master CSS custom properties with hands-on examples!</p>
+        </header>
+
+        <section class="theory">
+            <h2>What Are CSS Variables?</h2>
+            <p>
+                <strong>CSS variables</strong> (also called <strong>custom properties</strong>) allow you to store values in reusable variables directly in your CSS. They make your stylesheets more maintainable, flexible, and dynamic.<br>
+                Syntax: <code>--variable-name: value;</code> and usage: <code>var(--variable-name)</code>.
+            </p>
+            <ul>
+                <li><strong>Global Scope:</strong> Define variables in <code>:root</code> to make them available everywhere.</li>
+                <li><strong>Local Scope:</strong> Define variables inside a selector to limit their use to that element and its children.</li>
+                <li><strong>Dynamic Updates:</strong> Variables can be changed at runtime using JavaScript or by changing classes.</li>
+                <li><strong>Inheritance:</strong> CSS variables inherit like other CSS properties.</li>
+            </ul>
+        </section>
+
+        <section class="example interactive">
+            <h2>Example 1: Global Variables</h2>
+            <div class="code-demo">
+                <div class="code-block">
+<pre><code>:root {
+  --main-bg: #f0f4ff;
+  --accent: #3498db;
+  --radius: 12px;
+}
+.box {
+  background: var(--main-bg);
+  border: 2px solid var(--accent);
+  border-radius: var(--radius);
+  color: var(--accent);
+  padding: 1rem 2rem;
+  font-weight: bold;
+}</code></pre>
+                </div>
+                <div class="live-demo">
+                    <div class="box">This box uses global CSS variables!</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="theory">
+            <h2>How CSS Variables Work</h2>
+            <ul>
+                <li><strong>Declaration:</strong> Use <code>--name: value;</code> inside a selector. The <code>--</code> prefix is required.</li>
+                <li><strong>Usage:</strong> Use <code>var(--name)</code> wherever a value is expected. The browser replaces this with the variable's value.</li>
+                <li><strong>Fallbacks:</strong> <code>var(--name, fallback)</code> provides a default value if the custom property is not defined. This is great for robustness.</li>
+                <li><strong>Inheritance:</strong> Variables inherit down the DOM tree. If you set a variable on a parent, it's available to all its children, unless overridden.</li>
+                <li><strong>Case-Sensitive:</strong> Variable names like <code>--my-color</code> and <code>--My-Color</code> are treated as different variables.</li>
+            </ul>
+        </section>
+
+        <section class="example interactive">
+            <h2>Example 2: Local Scope &amp; Overriding</h2>
+            <div class="code-demo">
+                <div class="code-block">
+<pre><code>/* A default theme variable */
+:root {
+  --theme-bg: #f0f0f0;
+  --theme-text: #333;
+}
+.theme-light {
+  --theme-bg: #fff;
+  --theme-text: #222;
+}
+.theme-dark {
+  --theme-bg: #222;
+  --theme-text: #fff;
+}
+.card {
+  background: var(--theme-bg);
+  color: var(--theme-text);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}</code></pre>
+                </div>
+                <div class="live-demo">
+                    <div class="card">Default Theme</div>
+                    <div class="card theme-light">Light Theme Card</div>
+                    <div class="card theme-dark">Dark Theme Card</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="theory">
+            <h2>Best Practices & Tips</h2>
+            <ul>
+                <li>Use <code>:root</code> for global, site-wide variables (e.g., brand colors, spacing units, font families).</li>
+                <li>Define component-level variables for properties that only affect a single component, enhancing encapsulation.</li>
+                <li>Leverage variables for easy theming (like light/dark mode) by redefining them within a class or media query.</li>
+                <li>Combine with <code>calc()</code> for dynamic calculations, like <code>width: calc(100% - var(--spacing-large));</code>.</li>
+                <li>Remember: CSS variables are not supported in IE11 and below. For modern projects, this is rarely an issue.</li>
+            </ul>
+        </section>
+
+        <section class="example interactive">
+            <h2>Example 3: Fallback Values</h2>
+            <div class="code-demo">
+                <div class="code-block">
+<pre><code>.fallback-demo {
+  /* --not-set is not defined */
+  color: var(--not-set, #e74c3c);
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border: 1px dashed var(--not-set, #e74c3c);
+  border-radius: 6px;
+}</code></pre>
+                </div>
+                <div class="live-demo">
+                    <div class="fallback-demo">This uses a fallback color because <code>--not-set</code> is not defined.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="resources">
+            <h2>Further Reading</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*" target="_blank" rel="noopener noreferrer">MDN: CSS Custom Properties</a></li>
+                <li><a href="https://css-tricks.com/a-complete-guide-to-custom-properties/" target="_blank" rel="noopener noreferrer">CSS-Tricks: A Complete Guide to Custom Properties</a></li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

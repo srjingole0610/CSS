@@ -39,6 +39,7 @@ Whether you're a beginner or an experienced developer, use this summary to quick
 - [CSS Transitions](#26-css-transitions)
 - [CSS Transform](#27-css-transform)
 - [CSS Animations](#28-css-animations)
+- [CSS Variables](#29-css-variables)
 
 ---
 
@@ -1347,3 +1348,49 @@ When a property specified in <code>transition-property</code> changes (such as o
 
 ### See Also
 - <a href="HTML/animations.html">Interactive CSS Animations Example</a>
+
+---
+
+## 29. CSS Variables
+
+**CSS Variables**, also known as **Custom Properties**, allow you to store reusable values in your stylesheet. They make your code more maintainable, readable, and dynamic, especially for theming and managing complex designs.
+
+### Syntax
+- **Declaration:** Define a variable using two dashes, e.g., `--main-color: #3498db;`.
+- **Usage:** Access the variable using the `var()` function, e.g., `color: var(--main-color);`.
+
+### Scope
+- **Global Scope:** Variables defined in the `:root` pseudo-class are available globally.
+- **Local Scope:** Variables defined within a selector (e.g., a class) are only available to that element and its descendants.
+
+### Key Features
+- **Fallback Values:** Provide a default if a variable isn't set: `var(--custom-color, black)`.
+- **Dynamic:** Can be updated with JavaScript or by changing classes, making them ideal for theming.
+- **Inheritance:** Variables are inherited by child elements.
+
+### ✅ Example:
+```css
+/* Global variables */
+:root {
+  --primary-color: #3498db;
+  --base-font-size: 16px;
+}
+
+body {
+  font-size: var(--base-font-size);
+}
+
+.button {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Local override */
+.button-danger {
+  --primary-color: #e74c3c; /* This overrides the global variable */
+}
+
+
+```
+### See Also
+- <a href="HTML/variables.html">Interactive CSS Variables Example</a>
