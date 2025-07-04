@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="In-depth guide to CSS inheritance and cascade with interactive code examples. Learn how CSS properties are inherited and how the cascade determines which styles apply."
+    />
+    <meta
+      name="keywords"
+      content="CSS, inheritance, cascade, specificity, web development, tutorial, examples"
+    />
+    <meta name="author" content="Full Stack Mastery" />
+    <link rel="stylesheet" href="../CSS/inheritance-&-cascade.css" />
+    <link rel="icon" type="image/png" href="../images/css_favicon.png" />
+    <title>CSS Inheritance & Cascade – Interactive Guide</title>
+  </head>
+  <body>
+    <nav>
+      <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+    </nav>
+    <main>
+      <header>
+        <h1>CSS Inheritance & Cascade</h1>
+        <p class="subtitle">
+          Understand how CSS properties are inherited and how the cascade
+          determines which styles apply.
+        </p>
+      </header>
+      <section class="theory">
+        <h2>What is Inheritance in CSS?</h2>
+        <p>
+          Inheritance in CSS is the mechanism by which some property values
+          applied to a parent element are passed down to its children. Not all
+          CSS properties are inherited. For example, <code>color</code> and
+          <code>font-family</code> are inherited, but <code>margin</code> and
+          <code>padding</code> are not.
+        </p>
+        <ul>
+          <li>
+            <strong>Inherited Properties:</strong> <code>color</code>,
+            <code>font-family</code>, <code>font-size</code>,
+            <code>line-height</code>, etc.
+          </li>
+          <li>
+            <strong>Non-inherited Properties:</strong> <code>margin</code>,
+            <code>padding</code>, <code>border</code>, <code>background</code>,
+            etc.
+          </li>
+        </ul>
+        <p>
+          You can force inheritance using the <code>inherit</code> keyword, or
+          prevent it with <code>initial</code> or <code>unset</code>.
+        </p>
+      </section>
+      <section class="example interactive">
+        <h2>Interactive Example: Inheritance</h2>
+        <div class="code-demo">
+          <div class="code-block">
+            <pre><code>/* Parent sets color and font-family */
+.parent {
+  color: #3498db;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+.child {
+  font-size: 1.2em;
+}
+</code></pre>
+          </div>
+          <div class="live-demo">
+            <div class="parent">
+              Parent (color and font-family set)
+              <div class="child">Child (inherits color and font-family)</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="theory">
+        <h2>What is the Cascade in CSS?</h2>
+        <p>
+          The cascade is the algorithm that determines which CSS rule applies
+          when multiple rules could apply to the same element. It is based on
+          three main factors:
+        </p>
+        <ol>
+          <li>
+            <strong>Importance</strong> (e.g.,
+            <code>!important</code> declarations)
+          </li>
+          <li><strong>Specificity</strong> (how specific the selector is)</li>
+          <li>
+            <strong>Source Order</strong> (which rule comes last in the CSS)
+          </li>
+        </ol>
+        <p>
+          The browser evaluates these factors in order to resolve conflicts and
+          apply the correct style.
+        </p>
+      </section>
+      <section class="example interactive">
+        <h2>Interactive Example: Cascade & Specificity</h2>
+        <div class="code-demo">
+          <div class="code-block">
+            <pre><code>/* Multiple rules for the same element */
+.box {
+  background: #f0f4ff;
+  color: #222;
+}
+#special {
+  color: #e74c3c;
+}
+.box {
+  color: #3498db !important;
+}
+</code></pre>
+          </div>
+          <div class="live-demo">
+            <div class="box" id="special">
+              This box demonstrates the cascade and specificity.
+            </div>
+          </div>
+        </div>
+        <p
+          class="demo-description"
+          title="The color will be blue (#3498db) because the '!important' rule has the highest priority, overriding both the ID selector and the other class rule."
+        >
+          Try to predict which color will apply and why. Hover for explanation.
+        </p>
+      </section>
+      <section class="theory">
+        <h2>Best Practices & Tips</h2>
+        <ul>
+          <li>Use inheritance to reduce repetition and keep your CSS DRY.</li>
+          <li>
+            Be mindful of the cascade and specificity to avoid unexpected
+            results.
+          </li>
+          <li>
+            Use <code>inherit</code>, <code>initial</code>, and
+            <code>unset</code> for explicit control.
+          </li>
+          <li>
+            Avoid overusing <code>!important</code> as it makes debugging
+            harder.
+          </li>
+        </ul>
+      </section>
+      <section class="resources">
+        <h2>Further Reading</h2>
+        <ul>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance"
+              target="_blank"
+              rel="noopener noreferrer"
+              >MDN: CSS Inheritance</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade"
+              target="_blank"
+              rel="noopener noreferrer"
+              >MDN: CSS Cascade</a
+            >
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
