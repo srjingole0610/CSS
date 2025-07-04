@@ -223,7 +223,7 @@ body {
 }
 
 .control-btn:hover {
-    background-color: #2980b9;
+    background-color: var(--primary-color-hover);
 }
 
 .playground-container {

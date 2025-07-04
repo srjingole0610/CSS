@@ -266,18 +266,27 @@
             buttons.forEach(button => {
                 button.addEventListener('click', function() {
                     if (this.dataset.float) {
+                        // Update float property on the main element
                         currentFloat = this.dataset.float;
                         playgroundItem.style.float = currentFloat;
-                        // Reset clear property when setting float
-                        currentClear = 'none';
-                        playgroundItem.style.clear = 'none';
+                        
+                        // Create or update the subsequent element to demonstrate clear
+                        let subsequentElement = document.querySelector('.subsequent-element');
+                        if (!subsequentElement) {
+                            subsequentElement = document.createElement('div');
+                            subsequentElement.className = 'subsequent-element';
+                            subsequentElement.textContent = 'Subsequent Element';
+                            playgroundItem.parentNode.insertBefore(subsequentElement, playgroundItem.nextSibling);
+                        }
+                        subsequentElement.style.clear = currentClear;
                     }
                     else if (this.dataset.clear) {
+                        // Update clear property on the subsequent element
                         currentClear = this.dataset.clear;
-                        playgroundItem.style.clear = currentClear;
-                        // Reset float property when setting clear
-                        currentFloat = 'none';
-                        playgroundItem.style.float = 'none';
+                        let subsequentElement = document.querySelector('.subsequent-element');
+                        if (subsequentElement) {
+                            subsequentElement.style.clear = currentClear;
+                        }
                     }
                     
                     updateStyleDisplay();

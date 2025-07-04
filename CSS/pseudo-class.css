@@ -251,7 +251,7 @@ code {
   background: #3498db;
 }
 /* --- New Pseudo-Classes: :is(), :where(), :has(), :not() (advanced), :focus-visible --- */
-.is-where-demo :is(h2, h3)  {
+.is-where-demo :is(h2, h3) {
   color: #8e44ad;
 }
 .is-where-demo p {
