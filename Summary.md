@@ -1745,17 +1745,17 @@ The cascade is the algorithm that determines which CSS rule applies when multipl
 
 - Importance ( !important )
 - Specificity (how specific the selector is)
-- Source Order (which rule comes last) Example:
-```
-.box {
-  background: #f0f4ff;
-  color: #222;
+Source Order (which rule comes last)
+```css
+.box {
+  background: #f0f4ff;
+  color: #222;
 }
-#special {
-  color: #e74c3c;
+#special {
+  color: #e74c3c;
 }
-.box {
-  color: #3498db !important;
+.box {
+  color: #3498db !important;
 }
 ```
 ### 🔑 Key Points:
