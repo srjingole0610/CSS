@@ -1777,3 +1777,69 @@ Source Order (which rule comes last)
 - MDN: CSS Cascade
 - CSS-Tricks: Specifics on CSS Specificity
 
+## 35. CSS `backdrop-filter`
+
+### What is `backdrop-filter` in CSS?
+The `backdrop-filter` property applies graphical effects (such as blurring or color shifting) **to the area behind an element**. It works like placing a frosted glass over content, letting you create stylish UI effects like **glassmorphism**.
+
+It only works on elements with a **transparent background** (or `background-color` with opacity) and usually in combination with `background` and `positioning` styles.
+
+#### Example:
+```css
+.glass-box {
+  backdrop-filter: blur(10px) brightness(0.9);
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 1rem;
+}
+```
+
+### Supported Filter Functions:
+- `blur(px)`
+- `brightness(%)`
+- `contrast(%)`
+- `grayscale(%)`
+- `hue-rotate(deg)`
+- `invert(%)`
+- `opacity(%)`
+- `saturate(%)`
+- `sepia(%)`
+
+You can also use **multiple filters** separated by a space.
+
+```css
+backdrop-filter: blur(5px) contrast(120%);
+```
+
+### 🔑 Key Points:
+- Only affects the **background content behind the element**
+- Needs a **semi-transparent** or **transparent background**
+- Requires **browser support** (ensure fallback for older browsers)
+- Often used with **fixed or absolute positioning**
+- Works well in **modern UI design** (glassmorphism, modals, popups)
+
+### Best Practices
+- Use `backdrop-filter` sparingly—heavy filters can affect performance
+- Combine with a `rgba` or semi-transparent background
+- Always provide a **fallback** for unsupported browsers
+- Consider accessibility—strong blur or contrast may reduce readability
+
+### Compatibility
+- Supported in most modern browsers (Chrome, Edge, Safari)
+- **Not supported** in Firefox without enabling experimental settings
+- Consider using feature detection via `@supports`
+
+#### Example:
+```css
+@supports (backdrop-filter: blur(5px)) {
+  .frosted {
+    backdrop-filter: blur(5px);
+  }
+}
+```
+
+### Further Reading
+- MDN: [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter)
+- CSS-Tricks: [Backdrop Filter Basics](https://css-tricks.com/almanac/properties/b/backdrop-filter/)
+- CSS-glass: [Creating Glassmorphism Effects in CSS](https://css.glass/)
+
