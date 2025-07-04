@@ -44,6 +44,9 @@ Whether you're a beginner or an experienced developer, use this summary to quick
 - [CSS Float](#31-css-float)
 - [CSS Media Queries](#32-css-media-queries)
 - [CSS Container Queries](#33-css-container-queries)
+- [CSS Inheritance & Cascade](#34-css-inheritance--cascade)
+- [CSS Backdrop Filter](#35-css-backdrop-filter)
+- [CSS Writing Mode](#36-css-writing-mode)
 
 ---
 
@@ -1843,3 +1846,80 @@ backdrop-filter: blur(5px) contrast(120%);
 - CSS-Tricks: [Backdrop Filter Basics](https://css-tricks.com/almanac/properties/b/backdrop-filter/)
 - CSS-glass: [Creating Glassmorphism Effects in CSS](https://css.glass/)
 
+
+## 36. CSS `writing-mode`
+
+### What is `writing-mode` in CSS?
+
+The `writing-mode` property defines the direction in which text lines are laid out, either horizontally or vertically. It also determines the direction in which blocks flow. This is fundamental for supporting languages with vertical scripts (like Japanese or Chinese) and for creating vertical text layouts for stylistic purposes.
+
+It fundamentally changes the coordinate system of the layout, affecting how properties like `width`, `height`, and `margin` are interpreted.
+
+#### Example:
+
+```
+.vertical-text-box {
+  writing-mode: vertical-rl;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  width: 200px; /* This now controls vertical space */
+  height: 150px; /* This now controls horizontal space */
+}
+
+```
+
+### Supported Values:
+
+-   `horizontal-tb`: Text flows horizontally from left-to-right, top-to-bottom. **This is the default value.**  
+-   `vertical-rl`: Text flows vertically from top-to-bottom. Blocks are laid out from right-to-left. 
+-   `vertical-lr`: Text flows vertically from top-to-bottom. Blocks are laid out from left-to-right. 
+-   `sideways-rl`: ⚠️ **Experimental.** Text flows vertically, and all glyphs are rotated 90° to the right.   
+-   `sideways-lr`: ⚠️ **Experimental.** Text flows vertically, and all glyphs are rotated 90° to the left.
+    
+
+### 🔑 Key Points:
+
+-   Changes the **block flow direction** (e.g., from top-to-bottom to right-to-left).
+-   Swaps the meaning of horizontal and vertical dimensions. In a vertical mode, `width` refers to the block's height, and `height` refers to its width.
+ 
+-   Logical properties like `margin-block-start` or `padding-inline-end` are often easier to use with `writing-mode` than physical properties (`margin-top`, `padding-right`).
+-   Essential for **internationalization (i18n)** and creating typographically rich layouts.
+    
+
+### Best Practices
+
+-   Apply `writing-mode` to a container element to ensure consistent flow for all its children.
+-   Use logical properties (`inset-block-start`, `margin-inline-start`, etc.) for spacing and positioning to create layouts that adapt correctly to changes in writing mode.
+-   Combine with `text-orientation` to control how individual characters are displayed within a vertical line of text.
+-   Thoroughly test layouts, especially with Flexbox and Grid, as alignment properties will behave differently.
+    
+### Compatibility
+
+-   Core values (`horizontal-tb`, `vertical-rl`, `vertical-lr`) are well-supported in all modern browsers (Chrome, Firefox, Safari, Edge).
+-   The `sideways-*` values have limited and inconsistent browser support. Check compatibility tables before use.
+    
+#### Example using `@supports`:
+
+```
+/* Fallback for older browsers */
+.my-element {
+  width: 150px;
+}
+
+/* Apply vertical writing mode where supported */
+@supports (writing-mode: vertical-rl) {
+  .my-element {
+    writing-mode: vertical-rl;
+    /* Width and height are now interpreted differently */
+    width: auto; 
+    height: 150px;
+  }
+}
+
+```
+
+### Further Reading
+
+-   MDN: [`writing-mode`](https://www.google.com/search?q=%5Bhttps://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode%5D(https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode) "null")
+-   CSS-Tricks: [CSS Writing Mode](https://css-tricks.com/almanac/properties/w/writing-mode/ "null") 
+-   W3C: [CSS Writing Modes Level 3](https://www.w3.org/TR/css-writing-modes-3/ "null")

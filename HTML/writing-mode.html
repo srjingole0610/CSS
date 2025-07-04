@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Writing Mode – Theory & Interactive Examples</title>
+  <meta name="description" content="Comprehensive guide and interactive examples for the CSS writing-mode property." />
+  <meta name="keywords" content="css, writing-mode, vertical text, horizontal text, web design, text direction" />
+  <meta name="author" content="Suraj Ingole" />
+  <meta name="robots" content="index, follow" />
+  <link rel="shortcut icon" href="../images/css_favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="../CSS/writing-mode.css" />
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+
+  <main class="container">
+
+    <!-- Theory Section -->
+    <section class="theory-section mb-12">
+      <h1 class="text-3xl font-bold mb-4">CSS <code>writing-mode</code></h1>
+      <p class="intro mb-4">
+        The <code>writing-mode</code> CSS property defines whether lines of text are laid out horizontally or vertically
+        and the direction in which blocks progress. This is essential for supporting internationalization, creative layouts,
+        and advanced typographic effects.
+      </p>
+      <ul>
+        <li><strong>Horizontal-tb (default):</strong> Text flows horizontally from left to right and lines stack top to bottom.</li>
+        <li><strong>Vertical-rl:</strong> Text flows vertically from top to bottom and lines stack right to left.</li>
+        <li><strong>Vertical-lr:</strong> Text flows vertically from top to bottom and lines stack left to right.</li>
+        <li><strong>Sideways-rl / sideways-lr:</strong> Rotates text for creative vertical effects.</li>
+      </ul>
+      <div class="syntax-block">
+        <h3 class="font-semibold mb-2">Syntax</h3>
+        <pre><code>writing-mode: horizontal-tb | vertical-rl | vertical-lr | sideways-rl | sideways-lr;</code></pre>
+      </div>
+      <div class="tip-block flex items-start">
+        <span class="tip-icon">💡</span>
+        <span>Tip: Combine <code>writing-mode</code> with <code>text-orientation</code> for even more control over vertical text appearance!</span>
+      </div>
+    </section>
+
+    <!-- Interactive Examples -->
+    <section class="examples-section mb-12">
+      <h2 class="text-2xl font-semibold mb-6">Interactive Examples</h2>
+      <div class="example-grid mb-8">
+        <!-- Individual writing mode examples -->
+        <div class="example-card">
+          <h3>Horizontal (Default)</h3>
+          <div class="writing-demo horizontal-tb">Horizontal-tb (default): English text flows left to right.</div>
+          <pre><code>.horizontal-tb {
+  writing-mode: horizontal-tb;
+}</code></pre>
+        </div>
+        <div class="example-card">
+          <h3>Vertical Right-to-Left</h3>
+          <div class="writing-demo vertical-rl">vertical-rl: 文字は上から下、右から左へ流れます。</div>
+          <pre><code>.vertical-rl {
+  writing-mode: vertical-rl;
+}</code></pre>
+        </div>
+        <div class="example-card">
+          <h3>Vertical Left-to-Right</h3>
+          <div class="writing-demo vertical-lr">vertical-lr: 文字は上から下、左から右へ流れます。</div>
+          <pre><code>.vertical-lr {
+  writing-mode: vertical-lr;
+}</code></pre>
+        </div>
+        <div class="example-card">
+          <h3>Sideways Right-to-Left</h3>
+          <div class="writing-demo sideways-rl">sideways-rl: Vertical text, rotated for creative effect.</div>
+          <pre><code>.sideways-rl {
+  writing-mode: sideways-rl;
+}</code></pre>
+        </div>
+        <div class="example-card">
+          <h3>Sideways Left-to-Right</h3>
+          <div class="writing-demo sideways-lr">sideways-lr: Vertical text, rotated the other way.</div>
+          <pre><code>.sideways-lr {
+  writing-mode: sideways-lr;
+}</code></pre>
+        </div>
+      </div>
+      <div class="note">
+        <strong>Try it out:</strong> Each card demonstrates a different <code>writing-mode</code> value. Resize your browser or copy the code to experiment in your own projects!
+      </div>
+    </section>
+
+    <!-- Interactive Demo -->
+    <section class="mb-12">
+      <div class="w-full max-w-5xl bg-white rounded-xl shadow-lg p-6 md:p-8 mx-auto">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-bold">Live Playground</h2>
+          <p class="text-gray-600">Experiment with <code>writing-mode</code> using the controls below.</p>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-8">
+
+          <!-- Controls -->
+          <div class="w-full md:w-1/3">
+            <h3 class="text-xl font-semibold mb-4">Choose a Mode</h3>
+            <div id="controls" class="space-y-3">
+              <label><input type="radio" name="writing-mode" value="horizontal-tb" class="mr-2" checked> horizontal-tb</label><br />
+              <label><input type="radio" name="writing-mode" value="vertical-rl" class="mr-2"> vertical-rl</label><br />
+              <label><input type="radio" name="writing-mode" value="vertical-lr" class="mr-2"> vertical-lr</label><br />
+              <label><input type="radio" name="writing-mode" value="sideways-rl" class="mr-2"> sideways-rl</label><br />
+              <label><input type="radio" name="writing-mode" value="sideways-lr" class="mr-2"> sideways-lr</label>
+            </div>
+
+            <div class="mt-6 bg-gray-100 p-4 rounded-md">
+              <h4 class="font-semibold mb-1">Applied CSS:</h4>
+              <code id="css-output" class="text-blue-700 bg-white p-2 rounded block">writing-mode: horizontal-tb;</code>
+            </div>
+          </div>
+
+          <!-- Output -->
+          <div class="w-full md:w-2/3 flex items-center justify-center bg-gray-100 rounded-md p-4 min-h-[350px]">
+            <div id="demo-box" class="demo-box wm-horizontal-tb bg-sky-100 border border-sky-400 p-4 rounded overflow-auto">
+              <h3 class="font-bold mb-2">Example Content</h3>
+              <p>This is a demonstration of how the <code>writing-mode</code> property affects text flow and block direction. Notice how 'width' and 'height' are interpreted differently in vertical modes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- References -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">References</h2>
+      <ul class="list-disc pl-6 text-blue-700">
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode" target="_blank">MDN: writing-mode</a></li>
+        <li><a href="https://css-tricks.com/almanac/properties/w/writing-mode/" target="_blank">CSS-Tricks: writing-mode</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    const controls = document.getElementById('controls');
+    const demoBox = document.getElementById('demo-box');
+    const cssOutput = document.getElementById('css-output');
+    const writingModeClasses = ['wm-horizontal-tb', 'wm-vertical-rl', 'wm-vertical-lr', 'wm-sideways-rl', 'wm-sideways-lr'];
+
+    controls.addEventListener('change', (e) => {
+      if (e.target.name === 'writing-mode') {
+        const value = e.target.value;
+        demoBox.classList.remove(...writingModeClasses);
+        demoBox.classList.add(`wm-${value}`);
+        cssOutput.textContent = `writing-mode: ${value};`;
+      }
+    });
+  </script>
+</body>
+</html>
