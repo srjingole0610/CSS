@@ -293,17 +293,17 @@ section.example {
 
 @media (min-width: 37.5rem) {
   .responsive-item {
-    flex: 1 1 calc(50% - 1.25rem);
+    flex: 1 1 calc(50% - 0.625rem);
   }
   
   .approach {
-    flex: 1 1 calc(50% - 1.25rem);
+    flex: 1 1 calc(50% - 0.625rem);
   }
 }
 
 @media (min-width: 56.25rem) {
   .responsive-item {
-    flex: 1 1 calc(33.33% - 1.25rem);
+    flex: 1 1 calc((100% - 2.5rem) / 3);
   }
 }
 

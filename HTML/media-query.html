@@ -42,13 +42,13 @@
 .responsive-box {
   background-color: #3498db;
   color: white;
-  padding: 20px;
+  padding: 1.25rem;
   width: 100%;
   text-align: center;
 }
 
-/* Apply when screen width is 600px or less */
-@media (max-width: 600px) {
+/* Apply when screen width is 37.5rem or less */
+@media (max-width: 37.5rem) {
   .responsive-box {
     background-color: #e74c3c;
     font-size: 0.9rem;
@@ -57,7 +57,7 @@
                 </div>
                 <div class="live-demo">
                     <div class="responsive-box">Resize your browser window to see this box change!</div>
-                    <p class="demo-description">This box changes color and font size when the viewport width is 600px or less.</p>
+                    <p class="demo-description">This box changes color and font size when the viewport width is 37.5rem or less.</p>
                 </div>
             </div>
         </section>
@@ -91,7 +91,7 @@
   .theme-aware {
     background-color: white !important;
     color: black !important;
-    border: 1px solid black !important;
+    border: 0.0625rem solid black !important;
   }
 }</code></pre>
                 </div>
@@ -125,23 +125,23 @@
 .complex-demo {
   background-color: #3498db;
   color: white;
-  padding: 20px;
-  border-radius: 8px;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
   text-align: center;
 }
 
 /* Medium screens in landscape mode */
-@media (min-width: 600px) and (max-width: 1024px) and (orientation: landscape) {
+@media (min-width: 37.5rem) and (max-width: 64rem) and (orientation: landscape) {
   .complex-demo {
     background-color: #9b59b6;
-    border-radius: 16px;
+    border-radius: 1rem;
   }
 }
 
 /* High-resolution displays */
 @media (min-resolution: 2dppx) {
   .complex-demo {
-    border: 2px solid gold;
+    border: 0.125rem solid gold;
   }
 }</code></pre>
                 </div>
@@ -162,12 +162,12 @@
 .element { width: 100%; }
 
 /* Tablet and up */
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
   .element { width: 50%; }
 }
 
 /* Desktop */
-@media (min-width: 1024px) {
+@media (min-width: 64rem) {
   .element { width: 33.33%; }
 }</code></pre>
                 </div>
@@ -178,12 +178,12 @@
 .element { width: 33.33%; }
 
 /* Tablet and down */
-@media (max-width: 1023px) {
+@media (max-width: 63.9375rem) {
   .element { width: 50%; }
 }
 
 /* Mobile */
-@media (max-width: 767px) {
+@media (max-width: 47.9375rem) {
   .element { width: 100%; }
 }</code></pre>
                 </div>
@@ -197,27 +197,27 @@
 <pre><code>.responsive-layout {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 .responsive-item {
   flex: 1 1 100%;
   background-color: #3498db;
   color: white;
-  padding: 20px;
+  padding: 1.25rem;
   text-align: center;
-  border-radius: 8px;
+  border-radius: 0.5rem;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 37.5rem) {
   .responsive-item {
-    flex: 1 1 calc(50% - 20px);
+    flex: 1 1 calc(50% - 0.625rem);
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 56.25rem) {
   .responsive-item {
-    flex: 1 1 calc(33.33% - 20px);
+    flex: 1 1 calc((100% - 2.5rem) / 3);
   }
 }</code></pre>
                 </div>
