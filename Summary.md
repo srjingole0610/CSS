@@ -1674,8 +1674,7 @@ CSS **Media Queries** are a powerful feature that allows you to apply different 
 ### ✅ Example: Basic Container Query
 ```
 .container {
-  container-type: inline-
-size;
+  container-type: inline-size;
   width: 100%;
   resize: horizontal;
   overflow: auto;
@@ -1703,8 +1702,7 @@ size;
 - cqmax: The larger value of cqi or cqb
 ```
 .cq-heading {
-  font-size: calc(1rem + 
-2cqi);
+  font-size: calc(1rem + 2cqi);
 }
 ```
 ### 📊 Container Queries vs. Media Queries
