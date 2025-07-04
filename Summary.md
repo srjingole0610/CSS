@@ -31,7 +31,7 @@ Whether you're a beginner or an experienced developer, use this summary to quick
 - [CSS Position Property](#18-css-position-property)
 - [z-index in CSS](#19-z-index-in-css)
 - [Overflow in CSS](#20-overflow-in-css)
-- [ Pseudo-Elements in CSS](#21-pseudo-elements-in-css)
+- [Pseudo-Elements in CSS](#21-pseudo-elements-in-css)
 - [CSS Pseudo-Classes](#22-css-pseudo-classes)
 - [CSS Multi-Column Layout](#23-css-multi-column-layout)
 - [CSS Flexbox](#24-css-flexbox)
@@ -40,6 +40,10 @@ Whether you're a beginner or an experienced developer, use this summary to quick
 - [CSS Transform](#27-css-transform)
 - [CSS Animations](#28-css-animations)
 - [CSS Variables](#29-css-variables)
+- [CSS Specificity](#30-css-specificity)
+- [CSS Float](#31-css-float)
+- [CSS Media Queries](#32-css-media-queries)
+- [CSS Container Queries](#33-css-container-queries)
 
 ---
 
@@ -48,9 +52,11 @@ Whether you're a beginner or an experienced developer, use this summary to quick
 **CSS (Cascading Style Sheets)** is a style sheet language used to define the presentation and layout of HTML documents. It separates content (HTML) from design, enabling consistent styling across multiple web pages.
 
 ### 🔑 Key Concepts:
-- **Separation of Concerns:** Structure (HTML) vs. Style (CSS)
+-
+ **Separation of Concerns:** Structure (HTML) vs. Style (CSS)
 - **Cascading Nature:** Multiple rules can apply to an element; the most specific one takes effect.
 - **Inheritance:** Certain properties (e.g., `color`, `font-family`) pass from parent to child elements.
+
 
 ### ✅ Example:
 ```html
@@ -59,7 +65,8 @@ Whether you're a beginner or an experienced developer, use this summary to quick
 <html>
 <head>
   <link rel="stylesheet" href="style.css">
-</head>
+<
+/head>
 <body>
   <h1>Hello, CSS!</h1>
 </body>
@@ -67,10 +74,12 @@ Whether you're a beginner or an experienced developer, use this summary to quick
 ```
 
 ```css
+
 /* style.css */
 h1 {
   color: teal;
-  font-family: Arial, sans-serif;
+ 
+ font-family: Arial, sans-serif;
 }
 ```
 
@@ -78,28 +87,34 @@ h1 {
 
 ## 2. Types of Stylesheets
 
+
 CSS can be applied in three primary ways:
 
-| Type        | Description | Use Case |
+|
+ Type        | Description | Use Case |
 |-------------|-------------|----------|
 | **Inline**   | Defined inside an element's `style` attribute | For quick testing or overriding |
 | **Internal** | Placed within `<style>` in the HTML `<head>` | For single-page documents |
 | **External** | Linked via `<link>` to a `.css` file | Recommended for maintainability and reuse |
 
-### ✅ Example:
+#
+## ✅ Example:
 ```html
 <!-- Inline -->
-<p style="color: red;">This is inline styled</p>
+<
+p style="color: red;">This is inline styled</p>
 
 <!-- Internal -->
 <head>
   <style>
-    p { color: blue; }
+ 
+   p { color: blue; }
   </style>
 </head>
 
 <!-- External -->
-<head>
+<
+head>
   <link rel="stylesheet" href="styles.css">
 </head>
 ```
@@ -108,62 +123,75 @@ CSS can be applied in three primary ways:
 
 ## 3. CSS Selectors
 
-**Selectors** determine which HTML elements to style.
+*
+*Selectors** determine which HTML elements to style.
 
 ### 🎯 Common Selectors:
 - `element` – Targets all specific elements (e.g., `p {}`)
-- `.class` – Targets elements with a specific class
+-
+ `.class` – Targets elements with a specific class
 - `#id` – Targets a unique element by its ID
 - `[attribute]` – Targets elements by attribute
 - `:pseudo-class` – Styles elements in a specific state
-- `::pseudo-element` – Styles a part of an element (e.g., `::first-line`)
+-
+ `::pseudo-element` – Styles a part of an element (e.g., `::first-line`)
 
 ### 🔢 Specificity (Priority Order):
 `Inline Styles > #ID > .Class / [Attr] / :Pseudo-class > Element / ::Pseudo-element`
+
 
 ### ✅ Example:
 ```css
 p { color: navy; }
 .highlight { background: yellow; }
 #main { border: 1px solid #333; }
-input[type="text"] { border-radius: 4px; }
+i
+nput[type="text"] { border-radius: 4px; }
 a:hover { color: orange; }
 ```
 
 ---
 
+
 ## 4. Comments in CSS
 
-Comments help document your styles. They're ignored by browsers.
+C
+omments help document your styles. They're ignored by browsers.
 
 ```css
 /* This is a single-line comment */
+
 
 /* Layout Styles */
 .container {
   max-width: 1200px;
   margin: 0 auto;
 }
-```
+`
+``
 
 ---
 
 ## 5. Colors in CSS
 
+
 CSS provides several ways to define color:
 
 | Format     | Example                |
 |------------|------------------------|
-| Named      | `red`, `blue`          |
+|
+ Named      | `red`, `blue`          |
 | Hex        | `#ff0000`, `#333`      |
 | RGB        | `rgb(255, 0, 0)`       |
 | RGBA       | `rgba(255, 0, 0, 0.5)` |
 | HSL/HSLA   | `hsl(0, 100%, 50%)`    |
 
+
 ### 👀 Accessibility Tip:
 Ensure **sufficient contrast** between foreground and background colors for better readability.
 
-### ✅ Example:
+#
+## ✅ Example:
 ```css
 body {
   background-color: #f0f0f0;
@@ -176,7 +204,114 @@ body {
 }
 ```
 
+
 ---
+
+}
+
+.float-column {
+    float: left;
+    width: 30%;
+    margin-right: 5%;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    min-height: 150px;
+}
+
+.float-column:last-child {
+    margin-right: 0;
+}
+
+/* Interactive Playground */
+.interactive-playground {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.control-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.control-btn:hover {
+    background-color: var(--primary-color-hover);
+}
+
+.playground-container {
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.playground-box {
+    overflow: hidden;
+    margin-bottom: 20px;
+    min-height: 200px;
+}
+
+.playground-item {
+    width: 150px;
+    height: 100px;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.playground-text {
+    margin-top: 10px;
+}
+
+.current-styles {
+    margin-top: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .float-column {
+        float: none;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    .controls {
+        flex-direction: column;
+    }
+    
+    .back-button {
+        position: static;
+        display: inline-block;
+        margin-bottom: 15px;
+        transform: none;
+    }
+    
+    .page-header {
+        padding-top: 15px;
+    }
+}
 
 ## 6. Backgrounds in CSS
 
@@ -1391,5 +1526,201 @@ body {
 }
 ```
 
-### See Also
-- <a href="HTML/variables.html">Interactive CSS Variables Example</a>
+For a detailed, interactive guide, see the [CSS Variables Example Page](./HTML/variables.html).
+
+---
+
+## 30. CSS Specificity
+
+**CSS Specificity** is the set of rules browsers use to determine which style declaration is applied to an element when multiple conflicting rules exist. The more specific a selector is, the higher its precedence.
+
+### Specificity Hierarchy (Highest to Lowest)
+1.  **Inline Styles** - `style="..."`
+2.  **IDs** - `#my-id`
+3.  **Classes, Attributes, Pseudo-classes** - `.my-class`, `[type="text"]`, `:hover`
+4.  **Elements, Pseudo-elements** - `p`, `::before`
+
+### The `!important` Rule
+Adding `!important` to a style declaration makes it override all other declarations, regardless of specificity. It should be used with extreme caution as it can make debugging difficult.
+
+### ✅ Example:
+```css
+/* Low specificity */
+p {
+  color: blue;
+}
+
+/* Higher specificity */
+.my-paragraph {
+  color: green;
+}
+
+/* Highest specificity */
+#main-paragraph {
+  color: red;
+}
+
+/* This will be applied regardless of the ID selector */
+p.important {
+    color: purple !important;
+}
+```
+
+---
+
+## 31. CSS Float
+
+The **float** property is one of CSS's traditional layout mechanisms that specifies how an element should float, allowing text and inline elements to wrap around it. While modern layout techniques like Flexbox and Grid are now preferred for complex layouts, float remains useful for specific scenarios.
+
+### 🔑 Key Concepts:
+
+- **Float Values:** The float property can take values like `left`, `right`, `none`, and `inherit`.
+- **Document Flow:** Floated elements are removed from the normal document flow.
+- **Container Collapse:** Containers with only floated elements collapse to zero height.
+- **Clearing Floats:** The `clear` property controls how elements behave around floated items.
+
+### 🧹 The Clear Property:
+
+The `clear` property specifies which sides of an element cannot be adjacent to earlier floating elements:
+
+- `clear: left` - Element appears below left-floated elements
+- `clear: right` - Element appears below right-floated elements
+- `clear: both` - Element appears below both left and right-floated elements
+- `clear: none` - Default value, allows floating elements on both sides
+
+### 🛠️ The Clearfix Hack:
+
+When a container has only floated elements, it collapses to zero height. The "clearfix" is a common solution:
+
+```css
+/* Modern clearfix using ::after pseudo-element */
+.clearfix-container::after  {
+  content: "";
+  display: block;
+  clear: both;
+}
+```
+
+---
+
+## 32. CSS Media Queries
+
+CSS **Media Queries** are a powerful feature that allows you to apply different styles based on device characteristics like screen size, resolution, orientation, and user preferences. They're the foundation of responsive web design, enabling websites to adapt to different viewing environments.
+
+### 🔑 Key Concepts:
+
+- **Responsive Design:** Media queries enable content to adapt to different screen sizes and devices.
+- **Conditional Styling:** Apply CSS only when specific conditions about the user's device or preferences are met.
+- **Mobile-First Approach:** Start with styles for small screens, then enhance for larger screens.
+- **User Preference Detection:** Adapt to user preferences like dark mode or reduced motion.
+
+### 📱 Media Query Syntax:
+
+```css
+@media [media-type] [and/not/only] ([media-feature]) {
+  /* CSS rules to apply when conditions are met */
+}
+```
+
+## 33. CSS Container Queries
+
+**CSS Container Queries** allow you to apply styles to elements based on the size of their containing element, rather than the viewport. This enables truly modular, component-based responsive design.
+
+### 🔑 Key Concepts:
+- **Component-Based Design:** Style elements based on their parent container's size
+- **Reusable Components:** Create components that adapt to any context they're placed in
+- **Modular Layouts:** Build layouts that respond to their available space
+- **Reduced Complexity:** Simplify responsive design by focusing on components, not just viewport
+
+### 📝 Syntax
+```css
+.container {
+  container-type: inline-size;
+  width: 100%;
+  resize: horizontal;
+  overflow: auto;
+}
+.card {
+  padding: 1rem;
+  background: #f0f4ff;
+  border-radius: 8px;
+}
+@container (max-width: 400px) {
+  .card {
+    background: #e74c3c;
+    color: white;
+    padding: 0.5rem;
+  }
+}
+
+.sidebar {
+  container-type: inline-size;
+  container-name: sidebar;
+}
+@container sidebar (max-width: 300px) {
+  .widget {
+    background: #3498db;
+    color: white;
+  }
+}
+```
+### 🧩 Container Query Components
+- container-type: Establishes a containment context ( size , inline-size , normal )
+- container-name: Optional name for the container
+- @container: The at-rule that begins a container query
+- Container Features: Conditions about the container dimensions ( width , height , aspect-ratio )
+- Logical Operators: and , not , or to combine conditions
+
+### ✅ Example: Basic Container Query
+```
+.container {
+  container-type: inline-size;
+  width: 100%;
+  resize: horizontal;
+  overflow: auto;
+}
+.card {
+  padding: 1rem;
+  background: #f0f4ff;
+  border-radius: 8px;
+}
+@container (max-width: 400px) 
+{
+  .card {
+    background: #e74c3c;
+    color: white;
+    padding: 0.5rem;
+  }
+}
+```
+### 📏 Container Query Units
+- cqw: 1% of a query container's width
+- cqh: 1% of a query container's height
+- cqi: 1% of a query container's inline size
+- cqb: 1% of a query container's block size
+- cqmin: The smaller value of cqi or cqb
+- cqmax: The larger value of cqi or cqb
+```
+.cq-heading {
+  font-size: calc(1rem + 2cqi);
+}
+```
+### 📊 Container Queries vs. Media Queries
+Feature Container Queries Media Queries Target Container size Viewport size Use Modular components Page layout Example
+
+```
+@container (min-width: 400px) 
+{ .card { display: flex; } }
+@media (min-width: 768px) { 
+.card { display: flex; } }
+```
+### 💡 Best Practices
+- Use for component-level responsiveness
+- Combine with media queries for full flexibility
+- Prefer inline-size for internationalization
+- Be mindful of performance with deep nesting
+- Provide fallbacks for unsupported browsers
+### 🔗 Further Reading
+- MDN: CSS Container Queries
+- W3C: CSS Containment Module Level 3
+- Can I Use: CSS Container Queries

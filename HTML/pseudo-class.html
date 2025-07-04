@@ -21,14 +21,59 @@
       <h2>What are CSS Pseudo-Classes?</h2>
       <p><strong>Pseudo-classes</strong> are special keywords added to selectors that specify a special state of the selected elements. They allow you to style elements based on user interaction, position in the DOM, or other dynamic conditions, without adding extra classes or JavaScript.</p>
       <ul>
-        <li><strong>User Interaction:</strong> <code>:hover</code>, <code>:focus</code>, <code>:active</code></li>
+        <li><strong>User Interaction:</strong> <code>:hover</code>, <code>:focus</code>, <code>:active</code>, <code>:focus-visible</code></li>
         <li><strong>Structural:</strong> <code>:first-child</code>, <code>:last-child</code>, <code>:nth-child()</code>, <code>:only-child</code>, <code>:empty</code></li>
         <li><strong>Form State:</strong> <code>:checked</code>, <code>:disabled</code>, <code>:required</code>, <code>:valid</code>, <code>:invalid</code></li>
-        <li><strong>Negation:</strong> <code>:not()</code></li>
+        <li><strong>Negation & Logic:</strong> <code>:not()</code>, <code>:is()</code>, <code>:where()</code>, <code>:has()</code></li>
       </ul>
       <p>Pseudo-classes are written after a selector, prefixed with a colon. Example: <code>a:hover</code> styles links when hovered.</p>
+      <h3>New & Advanced Pseudo-Classes</h3>
+      <ul>
+        <li><strong>:is()</strong> — Matches any selector in a comma-separated list, making complex selectors easier to write and maintain. Example: <code>:is(h1, h2, h3) { color: purple; }</code></li>
+        <li><strong>:where()</strong> — Like <code>:is()</code> but always has zero specificity, useful for utility and reset styles. Example: <code>:where(nav a) { text-decoration: underline; }</code></li>
+        <li><strong>:has()</strong> — Parent selector: matches elements that contain a certain child or descendant. Example: <code>article:has(img) { border: 2px solid #ffd200; }</code></li>
+        <li><strong>:not()</strong> — Excludes elements matching a selector. Now supports complex selectors. Example: <code>li:not(.active) { opacity: 0.7; }</code></li>
+        <li><strong>:focus-visible</strong> — Styles elements only when focused via keyboard navigation (not mouse), improving accessibility. Example: <code>button:focus-visible { outline: 2px solid #3498db; }</code></li>
+      </ul>
     </section>
     <section class="demo-section">
+      <div class="demo-block">
+        <h3>:is(), :where()</h3>
+        <p><code>:is()</code> and <code>:where()</code> simplify writing selectors for multiple elements. <code>:where()</code> always has zero specificity, so it won't override more specific rules.</p>
+        <div class="is-where-demo">
+          <h2>Heading 2</h2>
+          <h3>Heading 3</h3>
+          <p>Paragraph</p>
+        </div>
+        <pre><code>.is-where-demo :is(h2, h3) { color: #8e44ad; }
+        .is-where-demo :where(p) { background: #e3f6fd; }</code></pre>
+      </div>
+      <div class="demo-block">
+        <h3>:has()</h3>
+        <p><code>:has()</code> lets you style a parent based on its children. For example, highlight cards that contain an image:</p>
+        <div class="has-demo">
+           <div class="card"><img src="../images/css_favicon.png" alt="CSS logo icon" width="24"> Card with image</div>
+          <div class="card">Card without image</div>
+        </div>
+        <pre><code>.has-demo .card:has(img) { border: 2px solid #ffd200; background: #f0e6fa; }</code></pre>
+      </div>
+      <div class="demo-block">
+        <h3>:not() (Advanced)</h3>
+        <p><code>:not()</code> can now accept complex selectors, not just simple classes or elements. For example, style all list items except those with a specific class or attribute:</p>
+        <ul class="not-advanced-demo">
+          <li>Apple</li>
+          <li class="exclude">Banana</li>
+          <li data-skip>Skip Me</li>
+          <li>Cherry</li>
+        </ul>
+        <pre><code>.not-advanced-demo li:not(.exclude, [data-skip]) { color: #8e44ad; font-weight: bold; }</code></pre>
+      </div>
+      <div class="demo-block">
+        <h3>:focus-visible</h3>
+        <p><code>:focus-visible</code> only applies focus styles when the user is navigating with a keyboard (Tab), not with a mouse click. This improves accessibility and avoids unwanted outlines.</p>
+        <button class="focus-visible-demo-btn">Tab to Focus Me</button>
+        <pre><code>.focus-visible-demo-btn:focus-visible { outline: 3px solid #3498db; background: #e3f6fd; }</code></pre>
+      </div>
       <h2>Interactive Examples</h2>
       <div class="demo-block">
         <h3>:hover, :focus, :active</h3>

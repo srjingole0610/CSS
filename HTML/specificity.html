@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A deep dive into CSS Specificity with interactive examples. Understand how browsers decide which CSS rules to apply."
+    />
+    <meta
+      name="keywords"
+      content="CSS, Specificity, Selectors, CSS Rules, Web Development, Tutorial"
+    />
+    <meta name="author" content="Full Stack Mastery" />
+    <title>CSS Specificity – Interactive Guide</title>
+    <link rel="stylesheet" href="../CSS/specificity.css" />
+    <link rel="icon" type="image/png" href="../images/css_favicon.png" />
+  </head>
+  <body>
+    <nav>
+      <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+    </nav>
+    <main>
+      <header>
+        <h1>CSS Specificity</h1>
+        <p class="subtitle">
+          Understand the rules that determine which style declarations are
+          applied to an element.
+        </p>
+      </header>
+
+      <section class="theory">
+        <h2>What is CSS Specificity?</h2>
+        <p>
+          <strong>CSS Specificity</strong> is the algorithm used by browsers to
+          determine which CSS rule is the most relevant and should be applied to
+          an element. When multiple rules target the same element and conflict,
+          specificity decides which one wins.
+        </p>
+        <div class="specificity-chart">
+          <img
+            src="../images/CSS-specificity.png"
+            alt="CSS Specificity Chart"
+            class="specificity-image"
+          />
+        </div>
+        <ul>
+          <li>Specificity is calculated based on the makeup of a selector.</li>
+          <li>
+            The selector with the highest specificity value will override
+            others.
+          </li>
+          <li>
+            If specificity is equal, the last declared rule in the CSS source
+            order wins.
+          </li>
+        </ul>
+      </section>
+
+      <section class="theory">
+        <h2>Specificity Hierarchy</h2>
+        <p>
+          Specificity is calculated by counting the number of selectors in each
+          of these categories (from highest to lowest priority):
+        </p>
+        <ol>
+          <li>
+            <strong>Inline Styles:</strong> Style applied directly to an element
+            (e.g., <code>&lt;p style="color: red;"&gt;</code>).
+          </li>
+          <li>
+            <strong>IDs:</strong> Selectors that target an element by its unique
+            ID (e.g., <code>#my-id</code>).
+          </li>
+          <li>
+            <strong>Classes, Attributes, and Pseudo-classes:</strong> Selectors
+            like <code>.my-class</code>, <code>[type="text"]</code>, or
+            <code>:hover</code>.
+          </li>
+          <li>
+            <strong>Elements and Pseudo-elements:</strong> Selectors for element
+            types like <code>p</code>, <code>div</code>, or pseudo-elements like
+            <code>::before</code>.
+          </li>
+        </ol>
+        <p>
+          The universal selector (<code>*</code>) and combinators
+          (<code>+</code>, <code>></code>, <code>~</code>, ' ') have no effect
+          on specificity.
+        </p>
+      </section>
+
+      <section class="example">
+        <h2>Example 1: ID vs. Class vs. Element</h2>
+        <div class="code-demo">
+          <div class="code-block">
+            <pre><code>/* Element selector (low specificity) */
+p {
+  color: blue;
+}
+/* Class selector (medium specificity) */
+.text-green {
+  color: green;
+}
+/* ID selector (high specificity) */
+#text-red {
+  color: red;
+}</code></pre>
+          </div>
+          <div class="live-demo">
+            <p id="text-red" class="text-green">
+              This text is red because the ID selector (#text-red) has the
+              highest specificity.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="example">
+        <h2>Example 2: Specificity Calculation</h2>
+        <p>
+          A selector's specificity is often represented as `(IDs, Classes,
+          Elements)`.
+        </p>
+        <div class="code-demo">
+          <div class="code-block">
+            <pre><code>/* Specificity: (0, 1, 1) */
+div.box {
+  background-color: lightblue;
+}
+/* Specificity: (0, 2, 0) */
+.box.dark {
+  background-color: navy;
+  color: white;
+}
+/* Specificity: (1, 0, 0) */
+#unique-box {
+  border: 2px solid red;
+}</code></pre>
+          </div>
+          <div class="live-demo">
+            <div id="unique-box" class="box dark">
+              This box has a navy background because `.box.dark` (0,2,0) is more
+              specific than `div.box` (0,1,1). The red border comes from the ID.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="theory">
+        <h2>The <code>!important</code> Rule</h2>
+        <p>
+          The <code>!important</code> declaration can be added to a style to
+          override all other rules, regardless of specificity. It should be used
+          sparingly as it can make debugging difficult.
+        </p>
+        <ul>
+          <li>
+            <strong>Use Case:</strong> Overriding styles from a third-party
+            library or for utility classes that must always apply.
+          </li>
+          <li>
+            <strong>Warning:</strong> Avoid using <code>!important</code> in
+            your primary stylesheet whenever possible. It's a sign of
+            specificity wars.
+          </li>
+        </ul>
+      </section>
+
+      <section class="example">
+        <h2>Example 3: The Power of <code>!important</code></h2>
+        <div class="code-demo">
+          <div class="code-block">
+            <pre><code>#important-demo {
+  background-color: red; /* High specificity */
+}
+.important-override {
+  background-color: limegreen !important; /* Wins! */
+}</code></pre>
+          </div>
+          <div class="live-demo">
+            <div id="important-demo" class="important-override">
+              This box is green because <code>!important</code> overrides the ID
+              selector.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="resources">
+        <h2>Further Reading</h2>
+        <ul>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity"
+              target="_blank"
+              rel="noopener noreferrer"
+              >MDN: Specificity</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://css-tricks.com/specifics-on-css-specificity/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >CSS-Tricks: Specifics on CSS Specificity</a
+            >
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
