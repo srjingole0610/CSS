@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="In-depth guide to CSS media queries with interactive code examples. Learn how to create responsive designs for different screen sizes and devices.">
+    <meta name="keywords" content="CSS, media queries, responsive design, web development, examples, tutorial">
+    <meta name="author" content="Full Stack Mastery">
+    <title>CSS Media Queries – Interactive Guide</title>
+    <link rel="stylesheet" href="../CSS/media-query.css">
+    <link rel="icon" type="image/png" href="../images/css_favicon.png">
+</head>
+<body>
+    <nav>
+        <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+    </nav>
+    <main>
+        <header>
+            <h1>CSS Media Queries</h1>
+            <p class="subtitle">Create responsive, adaptive designs that work beautifully across all devices!</p>
+        </header>
+
+        <section class="theory">
+            <h2>What Are CSS Media Queries?</h2>
+            <p>
+                <strong>CSS Media Queries</strong> allow you to apply different styles based on device characteristics like screen size, resolution, orientation, and more. They're the foundation of responsive web design, enabling your website to adapt to different viewing environments.
+            </p>
+            <p>Media queries use the <code>@media</code> rule to conditionally apply CSS when a specific condition is true.</p>
+            <ul>
+                <li><strong>Responsive Design:</strong> Adapt layouts for different screen sizes</li>
+                <li><strong>Device Targeting:</strong> Apply styles based on device capabilities</li>
+                <li><strong>Print Styling:</strong> Create specialized styles for printed pages</li>
+                <li><strong>Accessibility:</strong> Adjust for user preferences like reduced motion</li>
+            </ul>
+        </section>
+
+        <section class="example interactive">
+            <h2>Example 1: Basic Media Query Syntax</h2>
+            <div class="code-demo">
+                <div class="code-block">
+<pre><code>/* Default styles */
+.responsive-box {
+  background-color: #3498db;
+  color: white;
+  padding: 1.25rem;
+  width: 100%;
+  text-align: center;
+}
+
+/* Apply when screen width is 37.5rem or less */
+@media (max-width: 37.5rem) {
+  .responsive-box {
+    background-color: #e74c3c;
+    font-size: 0.9rem;
+  }
+}</code></pre>
+                </div>
+                <div class="live-demo">
+                    <div class="responsive-box">Resize your browser window to see this box change!</div>
+                    <p class="demo-description">This box changes color and font size when the viewport width is 37.5rem or less.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="theory">
+            <h2>Media Query Components</h2>
+            <ul>
+                <li><strong>@media:</strong> The at-rule that begins a media query</li>
+                <li><strong>Media Type:</strong> Optional specification of the media type (e.g., <code>screen</code>, <code>print</code>, <code>all</code>)</li>
+                <li><strong>Media Features:</strong> Conditions about the user agent or display device (e.g., <code>width</code>, <code>height</code>, <code>orientation</code>)</li>
+                <li><strong>Logical Operators:</strong> <code>and</code>, <code>not</code>, <code>only</code>, and commas (which act as OR operators)</li>
+            </ul>
+            <p>Basic syntax: <code>@media [media-type] [and/not/only] ([media-feature]) { /* CSS rules */ }</code></p>
+        </section>
+
+        <section class="example interactive">
+            <h2>Example 2: Media Types & Features</h2>
+            <div class="code-demo">
+                <div class="code-block">
+<pre><code>/* Styles for screens with dark color scheme */
+@media screen and (prefers-color-scheme: dark) {
+  .theme-aware {
+    background-color: #222;
+    color: #f0f0f0;
+    border-color: #444;
+  }
+}
+
+/* Styles for print */
+@media print {
+  .theme-aware {
+    background-color: white !important;
+    color: black !important;
+    border: 0.0625rem solid black !important;
+  }
+}</code></pre>
+                </div>
+                <div class="live-demo">
+                    <div class="theme-aware">This box adapts to your system's color scheme preference and will have special styling when printed.</div>
+                    <p class="demo-description">If your system is set to dark mode, this box will have a dark background.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="theory">
+            <h2>Common Media Features</h2>
+            <ul>
+                <li><strong>width, min-width, max-width:</strong> Viewport width</li>
+                <li><strong>height, min-height, max-height:</strong> Viewport height</li>
+                <li><strong>orientation:</strong> Portrait or landscape</li>
+                <li><strong>aspect-ratio:</strong> Width-to-height ratio of viewport</li>
+                <li><strong>resolution:</strong> Pixel density of the output device</li>
+                <li><strong>prefers-color-scheme:</strong> User's color scheme preference (light or dark)</li>
+                <li><strong>prefers-reduced-motion:</strong> User's motion preference</li>
+                <li><strong>hover:</strong> Whether the device supports hover interactions</li>
+                <li><strong>pointer:</strong> Precision of the primary input mechanism (coarse, fine, none)</li>
+            </ul>
+        </section>
+
+        <section class="example interactive">
+            <h2>Example 3: Complex Media Queries</h2>
+            <div class="code-demo">
+                <div class="code-block">
+<pre><code>/* Base styles */
+.complex-demo {
+  background-color: #3498db;
+  color: white;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+/* Medium screens in landscape mode */
+@media (min-width: 37.5rem) and (max-width: 64rem) and (orientation: landscape) {
+  .complex-demo {
+    background-color: #9b59b6;
+    border-radius: 1rem;
+  }
+}
+
+/* High-resolution displays */
+@media (min-resolution: 2dppx) {
+  .complex-demo {
+    border: 0.125rem solid gold;
+  }
+}</code></pre>
+                </div>
+                <div class="live-demo">
+                    <div class="complex-demo">This box has different styles based on complex conditions.</div>
+                    <p class="demo-description">This example demonstrates combining multiple conditions and targeting high-resolution displays.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="theory">
+            <h2>Mobile-First vs. Desktop-First</h2>
+            <div class="approach-comparison">
+                <div class="approach mobile-first">
+                    <h3>Mobile-First Approach</h3>
+                    <p>Start with styles for small screens, then add complexity for larger screens using <code>min-width</code> queries.</p>
+                    <pre><code>/* Base styles for mobile */
+.element { width: 100%; }
+
+/* Tablet and up */
+@media (min-width: 48rem) {
+  .element { width: 50%; }
+}
+
+/* Desktop */
+@media (min-width: 64rem) {
+  .element { width: 33.33%; }
+}</code></pre>
+                </div>
+                <div class="approach desktop-first">
+                    <h3>Desktop-First Approach</h3>
+                    <p>Start with styles for large screens, then simplify for smaller screens using <code>max-width</code> queries.</p>
+                    <pre><code>/* Base styles for desktop */
+.element { width: 33.33%; }
+
+/* Tablet and down */
+@media (max-width: 63.9375rem) {
+  .element { width: 50%; }
+}
+
+/* Mobile */
+@media (max-width: 47.9375rem) {
+  .element { width: 100%; }
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="example interactive">
+            <h2>Example 4: Responsive Layout</h2>
+            <div class="code-demo">
+                <div class="code-block">
+<pre><code>.responsive-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.responsive-item {
+  flex: 1 1 100%;
+  background-color: #3498db;
+  color: white;
+  padding: 1.25rem;
+  text-align: center;
+  border-radius: 0.5rem;
+}
+
+@media (min-width: 37.5rem) {
+  .responsive-item {
+    flex: 1 1 calc(50% - 0.625rem);
+  }
+}
+
+@media (min-width: 56.25rem) {
+  .responsive-item {
+    flex: 1 1 calc((100% - 2.5rem) / 3);
+  }
+}</code></pre>
+                </div>
+                <div class="live-demo">
+                    <div class="responsive-layout">
+                        <div class="responsive-item">Item 1</div>
+                        <div class="responsive-item">Item 2</div>
+                        <div class="responsive-item">Item 3</div>
+                    </div>
+                    <p class="demo-description">Resize the window to see how these items adapt from 1 column to 2 columns to 3 columns.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="theory">
+            <h2>Best Practices & Tips</h2>
+            <ul>
+                <li><strong>Mobile-First:</strong> Start with base styles for mobile, then enhance for larger screens.</li>
+                <li><strong>Use Relative Units:</strong> Prefer <code>em</code>, <code>rem</code>, <code>%</code>, and viewport units for flexible layouts.</li>
+                <li><strong>Logical Breakpoints:</strong> Base breakpoints on your content, not specific devices.</li>
+                <li><strong>Test Thoroughly:</strong> Check your design on various devices and screen sizes.</li>
+                <li><strong>Avoid Device-Specific Queries:</strong> Focus on screen characteristics, not specific devices.</li>
+                <li><strong>Consider User Preferences:</strong> Use queries like <code>prefers-color-scheme</code> and <code>prefers-reduced-motion</code>.</li>
+                <li><strong>Minimize Media Query Count:</strong> Too many breakpoints can lead to maintenance challenges.</li>
+            </ul>
+        </section>
+
+        <section class="example interactive">
+            <h2>Example 5: User Preference Media Queries</h2>
+            <div class="code-demo">
+                <div class="code-block">
+<pre><code>/* Respect user's motion preferences */
+.animated-element {
+  transition: transform 0.3s ease;
+}
+.animated-element:hover {
+  transform: scale(1.1);
+}
+
+/* Disable animation if user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animated-element {
+    transition: none;
+  }
+  .animated-element:hover {
+    transform: none;
+  }
+}</code></pre>
+                </div>
+                <div class="live-demo">
+                    <div class="animated-element">Hover over me!</div>
+                    <p class="demo-description">This element animates on hover, but respects the user's reduced motion preference if enabled.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="resources">
+            <h2>Further Reading</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries" target="_blank" rel="noopener noreferrer">MDN: Media Queries</a></li>
+                <li><a href="https://www.w3.org/TR/mediaqueries-5/" target="_blank" rel="noopener noreferrer">W3C: Media Queries Level 5</a></li>
+                <li><a href="https://css-tricks.com/a-complete-guide-to-css-media-queries/" target="_blank" rel="noopener noreferrer">CSS-Tricks: A Complete Guide to CSS Media Queries</a></li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
