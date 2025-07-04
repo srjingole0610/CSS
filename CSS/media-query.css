@@ -1,0 +1,334 @@
+/* CSS Media Queries Interactive Example Styles */
+:root {
+  --main-bg: #f0f4ff;
+  --accent: #3498db;
+  --accent-secondary: #e74c3c;
+  --accent-tertiary: #9b59b6;
+  --radius: 0.75rem;
+  --theory-bg: #f9fafc;
+  --code-bg: #23272e;
+  --code-color: #e3e8ef;
+  --accent-hover: #217dbb;
+  --demo-bg: #fff;
+  --subtitle: #555;
+  --border-color-light: #e0e6ef;
+  --resources-accent: #8e44ad;
+  --transition: all 0.3s ease;
+  --box-shadow: 0 0.25rem 1.5rem rgba(52, 152, 219, 0.08);
+  --border-radius: 0.5rem;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--main-bg);
+  margin: 0;
+  color: #222;
+  line-height: 1.7;
+}
+
+nav {
+  margin: 0;
+  padding: 1rem 2rem 0 2rem;
+}
+
+.back-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.back-btn:hover {
+  background: var(--accent-hover);
+}
+
+main {
+  max-width: 51.25rem;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--box-shadow);
+  padding: 2.5rem 2rem 2rem 2rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.subtitle {
+  color: var(--subtitle);
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+section.theory {
+  background: var(--theory-bg);
+  border-left: 0.25rem solid var(--accent);
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+}
+
+section.theory h2 {
+  margin-top: 0;
+}
+
+section.example {
+  margin-bottom: 2.5rem;
+}
+
+.code-demo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.code-block {
+  background: var(--code-bg);
+  color: var(--code-color);
+  padding: 1rem 1.2rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  min-width: 16.25rem;
+  max-width: 21.875rem;
+  overflow-x: auto;
+  flex: 1 1 16.25rem;
+}
+
+.code-block code {
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  font-size: 0.9em;
+  color: inherit;
+}
+
+.live-demo {
+  background: var(--demo-bg);
+  border: 0.0625rem solid var(--border-color-light);
+  border-radius: 0.5rem;
+  padding: 1.2rem 1.5rem;
+  min-width: 13.75rem;
+  flex: 1 1 13.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.demo-description {
+  font-size: 0.9rem;
+  color: var(--subtitle);
+  margin: 0.5rem 0 0 0;
+}
+
+/* Example 1: Basic Media Query */
+.responsive-box {
+  background-color: var(--accent);
+  color: white;
+  padding: 1.25rem 0;
+  width: 100%;
+  text-align: center;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+/* Example 2: Media Types & Features */
+.theme-aware {
+  background-color: #f8f9fa;
+  color: #333;
+  padding: 1.25rem;
+  border-radius: var(--border-radius);
+  border: 0.0625rem solid #ddd;
+  text-align: center;
+  transition: var(--transition);
+}
+
+/* Example 3: Complex Media Queries */
+.complex-demo {
+  background-color: var(--accent);
+  color: white;
+  padding: 1.25rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  transition: var(--transition);
+}
+
+/* Example 4: Responsive Layout */
+.responsive-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.responsive-item {
+  flex: 1 1 100%;
+  background-color: var(--accent);
+  color: white;
+  padding: 1.25rem;
+  text-align: center;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+/* Example 5: User Preference Media Queries */
+.animated-element {
+  background-color: var(--accent);
+  color: white;
+  padding: 1.25rem;
+  text-align: center;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.animated-element:hover {
+  transform: scale(1.1);
+}
+
+/* Mobile-First vs Desktop-First section */
+.approach-comparison {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.approach {
+  flex: 1 1 100%;
+  padding: 1.2rem;
+  border-radius: var(--border-radius);
+  background-color: #f8f9fa;
+}
+
+.approach h3 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+.approach pre {
+  background: var(--code-bg);
+  color: var(--code-color);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  overflow-x: auto;
+  font-size: 0.9rem;
+}
+
+.approach code {
+  font-family: 'Fira Mono', 'Consolas', monospace;
+}
+
+.mobile-first {
+  border-left: 0.25rem solid var(--accent);
+}
+
+.desktop-first {
+  border-left: 0.25rem solid var(--accent-secondary);
+}
+
+.resources {
+  margin-top: 2.5rem;
+  padding: 1.2rem 1.5rem;
+  background: #f6fafd;
+  border-radius: 0.5rem;
+  border-left: 0.25rem solid var(--resources-accent);
+}
+
+.resources h2 {
+  margin-top: 0;
+  color: var(--resources-accent);
+}
+
+.resources ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+/* Media Queries for this page */
+@media (max-width: 37.5rem) {
+  .responsive-box {
+    background-color: var(--accent-secondary);
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .theme-aware {
+    background-color: #222;
+    color: #f0f0f0;
+    border-color: #444;
+  }
+}
+
+@media print {
+  .theme-aware {
+    background-color: white !important;
+    color: black !important;
+    border: 0.0625rem solid black !important;
+  }
+  
+  .back-btn {
+    display: none;
+  }
+}
+
+@media (min-width: 37.5rem) and (max-width: 64rem) and (orientation: landscape) {
+  .complex-demo {
+    background-color: var(--accent-tertiary);
+    border-radius: 1rem;
+  }
+}
+
+@media (min-resolution: 2dppx) {
+  .complex-demo {
+    border: 0.125rem solid gold;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  .responsive-item {
+    flex: 1 1 calc(50% - 1.25rem);
+  }
+  
+  .approach {
+    flex: 1 1 calc(50% - 1.25rem);
+  }
+}
+
+@media (min-width: 56.25rem) {
+  .responsive-item {
+    flex: 1 1 calc(33.33% - 1.25rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-element {
+    transition: none;
+  }
+  .animated-element:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 43.75rem) {
+  main {
+    padding: 1.5rem 1rem;
+  }
+  
+  .code-demo {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .code-block,
+  .live-demo {
+    max-width: 100%;
+    width: 100%;
+  }
+}

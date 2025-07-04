@@ -18,14 +18,12 @@ Whether you're a beginner or an experienced developer, use this summary to quick
 - [Comments in CSS](#4-comments-in-css)
 - [Colors in CSS](#5-colors-in-css)
 - [Backgrounds in CSS](#6-backgrounds-in-css)
-
 - [Units in CSS](#7-units-in-css)
 - [Fonts in CSS](#8-fonts-in-css)
 - [Text Properties in CSS](#9-text-properties-in-css)
 - [Box Model in CSS](#10-box-model-in-css)
 - [Gradients in CSS](#11-gradients-in-css)
 - [Box Shadow in CSS](#12-box-shadow-in-css)
-
 - [drop-shadow Filter in CSS](#13-drop-shadow-filter-in-css)
 - [CSS Filters](#14-css-filters)
 - [CSS Lists](#15-css-lists)
@@ -33,8 +31,7 @@ Whether you're a beginner or an experienced developer, use this summary to quick
 - [CSS Anchor States (Links)](#17-css-anchor-states-links)
 - [CSS Position Property](#18-css-position-property)
 - [z-index in CSS](#19-z-index-in-css)
--
- [Overflow in CSS](#20-overflow-in-css)
+- [Overflow in CSS](#20-overflow-in-css)
 - [Pseudo-Elements in CSS](#21-pseudo-elements-in-css)
 - [CSS Pseudo-Classes](#22-css-pseudo-classes)
 - [CSS Multi-Column Layout](#23-css-multi-column-layout)
@@ -42,11 +39,11 @@ Whether you're a beginner or an experienced developer, use this summary to quick
 - [CSS Grid](#25-css-grid)
 - [CSS Transitions](#26-css-transitions)
 - [CSS Transform](#27-css-transform)
-
 - [CSS Animations](#28-css-animations)
 - [CSS Variables](#29-css-variables)
 - [CSS Specificity](#30-css-specificity)
 - [CSS Float](#31-css-float)
+- [CSS Media Queries](#32-css-media-queries)
 
 ---
 
@@ -1601,5 +1598,26 @@ When a container has only floated elements, it collapses to zero height. The "cl
   content: "";
   display: block;
   clear: both;
+}
+```
+
+---
+
+## 32. CSS Media Queries
+
+CSS **Media Queries** are a powerful feature that allows you to apply different styles based on device characteristics like screen size, resolution, orientation, and user preferences. They're the foundation of responsive web design, enabling websites to adapt to different viewing environments.
+
+### 🔑 Key Concepts:
+
+- **Responsive Design:** Media queries enable content to adapt to different screen sizes and devices.
+- **Conditional Styling:** Apply CSS only when specific conditions about the user's device or preferences are met.
+- **Mobile-First Approach:** Start with styles for small screens, then enhance for larger screens.
+- **User Preference Detection:** Adapt to user preferences like dark mode or reduced motion.
+
+### 📱 Media Query Syntax:
+
+```css
+@media [media-type] [and/not/only] ([media-feature]) {
+  /* CSS rules to apply when conditions are met */
 }
 ```
