@@ -1920,6 +1920,6 @@ It fundamentally changes the coordinate system of the layout, affecting how prop
 
 ### Further Reading
 
--   MDN: [`writing-mode`](https://www.google.com/search?q=%5Bhttps://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode%5D(https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode) "null")
--   CSS-Tricks: [CSS Writing Mode](https://css-tricks.com/almanac/properties/w/writing-mode/ "null") 
--   W3C: [CSS Writing Modes Level 3](https://www.w3.org/TR/css-writing-modes-3/ "null")
+-   MDN: [`writing-mode`](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode)
+-   CSS-Tricks: [CSS Writing Mode](https://css-tricks.com/almanac/properties/w/writing-mode/)
+-   W3C: [CSS Writing Modes Level 3](https://www.w3.org/TR/css-writing-modes-3/)
