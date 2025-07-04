@@ -146,6 +146,52 @@
           </li>
         </ul>
       </section>
+      <section class="theory advanced-inheritance">
+        <h2>Advanced: <span style="color:var(--accent)">initial</span>, <span style="color:var(--accent)">inherit</span>, <span style="color:var(--accent-secondary)">unset</span>, <span style="color:#8e44ad">revert</span></h2>
+        <p>
+          CSS provides four special keywords to control property values and inheritance:
+        </p>
+        <ul class="keyword-list">
+          <li><strong><code>initial</code>:</strong> Sets the property to its default value as defined by the CSS specification, regardless of inheritance.</li>
+          <li><strong><code>inherit</code>:</strong> Forces the property to inherit its value from its parent, even if it is not normally inherited.</li>
+          <li><strong><code>unset</code>:</strong> Resets the property to <code>inherit</code> if it is naturally inherited, or <code>initial</code> if not.</li>
+          <li><strong><code>revert</code>:</strong> Rolls the property back to the value established by the user-agent or user styles, ignoring author styles.</li>
+        </ul>
+        <div class="code-demo">
+          <div class="code-block">
+            <pre><code>/* Example: Using initial, inherit, unset, revert */
+.parent-demo {
+  color: #e67e22;
+  font-weight: bold;
+}
+.child-inherit {
+  color: inherit;
+}
+.child-initial {
+  color: initial;
+}
+.child-unset {
+  color: unset;
+}
+.child-revert {
+  color: revert;
+}
+</code></pre>
+          </div>
+          <div class="live-demo advanced-demo">
+            <div class="parent-demo">
+              Parent (color: orange, font-weight: bold)
+              <div class="child-inherit" title="Inherits orange from parent.">Child (color: <b>inherit</b>)</div>
+              <div class="child-initial" title="Resets to browser default (usually black).">Child (color: <b>initial</b>)</div>
+              <div class="child-unset" title="Acts like inherit for color (inherits orange).">Child (color: <b>unset</b>)</div>
+              <div class="child-revert" title="Reverts to user-agent or user style (usually black).">Child (color: <b>revert</b>)</div>
+            </div>
+          </div>
+        </div>
+        <p class="demo-description" style="margin-top:0.7rem">
+          <span style="color:var(--accent)"><b>Try it:</b></span> Hover over each child to see a tooltip explaining the result!
+        </p>
+      </section>
       <section class="resources">
         <h2>Further Reading</h2>
         <ul>

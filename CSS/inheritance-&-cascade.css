@@ -10,7 +10,7 @@
   --box-shadow: 0 0.25rem 1.5rem rgba(52, 152, 219, 0.08);
 }
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   background: var(--bg);
   margin: 0;
   color: #222;
@@ -80,7 +80,7 @@ section.example {
   flex: 1 1 16.25rem;
 }
 .code-block code {
-  font-family: 'Fira Mono', 'Consolas', monospace;
+  font-family: "Fira Mono", "Consolas", monospace;
   font-size: 0.9em;
   color: inherit;
 }
@@ -116,6 +116,71 @@ section.example {
   margin: 0;
   padding-left: 1.2em;
 }
+/* Advanced Inheritance Section */
+.advanced-inheritance {
+  background: linear-gradient(90deg, #f9fafc 80%, #f6e9fa 100%);
+  border-left: 0.25rem solid #8e44ad;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 0.25rem 1.5rem rgba(142, 68, 173, 0.07);
+}
+.keyword-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.2rem;
+}
+.keyword-list li {
+  background: #f6fafd;
+  border-radius: 0.4rem;
+  padding: 0.7rem 1.1rem;
+  border-left: 0.18rem solid var(--accent-secondary);
+  font-size: 1rem;
+  min-width: 12rem;
+  box-shadow: 0 0.1rem 0.5rem rgba(52, 152, 219, 0.04);
+}
+.advanced-demo .child-inherit,
+.advanced-demo .child-initial,
+.advanced-demo .child-unset,
+.advanced-demo .child-revert {
+  margin: 0.5rem 0;
+  padding: 0.4rem 1rem;
+  border-radius: 0.3rem;
+  transition: background 0.2s;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.advanced-demo .child-inherit {
+  background-color: #fdf6e3;
+  color:inherit;
+}
+.advanced-demo .child-initial {
+  background-color: #f0f4ff;
+  color:initial;
+}
+.advanced-demo .child-unset {
+  background-color: #eafaf1;
+  color:unset;
+}
+.advanced-demo .child-revert {
+  background-color: #f6e9fa;
+  color:revert;
+}
+.parent-demo {
+  margin-bottom: 0.5rem;
+  padding: 1rem 1.2rem;
+  border-radius: 0.4rem;
+  background: #fff7ed;
+  font-size: 1.08em;
+  font-weight: bold;
+  color: #e67e22;
+  position: relative;
+}
+.advanced-demo {
+  position: relative;
+}
 @media (max-width: 700px) {
   main {
     padding: 1.5rem 1rem;
@@ -128,5 +193,16 @@ section.example {
   .live-demo {
     max-width: 100%;
     width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+  .code-block {
+    font-size: 0.9rem;
   }
 }
