@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="In-depth guide to CSS container queries with interactive code examples. Learn how to create responsive components that adapt based on their container size.">
+    <meta name="keywords" content="CSS, container queries, responsive design, component-based design, web development, examples, tutorial">
+    <meta name="author" content="Full Stack Mastery">
+    <title>CSS Container Queries – Interactive Guide</title>
+    <link rel="stylesheet" href="../CSS/container-queries.css">
+    <link rel="icon" type="image/png" href="../images/css_favicon.png">
+</head>
+<body>
+    <nav>
+        <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+    </nav>
+    <main>
+        <header>
+            <h1>CSS Container Queries</h1>
+            <p class="subtitle">Create truly responsive components that adapt based on their container size, not just the viewport!</p>
+        </header>
+
+        <section class="theory">
+            <h2>What Are CSS Container Queries?</h2>
+            <p>
+                <strong>CSS Container Queries</strong> allow you to apply styles to elements based on the size of their containing element, rather than the size of the viewport (as with media queries). This enables truly modular, component-based responsive design.
+            </p>
+            <p>Container queries use the <code>@container</code> rule to conditionally apply CSS when a specific container condition is true.</p>
+            <ul>
+                <li><strong>Component-Based Design:</strong> Style elements based on their parent container's size</li>
+                <li><strong>Reusable Components:</strong> Create components that adapt to any context they're placed in</li>
+                <li><strong>Modular Layouts:</strong> Build layouts that respond to their available space</li>
+                <li><strong>Reduced Complexity:</strong> Simplify responsive design by focusing on components, not just viewport</li>
+            </ul>
+        </section>
+
+        <section class="example interactive">
+            <h2>Example 1: Basic Container Query Syntax</h2>
+            <div class="code-demo">
+                <div class="code-block">
+<pre><code>/* Define a containment context */
+.container {
+  container-type: inline-size;
+  width: 100%;
+  resize: horizontal;
+  overflow: auto;
+  border: 1px dashed #ccc;
+}
+
+/* Default card styles */
+.card {
+  padding: 1rem;
+  background-color: #f0f4ff;
+  border-radius: 8px;
+}
+
+/* Apply when container width is 400px or less */
+@container (max-width: 400px) {
+  .card {
+    background-color: #e74c3c;
+    color: white;
+    padding: 0.5rem;
+  }
+}</code></pre>
+                </div>
+                <div class="live-demo">
+                    <div class="container">
+                        <div class="card">This card changes style based on its container width. Try resizing the container!</div>
+                    </div>
+                    <p class="demo-description">Resize the container (drag the bottom-right corner) to see the card change styles when the container width is 400px or less.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="theory">
+            <h2>Container Query Components</h2>
+            <ul>
+                <li><strong>container-type:</strong> Establishes a containment context (values: <code>size</code>, <code>inline-size</code>, <code>normal</code>)</li>
+                <li><strong>container-name:</strong> Optional name for the container to target it specifically</li>
+                <li><strong>@container:</strong> The at-rule that begins a container query</li>
+                <li><strong>Container Features:</strong> Conditions about the container dimensions (e.g., <code>width</code>, <code>height</code>, <code>aspect-ratio</code>)</li>
+                <li><strong>Logical Operators:</strong> <code>and</code>, <code>not</code>, <code>or</code> to combine conditions</li>
+            </ul>
+            <p>Basic syntax: <code>@container [container-name] ([container-feature]) { /* CSS rules */ }</code></p>
+        </section>
+
+        <section class="example interactive">
+            <h2>Example 2: Named Containers</h2>
+            <div class="code-demo">
+                <div class="code-block">
+<pre><code>/* Define named containment contexts */
+.sidebar {
+  container-type: inline-size;
+  container-name: sidebar;
+  width: 100%;
+  resize: horizontal;
+  overflow: auto;
+  border: 1px dashed #3498db;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.main-content {
+  container-type: inline-size;
+  container-name: main;
+  width: 100%;
+  resize: horizontal;
+  overflow: auto;
+  border: 1px dashed #9b59b6;
+  padding: 1rem;
+}
+
+/* Target specific containers */
+@container sidebar (max-width: 300px) {
+  .widget {
+    background-color: #3498db;
+    color: white;
+  }
+}
+
+@container main (min-width: 400px) {
+  .widget {
+    background-color: #9b59b6;
+    color: white;
+  }
+}</code></pre>
+                </div>
+                <div class="live-demo">
+                    <div class="sidebar">
+                        <div class="widget">Sidebar Widget</div>
+                    </div>
+                    <div class="main-content">
+                        <div class="widget">Main Content Widget</div>
+                    </div>
+                    <p class="demo-description">Resize both containers to see how the same widget component adapts differently based on which container it's in.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="theory">
+            <h2>Container Query Units</h2>
+            <p>CSS Container Queries introduce new relative length units that are based on the dimensions of the query container:</p>
+            <ul>
+                <li><strong>cqw:</strong> 1% of a query container's width</li>
+                <li><strong>cqh:</strong> 1% of a query container's height</li>
+                <li><strong>cqi:</strong> 1% of a query container's inline size</li>
+                <li><strong>cqb:</strong> 1% of a query container's block size</li>
+                <li><strong>cqmin:</strong> The smaller value of cqi or cqb</li>
+                <li><strong>cqmax:</strong> The larger value of cqi or cqb</li>
+            </ul>
+            <p>These units allow for fluid typography and spacing that scales with the container size.</p>
+        </section>
+
+        <section class="example interactive">
+            <h2>Example 3: Container Query Units</h2>
+            <div class="code-demo">
+                <div class="code-block">
+<pre><code>/* Define a containment context */
+.cq-units-demo {
+  container-type: inline-size;
+  width: 100%;
+  resize: horizontal;
+  overflow: auto;
+  border: 1px dashed #ccc;
+  padding: 1rem;
+}
+
+/* Use container query units for fluid sizing */
+.cq-heading {
+  font-size: calc(1rem + 2cqi);
+  margin-bottom: 0.5cqi;
+}
+
+.cq-text {
+  font-size: calc(0.8rem + 0.5cqi);
+}</code></pre>
+                </div>
+                <div class="live-demo">
+                    <div class="cq-units-demo">
+                        <h3 class="cq-heading">Fluid Typography</h3>
+                        <p class="cq-text">This text scales fluidly based on the container's inline size using container query units (cqi).</p>
+                    </div>
+                    <p class="demo-description">Resize the container to see how the text size adjusts proportionally to the container width.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="theory">
+            <h2>Container Queries vs. Media Queries</h2>
+            <div class="approach-comparison">
+                <div class="approach container-queries">
+                    <h3>Container Queries</h3>
+                    <p>Style elements based on their parent container's size, enabling truly modular components.</p>
+                    <pre><code>/* Define container */
+.card-container {
+  container-type: inline-size;
+}
+
+/* Base styles */
+.card { display: block; }
+
+/* Container-based styles */
+@container (min-width: 400px) {
+  .card { display: flex; }
+}</code></pre>
+                </div>
+                <div class="approach media-queries">
+                    <h3>Media Queries</h3>
+                    <p>Style elements based on the viewport size, affecting all matching elements on the page.</p>
+                    <pre><code>/* Base styles */
+.card { display: block; }
+
+/* Viewport-based styles */
+@media (min-width: 768px) {
+  .card { display: flex; }
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="example interactive">
+            <h2>Example 4: Responsive Layout Component</h2>
+            <div class="code-demo">
+                <div class="code-block">
+<pre><code>.product-container {
+  container-type: inline-size;
+  width: 100%;
+  resize: horizontal;
+  overflow: auto;
+  border: 1px dashed #ccc;
+}
+
+.product-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  background-color: #f0f4ff;
+  aspect-ratio: 16/9;
+  border-radius: 4px;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@container (min-width: 500px) {
+  .product-card {
+    grid-template-columns: 200px 1fr;
+  }
+}</code></pre>
+                </div>
+                <div class="live-demo">
+                    <div class="product-container">
+                        <div class="product-card">
+                            <div class="product-image"></div>
+                            <div class="product-info">
+                                <h3>Product Title</h3>
+                                <p>Product description goes here. This is a responsive product card that changes layout based on its container width.</p>
+                                <button>Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="demo-description">Resize the container to see how the product card layout changes from stacked to side-by-side when the container is at least 500px wide.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="theory">
+            <h2>Best Practices & Tips</h2>
+            <ul>
+                <li><strong>Component-First Thinking:</strong> Design components to be self-contained and adaptable to any context.</li>
+                <li><strong>Combine with Media Queries:</strong> Use container queries for component-level responsiveness and media queries for page-level layout changes.</li>
+                <li><strong>Use Logical Properties:</strong> Prefer <code>inline-size</code> over <code>width</code> for better internationalization support.</li>
+                <li><strong>Performance Considerations:</strong> Be mindful of nesting container queries, as they can impact performance.</li>
+                <li><strong>Progressive Enhancement:</strong> Provide fallbacks for browsers that don't support container queries.</li>
+                <li><strong>Container Query Units:</strong> Leverage <code>cqi</code>, <code>cqw</code>, etc. for fluid typography and spacing within containers.</li>
+            </ul>
+        </section>
+
+        <section class="resources">
+            <h2>Further Reading</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries" target="_blank" rel="noopener noreferrer">MDN: CSS Container Queries</a></li>
+                <li><a href="https://www.w3.org/TR/css-contain-3/" target="_blank" rel="noopener noreferrer">W3C: CSS Containment Module Level 3</a></li>
+                <li><a href="https://caniuse.com/css-container-queries" target="_blank" rel="noopener noreferrer">Can I Use: CSS Container Queries</a></li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

@@ -9,7 +9,6 @@ Whether you're a beginner or an experienced developer, use this summary to quick
 
 ---
 
-
 ## Table of Contents
 
 - [What is CSS?](#1-what-is-css)
@@ -44,6 +43,7 @@ Whether you're a beginner or an experienced developer, use this summary to quick
 - [CSS Specificity](#30-css-specificity)
 - [CSS Float](#31-css-float)
 - [CSS Media Queries](#32-css-media-queries)
+- [CSS Container Queries](#33-css-container-queries)
 
 ---
 
@@ -1621,3 +1621,108 @@ CSS **Media Queries** are a powerful feature that allows you to apply different 
   /* CSS rules to apply when conditions are met */
 }
 ```
+
+## 33. CSS Container Queries
+
+**CSS Container Queries** allow you to apply styles to elements based on the size of their containing element, rather than the viewport. This enables truly modular, component-based responsive design.
+
+### 🔑 Key Concepts:
+- **Component-Based Design:** Style elements based on their parent container's size
+- **Reusable Components:** Create components that adapt to any context they're placed in
+- **Modular Layouts:** Build layouts that respond to their available space
+- **Reduced Complexity:** Simplify responsive design by focusing on components, not just viewport
+
+### 📝 Syntax
+```css
+.container {
+  container-type: inline-size;
+  width: 100%;
+  resize: horizontal;
+  overflow: auto;
+}
+.card {
+  padding: 1rem;
+  background: #f0f4ff;
+  border-radius: 8px;
+}
+@container (max-width: 400px) {
+  .card {
+    background: #e74c3c;
+    color: white;
+    padding: 0.5rem;
+  }
+}
+
+.sidebar {
+  container-type: inline-size;
+  container-name: sidebar;
+}
+@container sidebar (max-width: 300px) {
+  .widget {
+    background: #3498db;
+    color: white;
+  }
+}
+```
+### 🧩 Container Query Components
+- container-type: Establishes a containment context ( size , inline-size , normal )
+- container-name: Optional name for the container
+- @container: The at-rule that begins a container query
+- Container Features: Conditions about the container dimensions ( width , height , aspect-ratio )
+- Logical Operators: and , not , or to combine conditions
+
+### ✅ Example: Basic Container Query
+```
+.container {
+  container-type: inline-
+size;
+  width: 100%;
+  resize: horizontal;
+  overflow: auto;
+}
+.card {
+  padding: 1rem;
+  background: #f0f4ff;
+  border-radius: 8px;
+}
+@container (max-width: 400px) 
+{
+  .card {
+    background: #e74c3c;
+    color: white;
+    padding: 0.5rem;
+  }
+}
+```
+### 📏 Container Query Units
+- cqw: 1% of a query container's width
+- cqh: 1% of a query container's height
+- cqi: 1% of a query container's inline size
+- cqb: 1% of a query container's block size
+- cqmin: The smaller value of cqi or cqb
+- cqmax: The larger value of cqi or cqb
+```
+.cq-heading {
+  font-size: calc(1rem + 
+2cqi);
+}
+```
+### 📊 Container Queries vs. Media Queries
+Feature Container Queries Media Queries Target Container size Viewport size Use Modular components Page layout Example
+
+```
+@container (min-width: 400px) 
+{ .card { display: flex; } }
+@media (min-width: 768px) { 
+.card { display: flex; } }
+```
+### 💡 Best Practices
+- Use for component-level responsiveness
+- Combine with media queries for full flexibility
+- Prefer inline-size for internationalization
+- Be mindful of performance with deep nesting
+- Provide fallbacks for unsupported browsers
+### 🔗 Further Reading
+- MDN: CSS Container Queries
+- W3C: CSS Containment Module Level 3
+- Can I Use: CSS Container Queries
