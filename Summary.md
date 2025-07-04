@@ -1841,5 +1841,5 @@ backdrop-filter: blur(5px) contrast(120%);
 ### Further Reading
 - MDN: [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter)
 - CSS-Tricks: [Backdrop Filter Basics](https://css-tricks.com/almanac/properties/b/backdrop-filter/)
-- Web.dev: [Creating Glassmorphism Effects in CSS](https://web.dev/)
+- CSS-glass: [Creating Glassmorphism Effects in CSS](https://css.glass/)
 
