@@ -1,0 +1,132 @@
+:root {
+  --accent: #3498db;
+  --accent-secondary: #e74c3c;
+  --bg: #f0f4ff;
+  --theory-bg: #f9fafc;
+  --code-bg: #23272e;
+  --code-color: #e3e8ef;
+  --radius: 0.75rem;
+  --transition: all 0.3s ease;
+  --box-shadow: 0 0.25rem 1.5rem rgba(52, 152, 219, 0.08);
+}
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--bg);
+  margin: 0;
+  color: #222;
+  line-height: 1.7;
+}
+nav {
+  padding: 1rem 2rem 0 2rem;
+}
+.back-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+.back-btn:hover {
+  background: var(--accent-secondary);
+}
+main {
+  max-width: 51.25rem;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--box-shadow);
+  padding: 2.5rem 2rem 2rem 2rem;
+}
+header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.subtitle {
+  color: #555;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+section.theory {
+  background: var(--theory-bg);
+  border-left: 0.25rem solid var(--accent);
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+}
+section.theory h2 {
+  margin-top: 0;
+}
+section.example {
+  margin-bottom: 2.5rem;
+}
+.code-demo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+.code-block {
+  background: var(--code-bg);
+  color: var(--code-color);
+  padding: 1rem 1.2rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  min-width: 16.25rem;
+  max-width: 21.875rem;
+  overflow-x: auto;
+  flex: 1 1 16.25rem;
+}
+.code-block code {
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  font-size: 0.9em;
+  color: inherit;
+}
+.live-demo {
+  background: #fff;
+  border: 0.0625rem solid #e0e6ef;
+  border-radius: 0.5rem;
+  padding: 1.2rem 1.5rem;
+  min-width: 13.75rem;
+  flex: 1 1 13.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.demo-description {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0.5rem 0 0 0;
+}
+.resources {
+  margin-top: 2.5rem;
+  padding: 1.2rem 1.5rem;
+  background: #f6fafd;
+  border-radius: 0.5rem;
+  border-left: 0.25rem solid var(--accent-secondary);
+}
+.resources h2 {
+  margin-top: 0;
+  color: var(--accent-secondary);
+}
+.resources ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+@media (max-width: 700px) {
+  main {
+    padding: 1.5rem 1rem;
+  }
+  .code-demo {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .code-block,
+  .live-demo {
+    max-width: 100%;
+    width: 100%;
+  }
+}
