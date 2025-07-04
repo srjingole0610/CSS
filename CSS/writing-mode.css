@@ -57,7 +57,7 @@ body {
 .items-center { align-items: center; }
 .items-start { align-items: flex-start; }
 .justify-center { justify-content: center; }
-.w-full { width: 100%; }
+.w-full { width: 90%; }
 .max-w-5xl { max-width: 64rem; }
 .mx-auto { margin-left: auto; margin-right: auto; }
 .overflow-auto { overflow: auto; }
