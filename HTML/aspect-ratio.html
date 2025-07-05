@@ -71,7 +71,7 @@
         <section class="playground-section">
             <h2>Aspect Ratio Playground</h2>
             <p>Change the aspect ratio values below to see the box update in real time!</p>
-            <form class="playground-form" oninput="updatePlaygroundBox()">
+            <form class="playground-form">
                 <label for="playground-width">Width:</label>
                 <input type="number" id="playground-width" name="width" min="1" max="100" value="4">
                 <span>:</span>
@@ -104,30 +104,45 @@
         box.style.aspectRatio = w + ' / ' + h;
         code.textContent = `.playground-demo {\n  aspect-ratio: ${w} / ${h};\n  background: repeating-linear-gradient(135deg, #4f8cff 0 10px, #fff 10px 20px);\n}`;
     }
+
     // Initialize on load
-    window.onload = function() {
+    window.addEventListener('load', () => {
         updatePlaygroundBox();
+        
+        // Add event listeners for input changes
+        document.getElementById('playground-width').addEventListener('input', updatePlaygroundBox);
+        document.getElementById('playground-height').addEventListener('input', updatePlaygroundBox);
+
         // Code copy feature for all code blocks
-        document.querySelectorAll('.code-block').forEach(function(block) {
-            block.addEventListener('click', function() {
-                var text = block.textContent;
-                if (navigator.clipboard) {
-                    navigator.clipboard.writeText(text);
-                } else {
-                    var textarea = document.createElement('textarea');
-                    textarea.value = text;
-                    document.body.appendChild(textarea);
-                    textarea.select();
-                    document.execCommand('copy');
-                    document.body.removeChild(textarea);
+        document.querySelectorAll('.code-block').forEach(block => {
+            block.addEventListener('click', async () => {
+                const text = block.textContent;
+                try {
+                    if (navigator.clipboard) {
+                        await navigator.clipboard.writeText(text);
+                    } else {
+                        const textarea = document.createElement('textarea');
+                        textarea.value = text;
+                        // Position off-screen to prevent layout shifts
+                        textarea.style.position = 'fixed';
+                        textarea.style.left = '-9999px';
+                        textarea.style.top = '0';
+                        document.body.appendChild(textarea);
+                        textarea.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(textarea);
+                    }
+                    // Visual feedback for successful copy
+                    block.style.background = '#2a4d8f';
+                    setTimeout(() => {
+                        block.style.background = '';
+                    }, 600);
+                } catch (err) {
+                    console.error('Failed to copy text:', err);
                 }
-                block.style.background = '#2a4d8f';
-                setTimeout(function() {
-                    block.style.background = '';
-                }, 600);
             });
         });
-    };
+    });
     </script>
 </body>
 </html>

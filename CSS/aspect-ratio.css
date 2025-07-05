@@ -5,15 +5,13 @@
     --space-1: 0.5rem;
     --space-2: 0.7rem;
     --space-3: 0.8rem;
-    --space-4: 1em;
+    --space-4: 1rem;
     --space-5: 1.1rem;
-    --space-6: 1.2em;
+    --space-6: 1.2rem;
     --space-7: 1.5rem;
-    --space-8: 1.2rem;
     --space-9: 2rem;
     --space-10: 2.2em;
     --space-11: 2.5rem;
-    --space-12: 2.5rem;
     /* Radii */
     --radius-1: 0.3em;
     --radius-2: 0.4em;
@@ -46,6 +44,7 @@
     --color-bg-code: #23272e;
     --color-bg-code-active: #2a4d8f;
     --color-bg-playground: repeating-linear-gradient(135deg, #4f8cff 0 0.625rem, #fff 0.625rem 1.25rem);
+    --color-bg-main: #fff;
     --color-text-main: #222;
     --color-text-accent: #4f8cff;
     --color-text-secondary: #2a4d8f;
@@ -71,7 +70,7 @@ body {
     background: var(--color-bg-btn);
     color: var(--color-text-secondary);
     text-decoration: none;
-    padding: var(--space-1) var(--space-8);
+    padding: var(--space-1) var(--space-6);
     border-radius: 2em;
     font-weight: 500;
     transition: background-color 0.2s;
@@ -84,10 +83,10 @@ body {
 .aspect-main {
     max-width: 56.25rem; /* 900px */
     margin: var(--space-9) auto;
-    background: #fff;
+    background-color: var(--color-bg-main);
     border-radius: var(--radius-7);
     box-shadow: var(--shadow-5);
-    padding: var(--space-12) 2rem 2rem 2rem;
+    padding: var(--space-11) var(--space-9) var(--space-9) var(--space-9);
 }
 
 .aspect-header {
@@ -122,7 +121,7 @@ body {
 }
 .theory-section h2 {
     margin-top: 0;
-    color: #2a4d8f;
+    color: var(--color-text-secondary);
 }
 .theory-list {
     margin: 1em 0 1em 1.5em;
@@ -150,12 +149,12 @@ body {
     background: var(--color-bg-card);
     border-radius: var(--radius-4);
     box-shadow: var(--shadow-2);
-    padding: var(--space-8) 1em 1em 1em;
+    padding: var(--space-6);
     width: var(--width-card);
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--space-6);
 }
 .example-card h3 {
     margin: 0 0 var(--space-2) 0;
@@ -194,7 +193,7 @@ body {
     font-family: 'Fira Mono', 'Consolas', monospace;
     font-size: 0.98em;
     border-radius: var(--radius-2);
-    padding: var(--space-2) var(--space-8);
+    padding: var(--space-2) var(--space-6);
     margin: var(--space-1) 0 0 0;
     width: 100%;
     overflow-x: auto;
@@ -214,13 +213,13 @@ body {
     box-shadow: var(--shadow-2);
 }
 .playground-section h2 {
-    color: #2a4d8f;
+    color: var(--color-text-secondary);
 }
 .playground-form {
     display: flex;
     align-items: center;
     gap: var(--space-2);
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--space-6);
     font-size: var(--space-5);
 }
 .playground-form input[type="number"] {
@@ -229,7 +228,7 @@ body {
     border: 1px solid var(--color-border);
     border-radius: var(--radius-1);
     font-size: 1em;
-    background: #fff;
+    background-color: var(--color-bg-main);
     color: var(--color-text-main);
     outline: none;
     transition: border 0.2s;
@@ -263,7 +262,7 @@ body {
     color: var(--color-text-secondary);
 }
 .references-section ul {
-    margin: var(--space-2) 0 0 var(--space-8);
+    margin: var(--space-2) 0 0 var(--space-6);
     padding: 0;
     list-style: disc inside;
 }

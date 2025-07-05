@@ -1998,6 +1998,6 @@ CSS
 
 ### Further Reading
 
--   MDN: [`aspect-ratio`](https://www.google.com/search?q=%5Bhttps://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio%5D(https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio))    
--   CSS-Tricks: [The CSS `aspect-ratio` Property](https://www.google.com/search?q=%5Bhttps://css-tricks.com/the-css-aspect-ratio-property/%5D(https://css-tricks.com/the-css-aspect-ratio-property/))   
--   Smashing Magazine: [Say Hello To The New `aspect-ratio` CSS Property](https://www.google.com/search?q=%5Bhttps://www.smashingmagazine.com/2021/04/css-aspect-ratio/%5D(https://www.smashingmagazine.com/2021/04/css-aspect-ratio/))
+-   MDN: [`aspect-ratio`](https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio)
+-   CSS-Tricks: [The CSS `aspect-ratio` Property](https://css-tricks.com/the-css-aspect-ratio-property/)
+-   Smashing Magazine: [Say Hello To The New `aspect-ratio` CSS Property](https://www.smashingmagazine.com/2021/04/css-aspect-ratio/)
