@@ -2109,4 +2109,4 @@ CSS
 -   MDN: [`object-fit`](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit)
 -   MDN: [`object-position`](https://developer.mozilla.org/en-US/docs/Web/CSS/object-position)
 -   CSS-Tricks: [A Complete Guide to `object-fit`](https://css-tricks.com/almanac/properties/o/object-fit)
--   DigitalOcean: [Understanding the `object-fit` and `object-position` CSS Properties](Bhttps://www.digitalocean.com/community/tutorials/css-object-fit-object-position)
+-   DigitalOcean: [Understanding the `object-fit` and `object-position` CSS Properties](https://www.digitalocean.com/community/tutorials/css-object-fit-object-position)

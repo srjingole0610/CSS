@@ -45,6 +45,8 @@
     --space-xs: 0.5rem;
     --space-sm: 0.7rem;
     --space-md: 0.8rem;
+    --space-4: 1rem;
+    --space-5: 1.1rem;
     --space-lg: 1.2rem;
     --space-xl: 1.5rem;
     --space-2xl: 2rem;
@@ -128,7 +130,7 @@ body {
 .theory-section {
     background: var(--color-bg-section);
     border-radius: var(--radius-section);
-    padding: var(--space-xl) var(--space-6) var(--space-md) var(--space-6);
+    padding: var(--space-xl) var(--space-lg);
     margin-bottom: var(--space-section);
     box-shadow: var(--shadow-2);
 }
