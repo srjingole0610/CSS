@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="In-depth guide to CSS object-fit and object-position with interactive examples.">
+    <meta name="keywords" content="css, object-fit, object-position, images, responsive, css demo">
+    <meta name="author" content="Suraj Ingole">
+    <meta name="robots" content="index, follow">
+    <link rel="shortcut icon" href="../images/css_favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/object-fit-object-position.css">
+    <title>CSS object-fit & object-position – Interactive Guide & Examples</title>
+</head>
+<body>
+    <nav class="back-nav">
+        <a href="../index.html" class="back-btn">← Back to Directory</a>
+    </nav>
+    <main class="main-content">
+        <header class="header">
+            <img src="../images/css_favicon.png" alt="CSS Logo" class="logo">
+            <h1>CSS <span class="highlight">object-fit</span> & <span class="highlight">object-position</span></h1>
+            <p class="subtitle">Control how images and videos fit and align inside their containers</p>
+        </header>
+
+        <section class="theory-section">
+            <h2>What are <code>object-fit</code> & <code>object-position</code>?</h2>
+            <p>
+                <strong>object-fit</strong> and <strong>object-position</strong> are CSS properties that control how replaced elements (like <code>&lt;img&gt;</code> and <code>&lt;video&gt;</code>) are resized and positioned within their containers. They are especially useful for responsive layouts, galleries, and media cards.
+            </p>
+            <ul class="theory-list">
+                <li><b>object-fit</b>: Defines how the content should be resized to fit its container. Common values:
+                    <ul>
+                        <li><code>fill</code> (default): Stretches to fill the box, may distort.</li>
+                        <li><code>contain</code>: Scales to fit, preserving aspect ratio (may leave empty space).</li>
+                        <li><code>cover</code>: Scales to cover the box, cropping if needed.</li>
+                        <li><code>none</code>: No resizing, uses image's original size.</li>
+                        <li><code>scale-down</code>: Like <code>none</code> or <code>contain</code>, whichever is smaller.</li>
+                    </ul>
+                </li>
+                <li><b>object-position</b>: Specifies the alignment of the content inside the box (e.g., <code>center</code>, <code>top right</code>, <code>50% 100%</code>).</li>
+            </ul>
+            <p>
+                <b>Why use them?</b> They provide a simple, CSS-only way to create beautiful, responsive image and video layouts without extra markup or JavaScript.
+            </p>
+        </section>
+
+        <section class="examples-section">
+            <h2>Interactive Examples</h2>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <h3>object-fit: cover</h3>
+                    <div class="media-frame">
+                        <img src="../images/fireman.webp" alt="Fireman" class="media-img fit-cover">
+                    </div>
+                    <pre class="code-block">.fit-cover {
+  object-fit: cover;
+}</pre>
+                </div>
+                <div class="example-card">
+                    <h3>object-fit: contain</h3>
+                    <div class="media-frame">
+                        <img src="../images/fireman.webp" alt="Fireman" class="media-img fit-contain">
+                    </div>
+                    <pre class="code-block">.fit-contain {
+  object-fit: contain;
+}</pre>
+                </div>
+                <div class="example-card">
+                    <h3>object-fit: none</h3>
+                    <div class="media-frame">
+                        <img src="../images/fireman.webp" alt="Fireman" class="media-img fit-none">
+                    </div>
+                    <pre class="code-block">.fit-none {
+  object-fit: none;
+}</pre>
+                </div>
+                <div class="example-card">
+                    <h3>object-fit: cover + object-position: top right</h3>
+                    <div class="media-frame">
+                        <img src="../images/fireman.webp" alt="Fireman" class="media-img fit-cover-pos">
+                    </div>
+                    <pre class="code-block">.fit-cover-pos {
+  object-fit: cover;
+  object-position: top right;
+}</pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="references-section">
+            <h2>References & Further Reading</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit" target="_blank" rel="noopener">MDN: object-fit</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/object-position" target="_blank" rel="noopener">MDN: object-position</a></li>
+                <li><a href="https://css-tricks.com/almanac/properties/o/object-fit/" target="_blank" rel="noopener">CSS-Tricks: object-fit</a></li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
