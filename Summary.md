@@ -47,6 +47,8 @@ Whether you're a beginner or an experienced developer, use this summary to quick
 - [CSS Inheritance & Cascade](#34-css-inheritance--cascade)
 - [CSS Backdrop Filter](#35-css-backdrop-filter)
 - [CSS Writing Mode](#36-css-writing-mode)
+- [CSS Aspect Ratio](#37-css-aspect-ratio)
+
 
 ---
 
@@ -171,9 +173,7 @@ omments help document your styles. They're ignored by browsers.
   margin: 0 auto;
 }
 `
-``
-
----
+```
 
 ## 5. Colors in CSS
 
@@ -206,115 +206,6 @@ body {
   color: white;
 }
 ```
-
-
----
-
-}
-
-.float-column {
-    float: left;
-    width: 30%;
-    margin-right: 5%;
-    padding: 15px;
-    box-sizing: border-box;
-    background-color: #f8f9fa;
-    border-radius: var(--border-radius);
-    min-height: 150px;
-}
-
-.float-column:last-child {
-    margin-right: 0;
-}
-
-/* Interactive Playground */
-.interactive-playground {
-    background-color: white;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    padding: 25px;
-    margin-bottom: 30px;
-}
-
-.controls {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.control-btn {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.control-btn:hover {
-    background-color: var(--primary-color-hover);
-}
-
-.playground-container {
-    background-color: #f8f9fa;
-    border-radius: var(--border-radius);
-    padding: 20px;
-    margin-top: 20px;
-}
-
-.playground-box {
-    overflow: hidden;
-    margin-bottom: 20px;
-    min-height: 200px;
-}
-
-.playground-item {
-    width: 150px;
-    height: 100px;
-    background-color: var(--primary-color);
-    color: white;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: var(--border-radius);
-    transition: var(--transition);
-}
-
-.playground-text {
-    margin-top: 10px;
-}
-
-.current-styles {
-    margin-top: 20px;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .float-column {
-        float: none;
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
-    
-    .controls {
-        flex-direction: column;
-    }
-    
-    .back-button {
-        position: static;
-        display: inline-block;
-        margin-bottom: 15px;
-        transform: none;
-    }
-    
-    .page-header {
-        padding-top: 15px;
-    }
-}
 
 ## 6. Backgrounds in CSS
 
@@ -1602,6 +1493,110 @@ When a container has only floated elements, it collapses to zero height. The "cl
   display: block;
   clear: both;
 }
+
+.float-column {
+    float: left;
+    width: 30%;
+    margin-right: 5%;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    min-height: 150px;
+}
+
+.float-column:last-child {
+    margin-right: 0;
+}
+
+/* Interactive Playground */
+.interactive-playground {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.control-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.control-btn:hover {
+    background-color: var(--primary-color-hover);
+}
+
+.playground-container {
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.playground-box {
+    overflow: hidden;
+    margin-bottom: 20px;
+    min-height: 200px;
+}
+
+.playground-item {
+    width: 150px;
+    height: 100px;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.playground-text {
+    margin-top: 10px;
+}
+
+.current-styles {
+    margin-top: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .float-column {
+        float: none;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    .controls {
+        flex-direction: column;
+    }
+    
+    .back-button {
+        position: static;
+        display: inline-block;
+        margin-bottom: 15px;
+        transform: none;
+    }
+    
+    .page-header {
+        padding-top: 15px;
+    }
+}
 ```
 
 ---
@@ -1923,3 +1918,86 @@ It fundamentally changes the coordinate system of the layout, affecting how prop
 -   MDN: [`writing-mode`](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode)
 -   CSS-Tricks: [CSS Writing Mode](https://css-tricks.com/almanac/properties/w/writing-mode/)
 -   W3C: [CSS Writing Modes Level 3](https://www.w3.org/TR/css-writing-modes-3/)
+
+
+## 37. CSS `aspect-ratio`
+
+### What is `aspect-ratio` in CSS?
+
+The `aspect-ratio` property allows you to **maintain a consistent width-to-height ratio for an element**, regardless of its actual dimensions. This is incredibly useful for ensuring that images, videos, `iframe`s, and other embedded content scale proportionally without distortion or layout shifts.
+
+Before `aspect-ratio`, achieving this often involved padding hacks (using `padding-bottom` with a percentage based on the desired ratio) or JavaScript. This property provides a much simpler and more direct solution.
+
+#### Example:
+
+CSS
+
+```
+.responsive-image {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Sets a 16:9 aspect ratio */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.square-box {
+  width: 200px;
+  aspect-ratio: 1; /* Creates a perfect square */
+}
+
+```
+
+### How `aspect-ratio` Works:
+
+You can define the aspect ratio in a few ways:
+
+-   **`width / height`**: The most common way, e.g., `16 / 9`, `4 / 3`, `1 / 1`.  
+-   **A single number**: This number represents the `width / height` ratio. For example, `aspect-ratio: 1.5;` is equivalent to `3 / 2`. 
+-   **`auto`**: The default value. The element's aspect ratio is determined by its intrinsic dimensions (e.g., an image's natural aspect ratio).
+    
+
+### 🔑 Key Points:
+
+-   Ensures elements scale **proportionally**, preventing content distortion.   
+-   Simplifies responsive design for media and other elements.
+-   Can be used on any block-level or inline-block element.
+-   Eliminates the need for traditional "padding hacks" for aspect ratio control.
+-   Works well with `width` or `height` properties to define one dimension, letting `aspect-ratio` calculate the other.
+    
+
+### Best Practices
+
+-   Use `aspect-ratio` for responsive images, videos, and embedded content (like YouTube videos) to prevent layout shifts and maintain visual integrity.
+ 
+-   Combine with `object-fit` for images and videos to control how content fills its proportional box (e.g., `cover`, `contain`).
+-   Consider using it for UI components like cards or buttons where a specific shape needs to be maintained regardless of content.
+    
+
+### Compatibility
+
+-   Supported in most modern browsers (Chrome, Edge, Firefox, Safari).
+-   No significant compatibility issues in current widely used browsers.
+    
+
+#### Example:
+
+CSS
+
+```
+/* For an embedded YouTube video */
+.video-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+}
+
+```
+
+### Further Reading
+
+-   MDN: [`aspect-ratio`](https://www.google.com/search?q=%5Bhttps://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio%5D(https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio))    
+-   CSS-Tricks: [The CSS `aspect-ratio` Property](https://www.google.com/search?q=%5Bhttps://css-tricks.com/the-css-aspect-ratio-property/%5D(https://css-tricks.com/the-css-aspect-ratio-property/))   
+-   Smashing Magazine: [Say Hello To The New `aspect-ratio` CSS Property](https://www.google.com/search?q=%5Bhttps://www.smashingmagazine.com/2021/04/css-aspect-ratio/%5D(https://www.smashingmagazine.com/2021/04/css-aspect-ratio/))

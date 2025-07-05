@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="In-depth guide to the CSS aspect-ratio property with interactive examples and playground.">
+    <meta name="keywords" content="css, aspect-ratio, css aspect ratio, responsive design, css demo">
+    <meta name="author" content="Suraj Ingole">
+    <meta name="robots" content="index, follow">
+    <link rel="shortcut icon" href="../images/css_favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/aspect-ratio.css">
+    <title>CSS Aspect Ratio – Interactive Guide & Examples</title>
+</head>
+<body>
+    <nav class="back-nav">
+        <a href="../index.html" class="back-btn">← Back to Directory</a>
+    </nav>
+    <main class="aspect-main">
+        <header class="aspect-header">
+            <img src="../images/css_favicon.png" alt="CSS Logo" class="aspect-logo">
+            <h1>CSS <span class="highlight">aspect-ratio</span></h1>
+            <p class="subtitle">Maintain perfect proportions in responsive layouts</p>
+        </header>
+
+        <section class="theory-section">
+            <h2>What is <code>aspect-ratio</code> in CSS?</h2>
+            <p>
+                The <strong>aspect-ratio</strong> property in CSS allows you to define the width-to-height ratio of an element, ensuring it maintains its proportions regardless of the content or screen size. This is especially useful for responsive images, videos, cards, and any UI component that needs to scale predictably.
+            </p>
+            <ul class="theory-list">
+                <li><b>Syntax:</b> <code>aspect-ratio: &lt;width&gt; / &lt;height&gt;;</code></li>
+                <li><b>Example:</b> <code>aspect-ratio: 16 / 9;</code> (width is always 16 units for every 9 units of height)</li>
+                <li><b>Applies to:</b> All elements except inline boxes and non-replaced inline elements.</li>
+                <li><b>Overrides:</b> If both <code>width</code> and <code>height</code> are set, <code>aspect-ratio</code> is ignored.</li>
+            </ul>
+            <p>
+                <b>Why use it?</b> Before <code>aspect-ratio</code>, developers used padding hacks or JavaScript to maintain proportions. Now, it's a single, clean CSS property!
+            </p>
+        </section>
+
+        <section class="examples-section">
+            <h2>Interactive Examples</h2>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <h3>1:1 Square</h3>
+                    <div class="aspect-demo aspect-square"></div>
+                    <pre class="code-block" tabindex="0">.aspect-square {
+  aspect-ratio: 1 / 1;
+  background: #4f8cff;
+}</pre>
+                </div>
+                <div class="example-card">
+                    <h3>16:9 Video Frame</h3>
+                    <div class="aspect-demo aspect-video"></div>
+                    <pre class="code-block" tabindex="0">.aspect-video {
+  aspect-ratio: 16 / 9;
+  background: #222 url('../images/fireman.webp') center/cover;
+}</pre>
+                </div>
+                <div class="example-card">
+                    <h3>3:4 Portrait</h3>
+                    <div class="aspect-demo aspect-portrait"></div>
+                    <pre class="code-block" tabindex="0">.aspect-portrait {
+  aspect-ratio: 3 / 4;
+  background: linear-gradient(135deg, #ffb347, #ffcc33);
+}</pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="playground-section">
+            <h2>Aspect Ratio Playground</h2>
+            <p>Change the aspect ratio values below to see the box update in real time!</p>
+            <form class="playground-form" oninput="updatePlaygroundBox()">
+                <label for="playground-width">Width:</label>
+                <input type="number" id="playground-width" name="width" min="1" max="100" value="4">
+                <span>:</span>
+                <label for="playground-height">Height:</label>
+                <input type="number" id="playground-height" name="height" min="1" max="100" value="3">
+            </form>
+            <div class="playground-demo-wrapper">
+                <div id="playground-demo" class="aspect-demo playground-demo"></div>
+                <pre id="playground-code" class="code-block" tabindex="0">.playground-demo {
+  aspect-ratio: 4 / 3;
+  background: repeating-linear-gradient(135deg, #4f8cff 0 10px, #fff 10px 20px);
+}</pre>
+            </div>
+        </section>
+
+        <section class="references-section">
+            <h2>References & Further Reading</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio" target="_blank" rel="noopener noreferrer">MDN: aspect-ratio</a></li>
+                <li><a href="https://css-tricks.com/aspect-ratio-css-container/" target="_blank" rel="noopener noreferrer">CSS-Tricks: Aspect Ratio in CSS</a></li>
+            </ul>
+        </section>
+    </main>
+    <script>
+    function updatePlaygroundBox() {
+        var w = document.getElementById('playground-width').value || 1;
+        var h = document.getElementById('playground-height').value || 1;
+        var box = document.getElementById('playground-demo');
+        var code = document.getElementById('playground-code');
+        box.style.aspectRatio = w + ' / ' + h;
+        code.textContent = `.playground-demo {\n  aspect-ratio: ${w} / ${h};\n  background: repeating-linear-gradient(135deg, #4f8cff 0 10px, #fff 10px 20px);\n}`;
+    }
+    // Initialize on load
+    window.onload = function() {
+        updatePlaygroundBox();
+        // Code copy feature for all code blocks
+        document.querySelectorAll('.code-block').forEach(function(block) {
+            block.addEventListener('click', function() {
+                var text = block.textContent;
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(text);
+                } else {
+                    var textarea = document.createElement('textarea');
+                    textarea.value = text;
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textarea);
+                }
+                block.style.background = '#2a4d8f';
+                setTimeout(function() {
+                    block.style.background = '';
+                }, 600);
+            });
+        });
+    };
+    </script>
+</body>
+</html>
