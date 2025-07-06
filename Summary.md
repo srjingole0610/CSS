@@ -2124,16 +2124,12 @@ Historically, CSS used physical properties like `margin-left` or `border-top`. L
 
 Imagine a paragraph in English (LTR, top-to-bottom writing mode) vs. Arabic (RTL, top-to-bottom writing mode).
 
-**Traditional (Physical) CSS:**
-
-CSS
-
-```
+#### Traditional (Physical) CSS:
+```css
 .box-physical {
   margin-left: 20px;   /* Always on the left */
   border-top: 1px solid black; /* Always on the top */
 }
-
 ```
 
 -   In English, `margin-left` creates space at the start of the line.
@@ -2141,11 +2137,9 @@ CSS
 -   In Arabic, `margin-left` creates space at the _end_ of the line, which is usually not desired for starting text.
     
 
-**Logical CSS:**
+#### Logical CSS:
 
-CSS
-
-```
+```css
 .box-logical {
   margin-inline-start: 20px; /* Space at the start of the inline direction */
   border-block-start: 1px solid black; /* Border at the start of the block direction */
@@ -2164,7 +2158,7 @@ CSS
 
 Logical properties map to physical properties depending on the writing mode (`horizontal-tb`, `vertical-rl`, `vertical-lr`), text direction (`ltr`, `rtl`), and text orientation.
 
-**1. Margins:**
+#### 1. Margins:
 
 -   `margin-block-start` (maps to `margin-top` or `margin-bottom`)
     
@@ -2177,7 +2171,7 @@ Logical properties map to physical properties depending on the writing mode (`ho
 -   **Shorthands:** `margin-block`, `margin-inline`
     
 
-**2. Paddings:**
+#### 2. Paddings:
 
 -   `padding-block-start`
     
@@ -2188,16 +2182,15 @@ Logical properties map to physical properties depending on the writing mode (`ho
 -   `padding-inline-end`
     
 -   **Shorthands:** `padding-block`, `padding-inline`
-    
 
-**3. Borders:**
+#### 3. Borders:
 
 -   `border-block-start`, `border-block-end`, `border-inline-start`, `border-inline-end`
     
 -   **Shorthands:** `border-block`, `border-inline`, `border-block-start-width`, `border-block-start-style`, etc.
     
 
-**4. Positioning (Inset Properties):**
+#### 4. Positioning (Inset Properties):
 
 -   `inset-block-start` (maps to `top` or `bottom`)
     
@@ -2210,7 +2203,7 @@ Logical properties map to physical properties depending on the writing mode (`ho
 -   **Shorthands:** `inset`, `inset-block`, `inset-inline`
     
 
-**5. Sizing:**
+#### 5. Sizing:
 
 -   `inline-size` (maps to `width` or `height` depending on writing mode)
     
@@ -2221,7 +2214,7 @@ Logical properties map to physical properties depending on the writing mode (`ho
 -   `min-block-size`, `max-block-size`
     
 
-**6. Text Properties:**
+#### 6. Text Properties:
 
 -   `text-align`: Can use `start` or `end` to align based on writing direction.
     

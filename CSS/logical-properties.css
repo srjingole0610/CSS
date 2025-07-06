@@ -45,7 +45,8 @@ body {
 }
 
 .back-nav {
-    margin: var(--space-3xl) 0 0 var(--space-3xl);
+    margin-block-start: var(--space-3xl);
+    margin-inline-start: var(--space-3xl);
 }
 .back-btn {
     display: inline-block;
@@ -64,7 +65,8 @@ body {
 
 .main-content {
     max-width: 58rem;
-    margin: var(--space-2xl) auto;
+    margin-block: var(--space-2xl);
+    margin-inline: auto;
     background: #fff;
     border-radius: var(--radius-logo);
     box-shadow: var(--shadow-5);
