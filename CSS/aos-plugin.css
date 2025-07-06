@@ -58,6 +58,9 @@
     --example-grid-gap: var(--space-md);
     --main-max-width: 56rem;
     --main-padding: var(--space-xl) var(--space-lg) var(--space-lg) var(--space-lg);
+
+    /* Animation */
+    --ease-snappy: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -290,7 +293,7 @@ body {
     margin-bottom: 0;
     margin-left: 0;
     margin-right: 0;
-    width: 100%;
+    width: 90%;
     overflow-x: auto;
     box-shadow: var(--shadow-1);
     cursor: pointer;
@@ -337,7 +340,7 @@ body {
 .aos-scroll-fade-in {
     opacity: 0.2;
     transform: translateY(2rem);
-    transition: opacity 0.8s var(--color-text-accent), transform 0.8s;
+    transition: opacity 0.8s var(--ease-snappy), transform 0.8s ease-in-out;
     will-change: opacity, transform;
 }
 

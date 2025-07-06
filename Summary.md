@@ -2277,7 +2277,7 @@ It works by adding specific `data-*` attributes to your HTML elements, which AOS
 
 HTML
 
-```
+```html
 <!-- HTML -->
 <div data-aos="fade-up">
   This element will fade up when scrolled into view.
@@ -2286,10 +2286,13 @@ HTML
 <div data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
   This element will zoom in after a delay and with a longer duration.
 </div>
+```
+
+JavaScript
+
 ```javascript
 // JavaScript (after loading AOS library)
 AOS.init(); // Initialize AOS
-
 ```
 
 ### How AOS Works:
