@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="In-depth guide to CSS logical properties with interactive examples.">
+    <meta name="keywords" content="css, logical properties, margin-block, padding-inline, writing-mode, css demo">
+    <meta name="author" content="Suraj Ingole">
+    <meta name="robots" content="index, follow">
+    <link rel="shortcut icon" href="../images/css_favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/logical-properties.css">
+    <title>CSS Logical Properties – Interactive Guide & Examples</title>
+</head>
+<body>
+    <nav class="back-nav">
+        <a href="../index.html" class="back-btn">← Back to Directory</a>
+    </nav>
+    <main class="main-content">
+        <header class="header">
+            <img src="../images/css_favicon.png" alt="CSS Logo" class="logo">
+            <h1>CSS <span class="highlight">Logical Properties</span></h1>
+            <p class="subtitle">Write direction-aware, internationalized, and flexible layouts</p>
+        </header>
+
+        <section class="theory-section">
+            <h2>What are CSS Logical Properties?</h2>
+            <p>
+                <strong>Logical properties</strong> are CSS properties that describe layout in a way that adapts to the writing mode, direction, and orientation of the document. Instead of using physical directions like <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code>, logical properties use <code>block</code> and <code>inline</code> axes, making your CSS more robust for internationalization and vertical writing modes.
+            </p>
+            <ul class="theory-list">
+                <li><b>Block axis:</b> The direction in which blocks are stacked (usually top-to-bottom).</li>
+                <li><b>Inline axis:</b> The direction in which text flows (usually left-to-right).</li>
+                <li><b>Examples:</b> <code>margin-block-start</code>, <code>padding-inline-end</code>, <code>border-block</code>, <code>inset-inline</code>, etc.</li>
+                <li><b>Why use them?</b> Logical properties make layouts more adaptable to different languages and writing directions (LTR, RTL, vertical, etc.).</li>
+            </ul>
+        </section>
+
+        <section class="examples-section">
+            <h2>Interactive Examples</h2>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <h3>Physical vs Logical Margin</h3>
+                    <div class="demo-box physical-margin">Physical: <code>margin-top</code></div>
+                    <div class="demo-box logical-margin">Logical: <code>margin-block-start</code></div>
+                    <pre class="code-block">.physical-margin {
+  margin-top: 2rem;
+}
+.logical-margin {
+  margin-block-start: 2rem;
+}</pre>
+                </div>
+                <div class="example-card">
+                    <h3>Padding Inline/Block</h3>
+                    <div class="demo-box padding-logical">Padding: <code>padding-inline</code> & <code>padding-block</code></div>
+                    <pre class="code-block">.padding-logical {
+  padding-inline: 2rem;
+  padding-block: 1rem;
+}</pre>
+                </div>
+                <div class="example-card">
+                    <h3>Border Inline/Block</h3>
+                    <div class="demo-box border-logical">Border: <code>border-inline</code> & <code>border-block</code></div>
+                    <pre class="code-block">.border-logical {
+  border-inline: 4px solid #4f8cff;
+  border-block: 2px dashed #ffb347;
+}</pre>
+                </div>
+                <div class="example-card">
+                    <h3>Inset Logical</h3>
+                    <div class="demo-inset-wrapper">
+                        <div class="demo-inset">inset-inline-end: 0.5rem;<br>inset-block-start: 1rem;</div>
+                    </div>
+                    <pre class="code-block">.demo-inset {
+  position: absolute;
+  inset-inline-end: 0.5rem;
+  inset-block-start: 1rem;
+}</pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="references-section">
+            <h2>References & Further Reading</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties" target="_blank" rel="noopener">MDN: CSS Logical Properties</a></li>
+                <li><a href="https://css-tricks.com/css-logical-properties/" target="_blank" rel="noopener">CSS-Tricks: CSS Logical Properties</a></li>
+                <li><a href="https://web.dev/logical-properties/" target="_blank" rel="noopener">web.dev: Logical Properties</a></li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
