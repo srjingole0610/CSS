@@ -1,0 +1,441 @@
+:root {
+  /* Colors */
+  --accent: #3498db;
+  --accent-secondary: #e74c3c;
+  --revert: #8e44ad;
+  --bg: #f0f4ff;
+  --theory-bg: #f9fafc;
+  --code-bg: #23272e;
+  --code-color: #e3e8ef;
+  --text-primary: #222;
+  --text-secondary: #555;
+  --white: #fff;
+  --border-color: #e0e6ef;
+  --resources-bg: #f6fafd;
+  --inherit-bg: #fdf6e3;
+  --initial-bg: #f0f4ff;
+  --unset-bg: #eafaf1;
+  --revert-bg: #f6e9fa;
+  --tooltip-bg: #fffbe6;
+  --tooltip-orange: #e67e22;
+  --tooltip-green: #27ae60;
+
+  /* Spacing */
+  --radius: 0.75rem;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.4rem;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 2.5rem;
+
+  /* Typography */
+  --font-size-sm: 0.9rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.2rem;
+  --line-height: 1.7;
+  
+  /* Effects */
+  --transition: all 0.3s ease;
+  --box-shadow: 0 0.25rem 1.5rem rgba(52, 152, 219, 0.08);
+  --box-shadow-sm: 0 0.1rem 0.5rem rgba(52, 152, 219, 0.04);
+  --box-shadow-purple: 0 0.25rem 1.5rem rgba(142, 68, 173, 0.07);
+  --box-shadow-tooltip: 0 0.2rem 1rem rgba(52, 152, 219, 0.08);
+
+  /* Demo specific */
+  --demo-bg: #fff7ed;
+  --demo-text: #b85c16; /* Updated for WCAG AA compliance - contrast ratio 4.52:1 */
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  margin: 0;
+  color: var(--text-primary);
+  line-height: var(--line-height);
+}
+
+nav {
+  padding: var(--spacing-sm) var(--spacing-lg) 0 var(--spacing-lg);
+}
+
+.back-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--white);
+  text-decoration: none;
+  padding: var(--spacing-xs) 1.2rem;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.back-btn:hover {
+  background: var(--accent-secondary);
+}
+
+main {
+  max-width: 51.25rem;
+  margin: var(--spacing-lg) auto;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--box-shadow);
+  padding: var(--spacing-xl) var(--spacing-lg) var(--spacing-lg) var(--spacing-lg);
+}
+
+header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: var(--font-size-lg);
+  margin-top: var(--spacing-xs);
+}
+
+section.theory {
+  background: var(--theory-bg);
+  border-left: 0.25rem solid var(--accent);
+  padding: 1.2rem var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  border-radius: var(--radius-sm);
+}
+
+section.theory h2 {
+  margin-top: 0;
+}
+
+section.example {
+  margin-bottom: var(--spacing-xl);
+}
+
+.code-demo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  align-items: flex-start;
+}
+
+.code-block {
+  background: var(--code-bg);
+  color: var(--code-color);
+  padding: var(--spacing-sm) 1.2rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-base);
+  min-width: 16.25rem;
+  max-width: 21.875rem;
+  overflow-x: auto;
+  flex: 1 1 16.25rem;
+}
+
+.code-block code {
+  font-family: "Fira Mono", "Consolas", monospace;
+  font-size: 0.9em;
+  color: inherit;
+}
+
+.parent {
+  color: var(--accent);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.child {
+  font-size: 1.2em;
+}
+
+.box {
+  background: var(--bg);
+  color: var(--text-primary);
+}
+
+#special {
+  color: var(--accent-secondary);
+}
+
+.box {
+  color: var(--accent) !important;
+}
+
+.live-demo {
+  background: var(--white);
+  border: 0.0625rem solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 1.2rem var(--spacing-md);
+  min-width: 13.75rem;
+  flex: 1 1 13.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  align-items: flex-start;
+}
+
+.demo-description {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin: var(--spacing-xs) 0 0 0;
+}
+
+.resources {
+  margin-top: var(--spacing-xl);
+  padding: 1.2rem var(--spacing-md);
+  background: var(--resources-bg);
+  border-radius: var(--radius-sm);
+  border-left: 0.25rem solid var(--accent-secondary);
+}
+
+.resources h2 {
+  margin-top: 0;
+  color: var(--accent-secondary);
+}
+
+.resources ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+/* Advanced Inheritance Section */
+.advanced-inheritance {
+  background: linear-gradient(90deg, var(--theory-bg) 80%, var(--revert-bg) 100%);
+  border-left: 0.25rem solid var(--revert);
+  margin-bottom: var(--spacing-xl);
+  box-shadow: var(--box-shadow-purple);
+}
+
+.keyword-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.2rem;
+}
+
+.keyword-list li {
+  background: var(--resources-bg);
+  border-radius: var(--radius-md);
+  padding: 0.7rem 1.1rem;
+  border-left: 0.18rem solid var(--accent-secondary);
+  font-size: var(--font-size-base);
+  min-width: 12rem;
+  box-shadow: var(--box-shadow-sm);
+}
+
+.advanced-demo .child-inherit,
+.advanced-demo .child-initial,
+.advanced-demo .child-unset,
+.advanced-demo .child-revert {
+  margin: var(--spacing-xs) 0;
+  padding: 0.4rem var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  transition: background 0.2s;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.advanced-demo .child-inherit {
+  background-color: var(--inherit-bg);
+  color: inherit;
+}
+
+.advanced-demo .child-initial {
+  background-color: var(--initial-bg);
+  color: initial;
+}
+
+.advanced-demo .child-unset {
+  background-color: var(--unset-bg);
+  color: unset;
+}
+
+.advanced-demo .child-revert {
+  background-color: var(--revert-bg);
+  color: revert;
+}
+
+.parent-demo {
+  margin-bottom: var(--spacing-xs);
+  padding: var(--spacing-sm) 1.2rem;
+  border-radius: var(--radius-md);
+  background: var(--demo-bg);
+  font-size: 1.08em;
+  font-weight: bold;
+  color: var(--demo-text);
+  position: relative;
+}
+
+.advanced-demo {
+  position: relative;
+}
+
+.theme-accent {
+  color: var(--accent);
+}
+
+.theme-accent-secondary {
+  color: var(--accent-secondary);
+}
+
+.theme-revert {
+  color: var(--revert);
+}
+
+.advanced-demo .child-inherit::after {
+  content: "Inherits orange from parent.";
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  left: 105%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--tooltip-bg);
+  color: var(--tooltip-orange);
+  border: 1px solid var(--tooltip-orange);
+  border-radius: var(--radius-sm);
+  padding: 0.3rem 0.7rem;
+  font-size: 0.95em;
+  white-space: nowrap;
+  z-index: 10;
+  transition: opacity 0.2s;
+}
+
+.advanced-demo .child-initial::after {
+  content: "Resets to browser default (usually black).";
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  left: 105%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--initial-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 0.3rem 0.7rem;
+  font-size: 0.95em;
+  white-space: nowrap;
+  z-index: 10;
+  transition: opacity 0.2s;
+}
+
+.advanced-demo .child-unset::after {
+  content: "Acts like inherit for color (inherits orange).";
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  left: 105%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--unset-bg);
+  color: var(--tooltip-green);
+  border: 1px solid var(--tooltip-green);
+  border-radius: var(--radius-sm);
+  padding: 0.3rem 0.7rem;
+  font-size: 0.95em;
+  white-space: nowrap;
+  z-index: 10;
+  transition: opacity 0.2s;
+}
+
+.advanced-demo .child-revert::after {
+  content: "Reverts to user-agent or user style (usually black).";
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  left: 105%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--revert-bg);
+  color: var(--revert);
+  border: 1px solid var(--revert);
+  border-radius: var(--radius-sm);
+  padding: 0.3rem 0.7rem;
+  font-size: 0.95em;
+  white-space: nowrap;
+  z-index: 10;
+  transition: opacity 0.2s;
+}
+
+.advanced-demo .child-inherit:hover::after,
+.advanced-demo .child-initial:hover::after,
+.advanced-demo .child-unset:hover::after,
+.advanced-demo .child-revert:hover::after {
+  opacity: 1;
+}
+
+.demo-tooltip-parent {
+  position: relative;
+  display: inline-block;
+}
+
+.demo-tooltip-trigger {
+  color: var(--accent-secondary);
+  cursor: pointer;
+  position: relative;
+}
+
+.demo-tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  width: 320px;
+  background: var(--tooltip-bg);
+  color: var(--tooltip-orange);
+  text-align: left;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--tooltip-orange);
+  padding: 0.7em 1em;
+  position: absolute;
+  left: 50%;
+  top: 120%;
+  transform: translateX(-50%);
+  z-index: 20;
+  font-size: 0.98em;
+  box-shadow: var(--box-shadow-tooltip);
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+.demo-tooltip-trigger:hover .demo-tooltip-text,
+.demo-tooltip-trigger:focus .demo-tooltip-text {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.advanced-inheritance .advanced-demo-description {
+  margin-top: 0.7rem;
+}
+
+.accent-bold {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+@media (max-width: 700px) {
+  main {
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+  .code-demo {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+  .code-block,
+  .live-demo {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+  .subtitle {
+    font-size: var(--font-size-base);
+  }
+  .code-block {
+    font-size: var(--font-size-sm);
+  }
+}

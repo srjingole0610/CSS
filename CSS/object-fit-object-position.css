@@ -1,0 +1,252 @@
+ :root {
+    /* Fonts */
+    --font-main: 'Segoe UI', Arial, sans-serif;
+    --font-mono: 'Fira Mono', 'Consolas', monospace;
+    --font-size-base: 1rem;
+    --font-size-h1: 2.2rem;
+    --font-size-h3: 1.1em;
+    --font-size-code: 0.98em;
+    --font-weight-bold: 700;
+    --font-weight-semi: 500;
+    /* Colors */
+    --color-black: #222;
+    --color-blue: #4f8cff;
+    --color-blue-dark: #2a4d8f;
+    --color-bg-main: #f7f9fb;
+    --color-bg-main-content: #fff;
+    --color-bg-card: #f8fafc;
+    --color-bg-section: #f0f4fa;
+    --color-bg-btn: #e3e9f7;
+    --color-bg-btn-hover: #d0d8ee;
+    --color-bg-media: #eee;
+    --color-bg-media-img: #ddd;
+    --color-bg-code: #23272e;
+    --color-bg-code-active: #2a4d8f;
+    --color-border: #b3c6e0;
+    --color-border-section: #e3e9f7;
+    --color-text-main: var(--color-black);
+    --color-text-accent: var(--color-blue);
+    --color-text-secondary: var(--color-blue-dark);
+    --color-text-code: #e3e9f7;
+    /* Shadows */
+    --shadow-1: 0 1px 4px #0001;
+    --shadow-2: 0 1px 8px #0001;
+    --shadow-3: 0 2px 8px #0002;
+    --shadow-4: 0 4px 16px #4f8cff33;
+    --shadow-5: 0 4px 32px #0002;
+    /* Radii */
+    --radius-btn: 2em;
+    --radius-card: 0.7em;
+    --radius-section: 0.8em;
+    --radius-media: 0.5em;
+    --radius-code: 0.4em;
+    --radius-logo: 1.2em;
+    /* Spacing & Margin */
+    --space-xs: 0.5rem;
+    --space-sm: 0.7rem;
+    --space-md: 0.8rem;
+    --space-4: 1rem;
+    --space-5: 1.1rem;
+    --space-lg: 1.2rem;
+    --space-xl: 1.5rem;
+    --space-2xl: 2rem;
+    --space-3xl: 2.5rem;
+    --space-section: 2.2em;
+    --space-card: 1em;
+    --margin-auto: auto;
+    --margin-0: 0;
+    --margin-top-xs: var(--space-xs);
+    --margin-top-sm: var(--space-sm);
+    --margin-top-md: var(--space-md);
+    --margin-top-lg: var(--space-lg);
+    --margin-top-xl: var(--space-xl);
+    --margin-top-2xl: var(--space-2xl);
+    --margin-top-3xl: var(--space-3xl);
+    /* Sizes */
+    --width-card: 16.25rem;
+    --media-frame-size: 12.5rem;
+    --logo-size: 3rem;
+}
+
+body {
+    font-family: var(--font-main);
+    background: var(--color-bg-main);
+    color: var(--color-text-main);
+    margin: var(--margin-0);
+    padding: var(--margin-0);
+    font-size: var(--font-size-base);
+}
+
+.back-nav {
+    margin: var(--margin-top-3xl) 0 0 var(--margin-top-3xl);
+}
+.back-btn {
+    display: inline-block;
+    background: var(--color-bg-btn);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    padding: var(--space-xs) var(--space-lg);
+    border-radius: var(--radius-btn);
+    font-weight: var(--font-weight-semi);
+    transition: background-color 0.2s;
+    box-shadow: var(--shadow-1);
+}
+.back-btn:hover {
+    background: var(--color-bg-btn-hover);
+}
+
+.main-content {
+    max-width: 56.25rem;
+    margin: var(--space-2xl) var(--margin-auto);
+    background: var(--color-bg-main-content);
+    border-radius: var(--radius-logo);
+    box-shadow: var(--shadow-5);
+    padding: var(--space-3xl) var(--space-2xl) var(--space-2xl) var(--space-2xl);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: var(--margin-top-3xl);
+}
+.logo {
+    width: var(--logo-size);
+    vertical-align: middle;
+    margin-bottom: var(--margin-top-xs);
+}
+.header h1 {
+    font-size: var(--font-size-h1);
+    margin: 0.2em 0 0.1em 0;
+    font-weight: var(--font-weight-bold);
+}
+.header .highlight {
+    color: var(--color-text-accent);
+}
+.subtitle {
+    color: var(--color-text-accent);
+    font-size: var(--space-5);
+    margin-bottom: var(--margin-top-xs);
+}
+
+.theory-section {
+    background: var(--color-bg-section);
+    border-radius: var(--radius-section);
+    padding: var(--space-xl) var(--space-lg);
+    margin-bottom: var(--space-section);
+    box-shadow: var(--shadow-2);
+}
+.theory-section h2 {
+    margin-top: 0;
+    color: var(--color-text-secondary);
+}
+.theory-list {
+    margin: 1em 0 1em 1.5em;
+    padding: 0;
+    list-style: disc inside;
+}
+.theory-list li {
+    margin-bottom: var(--margin-top-xs);
+    font-size: 1.05em;
+}
+
+.examples-section {
+    margin-bottom: var(--space-section);
+}
+.examples-section h2 {
+    color: var(--color-text-secondary);
+}
+.examples-grid {
+    display: flex;
+    gap: var(--space-xl);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.example-card {
+    background: var(--color-bg-card);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-2);
+    padding: var(--space-lg) var(--space-card) var(--space-card) var(--space-card);
+    width: var(--width-card);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: var(--margin-top-lg);
+}
+.example-card h3 {
+    margin: 0 0 var(--margin-top-sm) 0;
+    font-size: var(--font-size-h3);
+    color: var(--color-text-accent);
+}
+.media-frame {
+    width: var(--media-frame-size);
+    height: var(--media-frame-size);
+    background: var(--color-bg-media);
+    border-radius: var(--radius-media);
+    overflow: hidden;
+    margin-bottom: var(--margin-top-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-3);
+}
+.media-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: var(--color-bg-media-img);
+}
+.fit-cover {
+    object-fit: cover;
+}
+.fit-contain {
+    object-fit: contain;
+}
+.fit-none {
+    object-fit: none;
+}
+.fit-cover-pos {
+    object-fit: cover;
+    object-position: top right;
+}
+
+.code-block {
+    background: var(--color-bg-code);
+    color: var(--color-text-code);
+    font-family: var(--font-mono);
+    font-size: var(--font-size-code);
+    border-radius: var(--radius-code);
+    padding: var(--space-sm) var(--space-lg);
+    margin: var(--margin-top-xs) 0 0 0;
+    width: 100%;
+    overflow-x: auto;
+    box-shadow: var(--shadow-1);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.code-block:active, .code-block:focus {
+    background: var(--color-bg-code-active);
+}
+
+.references-section {
+    margin-top: var(--space-3xl);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border-section);
+}
+.references-section h2 {
+    color: var(--color-text-secondary);
+}
+.references-section ul {
+    margin: var(--space-sm) 0 0 var(--space-lg);
+    padding: 0;
+    list-style: disc inside;
+}
+.references-section li {
+    margin-bottom: var(--space-xs);
+}
+.references-section a {
+    color: var(--color-text-accent);
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+.references-section a:hover {
+    color: var(--color-text-secondary);
+}

@@ -1,0 +1,334 @@
+/* =============================
+   CSS Backdrop Filter Demo Page
+   ============================= */
+
+:root {
+  --color-primary: #3498db;
+  --color-secondary: #8e44ad;
+  --color-text: #222;
+  --color-red: #c0392b;
+  --color-white: #fff;
+  --color-gray-light: #f3f3f3;
+  --color-gray-lighter: #f9f9f9;
+  --color-purple-light: #f7f3fa;
+  --color-blue-light: #eaf6fb;
+  --color-border: #e1e1e1;
+  --color-success: #27ae60;
+  --color-success-light: #d4f8e8;
+  --color-success-dark: #217a4a;
+  --color-warning: #b8860b;
+  --color-warning-light: #fffbe6;
+  --color-warning-border: #ffe066;
+  --color-info: #217dbb;
+
+  --shadow-sm: 0 0.125rem 0.5rem rgba(0,0,0,0.07);
+  --shadow-md: 0 0.25rem 1.5rem rgba(52,152,219,0.08);
+  --shadow-lg: 0 0.375rem 1.5rem rgba(142,68,173,0.18);
+
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 2.5rem;
+
+  --border-radius-sm: 0.375rem;
+  --border-radius-md: 0.75rem;
+  --border-radius-lg: 1.125rem;
+
+  --container-max-width: 68.75rem;
+  
+  --font-size-sm: 0.98em;
+  --font-size-base: 1em;
+  --font-size-md: 1.02em;
+  --font-size-lg: 1.04em;
+  --font-size-xl: 1.1rem;
+  --font-size-xxl: 1.3em;
+
+  --transition-base: 0.2s;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: url('../images/backdrop.jpg') center/cover no-repeat fixed;
+  margin: 0;
+  min-height: 100vh;
+  color: var(--color-text);
+}
+
+.nav-bar {
+  background: rgba(255,255,255,0.7);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+}
+
+.back-btn {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: var(--font-size-xl);
+  transition: color var(--transition-base);
+}
+
+.back-btn:hover {
+  color: var(--color-secondary);
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: var(--spacing-lg) auto;
+  background: rgba(255,255,255,0.85);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-xl) var(--spacing-lg) var(--spacing-lg) var(--spacing-lg);
+}
+
+.theory-section {
+  border-left: 0.3125rem solid var(--color-secondary);
+  background: var(--color-purple-light);
+  padding: var(--spacing-md) var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.theory-section h1 {
+  color: var(--color-secondary);
+  margin-top: 0;
+}
+
+.theory-section code {
+  background: var(--color-gray-light);
+  color: var(--color-red);
+  padding: 0.1em 0.4em;
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-base);
+}
+
+.examples-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.example-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+}
+
+.example-card {
+  background: var(--color-white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-md) var(--spacing-sm) var(--spacing-md) var(--spacing-sm);
+  flex: 1 1 17.5rem;
+  min-width: 16.25rem;
+  max-width: 21.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.example-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-0.25rem) scale(1.03);
+}
+
+.backdrop-demo {
+  width: 13.75rem;
+  height: 5.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-sm);
+  border-radius: 0.625rem;
+  border: 0.09375rem solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.demo-content {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--color-text);
+  text-shadow: 0 0.0625rem 0.5rem var(--color-white), 0 0.0625rem 0.125rem #8e44ad33;
+}
+
+.frosted-glass {
+  background: rgba(255,255,255,0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.blur-bright {
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(4px) brightness(0.7);
+  -webkit-backdrop-filter: blur(4px) brightness(0.7);
+}
+
+.contrast-gray {
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: contrast(2) grayscale(1);
+  -webkit-backdrop-filter: contrast(2) grayscale(1);
+}
+
+.glassmorphism {
+  background: linear-gradient(135deg, rgba(52,152,219,0.25), rgba(142,68,173,0.18));
+  backdrop-filter: blur(10px) saturate(1.5);
+  -webkit-backdrop-filter: blur(10px) saturate(1.5);
+  border: 1.5px solid rgba(255,255,255,0.25);
+}
+
+.hue-rotate {
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: hue-rotate(120deg) blur(3px);
+  -webkit-backdrop-filter: hue-rotate(120deg) blur(3px);
+}
+
+.sepia-modal {
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: sepia(0.8) blur(2px);
+  -webkit-backdrop-filter: sepia(0.8) blur(2px);
+}
+/* Modern enhancements for new theory and interactivity */
+.theory-grid {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+  flex-wrap: wrap;
+}
+.theory-block {
+  background: var(--color-white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-md) var(--spacing-sm);
+  flex: 1 1 18rem;
+  min-width: 15rem;
+  margin-bottom: var(--spacing-sm);
+}
+.syntax-block {
+  background: var(--color-blue-light);
+  border-left: 0.25rem solid var(--color-primary);
+  padding: 1em 1.5em;
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--spacing-md);
+}
+.tip-block {
+  display: flex;
+  align-items: center;
+  background: var(--color-warning-light);
+  border-left: 0.25rem solid var(--color-warning-border);
+  padding: 0.7em 1.2em;
+  border-radius: var(--border-radius-sm);
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-lg);
+  color: var(--color-warning);
+}
+.tip-icon {
+  font-size: var(--font-size-xxl);
+  margin-right: 0.5em;
+}
+.browser-icons {
+  display: flex;
+  gap: 1.5em;
+  align-items: center;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+.browser-icons img {
+  width: 2.2em;
+  height: 2.2em;
+  opacity: 0.85;
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+.browser-icons img:hover {
+  transform: scale(1.15) rotate(-5deg);
+  opacity: 1;
+}
+pre.copied {
+  background: var(--color-success-light) !important;
+  color: var(--color-success-dark) !important;
+  border: 1.5px solid var(--color-success);
+}
+pre[title]:hover {
+  box-shadow: 0 0 0 2px var(--color-success);
+}
+
+pre {
+  background: var(--color-gray-light);
+  border-radius: var(--border-radius-sm);
+  padding: 0.7em 1em;
+  font-size: var(--font-size-sm);
+  overflow-x: auto;
+  margin: 0.5em 0 0 0;
+  width: 100%;
+}
+
+.note {
+  background: var(--color-blue-light);
+  color: var(--color-info);
+  border-left: 0.25rem solid var(--color-primary);
+  padding: 0.7em 1.2em;
+  border-radius: var(--border-radius-sm);
+  margin-top: 1.2em;
+  font-size: var(--font-size-md);
+}
+
+.browser-support {
+  background: var(--color-gray-lighter);
+  border-left: 0.25rem solid var(--color-red);
+  padding: 1.2em 1.5em;
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.references {
+  background: var(--color-purple-light);
+  border-left: 0.25rem solid var(--color-secondary);
+  padding: 1.2em 1.5em;
+  border-radius: var(--border-radius-md);
+}
+
+.references ul {
+  margin: 0.5em 0 0 1.2em;
+}
+
+.references a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  transition: color var(--transition-base);
+}
+
+.references a:hover {
+  color: var(--color-secondary);
+}
+
+@media (max-width: 56.25rem) {
+  .container {
+    padding: var(--spacing-md) var(--spacing-xs);
+  }
+  .example-grid {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+}
+
+@media (max-width: 37.5rem) {
+  .container {
+    margin: var(--spacing-xs);
+    border-radius: 0;
+  }
+  .theory-section, .browser-support, .references {
+    padding: var(--spacing-sm) var(--spacing-xs);
+  }
+  .example-card {
+    min-width: 0;
+    max-width: 100%;
+    padding: var(--spacing-sm) var(--spacing-xs);
+  }
+  .backdrop-demo {
+    width: 100%;
+    min-width: 0;
+    height: 4.375rem;
+  }
+}

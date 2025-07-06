@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="In-depth guide to CSS @layer (Cascade Layers) with interactive examples and best practices.">
+    <meta name="keywords" content="css, @layer, cascade layers, css layering, css specificity, css demo">
+    <meta name="author" content="Suraj Ingole">
+    <meta name="robots" content="index, follow">
+    <link rel="shortcut icon" href="../images/css_favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/css-@layer.css">
+    <title>CSS @layer – Theory & Interactive Examples</title>
+</head>
+<body>
+    <nav class="back-nav">
+        <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+    </nav>
+    <main class="layer-main">
+        <header class="layer-header">
+            <h1><span class="highlight">CSS <code>@layer</code> (Cascade Layers)</span></h1>
+            <p class="subtitle">Organize, control, and master the CSS cascade with modern layering!</p>
+        </header>
+        <section class="theory-section">
+            <h2>What is CSS <code>@layer</code>?</h2>
+            <p>
+                <strong>CSS <code>@layer</code></strong> introduces <em>Cascade Layers</em>, a powerful way to group related styles and control their order in the cascade—before specificity and source order. Layers help you avoid specificity wars, manage overrides, and build scalable, maintainable stylesheets.
+            </p>
+            <ul class="theory-list">
+                <li>
+                    <strong>Explicit Cascade Order:</strong> Define the order of your layers, so you always know which styles win.
+                </li>
+                <li>
+                    <strong>Layered Organization:</strong> Group resets, base styles, components, utilities, and overrides into logical layers.
+                </li>
+                <li>
+                    <strong>Predictable Overrides:</strong> Styles in later layers override earlier ones, regardless of selector specificity.
+                </li>
+                <li>
+                    <strong>Unlayered Styles:</strong> Styles not in a layer always win over layered styles.
+                </li>
+            </ul>
+            <div class="syntax-block">
+                <h3>Basic Syntax</h3>
+                <pre><code>@layer reset, base, components, utilities, overrides;
+
+@layer reset {
+  * { margin: 0; padding: 0; }
+}
+@layer base {
+  body { font-family: sans-serif; }
+}
+@layer components {
+  .btn { background: #4f8cff; color: #fff; }
+}
+@layer utilities {
+  .text-red { color: red; }
+}
+                </code></pre>
+            </div>
+            <div class="tip-block">
+                <span class="tip-icon">💡</span>
+                <span>
+                    <strong>Tip:</strong> The <strong>last declared layer</strong> wins, regardless of selector specificity. Unlayered styles always win over layered styles!
+                </span>
+            </div>
+            <div class="note">
+                <strong>Browser Support:</strong> CSS <code>@layer</code> is supported in all modern browsers (Chrome 99+, Edge 99+, Firefox 97+, Safari 15.4+).
+            </div>
+        </section>
+
+        <section class="examples-section">
+            <h2>Interactive Examples</h2>
+            <div class="example-grid">
+                <!-- Example 1: Layered Buttons -->
+                <div class="example-card">
+                    <h3>Layered Button Styles</h3>
+                    <button class="btn text-red">Layered Button</button>
+                    <pre class="code-block" tabindex="0">
+@layer base, components, utilities;
+
+@layer base {
+  .btn {
+    background: #e3e9f7;
+    color: #2a4d8f;
+  }
+}
+@layer components {
+  .btn {
+    background: #4f8cff;
+    color: #fff;
+    border-radius: 0.4rem;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn:hover {
+    background: #2a4d8f;
+  }
+}
+@layer utilities {
+  .text-red {
+    color: red;
+  }
+}
+                    </pre>
+                </div>
+                <!-- Example 2: Layer Order Demo -->
+                <div class="example-card">
+                    <h3>Layer Order vs. Specificity</h3>
+                    <div class="layer-demo-box">Layered Box</div>
+                    <pre class="code-block" tabindex="0">
+@layer base, overrides;
+
+@layer base {
+  .layer-demo-box {
+    background: #f0f4fa;
+    color: #2a4d8f;
+    padding: 1.2rem;
+    border-radius: 0.8rem;
+    font-weight: 600;
+  }
+}
+@layer overrides {
+  .layer-demo-box {
+    background: #ffd200;
+    color: #be185d;
+  }
+}
+/* This unlayered style always wins! */
+.layer-demo-box {
+  border: 2px solid #4f8cff;
+}
+                    </pre>
+                </div>
+                <!-- Example 3: Unlayered Styles Always Win -->
+                <div class="example-card">
+                    <h3>Unlayered Styles Override Layers</h3>
+                    <div class="unlayered-demo">Unlayered Always Wins</div>
+                    <pre class="code-block" tabindex="0">
+@layer base, overrides;
+
+@layer base {
+  .unlayered-demo {
+    background: #f0f4fa;
+    color: #2a4d8f;
+  }
+}
+@layer overrides {
+  .unlayered-demo {
+    background: #ffd200;
+    color: #be185d;
+  }
+}
+/* Unlayered style (always wins) */
+.unlayered-demo {
+  background: #4f8cff;
+  color: #fff;
+}
+                    </pre>
+                </div>
+            </div>
+            <div class="note">
+                <strong>Try it:</strong> The button and boxes above are styled using different layers. Unlayered styles (outside any <code>@layer</code>) always take precedence!
+            </div>
+        </section>
+
+        <section class="references-section">
+            <h2>References</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@layer" target="_blank" rel="noopener">MDN: CSS @layer</a></li>
+                <li><a href="https://web.dev/css-cascade-layers/" target="_blank" rel="noopener">web.dev: Cascade Layers</a></li>
+                <li><a href="https://css-tricks.com/a-complete-guide-to-css-cascade-layers/" target="_blank" rel="noopener">CSS-Tricks: Cascade Layers</a></li>
+                <li><a href="https://www.miriamsuzanne.com/blog/2021/05/20/cascade-layers/" target="_blank" rel="noopener">Miriam Suzanne: Cascade Layers</a></li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

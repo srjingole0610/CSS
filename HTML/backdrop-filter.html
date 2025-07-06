@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="In-depth guide and interactive examples for CSS backdrop-filter property.">
+    <meta name="keywords" content="css, backdrop-filter, blur, transparency, frosted glass, css filters, web design">
+    <meta name="author" content="Suraj Ingole">
+    <meta name="robots" content="index, follow">
+    <link rel="shortcut icon" href="../images/css_favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/backdrop-filter.css">
+    <title>CSS Backdrop Filter – Theory & Interactive Examples</title>
+</head>
+<body>
+    <nav class="nav-bar">
+        <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+    </nav>
+    <main class="container">
+        <section class="theory-section">
+            <!-- Modern, in-depth theory section -->
+            <h1>CSS <code>backdrop-filter</code></h1>
+            <p class="intro">The <code>backdrop-filter</code> CSS property allows you to apply graphical effects <strong>to the area behind an element</strong>, not the element itself. This enables stunning UI effects such as <strong>frosted glass</strong>, <strong>vivid overlays</strong>, and <strong>dynamic modals</strong> that enhance depth, focus, and readability in modern web design.</p>
+            <div class="theory-grid">
+                <div class="theory-block">
+                    <h2>How It Works</h2>
+                    <ul>
+                        <li><strong>Backdrop Area:</strong> Effects are applied to whatever is <em>behind</em> the element, not its own content.</li>
+                        <li><strong>Transparency Required:</strong> The element (or its parent) must have a transparent or semi-transparent background (e.g., <code>background: rgba(255,255,255,0.3)</code>).</li>
+                        <li><strong>Multiple Filters:</strong> You can chain multiple filter functions (e.g., <code>blur(8px) brightness(0.7)</code>).</li>
+                        <li><strong>Popular Use Cases:</strong> Glassmorphism, overlays, modals, navigation bars, and immersive backgrounds.</li>
+                    </ul>
+                </div>
+                <div class="theory-block">
+                    <h2>Common Filter Functions</h2>
+                    <ul>
+                        <li><code>blur(px)</code> – Softens the backdrop for a frosted glass effect.</li>
+                        <li><code>brightness(%)</code> – Adjusts the brightness of the backdrop.</li>
+                        <li><code>contrast()</code> – Increases or decreases contrast.</li>
+                        <li><code>grayscale()</code> – Converts the backdrop to grayscale.</li>
+                        <li><code>sepia()</code>, <code>invert()</code>, <code>saturate()</code>, <code>hue-rotate()</code> – More creative options.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="syntax-block">
+                <h3>Syntax</h3>
+                <pre><code>backdrop-filter: blur(5px) brightness(0.8);
+-webkit-backdrop-filter: blur(5px) brightness(0.8);</code></pre>
+                <p><strong>Note:</strong> Always add <code>-webkit-backdrop-filter</code> for Safari support.</p>
+            </div>
+            <div class="tip-block">
+                <span class="tip-icon">💡</span>
+                <span>Tip: <strong>backdrop-filter</strong> is <em>inherited</em> by child elements, so you can nest effects for creative results!</span>
+            </div>
+        </section>
+        <section class="examples-section">
+            <h2>Interactive Examples</h2>
+            <div class="example-grid">
+                <div class="example-card">
+                    <h3>Frosted Glass Effect</h3>
+                    <div class="backdrop-demo frosted-glass">
+                        <div class="demo-content">Frosted Glass</div>
+                    </div>
+                    <pre><code>.frosted-glass {
+  background: rgba(255,255,255,0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}</code></pre>
+                </div>
+                <div class="example-card">
+                    <h3>Blur + Brightness</h3>
+                    <div class="backdrop-demo blur-bright">
+                        <div class="demo-content">Blur + Brightness</div>
+                    </div>
+                    <pre><code>.blur-bright {
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(4px) brightness(0.7);
+  -webkit-backdrop-filter: blur(4px) brightness(0.7);
+}</code></pre>
+                </div>
+                <div class="example-card">
+                    <h3>Contrast & Grayscale</h3>
+                    <div class="backdrop-demo contrast-gray">
+                        <div class="demo-content">Contrast + Grayscale</div>
+                    </div>
+                    <pre><code>.contrast-gray {
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: contrast(2) grayscale(1);
+  -webkit-backdrop-filter: contrast(2) grayscale(1);
+}</code></pre>
+                </div>
+                <div class="example-card">
+                    <h3>Colorful Glassmorphism</h3>
+                    <div class="backdrop-demo glassmorphism">
+                        <div class="demo-content">Glassmorphism</div>
+                    </div>
+                    <pre><code>.glassmorphism {
+  background: linear-gradient(135deg, rgba(52,152,219,0.25), rgba(142,68,173,0.18));
+  backdrop-filter: blur(10px) saturate(1.5);
+  -webkit-backdrop-filter: blur(10px) saturate(1.5);
+  border: 1.5px solid rgba(255,255,255,0.25);
+}</code></pre>
+                </div>
+                <div class="example-card">
+                    <h3>Hue Rotate Overlay</h3>
+                    <div class="backdrop-demo hue-rotate">
+                        <div class="demo-content">Hue Rotate</div>
+                    </div>
+                    <pre><code>.hue-rotate {
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: hue-rotate(120deg) blur(3px);
+  -webkit-backdrop-filter: hue-rotate(120deg) blur(3px);
+}</code></pre>
+                </div>
+                <div class="example-card">
+                    <h3>Sepia Modal</h3>
+                    <div class="backdrop-demo sepia-modal">
+                        <div class="demo-content">Sepia Modal</div>
+                    </div>
+                    <pre><code>.sepia-modal {
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: sepia(0.8) blur(2px);
+  -webkit-backdrop-filter: sepia(0.8) blur(2px);
+}</code></pre>
+                </div>
+            </div>
+            <div class="note">
+                <strong>Try it out:</strong> Hover over each card to see a highlight effect. Click a card to copy its CSS code! All effects are pure CSS—no JavaScript needed.
+            </div>
+            <script>
+            // Interactive: Click to copy code blocks in example cards
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelectorAll('.example-card pre').forEach(function(pre) {
+                    pre.addEventListener('click', async function() {
+                        const code = pre.innerText;
+                        
+                        // Try modern clipboard API first
+                        try {
+                            await navigator.clipboard.writeText(code);
+                        } catch (err) {
+                            // Fallback to execCommand
+                            const textArea = document.createElement('textarea');
+                            textArea.value = code;
+                            textArea.style.position = 'fixed';
+                            textArea.style.left = '-9999px';
+                            document.body.appendChild(textArea);
+                            textArea.select();
+                            try {
+                                document.execCommand('copy');
+                            } catch (err) {
+                                console.error('Failed to copy text: ', err);
+                            }
+                            document.body.removeChild(textArea);
+                        }
+
+                        // Visual feedback
+                        pre.classList.add('copied');
+                        pre.setAttribute('title', 'Copied!');
+                        setTimeout(() => {
+                            pre.classList.remove('copied');
+                            pre.removeAttribute('title');
+                        }, 1200);
+                    });
+                    pre.setAttribute('title', 'Click to copy');
+                    pre.style.cursor = 'pointer';
+                });
+            });
+            </script>
+        </section>
+        <section class="browser-support">
+            <h2>Browser Support</h2>
+            <p>The <code>backdrop-filter</code> property is supported in all modern browsers, but may require the <code>-webkit-</code> prefix for Safari and some mobile browsers. Always test your design for compatibility.</p>
+        </section>
+        <section class="references">
+            <h2>References</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter" target="_blank" rel="noopener">MDN: backdrop-filter</a></li>
+                <li><a href="https://css-tricks.com/almanac/properties/b/backdrop-filter/" target="_blank" rel="noopener">CSS-Tricks: Backdrop Filter</a></li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
