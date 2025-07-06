@@ -2448,7 +2448,7 @@ Scroll snap involves properties applied to both the **scroll container** (parent
             
 2.  `scroll-padding`: (Shorthand for `scroll-padding-top`, `right`, `bottom`, `left`) Defines an **offset** from the scroll container's content box. Snapping occurs relative to this padded area, useful for fixed headers or footers.
     
-3.  `scroll-margin`: (Shorthand for `scroll-margin-top`, `right`, `bottom`, `left`) Defines an **offset** from the scroll child's box. Snapping aligns the snap point _inside_ the `scroll-margin` of the child.
+3.  `scroll-margin`: (Shorthand for `scroll-margin-top`, `right`, `bottom`, `left`) Creates an invisible area around the scroll child element that extends outward from its edges. This area adjusts where the element will ultimately snap to, allowing you to fine-tune the final snap position to account for fixed headers or other layout considerations.
     
 
 #### Properties for the **Scroll Children**:
