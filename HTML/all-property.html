@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="In-depth guide to the CSS all property with interactive examples and best practices.">
+    <meta name="keywords" content="css, all property, css all, css reset, css demo">
+    <meta name="author" content="Suraj Ingole">
+    <meta name="robots" content="index, follow">
+    <link rel="shortcut icon" href="../images/css_favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/all-property.css">
+    <title>CSS all Property – Theory & Interactive Examples</title>
+</head>
+<body>
+    <nav class="back-nav">
+        <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+    </nav>
+    <main class="all-main">
+        <header class="all-header">
+            <h1><span class="highlight">CSS <code>all</code> Property</span></h1>
+            <p class="subtitle">Reset or inherit all CSS properties in a single declaration!</p>
+        </header>
+        <section class="theory-section">
+            <h2>What is the <code>all</code> Property?</h2>
+            <p>
+                The <strong>CSS <code>all</code> property</strong> is a powerful shorthand that lets you reset or inherit <em>all</em> CSS properties (except <code>unicode-bidi</code> and <code>direction</code>) at once. It's especially useful for resetting styles in components, modals, or third-party widgets.
+            </p>
+            <ul class="theory-list">
+                <li>
+                    <strong>Reset Everything:</strong> Use <code>all: unset;</code> to remove all inherited and user-agent styles from an element.
+                </li>
+                <li>
+                    <strong>Inherit Everything:</strong> Use <code>all: inherit;</code> to make an element inherit all properties from its parent.
+                </li>
+                <li>
+                    <strong>Revert Everything:</strong> Use <code>all: revert;</code> to revert all properties to their default UA or user styles.
+                </li>
+                <li>
+                    <strong>Not for Animatable Properties:</strong> <code>all</code> cannot be transitioned or animated.
+                </li>
+            </ul>
+            <div class="syntax-block">
+                <h3>Syntax</h3>
+                <pre><code>selector {
+  all: unset | initial | inherit | revert | revert-layer;
+}
+                </code></pre>
+            </div>
+            <div class="tip-block">
+                <span class="tip-icon">💡</span>
+                <span>
+                    <strong>Tip:</strong> <code>all: unset;</code> is great for creating "unstyled" buttons or links that ignore all browser and inherited styles!
+                </span>
+            </div>
+            <div class="note">
+                <strong>Browser Support:</strong> The <code>all</code> property is supported in all modern browsers.
+            </div>
+        </section>
+
+        <section class="examples-section">
+            <h2>Interactive Examples</h2>
+            <div class="example-grid">
+                <!-- Example 1: Reset Button -->
+                <div class="example-card">
+                    <h3>Reset Button Styles</h3>
+                    <button class="reset-btn">Normal Button</button>
+                    <button class="reset-btn all-unset">All: Unset</button>
+                    <pre class="code-block" tabindex="0">
+.reset-btn {
+  background: #4f8cff;
+  color: #fff;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-right: 0.7rem;
+}
+.all-unset {
+  all: unset;
+  background: #ffe4e6;
+  color: #be185d;
+  border-radius: 0.4rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border: 2px dashed #be185d;
+}
+                    </pre>
+                </div>
+                <!-- Example 2: Inherit All Properties -->
+                <div class="example-card">
+                    <h3>Inherit All Properties</h3>
+                    <div class="inherit-demo-parent">
+                        <span class="inherit-demo-child">Default Child</span>
+                        <span class="inherit-demo-child all-inherit">All: Inherit</span>
+                    </div>
+                    <pre class="code-block" tabindex="0">
+.inherit-demo-parent {
+  color: #7c3aed;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.inherit-demo-child {
+  color: #222;
+  font-size: 1rem;
+  font-weight: normal;
+  margin-right: 1.2rem;
+}
+.all-inherit {
+  all: inherit;
+}
+                    </pre>
+                </div>
+                <!-- Example 3: Revert All Properties -->
+                <div class="example-card">
+                    <h3>Revert All Properties</h3>
+                    <div class="revert-demo">
+                        <span class="revert-child">Styled Child</span>
+                        <span class="revert-child all-revert">All: Revert</span>
+                    </div>
+                    <pre class="code-block" tabindex="0">
+.revert-demo {
+  color: #be185d;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+.revert-child {
+  color: #4f8cff;
+  font-size: 1.5rem;
+  font-style: normal;
+  margin-right: 1.2rem;
+}
+.all-revert {
+  all: revert;
+}
+                    </pre>
+                </div>
+            </div>
+            <div class="note">
+                <strong>Try it:</strong> Compare the buttons and text above to see how <code>all</code> can reset, inherit, or revert all CSS properties at once!
+            </div>
+        </section>
+
+        <section class="references-section">
+            <h2>References</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/all" target="_blank" rel="noopener">MDN: CSS all property</a></li>
+                <li><a href="https://css-tricks.com/almanac/properties/a/all/" target="_blank" rel="noopener">CSS-Tricks: all property</a></li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
