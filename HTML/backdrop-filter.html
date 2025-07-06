@@ -130,9 +130,29 @@
             // Interactive: Click to copy code blocks in example cards
             document.addEventListener('DOMContentLoaded', function() {
                 document.querySelectorAll('.example-card pre').forEach(function(pre) {
-                    pre.addEventListener('click', function() {
+                    pre.addEventListener('click', async function() {
                         const code = pre.innerText;
-                        navigator.clipboard.writeText(code);
+                        
+                        // Try modern clipboard API first
+                        try {
+                            await navigator.clipboard.writeText(code);
+                        } catch (err) {
+                            // Fallback to execCommand
+                            const textArea = document.createElement('textarea');
+                            textArea.value = code;
+                            textArea.style.position = 'fixed';
+                            textArea.style.left = '-9999px';
+                            document.body.appendChild(textArea);
+                            textArea.select();
+                            try {
+                                document.execCommand('copy');
+                            } catch (err) {
+                                console.error('Failed to copy text: ', err);
+                            }
+                            document.body.removeChild(textArea);
+                        }
+
+                        // Visual feedback
                         pre.classList.add('copied');
                         pre.setAttribute('title', 'Copied!');
                         setTimeout(() => {
