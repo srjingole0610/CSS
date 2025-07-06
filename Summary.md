@@ -2833,9 +2833,6 @@ CSS
 ### Further Reading
 
 -   MDN: [CSS Nesting](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Nesting)
-    
--   Web.dev: [CSS Nesting](https://www.google.com/search?q=https://web.dev/css-nesting/)
-    
--   CSS-Tricks: [The Future of CSS: Nesting](https://css-tricks.com/the-future-of-css-nesting/)
-    
+-   Web.dev: [CSS Nesting](https://web.dev/css-nesting/)
+-   CSS-Tricks: [The Future of CSS: Nesting](https://css-tricks.com/the-future-of-css-nesting/)   
 -   W3C CSS Nesting Module: [CSS Nesting Module Level 1](https://www.w3.org/TR/css-nesting-1/)

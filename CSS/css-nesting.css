@@ -53,18 +53,19 @@ body {
     margin-left: var(--space-lg);
 }
 .back-btn {
-    display: inline-block;
-    background: var(--color-bg-btn);
-    color: var(--color-text-secondary);
-    text-decoration: none;
-    padding: var(--space-xs) var(--space-md);
-    border-radius: var(--radius-btn);
-    font-weight: var(--font-weight-semi);
-    transition: background-color 0.2s;
-    box-shadow: var(--shadow-1);
-}
-.back-btn:hover {
+  display: inline-block;
+  background: var(--color-bg-btn);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-btn);
+  font-weight: var(--font-weight-semi);
+  transition: background-color 0.2s;
+  box-shadow: var(--shadow-1);
+
+  &:hover {
     background: var(--color-bg-btn-hover);
+  }
 }
 
 .nesting-main {
