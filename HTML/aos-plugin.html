@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="In-depth guide to the AOS (Animate On Scroll) CSS plugin with interactive examples.">
+    <meta name="keywords" content="css, aos, animate on scroll, aos plugin, scroll animation, css animation, web design">
+    <meta name="author" content="Suraj Ingole">
+    <meta name="robots" content="index, follow">
+    <link rel="shortcut icon" href="../images/css_favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/aos-plugin.css">
+    <title>CSS AOS Plugin – Interactive Guide & Examples</title>
+</head>
+<body>
+    <nav class="back-nav">
+        <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+    </nav>
+    <main class="aos-main">
+        <header class="aos-header">
+            <h1><span class="highlight">AOS</span> (Animate On Scroll) Plugin</h1>
+            <p class="subtitle">Bring your web pages to life with scroll-triggered animations using the AOS library and CSS!</p>
+        </header>
+        <section class="theory-section">
+            <h2>What is AOS?</h2>
+            <p>
+                <strong>AOS (Animate On Scroll)</strong> is a popular open-source library that allows you to animate elements as you scroll down, using simple HTML attributes and CSS. It’s widely used for modern, interactive, and visually appealing web experiences.
+            </p>
+            <ul class="theory-list">
+                <li>Easy to use: Add <code>data-aos</code> attributes to any element.</li>
+                <li>Customizable: Choose from dozens of animation types, durations, delays, and more.</li>
+                <li>CSS-powered: Animations are handled via CSS transitions and transforms.</li>
+                <li>Responsive & performant: Works well on all modern browsers and devices.</li>
+            </ul>
+            <div class="syntax-block">
+                <h3>Basic Usage</h3>
+                <pre><code>&lt;!-- 1. Include AOS CSS & JS --&gt;
+&lt;link rel="stylesheet" href="aos.css"&gt;
+&lt;script src="aos.js"&gt;&lt;/script&gt;
+
+&lt;!-- 2. Add data-aos attribute --&gt;
+&lt;div data-aos="fade-up"&gt;I will fade up on scroll!&lt;/div&gt;
+
+&lt;!-- 3. Initialize AOS in JS --&gt;
+&lt;script&gt;AOS.init();&lt;/script&gt;
+</code></pre>
+            </div>
+            <div class="tip-block">
+                <span class="tip-icon">💡</span>
+                <span>Tip: You can combine <code>data-aos</code> with custom CSS for even more creative effects!</span>
+            </div>
+        </section>
+        <section class="examples-section">
+            <h2>Interactive Examples</h2>
+            <div class="example-grid">
+                <div class="example-card">
+                    <h3>Fade Up</h3>
+                    <div class="aos-demo aos-fade-up">Fade Up Animation</div>
+                    <pre class="code-block">&lt;div data-aos="fade-up"&gt;Fade Up Animation&lt;/div&gt;</pre>
+                </div>
+                <div class="example-card">
+                    <h3>Zoom In</h3>
+                    <div class="aos-demo aos-zoom-in">Zoom In Animation</div>
+                    <pre class="code-block">&lt;div data-aos="zoom-in"&gt;Zoom In Animation&lt;/div&gt;</pre>
+                </div>
+                <div class="example-card">
+                    <h3>Flip Left</h3>
+                    <div class="aos-demo aos-flip-left">Flip Left Animation</div>
+                    <pre class="code-block">&lt;div data-aos="flip-left"&gt;Flip Left Animation&lt;/div&gt;</pre>
+                </div>
+                <div class="example-card">
+                    <h3>Slide Right</h3>
+                    <div class="aos-demo aos-slide-right">Slide Right Animation</div>
+                    <pre class="code-block">&lt;div data-aos="slide-right"&gt;Slide Right Animation&lt;/div&gt;</pre>
+                </div>
+                <!-- Modern CSS-only AOS-like Demos -->
+                <div class="example-card">
+                    <h3>Fade In on Hover</h3>
+                    <div class="aos-demo aos-fade-in-hover">Fade In on Hover</div>
+                    <pre class="code-block">&lt;div class="aos-fade-in-hover"&gt;Fade In on Hover&lt;/div&gt;</pre>
+                </div>
+                <div class="example-card">
+                    <h3>Slide Up on Hover</h3>
+                    <div class="aos-demo aos-slide-up-hover">Slide Up on Hover</div>
+                    <pre class="code-block">&lt;div class="aos-slide-up-hover"&gt;Slide Up on Hover&lt;/div&gt;</pre>
+                </div>
+                <div class="example-card">
+                    <h3>Pulse on Hover</h3>
+                    <div class="aos-demo aos-pulse-hover">Pulse on Hover</div>
+                    <pre class="code-block">&lt;div class="aos-pulse-hover"&gt;Pulse on Hover&lt;/div&gt;</pre>
+                </div>
+                <div class="example-card">
+                    <h3>Rotate on Hover</h3>
+                    <div class="aos-demo aos-rotate-hover">Rotate on Hover</div>
+                    <pre class="code-block">&lt;div class="aos-rotate-hover"&gt;Rotate on Hover&lt;/div&gt;</pre>
+                </div>
+            </div>
+            <div class="note">
+                <strong>Note:</strong> The above examples use only CSS transitions and animations to simulate AOS-like effects on hover. No JavaScript is required!
+            </div>
+        </section>
+
+        <!-- Pure CSS Scroll Animation Highlighted Example -->
+        <section class="scroll-demo-section">
+            <h2 class="scroll-demo-title">Pure CSS Scroll Animation (No JS)</h2>
+            <div class="scroll-demo-container">
+                <div class="aos-demo aos-scroll-fade-in">
+                    <span class="scroll-demo-label">Scroll to Reveal (Pure CSS)</span>
+                </div>
+            </div>
+            <pre class="code-block" tabindex="0">
+&lt;div class="aos-scroll-fade-in"&gt;
+    Scroll to Reveal (Pure CSS)
+&lt;/div&gt;
+            </pre>
+            <div class="note scroll-demo-note">
+                <strong>How it works:</strong> This box will animate in as you scroll to it using only modern CSS (<code>animation-timeline: view()</code>). Try it in the latest Chrome/Edge for a true scroll effect!
+            </div>
+        </section>
+        <section class="references-section">
+            <h2>References</h2>
+            <ul>
+                <li><a href="https://michalsnik.github.io/aos/" target="_blank" rel="noopener">AOS Official Docs</a></li>
+                <li><a href="https://css-tricks.com/aos-css-driven-scroll-animations/" target="_blank" rel="noopener">CSS-Tricks: AOS Guide</a></li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
