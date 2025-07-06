@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="In-depth guide to CSS Scroll Snap with interactive examples and best practices.">
+    <meta name="keywords" content="css, scroll snap, scroll-snap-type, scroll-snap-align, web design, css demo">
+    <meta name="author" content="Suraj Ingole">
+    <meta name="robots" content="index, follow">
+    <link rel="shortcut icon" href="../images/css_favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/scroll-snap.css">
+    <title>CSS Scroll Snap – Theory & Interactive Examples</title>
+</head>
+<body>
+    <nav class="back-nav">
+        <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+    </nav>
+    <main class="snap-main">
+        <header class="snap-header">
+            <h1><span class="highlight">CSS Scroll Snap</span></h1>
+            <p class="subtitle">Create smooth, precise, and user-friendly scroll experiences with just CSS!</p>
+        </header>
+        <section class="theory-section">
+            <h2>What is CSS Scroll Snap?</h2>
+            <p>
+                <strong>CSS Scroll Snap</strong> is a modern CSS feature that lets you create scrollable containers where the scroll position automatically "snaps" to specific points, making navigation smooth and predictable. This is especially useful for carousels, slideshows, image galleries, onboarding screens, and full-page scroll layouts.
+            </p>
+            <ul class="theory-list">
+                <li>
+                    <strong><code>scroll-snap-type</code></strong>: Sets the axis (<code>x</code>, <code>y</code>, <code>block</code>, <code>inline</code>) and the snapping behavior (<code>mandatory</code> or <code>proximity</code>) on the container.
+                </li>
+                <li>
+                    <strong><code>scroll-snap-align</code></strong>: Defines how each child aligns to the snap point (<code>start</code>, <code>center</code>, <code>end</code>).
+                </li>
+                <li>
+                    <strong><code>scroll-snap-stop</code></strong>: (Optional) Controls whether scrolling can skip snap points (<code>normal</code> or <code>always</code>).
+                </li>
+                <li>
+                    <strong><code>scroll-padding</code> & <code>scroll-margin</code></strong>: Fine-tune the snap area and offset for more precise control.
+                </li>
+            </ul>
+            <div class="syntax-block">
+                <h3>Basic Syntax</h3>
+                <pre><code>/* Container */
+.scroll-container {
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  display: flex;
+}
+
+/* Children */
+.snap-item {
+  scroll-snap-align: center;
+}
+                </code></pre>
+            </div>
+            <div class="tip-block">
+                <span class="tip-icon">💡</span>
+                <span>
+                    <strong>Pro Tip:</strong> Use <code>scroll-snap-type: y mandatory;</code> for vertical snapping, and <code>scroll-snap-align: start;</code> for classic carousel or onboarding screens. Combine with <code>scroll-padding</code> for perfect alignment!
+                </span>
+            </div>
+            <div class="note">
+                <strong>Browser Support:</strong> CSS Scroll Snap is supported in all modern browsers, but always test for your use case!
+            </div>
+        </section>
+
+        <section class="examples-section">
+            <h2>Interactive Examples</h2>
+            <div class="example-grid">
+                <!-- Horizontal Snap Example -->
+                <div class="example-card">
+                    <h3>Horizontal Snap Carousel</h3>
+                    <div class="scroll-container horizontal-snap">
+                        <div class="snap-item snap-color-1">1</div>
+                        <div class="snap-item snap-color-2">2</div>
+                        <div class="snap-item snap-color-3">3</div>
+                        <div class="snap-item snap-color-4">4</div>
+                        <div class="snap-item snap-color-5">5</div>
+                    </div>
+                    <pre class="code-block" tabindex="0">
+.scroll-container {
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  display: flex;
+}
+.snap-item {
+  scroll-snap-align: center;
+}
+                    </pre>
+                </div>
+                <!-- Vertical Snap Example -->
+                <div class="example-card">
+                    <h3>Vertical Snap List</h3>
+                    <div class="scroll-container vertical-snap">
+                        <div class="snap-item snap-color-1">A</div>
+                        <div class="snap-item snap-color-2">B</div>
+                        <div class="snap-item snap-color-3">C</div>
+                        <div class="snap-item snap-color-4">D</div>
+                    </div>
+                    <pre class="code-block" tabindex="0">
+.scroll-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+  height: 18rem;
+  display: flex;
+  flex-direction: column;
+}
+.snap-item {
+  scroll-snap-align: start;
+}
+                    </pre>
+                </div>
+                <!-- Modern Snap Stop Example -->
+                <div class="example-card">
+                    <h3>Snap Stop (No Skipping)</h3>
+                    <div class="scroll-container horizontal-snap snap-stop-demo">
+                        <div class="snap-item snap-color-1 snap-stop">One</div>
+                        <div class="snap-item snap-color-2 snap-stop">Two</div>
+                        <div class="snap-item snap-color-3 snap-stop">Three</div>
+                        <div class="snap-item snap-color-4 snap-stop">Four</div>
+                    </div>
+                    <pre class="code-block" tabindex="0">
+.scroll-container {
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  display: flex;
+}
+.snap-stop {
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+                    </pre>
+                </div>
+                <!-- Snap Padding Example -->
+                <div class="example-card">
+                    <h3>Snap with Padding</h3>
+                    <div class="scroll-container horizontal-snap snap-padding-demo">
+                        <div class="snap-item snap-color-3">Alpha</div>
+                        <div class="snap-item snap-color-4">Beta</div>
+                        <div class="snap-item snap-color-5">Gamma</div>
+                    </div>
+                    <pre class="code-block" tabindex="0">
+.scroll-container {
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 3rem;
+  overflow-x: auto;
+  display: flex;
+}
+.snap-item {
+  scroll-snap-align: start;
+}
+                    </pre>
+                </div>
+            </div>
+            <div class="note">
+                <strong>Try it:</strong> Scroll horizontally or vertically in the boxes above. Each item will snap smoothly into place! Try the Snap Stop example to see how you can't skip items, and the Snap Padding example to see how the first item aligns with padding.
+            </div>
+        </section>
+
+        <!-- Modern Image Gallery Scroll Snap Example -->
+        <section class="examples-section">
+            <h2>Modern Scroll Snap Image Gallery</h2>
+            <div class="scroll-gallery-container">
+                <div class="gallery-snap-track">
+                    <div class="gallery-snap-item">
+                        <img src="../images/venti-views-qNXhVgRfU0E-unsplash.jpg" alt="Mountain under a starry sky with clouds">
+                    </div>
+                    <div class="gallery-snap-item">
+                        <img src="../images/pang-yuhao-xhtbjP2cs70-unsplash.jpg" alt="City skyline with tall buildings at dusk">
+                    </div>
+                    <div class="gallery-snap-item">
+                        <img src="../images/danny-greenberg-wfRgbguMUHI-unsplash.jpg" alt="Forest with sunlight streaming through trees">
+                    </div>
+                    <div class="gallery-snap-item">
+                        <img src="../images/colin-watts-l5oWg7ezXgs-unsplash.jpg" alt="Aerial view of winding road through green hills">
+                    </div>
+                    <div class="gallery-snap-item">
+                        <img src="../images/catalin-dumitra-cu-7XS4s_Ebq-w-unsplash.jpg" alt="Serene lake with mountains in the background">
+                    </div>
+                </div>
+            </div>
+            <pre class="code-block" tabindex="0">
+.scroll-gallery-container {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1rem;
+}
+.gallery-snap-track {
+  display: flex;
+  gap: 1.2rem;
+}
+.gallery-snap-item {
+  flex: 0 0 70vw;
+  max-width: 32rem;
+  scroll-snap-align: center;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  box-shadow: 0 0.0625rem 0.5rem #0001;
+  background: #fff;
+}
+.gallery-snap-item img {
+  width: 100%;
+  height: 18rem;
+  object-fit: cover;
+  display: block;
+}
+            </pre>
+            <div class="note">
+                <strong>Tip:</strong> Swipe or scroll horizontally to snap between images. This is a pure CSS, mobile-friendly image gallery!
+            </div>
+        </section>
+
+        <section class="references-section">
+            <h2>References</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scroll_Snap" target="_blank" rel="noopener">MDN: CSS Scroll Snap</a></li>
+                <li><a href="https://css-tricks.com/practical-css-scroll-snapping/" target="_blank" rel="noopener">CSS-Tricks: Practical CSS Scroll Snapping</a></li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
