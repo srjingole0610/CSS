@@ -159,9 +159,11 @@ body {
     align-items: center;
     transition: box-shadow 0.2s, transform 0.2s;
 }
-.example-card:hover {
-    box-shadow: var(--shadow-4);
-    transform: translateY(-0.18rem) scale(1.03);
+@media (prefers-reduced-motion: no-preference) {
+    .example-card:hover {
+        box-shadow: var(--shadow-4);
+        transform: translateY(-0.18rem) scale(1.03);
+    }
 }
 .animated-demo {
     display: flex;
@@ -197,11 +199,17 @@ body {
 /* Reduced motion query disables animation */
 @media (prefers-reduced-motion: reduce) {
     .bouncing-ball {
-        animation: none !important;
+        animation: none;
     }
     .fade-in-text {
-        animation: none !important;
-        opacity: 1 !important;
+        animation: none;
+        opacity: 1;
+    }
+    .example-card {
+        transition: none;
+    }
+    .example-card:hover {
+        transform: none;
     }
 }
 
