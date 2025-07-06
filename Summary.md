@@ -54,6 +54,7 @@ Whether you're a beginner or an experienced developer, use this summary to quick
 - [CSS Scroll Snap](#41-css-scroll-snap)
 - [CSS Reduced Motion Query](#42-css-prefers-reduced-motion-media-query)
 - [CSS Nesting](#43-css-nesting)
+- [CSS @Layer]()
 ---
 
 ## 1. What is CSS?
@@ -2836,3 +2837,167 @@ CSS
 -   Web.dev: [CSS Nesting](https://web.dev/css-nesting/)
 -   CSS-Tricks: [The Future of CSS: Nesting](https://css-tricks.com/the-future-of-css-nesting/)   
 -   W3C CSS Nesting Module: [CSS Nesting Module Level 1](https://www.w3.org/TR/css-nesting-1/)
+
+
+## 44. CSS `@layer` (Cascade Layers)
+
+### What is CSS `@layer` (Cascade Layers)?
+
+CSS `@layer` is an at-rule that introduces **Cascade Layers**, a powerful new way to organize and manage the CSS cascade. It allows developers to **group related styles into distinct layers**, giving them explicit control over the order in which these groups of styles are cascaded. This provides a much-needed solution to the common problem of CSS specificity wars and makes managing large stylesheets significantly easier.
+
+Before `@layer`, the cascade order was primarily determined by origin (user-agent, user, author), importance (`!important`), and then specificity and order of appearance. Cascade Layers add a new layer of control _before_ specificity, allowing you to define the precedence of entire groups of styles.
+
+#### Example:
+
+CSS
+
+```css
+/* Define cascade layers */
+@layer reset, base, components, utilities, overrides;
+
+/* Styles for the 'reset' layer */
+@layer reset {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+
+/* Styles for the 'base' layer */
+@layer base {
+  body {
+    font-family: sans-serif;
+    line-height: 1.5;
+  }
+  h1 {
+    font-size: 2em;
+  }
+}
+
+/* Styles for the 'components' layer */
+@layer components {
+  .button {
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    background-color: blue;
+    color: white;
+  }
+  .button--primary {
+    background-color: darkblue; /* This will override .button's background if .button--primary is in the same layer */
+  }
+}
+
+/* Styles for the 'utilities' layer */
+@layer utilities {
+  .text-red {
+    color: red; /* This will easily override component styles if 'utilities' layer is later in the order */
+  }
+  .m-0 {
+    margin: 0 !important; /* !important still wins within its layer, but layers still control precedence */
+  }
+}
+
+/* Styles for the 'overrides' layer */
+@layer overrides {
+  /* Specific, high-precedence overrides for specific scenarios */
+}
+
+/* Styles not in a layer (unlayered styles) always win over layered styles */
+p {
+  font-weight: bold; /* This will override any 'p' styles in any layer */
+}
+
+```
+
+### How `@layer` Works:
+
+1.  **Define Layer Order:** You explicitly declare the order of your layers using `@layer layer-name-1, layer-name-2, ...;`. The _last_ layer declared has the highest precedence.
+    
+    -   Example: `@layer reset, base, components, utilities;` means `utilities` styles will override `components`, `components` will override `base`, etc., _regardless of their specificity_.
+        
+2.  **Assign Styles to Layers:**
+    
+    -   **Named Blocks:** Wrap your styles in a named `@layer` block:
+        
+        CSS
+        
+        ```css
+        @layer components {
+          .card { /* ... */ }
+        }
+        
+        ```
+        
+    -   **Import into Layers:** Import external stylesheets into a specific layer:
+        
+        CSS
+        
+        ```css
+        @import url("reset.css") layer(reset);
+        
+        ```
+        
+    -   **Anonymous Layers:** You can create unnamed layers, which are useful for quick grouping, but their order depends on their appearance in the stylesheet.
+        
+3.  **Cascade Order with Layers:** The cascade now follows this hierarchy (from lowest to highest precedence):
+    
+    1.  User-agent styles
+        
+    2.  User styles
+        
+    3.  **CSS Cascade Layers (in declared order, last declared wins)**
+        
+    4.  Unlayered author styles (styles not explicitly put into a layer)
+        
+    5.  `!important` styles (within their respective layers/unlayered, but `!important` in a later layer still wins over `!important` in an earlier layer)
+        
+    6.  `!important` user styles
+        
+    7.  `!important` user-agent styles
+        
+    
+    **Crucially, unlayered styles have higher precedence than _any_ layered styles.** This means if you forget to put a style into a layer, it will always win over any layered styles, regardless of their layer order.
+    
+
+### 🔑 Key Points:
+
+-   **Specificity Management:** Solves the "specificity wars" problem by allowing you to define the precedence of entire groups of styles _before_ specificity comes into play.
+    
+-   **Predictable Cascade:** Makes the cascade more predictable and easier to reason about, especially in large projects.
+    
+-   **Organization:** Encourages better organization of stylesheets into logical groups (e.g., reset, base, components, utilities, themes).
+    
+-   **Third-Party Styles:** Great for integrating third-party CSS (like component libraries) into a controlled layer, preventing them from unexpectedly overriding your core styles.
+    
+-   **The Power of Order:** The order of `@layer` declarations is paramount. The _last_ declared layer has the highest precedence.
+    
+
+### Best Practices
+
+-   **Define layers at the top:** Declare your layer order once at the very beginning of your main stylesheet.
+    
+-   **Start with a clear strategy:** Plan your layers (e.g., `reset`, `base`, `components`, `utilities`, `themes`, `overrides`) before writing a lot of CSS.
+    
+-   **Keep unlayered styles minimal:** Aim to put almost all your author styles into layers. Unlayered styles should be reserved for very specific, high-precedence overrides that you explicitly want to win over everything else.
+    
+-   **Use for large projects/design systems:** Cascade Layers shine in complex projects, design systems, or when integrating multiple sources of CSS.
+    
+-   **Don't overuse:** For very small projects, the overhead of layers might not be necessary.
+    
+
+### Compatibility
+
+-   **Excellent in modern browsers:** Widely supported in Chrome (99+), Edge (99+), Firefox (97+), Safari (15.4+).
+    
+-   **No support in IE.**
+    
+-   Consider progressive enhancement or build tools (like PostCSS plugins) if you need to support older browsers.
+    
+
+### Further Reading
+
+-   MDN: [`@layer`](https://developer.mozilla.org/en-US/docs/Web/CSS/%40layer)
+-   Web.dev: [Cascade Layers](https://web.dev/css-cascade-layers/)
+-   CSS-Tricks: [A Complete Guide To CSS Cascade Layers](https://css-tricks.com/a-complete-guide-to-css-cascade-layers/)
+-   Miriam Suzanne's Explainer: [The Future of CSS: Cascade Layers (CSS @layer)](https://www.miriamsuzanne.com/blog/2021/05/20/cascade-layers/)
