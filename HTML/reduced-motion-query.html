@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="In-depth guide to the CSS reduced motion query with interactive examples and best practices.">
+    <meta name="keywords" content="css, reduced motion, prefers-reduced-motion, accessibility, css demo">
+    <meta name="author" content="Suraj Ingole">
+    <meta name="robots" content="index, follow">
+    <link rel="shortcut icon" href="../images/css_favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/reduced-motion-query.css">
+    <title>CSS Reduced Motion Query – Theory & Interactive Examples</title>
+</head>
+<body>
+    <nav class="back-nav">
+        <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+    </nav>
+    <main class="rmq-main">
+        <header class="rmq-header">
+            <h1><span class="highlight">CSS <code>prefers-reduced-motion</code></span></h1>
+            <p class="subtitle">Respect user accessibility preferences for less motion and safer, more inclusive interfaces.</p>
+        </header>
+        <section class="theory-section">
+            <h2>What is the Reduced Motion Query?</h2>
+            <p>
+                The <strong>CSS <code>prefers-reduced-motion</code> media query</strong> allows you to detect if a user has requested reduced motion in their operating system or browser settings. This is crucial for accessibility, as some users experience discomfort or dizziness from excessive animation or parallax effects.
+            </p>
+            <ul class="theory-list">
+                <li><strong>Accessibility First:</strong> Many users rely on this setting for a comfortable browsing experience.</li>
+                <li><strong>How it works:</strong> Use the media query to reduce, remove, or simplify animations and transitions.</li>
+                <li><strong>Values:</strong> <code>no-preference</code> (default), <code>reduce</code> (user prefers less motion).</li>
+            </ul>
+            <div class="syntax-block">
+                <h3>Syntax</h3>
+                <pre><code>/* Reduce or remove animation for users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  .animated-element {
+    animation: none;
+    transition: none;
+  }
+}
+                </code></pre>
+            </div>
+            <div class="tip-block">
+                <span class="tip-icon">💡</span>
+                <span>
+                    <strong>Tip:</strong> Always provide a functional and visually clear fallback for users who opt out of motion!
+                </span>
+            </div>
+            <div class="note">
+                <strong>Browser Support:</strong> <code>prefers-reduced-motion</code> is supported in all modern browsers.
+            </div>
+        </section>
+
+        <section class="examples-section">
+            <h2>Interactive Example</h2>
+            <div class="example-grid">
+                <div class="example-card">
+                    <h3>Bouncing Ball Animation</h3>
+                    <div class="animated-demo">
+                        <div class="bouncing-ball"></div>
+                    </div>
+                    <pre class="code-block" tabindex="0">
+.bouncing-ball {
+  animation: bounce 1.2s infinite alternate cubic-bezier(.5,1.5,.5,1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .bouncing-ball {
+    animation: none;
+  }
+}
+                    </pre>
+                </div>
+                <div class="example-card">
+                    <h3>Fade In Text</h3>
+                    <div class="animated-demo">
+                        <span class="fade-in-text">Hello, CSS World!</span>
+                    </div>
+                    <pre class="code-block" tabindex="0">
+.fade-in-text {
+  animation: fadeIn 2s ease-in;
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-text {
+    animation: none;
+    opacity: 1;
+  }
+}
+                    </pre>
+                </div>
+            </div>
+            <div class="note">
+                <strong>Try it:</strong> If your OS/browser has "Reduce Motion" enabled, the animations above will be disabled for a more comfortable experience.
+            </div>
+        </section>
+
+        <section class="references-section">
+            <h2>References</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion" target="_blank" rel="noopener">MDN: prefers-reduced-motion</a></li>
+                <li><a href="https://css-tricks.com/introduction-reduced-motion-media-query/" target="_blank" rel="noopener">CSS-Tricks: Introduction to Reduced Motion</a></li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

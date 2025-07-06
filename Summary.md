@@ -52,6 +52,7 @@ Whether you're a beginner or an experienced developer, use this summary to quick
 - [CSS Logical Properties](#39-css-logical-properties)
 - [CSS AOS PLugin](#40-animate-on-scroll-aos-library)
 - [CSS Scroll Snap](#41-css-scroll-snap)
+- [CSS Reduced Motion Query](#42-css-prefers-reduced-motion-media-query)
 ---
 
 ## 1. What is CSS?
@@ -2506,3 +2507,114 @@ Scroll snap involves properties applied to both the **scroll container** (parent
 -   CSS-Tricks: [A Complete Guide to CSS Scroll Snap](https://css-tricks.com/a-complete-guide-to-css-scroll-snap)
     
 -   web.dev: [Well-controlled scrolling with CSS Scroll Snap](https://web.dev/css-scroll-snap/)
+
+
+## 42. CSS `prefers-reduced-motion` Media Query
+
+### What is the `prefers-reduced-motion` Media Query?
+
+The `prefers-reduced-motion` media query is a CSS `@media` rule that allows you to **detect if a user has requested that the system minimize the amount of non-essential motion** on the screen. This is a crucial **accessibility feature** that helps prevent discomfort, motion sickness, or distraction for users sensitive to animations and transitions.
+
+Users can set this preference in their operating system settings (e.g., "Reduce motion" on macOS/iOS, "Show animations in Windows" on Windows, or similar settings on Android/Linux). When this setting is enabled, your website can detect it and adapt its UI by reducing or disabling animations.
+
+#### Example:
+
+CSS
+
+```css
+/* Default animations (e.g., a subtle fade-in) */
+.animated-element {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.animated-element.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .animated-element {
+    /* Disable transitions entirely */
+    transition: none;
+    /* Or provide a simpler, non-moving animation */
+    opacity: 1; /* Instantly visible */
+    transform: none;
+  }
+}
+
+```
+
+### How `prefers-reduced-motion` Works:
+
+The media query has two possible values:
+
+-   **`no-preference` (default):** The user has not explicitly expressed a preference, or the operating system doesn't provide this setting. In this case, you can show your full animations.
+    
+-   **`reduce`:** The user has indicated a preference for reduced motion. This is where you should adjust your animations.
+    
+
+You use it like any other media query:
+
+CSS
+
+```css
+@media (prefers-reduced-motion: reduce) {
+  /* CSS rules to apply when reduced motion is preferred */
+}
+
+```
+
+Inside this block, you can:
+
+-   **Disable animations entirely:** Set `transition: none;` or `animation: none;`.
+    
+-   **Replace complex animations with simpler ones:** For example, a fade-in instead of a complex slide-and-bounce.
+    
+-   **Remove animation delays or shorten durations.**
+    
+-   **Remove parallax effects or background video motion.**
+    
+
+### 🔑 Key Points:
+
+-   **Accessibility:** Improves the experience for users prone to motion sickness, vestibular disorders, or attention deficits.
+    
+-   **User Control:** Respects user preferences set at the operating system level.
+    
+-   **Progressive Enhancement:** You can design your site with full animations first, then use this media query to progressively enhance it for users who prefer less motion.
+    
+-   **Ethical Design:** Demonstrates consideration for a wider range of users, making your website more inclusive.
+    
+
+### Best Practices
+
+-   **Prioritize content:** Ensure your core content and functionality are accessible and understandable even without animations.
+    
+-   **Test with the setting enabled:** Actively test your website by enabling "Reduce motion" in your OS settings to see how it behaves.
+    
+-   **Don't remove _all_ motion:** Sometimes, subtle motion (like a simple fade) can still be useful for conveying state changes (e.g., button clicks, form submissions). The goal is to _reduce_ non-essential motion, not eliminate all.
+    
+-   **Educate your team:** Make `prefers-reduced-motion` a standard part of your development and design checklist.
+    
+-   **JavaScript detection:** You can also detect this preference in JavaScript using `window.matchMedia('(prefers-reduced-motion: reduce)').matches` to control JS-driven animations.
+    
+
+### Compatibility
+
+-   Widely supported in all modern browsers (Chrome, Edge, Firefox, Safari).
+    
+-   Older browsers might not support it, but since it's an enhancement, content will still be visible, just with full animations.
+    
+
+### Further Reading
+
+-   MDN: [`prefers-reduced-motion`](https://developer.mozilla.org/en-US/docs/Web/CSS/%40media/prefers-reduced-motion)
+    
+-   CSS-Tricks: [`prefers-reduced-motion`](https://css-tricks.com/introduction-to-prefers-reduced-motion)
+   
+-   web.dev: [Responsive design for motion](https://web.dev/prefers-reduced-motion/)
+    
+-   Smashing Magazine: [Designing Safer Web Animation For Motion Sensitivity](https://www.smashingmagazine.com/2020/08/designing-safer-web-animation-motion-sensitivity)
