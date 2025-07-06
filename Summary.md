@@ -54,7 +54,8 @@ Whether you're a beginner or an experienced developer, use this summary to quick
 - [CSS Scroll Snap](#41-css-scroll-snap)
 - [CSS Reduced Motion Query](#42-css-prefers-reduced-motion-media-query)
 - [CSS Nesting](#43-css-nesting)
-- [CSS @Layer]()
+- [CSS @Layer](#44-css-layer-cascade-layers)
+- [CSS All Property](#45-css-all-property)
 ---
 
 ## 1. What is CSS?
@@ -3001,3 +3002,142 @@ p {
 -   Web.dev: [Cascade Layers](https://web.dev/css-cascade-layers/)
 -   CSS-Tricks: [A Complete Guide To CSS Cascade Layers](https://css-tricks.com/a-complete-guide-to-css-cascade-layers/)
 -   Miriam Suzanne's Explainer: [The Future of CSS: Cascade Layers (CSS @layer)](https://www.miriamsuzanne.com/blog/2021/05/20/cascade-layers/)
+
+
+## 45. CSS `all` Property
+
+### What is the `all` Property in CSS?
+
+The `all` CSS shorthand property is a powerful and concise way to **reset all CSS properties of an element (except for `direction` and `unicode-bidi`) to their initial, inherited, or unset states**. It's particularly useful for creating isolated components, ensuring that a component's styling isn't unintentionally affected by global styles or inherited properties from its parent elements.
+
+It acts as a "reset button" for an element's styling, allowing you to establish a clean slate for its contained content.
+
+#### Example:
+
+Imagine you have a reusable `Modal` component, and you want to ensure its styling is completely self-contained and not influenced by any external CSS that might accidentally bleed into it.
+
+HTML
+
+```html
+<div class="modal-backdrop">
+  <div class="modal-content">
+    <h1>Modal Title</h1>
+    <p>Some modal content here.</p>
+    <button>Close</button>
+  </div>
+</div>
+
+```
+
+CSS
+
+```css
+/* CSS */
+/* Global styles that might accidentally affect a modal */
+body {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  color: #333;
+}
+
+h1 {
+  margin-top: 2em;
+  color: purple;
+}
+
+/* Using 'all' to reset the modal content */
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  text-align: center;
+
+  /* The magic happens here: */
+  all: unset; /* Resets all properties to their unset (initial or inherited) state */
+
+  /* Now re-apply only the desired properties */
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  text-align: center;
+
+  /* Explicitly re-set properties that would normally inherit */
+  font-family: sans-serif;
+  font-size: 16px;
+  color: #000;
+  line-height: 1.5;
+}
+
+/* Any nested elements inside modal-content will now inherit from modal-content's *new* reset values,
+   not from the body or other external styles. */
+.modal-content h1 {
+  margin-top: 0; /* Ensures no inherited margin-top from global h1 */
+  color: #222;
+  font-size: 1.8em;
+}
+
+```
+
+### `all` Property Values:
+
+The `all` property can take one of five global keyword values:
+
+-   **`initial`:** Resets all properties (except `direction` and `unicode-bidi`) to their **initial (default) values** as defined by the CSS specification for that property. For properties that are not inherited, this is effectively a complete reset.
+    
+    -   Example: `color` would become `black`, `background-color` would become `transparent`, `display` would become `inline`.
+        
+-   **`inherit`:** Resets all properties to their **computed inherited values** from the parent element. If a property is not normally inheritable, it will be reset to its `initial` value.
+    
+    -   Example: `color` would inherit the parent's color, `border` would become `none` (as it's not inherited), `font-size` would inherit.
+        
+-   **`unset`:** This is often the most practical and commonly used value for `all`.
+    
+    -   For **inherited properties**, it behaves like `inherit`.
+        
+    -   For **non-inherited properties**, it behaves like `initial`.
+        
+    -   This makes it a "smart" reset: properties that are naturally inherited will continue to be, while those that aren't will go back to their defaults.
+        
+-   **`revert`:** Resets all properties to the values established by the **previous cascade origin**. This means it reverts to the user-agent stylesheet's value if the author stylesheet defines it, or to the user stylesheet's value if it's present. It's particularly useful when dealing with custom user stylesheets or browser defaults.
+    
+-   **`revert-layer`:** Similar to `revert`, but specifically for **Cascade Layers**. It reverts the property to the value established in the previous cascade layer. This is useful when you want to undo an override made in the current layer and let an earlier layer's style take effect.
+    
+
+### 🔑 Key Points:
+
+-   **Global Reset:** Resets _all_ CSS properties on an element, except `direction` and `unicode-bidi`.
+    
+-   **Isolation:** Excellent for creating isolated UI components or shadow DOM content where you want to prevent external styles from affecting internal elements.
+    
+-   **Cleanup:** Can be used to "clean up" an element's styles before applying a completely new set of rules.
+    
+-   **Understanding Values:** Choose `initial`, `inherit`, `unset`, `revert`, or `revert-layer` carefully based on whether you want a hard reset, inherited values, or a reversion to a previous cascade state. `unset` is generally the most common and versatile choice for component isolation.
+    
+
+### Best Practices
+
+-   **Use sparingly and strategically:** `all` is very powerful and can easily strip away expected browser defaults or inherited styles. It's best used in scenarios where you genuinely need a complete style reset for a specific component.
+    
+-   **Apply and re-apply:** When using `all`, you'll typically follow it immediately with specific property declarations to set the desired styles for the element, as `all` wipes everything away.
+    
+-   **Combine with `:where()` or `:is()`:** For more specific use cases, you might combine `all` with selector functions to apply it to a range of elements without being too broad.
+    
+-   **Consider its impact on accessibility:** Ensure that resetting all styles doesn't inadvertently remove crucial styling that aids accessibility (e.g., focus outlines).
+    
+
+### Compatibility
+
+-   Widely supported in all modern browsers (Chrome, Edge, Firefox, Safari).
+-  `revert-layer` has slightly newer support, usually tied to Cascade Layers support.
+-   No support in Internet Explorer.
+    
+
+### Further Reading
+
+-   MDN: [`all`](https://developer.mozilla.org/en-US/docs/Web/CSS/all)
+-   CSS-Tricks: [The `all` Property](https://css-tricks.com/almanac/properties/a/all/)
+-   Web.dev: [The CSS `all` property](https://web.dev/css-all-property/)
