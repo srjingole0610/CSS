@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="In-depth guide to CSS Nesting with interactive examples and best practices.">
+    <meta name="keywords" content="css, nesting, css nesting, css structure, css demo">
+    <meta name="author" content="Suraj Ingole">
+    <meta name="robots" content="index, follow">
+    <link rel="shortcut icon" href="../images/css_favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/css-nesting.css">
+    <title>CSS Nesting – Theory & Interactive Examples</title>
+</head>
+<body>
+    <nav class="back-nav">
+        <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+    </nav>
+    <main class="nesting-main">
+        <header class="nesting-header">
+            <h1><span class="highlight">CSS Nesting</span></h1>
+            <p class="subtitle">Write cleaner, more organized, and more maintainable CSS using native nesting!</p>
+        </header>
+        <section class="theory-section">
+            <h2>What is CSS Nesting?</h2>
+            <p>
+                <strong>CSS Nesting</strong> is a modern feature that allows you to nest selectors inside one another, similar to preprocessors like Sass, but now natively supported in CSS. This makes your stylesheets more readable and helps you logically group related rules.
+            </p>
+            <ul class="theory-list">
+                <li>
+                    <strong>Cleaner Syntax:</strong> Group related styles together, reducing repetition.
+                </li>
+                <li>
+                    <strong>Native Support:</strong> No build tools or preprocessors needed—just pure CSS!
+                </li>
+                <li>
+                    <strong>Scoped Styles:</strong> Keep component or section styles together for easier maintenance.
+                </li>
+            </ul>
+            <div class="syntax-block">
+                <h3>Basic Syntax</h3>
+                <pre><code>nav {
+  background: #f0f4fa;
+  a {
+    color: #4f8cff;
+    text-decoration: none;
+    &:hover {
+      color: #2a4d8f;
+      text-decoration: underline;
+    }
+  }
+}
+                </code></pre>
+            </div>
+            <div class="tip-block">
+                <span class="tip-icon">💡</span>
+                <span>
+                    <strong>Tip:</strong> Use <code>&</code> to reference the parent selector inside a nested block!
+                </span>
+            </div>
+            <div class="note">
+                <strong>Browser Support:</strong> Native CSS nesting is supported in all modern browsers (Chrome, Edge, Safari, Firefox). Always check for the latest compatibility.
+            </div>
+        </section>
+
+        <section class="examples-section">
+            <h2>Interactive Examples</h2>
+            <div class="example-grid">
+                <!-- Example 1: Nested Button Styles -->
+                <div class="example-card">
+                    <h3>Button with Nested States</h3>
+                    <button class="nest-btn">Hover or Focus Me</button>
+                    <pre class="code-block" tabindex="0">
+.nest-btn {
+  background: #4f8cff;
+  color: #fff;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  &:hover,
+  &:focus {
+    background: #2a4d8f;
+  }
+}
+                    </pre>
+                </div>
+                <!-- Example 2: Nested List Styles -->
+                <div class="example-card">
+                    <h3>Nested List Styling</h3>
+                    <ul class="nest-list">
+                        <li>Item 1
+                            <ul>
+                                <li>Subitem 1.1</li>
+                                <li>Subitem 1.2</li>
+                            </ul>
+                        </li>
+                        <li>Item 2</li>
+                    </ul>
+                    <pre class="code-block" tabindex="0">
+.nest-list {
+  list-style: disc inside;
+  padding-left: 1rem;
+  li {
+    margin-bottom: 0.5rem;
+    ul {
+      list-style: circle inside;
+      margin-top: 0.3rem;
+      li {
+        color: #4f8cff;
+      }
+    }
+  }
+}
+                    </pre>
+                </div>
+                <!-- Example 3: Nested Card Component -->
+                <div class="example-card">
+                    <h3>Card with Nested Elements</h3>
+                    <div class="nest-card">
+                        <h4>Card Title</h4>
+                        <p>This is a card with nested CSS for its elements.</p>
+                        <a href="#">Read More</a>
+                    </div>
+                    <pre class="code-block" tabindex="0">
+.nest-card {
+  background: #f0f4fa;
+  border-radius: 0.8rem;
+  padding: 1.2rem;
+  h4 {
+    margin-top: 0;
+    color: #2a4d8f;
+  }
+  a {
+    color: #4f8cff;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+                    </pre>
+                </div>
+            </div>
+            <div class="note">
+                <strong>Try it:</strong> Interact with the button and explore the nested list and card. All styles are written using native CSS nesting!
+            </div>
+        </section>
+
+        <section class="references-section">
+            <h2>References</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Nesting" target="_blank" rel="noopener">MDN: CSS Nesting</a></li>
+                <li><a href="https://css-tricks.com/css-nesting/" target="_blank" rel="noopener">CSS-Tricks: CSS Nesting</a></li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
