@@ -13,6 +13,10 @@
     --color-tip-text: #b8860b;
     --color-note-bg: #e0f2fe;
     --color-note-text: #217dbb;
+    --color-pink: #be185d;
+    --color-pink-light: #ffe4e6;
+    --color-purple: #7c3aed;
+    --color-white: #fff;
 
     --font-main: 'Segoe UI', Arial, sans-serif;
     --font-size-base: 1rem;
@@ -20,8 +24,14 @@
     --font-size-h2: 1.4rem;
     --font-size-h3: 1.1rem;
     --font-size-code: 0.98rem;
+    --font-size-large: 1.3rem;
+    --font-size-medium: 1.2rem;
+    --font-size-small: 1.1rem;
+    --font-size-xs: 1.04rem;
+    --font-size-xxs: 1.02rem;
     --font-weight-bold: 700;
     --font-weight-semi: 600;
+    --font-weight-normal: normal;
 
     --space-xs: 0.5rem;
     --space-sm: 0.8rem;
@@ -37,6 +47,10 @@
     --shadow-3: 0 0.125rem 0.5rem #0002;
     --shadow-4: 0 0.25rem 1rem #4f8cff33;
     --shadow-5: 0 0.25rem 2rem #0002;
+
+    --border-width: 0.25rem;
+    --border-width-thin: 0.0625rem;
+    --border-width-dashed: 2px;
 }
 
 body {
@@ -106,18 +120,18 @@ body {
     color: var(--color-text-secondary);
 }
 .theory-list {
-    margin: 1rem 0 1rem 1.5rem;
+    margin: var(--font-size-base) 0 var(--font-size-base) 1.5rem;
     padding: 0;
     list-style: disc inside;
 }
 .theory-list li {
     margin-bottom: var(--space-xs);
-    font-size: 1.05rem;
+    font-size: var(--font-size-xs);
 }
 .syntax-block {
     background: var(--color-bg-main);
-    border-left: 0.25rem solid var(--color-text-accent);
-    padding: 1rem 1.5rem;
+    border-left: var(--border-width) solid var(--color-text-accent);
+    padding: var(--font-size-base) 1.5rem;
     border-radius: var(--radius-btn);
     margin-bottom: var(--space-md);
 }
@@ -125,16 +139,16 @@ body {
     display: flex;
     align-items: center;
     background: var(--color-tip-bg);
-    border-left: 0.25rem solid var(--color-tip-border);
+    border-left: var(--border-width) solid var(--color-tip-border);
     padding: 0.7rem 1.2rem;
     border-radius: var(--radius-btn);
     margin-bottom: var(--space-md);
-    font-size: 1.04rem;
+    font-size: var(--font-size-xs);
     color: var(--color-tip-text);
 }
 .tip-icon {
-    font-size: 1.3rem;
-    margin-right: 0.5rem;
+    font-size: var(--font-size-large);
+    margin-right: var(--space-xs);
 }
 
 .examples-section {
@@ -165,11 +179,11 @@ body {
 }
 .reset-btn {
     background: var(--color-text-accent);
-    color: #fff;
+    color: var(--color-white);
     border: none;
     border-radius: var(--radius-btn);
     padding: 0.7rem 1.5rem;
-    font-size: 1.1rem;
+    font-size: var(--font-size-small);
     cursor: pointer;
     margin-right: 0.7rem;
     margin-bottom: var(--space-xs);
@@ -181,41 +195,41 @@ body {
 }
 .all-unset {
     all: unset;
-    background: #ffe4e6;
-    color: #be185d;
+    background: var(--color-pink-light);
+    color: var(--color-pink);
     border-radius: var(--radius-btn);
     padding: 0.7rem 1.5rem;
-    font-size: 1.1rem;
+    font-size: var(--font-size-small);
     cursor: pointer;
-    border: 2px dashed #be185d;
+    border: var(--border-width-dashed) dashed var(--color-pink);
     margin-right: 0.7rem;
     margin-bottom: var(--space-xs);
     transition: background 0.2s;
 }
 .inherit-demo-parent {
-    color: #7c3aed;
-    font-size: 1.3rem;
-    font-weight: bold;
+    color: var(--color-purple);
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-bold);
     margin-bottom: var(--space-xs);
 }
 .inherit-demo-child {
-    color: #222;
-    font-size: 1rem;
-    font-weight: normal;
+    color: var(--color-text-main);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
     margin-right: 1.2rem;
 }
 .all-inherit {
     all: inherit;
 }
 .revert-demo {
-    color: #be185d;
-    font-size: 1.2rem;
+    color: var(--color-pink);
+    font-size: var(--font-size-medium);
     font-style: italic;
     margin-bottom: var(--space-xs);
 }
 .revert-child {
-    color: #4f8cff;
-    font-size: 1.5rem;
+    color: var(--color-text-accent);
+    font-size: var(--font-size-h3);
     font-style: normal;
     margin-right: 1.2rem;
 }
@@ -242,16 +256,16 @@ body {
 .note {
     background: var(--color-note-bg);
     color: var(--color-note-text);
-    border-left: 0.25rem solid var(--color-text-accent);
+    border-left: var(--border-width) solid var(--color-text-accent);
     padding: 0.7rem 1.2rem;
     border-radius: var(--radius-btn);
     margin-top: 1.2rem;
-    font-size: 1.02rem;
+    font-size: var(--font-size-xxs);
 }
 .references-section {
     margin-top: var(--space-xl);
     padding-top: var(--space-md);
-    border-top: 0.0625rem solid var(--color-border);
+    border-top: var(--border-width-thin) solid var(--color-border);
 }
 .references-section h2 {
     color: var(--color-text-secondary);

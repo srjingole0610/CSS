@@ -3084,7 +3084,7 @@ h1 {
 
 ### `all` Property Values:
 
-The `all` property can take one of four global keyword values:
+The `all` property can take one of five global keyword values:
 
 -   **`initial`:** Resets all properties (except `direction` and `unicode-bidi`) to their **initial (default) values** as defined by the CSS specification for that property. For properties that are not inherited, this is effectively a complete reset.
     
