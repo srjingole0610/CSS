@@ -1,0 +1,198 @@
+<!-- 10. Portfolio Website with Container Queries + Theme Toggle
+Goal: Build a fully responsive personal portfolio page with light/dark theme and adaptable sections.
+
+✅ Concepts Covered:
+
+Container Queries
+
+CSS Nesting
+
+CSS Variables
+
+Responsive layout
+
+accent-color for form inputs
+
+:has() selector (if supported)
+
+Accessibility: color contrast, :focus-visible, semantic tags
+
+💡 Bonus: Use BEM or SMACSS naming convention. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A personal portfolio website showcasing projects and skills." />
+    <meta name="keywords" content="portfolio, web development, projects, HTML, CSS, JavaScript" />
+    <meta name="author" content="AI Assistant" />
+   <link rel="shortcut icon" href="../../images/css_favicon.png" type="image/x-icon">
+    <title>My Modern Portfolio</title>
+    <link rel="stylesheet" href="portfolio-site.css" />
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header__content">
+            <h1 class="header__title">My Portfolio</h1>
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="#about" class="header__nav-link">About Me</a></li>
+                    <li class="header__nav-item"><a href="#projects" class="header__nav-link">Projects</a></li>
+                    <li class="header__nav-item"><a href="#contact" class="header__nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle">Toggle Theme</button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="challenge-section">
+            <div class="challenge-section__content">
+                <h2 class="challenge-section__title">Challenge Question:</h2>
+                <p class="challenge-section__text">
+                    Build a fully responsive personal portfolio page with light/dark theme and adaptable sections.
+                    Ensure the page includes a well-designed back button (using an &lt;a&gt; tag linking to index.html)
+                    and displays the challenge question prominently on the page. Add all necessary meta tags for SEO,
+                    responsiveness, and include a favicon. Make the page feel modern, interactive and engaging using
+                    only HTML and CSS. Use media queries to make responsive. It should be mobile friendly.
+                </p>
+                <ul class="challenge-section__concepts">
+                    <li><strong>Concepts Covered:</strong></li>
+                    <li>Container Queries</li>
+                    <li>CSS Nesting</li>
+                    <li>CSS Variables</li>
+                    <li>Responsive layout</li>
+                    <li>accent-color for form inputs</li>
+                    <li>:has() selector (if supported)</li>
+                    <li>Accessibility: color contrast, :focus-visible, semantic tags</li>
+                    <li>Bonus: Use BEM or SMACSS naming convention.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="about" class="section section--about">
+            <div class="section__content">
+                <h2 class="section__title">About Me</h2>
+                <div class="about__grid">
+                    <div class="about__image-wrapper">
+                        <img src="https://placehold.co/300x300/4F46E5/FFFFFF?text=Your+Photo" alt="Placeholder for your photo" class="about__image" />
+                    </div>
+                    <div class="about__text">
+                        <p>
+                            Hello! I'm a passionate web developer with a keen eye for detail and a love for creating
+                            engaging and user-friendly digital experiences. My journey in web development began with
+                            a fascination for how websites are built and has evolved into a dedication to crafting
+                            high-quality, accessible, and performant applications.
+                        </p>
+                        <p>
+                            I specialize in front-end development, with a strong foundation in HTML, CSS, and JavaScript.
+                            I enjoy tackling complex problems and continuously learning new technologies to stay
+                            at the forefront of the ever-evolving web landscape. When I'm not coding, you can find me
+                            exploring new design trends, reading tech blogs, or enjoying the outdoors.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section section--projects">
+            <div class="section__content">
+                <h2 class="section__title">My Projects</h2>
+                <div class="projects__grid">
+                    <article class="project-card">
+                        <img src="https://placehold.co/400x250/22C55E/FFFFFF?text=Project+1" alt="Project 1 Thumbnail" class="project-card__image" />
+                        <h3 class="project-card__title">Interactive Dashboard</h3>
+                        <p class="project-card__description">A responsive dashboard application built with modern CSS techniques and vanilla JavaScript for data visualization.</p>
+                        <div class="project-card__actions">
+                            <a href="#" class="project-card__link" aria-label="View Project 1 Demo">Demo</a>
+                            <a href="#" class="project-card__link" aria-label="View Project 1 Code on GitHub">Code</a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <img src="https://placehold.co/400x250/EF4444/FFFFFF?text=Project+2" alt="Project 2 Thumbnail" class="project-card__image" />
+                        <h3 class="project-card__title">E-commerce Storefront</h3>
+                        <p class="project-card__description">A simulated e-commerce website featuring product listings, a shopping cart, and user authentication flows.</p>
+                        <div class="project-card__actions">
+                            <a href="#" class="project-card__link" aria-label="View Project 2 Demo">Demo</a>
+                            <a href="#" class="project-card__link" aria-label="View Project 2 Code on GitHub">Code</a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <img src="https://placehold.co/400x250/3B82F6/FFFFFF?text=Project+3" alt="Project 3 Thumbnail" class="project-card__image" />
+                        <h3 class="project-card__title">Task Management App</h3>
+                        <p class="project-card__description">A clean and intuitive task management application with drag-and-drop functionality and local storage persistence.</p>
+                        <div class="project-card__actions">
+                            <a href="#" class="project-card__link" aria-label="View Project 3 Demo">Demo</a>
+                            <a href="#" class="project-card__link" aria-label="View Project 3 Code on GitHub">Code</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section section--contact">
+            <div class="section__content">
+                <h2 class="section__title">Get in Touch</h2>
+                <p class="contact__intro">Have a question or want to work together? Feel free to reach out!</p>
+                <form class="contact__form">
+                    <div class="form-group">
+                        <label for="name" class="form-group__label">Name:</label>
+                        <input type="text" id="name" name="name" required class="form-group__input" placeholder="Your Name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-group__label">Email:</label>
+                        <input type="email" id="email" name="email" required class="form-group__input" placeholder="your.email@example.com" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-group__label">Message:</label>
+                        <textarea id="message" name="message" rows="5" required class="form-group__textarea" placeholder="Your message here..."></textarea>
+                    </div>
+                    <button type="submit" class="contact__submit-button">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__text">&copy; 2025 My Portfolio. All rights reserved.</p>
+        <a href="../../index.html" class="footer__back-button">Back to Home</a>
+    </footer>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggleBtn = document.getElementById("theme-toggle");
+        themeToggleBtn.onclick = () => {
+            document.body.classList.toggle("dark-theme");
+            // Optionally save the preference to localStorage
+            if (document.body.classList.contains("dark-theme")) {
+                localStorage.setItem("theme", "dark");
+            } else {
+                localStorage.setItem("theme", "light");
+            }
+        };
+
+        // Apply saved theme on load
+        document.addEventListener("DOMContentLoaded", () => {
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme === "dark") {
+                document.body.classList.add("dark-theme");
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

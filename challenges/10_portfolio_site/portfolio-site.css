@@ -1,0 +1,611 @@
+/* style.css */
+
+/* CSS Variables for theming */
+:root {
+    --color-light-bg: #f8f9fa;
+    --color-light-text: #212529;
+    --color-light-primary: #007bff;
+    --color-light-secondary: #6c757d;
+    --color-light-accent: #28a745;
+    --color-light-card-bg: #ffffff;
+    --color-light-border: #dee2e6;
+    --color-light-shadow: rgba(0, 0, 0, 0.1);
+
+    --color-dark-bg: #212529;
+    --color-dark-text: #f8f9fa;
+    --color-dark-primary: #66b3ff;
+    --color-dark-secondary: #adb5bd;
+    --color-dark-accent: #20c997;
+    --color-dark-card-bg: #343a40;
+    --color-dark-border: #495057;
+    --color-dark-shadow: rgba(0, 0, 0, 0.5);
+
+    /* Current theme variables */
+    --bg-color: var(--color-light-bg);
+    --text-color: var(--color-light-text);
+    --primary-color: var(--color-light-primary);
+    --secondary-color: var(--color-light-secondary);
+    --accent-color: var(--color-light-accent);
+    --card-bg-color: var(--color-light-card-bg);
+    --border-color: var(--color-light-border);
+    --shadow-color: var(--color-light-shadow);
+
+    /* Form accent color */
+    accent-color: var(--primary-color); /* Applies to checkboxes, radio buttons, etc. */
+}
+
+/* Dark theme styles */
+body.dark-theme {
+    --bg-color: var(--color-dark-bg);
+    --text-color: var(--color-dark-text);
+    --primary-color: var(--color-dark-primary);
+    --secondary-color: var(--color-dark-secondary);
+    --accent-color: var(--color-dark-accent);
+    --card-bg-color: var(--color-dark-card-bg);
+    --border-color: var(--color-dark-border);
+    --shadow-color: var(--color-dark-shadow);
+}
+
+/* General Body Styles */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global focus styles for accessibility */
+*:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Header Styles */
+.header {
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px var(--shadow-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem; /* Space between items */
+}
+
+.header__title {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.header__nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.header__nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.header__nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.header__nav-link:hover::after,
+.header__nav-link:focus-visible::after {
+    width: 100%;
+}
+
+.header__nav-link:hover,
+.header__nav-link:focus-visible {
+    color: var(--primary-color);
+}
+
+.theme-toggle {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.theme-toggle:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.theme-toggle:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+/* Main Content Area */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem; /* Space between sections */
+}
+
+/* Challenge Section */
+.challenge-section {
+    background-color: var(--card-bg-color);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 6px 15px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.challenge-section__title {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.challenge-section__text {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.challenge-section__concepts {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+}
+
+.challenge-section__concepts li strong {
+    color: var(--primary-color);
+}
+
+/* General Section Styles */
+.section {
+    background-color: var(--card-bg-color);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 6px 15px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    /* Enable container queries for sections */
+    container-type: inline-size;
+    container-name: section-container;
+}
+
+.section__title {
+    color: var(--primary-color);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* About Section Specifics */
+.section--about {
+    /* Using :has() selector - if the section has an image, adjust padding */
+    &:has(.about__image) {
+        padding-bottom: 3rem; /* Example adjustment */
+    }
+}
+
+.about__grid {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+    /* Default for larger screens */
+    grid-template-columns: 1fr 2fr;
+}
+
+.about__image-wrapper {
+    text-align: center;
+}
+
+.about__image {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 50%;
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 4px 10px var(--shadow-color);
+    transition: transform 0.3s ease;
+}
+
+.about__image:hover {
+    transform: scale(1.03);
+}
+
+.about__text p {
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+}
+
+/* Projects Section Specifics */
+.projects__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--card-bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+.project-card__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.project-card__title {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin: 1rem 1.5rem 0.5rem;
+}
+
+.project-card__description {
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+    padding: 0 1.5rem 1rem;
+    flex-grow: 1; /* Allows description to take available space */
+}
+
+.project-card__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem 1.5rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: auto; /* Pushes actions to the bottom */
+}
+
+.project-card__link {
+    background-color: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+.project-card__link:hover,
+.project-card__link:focus-visible {
+    background-color: var(--accent-color);
+    transform: translateY(-1px);
+}
+
+/* Contact Section Specifics */
+.contact__intro {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+}
+
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group__label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.form-group__input,
+.form-group__textarea {
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: var(--bg-color); /* Ensure input background matches theme */
+    color: var(--text-color);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group__input:focus,
+.form-group__textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+.form-group__textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 120px;
+}
+
+.contact__submit-button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    align-self: center; /* Center the button */
+    width: fit-content;
+}
+
+.contact__submit-button:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.contact__submit-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+/* Footer Styles */
+.footer {
+    background-color: var(--card-bg-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 1.5rem 1.5rem;
+    border-top: 1px solid var(--border-color);
+    box-shadow: 0 -2px 10px var(--shadow-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer__text {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.footer__back-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.footer__back-button:hover,
+.footer__back-button:focus-visible {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* =======================================
+   Responsive Design with Media Queries
+   ======================================= */
+
+/* Small screens (e.g., mobile phones) */
+@media (max-width: 768px) {
+    .header__content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header__nav-list {
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-top: 1rem;
+    }
+
+    .header__nav-link {
+        padding: 0.25rem 0;
+    }
+
+    .theme-toggle {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .main-content {
+        padding: 1.5rem 1rem;
+        gap: 3rem;
+    }
+
+    .challenge-section__title {
+        font-size: 1.8rem;
+    }
+
+    .challenge-section__text {
+        font-size: 1rem;
+    }
+
+    .section__title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .about__grid {
+        grid-template-columns: 1fr; /* Stack on small screens */
+        text-align: center;
+    }
+
+    .about__image {
+        max-width: 200px;
+    }
+
+    .projects__grid {
+        grid-template-columns: 1fr; /* Stack project cards */
+    }
+
+    .project-card__title {
+        font-size: 1.2rem;
+    }
+
+    .project-card__description {
+        font-size: 0.9rem;
+    }
+
+    .project-card__actions {
+        justify-content: center;
+    }
+
+    .contact__form {
+        padding: 0 1rem;
+    }
+
+    .contact__submit-button {
+        width: 80%;
+    }
+}
+
+/* Medium screens (e.g., tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .header__content {
+        padding: 0 1rem;
+    }
+
+    .main-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .about__grid {
+        grid-template-columns: 1fr 1.5fr; /* Slightly adjust for tablets */
+    }
+
+    .projects__grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+/* =======================================
+   Container Queries
+   ======================================= */
+/* Applies to any element with container-type: inline-size and container-name: section-container */
+
+@container section-container (max-width: 600px) {
+    /* Adjustments for sections when their *own width* is less than 600px */
+
+    .section__title {
+        font-size: 1.6rem;
+        margin-bottom: 1.2rem;
+    }
+
+    /* About section specific container query */
+    .section--about .about__grid {
+        grid-template-columns: 1fr; /* Stack image and text within about section */
+        text-align: center;
+    }
+
+    /* Projects section specific container query */
+    .section--projects .project-card {
+        padding: 1rem; /* Smaller padding for cards in narrow containers */
+    }
+
+    .section--projects .project-card__title {
+        font-size: 1.1rem;
+        margin: 0.75rem 1rem 0.25rem;
+    }
+
+    .section--projects .project-card__description {
+        font-size: 0.85rem;
+        padding: 0 1rem 0.75rem;
+    }
+
+    .section--projects .project-card__actions {
+        padding: 0.5rem 1rem 1rem;
+        gap: 0.5rem;
+    }
+
+    .section--projects .project-card__link {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    /* Contact section specific container query */
+    .section--contact .contact__form {
+        gap: 1rem;
+    }
+}
+
+/* :has() selector example (CSS Nesting used here) */
+/* If a section has a title, apply a specific top padding */
+.section:has(.section__title) {
+    padding-top: 2.5rem;
+}
+
+/* If a project card has a link, add a subtle border to the actions */
+.project-card:has(.project-card__link) .project-card__actions {
+    border-top: 1px solid var(--border-color);
+}
