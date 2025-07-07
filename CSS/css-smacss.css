@@ -1,43 +1,60 @@
 :root {
+    /* Colors */
+    --color-white: #fff;
+    --color-black: #222;
     --color-bg-main: #f7f9fb;
     --color-bg-section: #f0f4fa;
     --color-bg-card: #f8fafc;
     --color-bg-card-secondary: #FF69B4;
     --color-bg-btn: #4f8cff;
     --color-bg-btn-hover: #2a4d8f;
-    --color-text-main: #222;
-    --color-text-accent: #4f8cff;
-    --color-text-secondary: #2a4d8f;
+    --color-text-main: var(--color-black);
+    --color-text-accent: var(--color-bg-btn);
+    --color-text-secondary: var(--color-bg-btn-hover);
     --color-border: #b3c6e0;
     --color-tip-bg: #fef9c3;
     --color-tip-border: #fde047;
     --color-tip-text: #b8860b;
     --color-note-bg: #e0f2fe;
     --color-note-text: #217dbb;
+    --color-yellow: rgb(251, 227, 117);
 
+    /* Typography */
     --font-main: 'Segoe UI', Arial, sans-serif;
+    --font-code: monospace;
     --font-size-base: 1rem;
     --font-size-h1: 2.2rem;
     --font-size-h2: 1.4rem;
     --font-size-h3: 1.1rem;
     --font-size-code: 0.98rem;
+    --font-size-small: 1.02rem;
+    --font-size-medium: 1.04rem;
+    --font-size-large: 1.05rem;
+    --font-size-xl: 1.2rem;
     --font-weight-bold: 700;
     --font-weight-semi: 600;
 
+    /* Spacing */
+    --space-xxs: 0.2rem;
     --space-xs: 0.5rem;
     --space-sm: 0.8rem;
     --space-md: 1.2rem;
     --space-lg: 2rem;
     --space-xl: 2.5rem;
 
+    /* Border Radius */
     --radius-card: 0.8rem;
     --radius-btn: 0.4rem;
 
+    /* Shadows */
     --shadow-1: 0 0.0625rem 0.25rem #0001;
     --shadow-2: 0 0.0625rem 0.5rem #0001;
     --shadow-3: 0 0.125rem 0.5rem #0002;
     --shadow-4: 0 0.25rem 1rem #4f8cff33;
     --shadow-5: 0 0.25rem 2rem #0002;
+
+    /* Transitions */
+    --transition-default: 0.2s;
 }
 
 body {
@@ -56,19 +73,19 @@ body {
 .back-btn {
     display: inline-block;
     background: var(--color-bg-btn);
-    color: #fff;
+    color: var(--color-white);
     text-decoration: none;
     padding: var(--space-xs) var(--space-md);
     border-radius: var(--radius-btn);
     font-weight: var(--font-weight-semi);
-    transition: background-color 0.2s;
+    transition: background-color var(--transition-default);
     box-shadow: var(--shadow-1);
 }
 .back-btn:hover {
     background: var(--color-bg-btn-hover);
 }
 
-.bem-main {
+.smacss-main {
     max-width: 56rem;
     margin: var(--space-xl) auto;
     background: var(--color-bg-card);
@@ -77,16 +94,16 @@ body {
     padding: var(--space-xl) var(--space-lg) var(--space-lg) var(--space-lg);
 }
 
-.bem-header {
+.smacss-header {
     text-align: center;
     margin-bottom: var(--space-xl);
 }
-.bem-header h1 {
+.smacss-header h1 {
     font-size: var(--font-size-h1);
     font-weight: var(--font-weight-bold);
-    margin: 0.2rem 0 0.1rem 0;
+    margin: var(--space-xxs) 0 var(--space-xxs) 0;
 }
-.bem-header .highlight {
+.smacss-header .highlight {
     color: var(--color-text-accent);
 }
 .subtitle {
@@ -107,18 +124,18 @@ body {
     color: var(--color-text-secondary);
 }
 .theory-list {
-    margin: 1rem 0 1rem 1.5rem;
+    margin: var(--font-size-base) 0 var(--font-size-base) 1.5rem;
     padding: 0;
     list-style: disc inside;
 }
 .theory-list li {
     margin-bottom: var(--space-xs);
-    font-size: 1.05rem;
+    font-size: var(--font-size-large);
 }
 .syntax-block {
     background: var(--color-bg-main);
     border-left: 0.25rem solid var(--color-text-accent);
-    padding: 1rem 1.5rem;
+    padding: var(--font-size-base) 1.5rem;
     border-radius: var(--radius-btn);
     margin-bottom: var(--space-md);
 }
@@ -130,12 +147,12 @@ body {
     padding: 0.7rem 1.2rem;
     border-radius: var(--radius-btn);
     margin-bottom: var(--space-md);
-    font-size: 1.04rem;
+    font-size: var(--font-size-medium);
     color: var(--color-tip-text);
 }
 .tip-icon {
     font-size: 1.3rem;
-    margin-right: 0.5rem;
+    margin-right: var(--space-xs);
 }
 
 .examples-section {
@@ -158,7 +175,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: box-shadow 0.2s, transform 0.2s;
+    transition: box-shadow var(--transition-default), transform var(--transition-default);
 }
 .example-card:hover {
     box-shadow: var(--shadow-4);
@@ -167,7 +184,7 @@ body {
 .code-block {
     background: var(--color-bg-main);
     color: var(--color-text-secondary);
-    font-family: monospace;
+    font-family: var(--font-code);
     font-size: var(--font-size-code);
     border-radius: var(--radius-btn);
     padding: var(--space-xs) var(--space-md);
@@ -176,7 +193,10 @@ body {
     overflow-x: auto;
     box-shadow: var(--shadow-1);
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: background-color var(--transition-default);
+}
+.code-block:active, .code-block:focus {
+    background: var(--color-bg-btn-hover);
 }
 .note {
     background: var(--color-note-bg);
@@ -185,7 +205,7 @@ body {
     padding: 0.7rem 1.2rem;
     border-radius: var(--radius-btn);
     margin-top: 1.2rem;
-    font-size: 1.02rem;
+    font-size: var(--font-size-small);
 }
 .references-section {
     margin-top: var(--space-xl);
@@ -196,20 +216,59 @@ body {
     color: var(--color-text-secondary);
 }
 .references-section ul {
-    margin: 0.5rem 0 0 1.2rem;
+    margin: var(--space-xs) 0 0 1.2rem;
 }
 .references-section a {
     color: var(--color-text-accent);
     text-decoration: underline;
-    transition: color 0.2s;
+    transition: color var(--transition-default);
 }
 .references-section a:hover {
     color: var(--color-text-secondary);
 }
 
-/* --- BEM Card Demo Styles --- */
+/* --- SMACSS Demo Styles --- */
+
+/* Layout */
+.layout-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--color-bg-section);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-card);
+    margin-bottom: var(--space-sm);
+    box-shadow: var(--shadow-1);
+    width: 100%;
+    max-width: 22rem;
+}
+.site-title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-accent);
+    margin: 0;
+}
+.nav {
+    display: flex;
+    gap: var(--space-xs);
+}
+.nav__link {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    padding: 0.4rem 0.9rem;
+    border-radius: var(--radius-btn);
+    font-weight: var(--font-weight-semi);
+    transition: background var(--transition-default), color var(--transition-default);
+}
+.nav__link:hover,
+.nav__link.is-active {
+    background: var(--color-bg-btn);
+    color: var(--color-white);
+}
+
+/* Module */
 .card {
-    background: #fff;
+    background: var(--color-white);
     border-radius: var(--radius-card);
     box-shadow: var(--shadow-1);
     padding: var(--space-md) var(--space-lg);
@@ -220,58 +279,69 @@ body {
     flex-direction: column;
     align-items: flex-start;
     border: 1.5px solid var(--color-border);
-    transition: box-shadow 0.2s, border-color 0.2s;
+    transition: box-shadow var(--transition-default), border-color var(--transition-default);
 }
 .card__title {
-    font-size: 1.2rem;
+    font-size: var(--font-size-h3);
     font-weight: var(--font-weight-bold);
     margin: 0 0 var(--space-xs) 0;
     color: var(--color-text-secondary);
 }
 .card__desc {
-    font-size: 1rem;
+    font-size: var(--font-size-base);
     margin-bottom: var(--space-sm);
     color: var(--color-text-main);
 }
 .card__btn {
     background: var(--color-bg-btn);
-    color: #ffffff;  /* Changed to white for better contrast */
+    color: var(--color-text-secondary);
     border: none;
     border-radius: var(--radius-btn);
     padding: 0.6rem 1.2rem;
-    font-size: 1rem;
+    font-size: var(--font-size-base);
     cursor: pointer;
     font-weight: var(--font-weight-semi);
-    transition: background 0.2s, color 0.2s;
+    transition: background var(--transition-default), color var(--transition-default);
 }
 .card__btn:hover,
 .card__btn:focus {
     background: var(--color-bg-btn-hover);
-    color: #fff;
+    color: var(--color-white);
 }
-.card--featured {
-    border: 2px solid var(--color-text-accent);
-    background-color: var(--color-bg-card-secondary);
-    box-shadow: var(--shadow-4);
+
+/* State */
+.is-active {
+    border: 2px solid var(--color-text-accent) !important;
+    box-shadow: var(--shadow-4) !important;
 }
-.card--featured .card__title {
-    color: #ffffff;
+.is-hidden {
+    display: none !important;
 }
-.card__btn--primary {
+
+/* Theme */
+.theme-dark {
+    background: var(--color-bg-card-secondary);
+    color: var(--color-white) !important;
+    border-color: var(--color-text-accent) !important;
+}
+.theme-dark .card__title {
+    color: var(--color-yellow);
+}
+.theme-dark .card__btn {
     background: var(--color-text-accent);
-    color: #fff;
+    color: var(--color-white);
 }
-.card__btn--primary:hover,
-.card__btn--primary:focus {
-    background: var(--color-text-secondary);
-    color: #fff;
+.theme-dark .card__btn:hover,
+.theme-dark .card__btn:focus {
+    background: var(--color-black);
+    color: var(--color-yellow);
 }
 
 @media (max-width: 56rem) {
-    .bem-main {
+    .smacss-main {
         padding: var(--space-lg) var(--space-md);
     }
-    .example-grid {
+    .example-grid{
         flex-direction: column;
         gap: var(--space-md);
     }

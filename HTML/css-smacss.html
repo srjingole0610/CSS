@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="In-depth guide to CSS SMACSS (Scalable and Modular Architecture for CSS) with interactive examples and best practices.">
+    <meta name="keywords" content="css, smacss, scalable css, modular css, css methodology, css demo">
+    <meta name="author" content="Suraj Ingole">
+    <meta name="robots" content="index, follow">
+    <link rel="shortcut icon" href="../images/css_favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/css-smacss.css">
+    <title>CSS SMACSS – Theory & Interactive Examples</title>
+</head>
+<body>
+    <nav class="back-nav">
+        <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+    </nav>
+    <main class="smacss-main">
+        <header class="smacss-header">
+            <h1><span class="highlight">CSS <code>SMACSS</code> Methodology</span></h1>
+            <p class="subtitle">Scalable and Modular Architecture for CSS: Organize, scale, and maintain your stylesheets with confidence!</p>
+        </header>
+        <section class="theory-section">
+            <h2>What is SMACSS?</h2>
+            <p>
+                <strong>SMACSS</strong> (<b>S</b>calable and <b>M</b>odular <b>A</b>rchitecture for <b>CSS</b>) is a flexible CSS methodology created by Jonathan Snook. It provides a set of guidelines for categorizing CSS rules, making your stylesheets more scalable, maintainable, and modular as your project grows.
+            </p>
+            <ul class="theory-list">
+                <li>
+                    <strong>Base Rules:</strong> Default element styles (e.g., <code>body</code>, <code>h1</code>, <code>ul</code>).
+                </li>
+                <li>
+                    <strong>Layout Rules:</strong> Major page sections and grid structures (e.g., <code>.layout-header</code>, <code>.layout-sidebar</code>).
+                </li>
+                <li>
+                    <strong>Module Rules:</strong> Reusable, self-contained components (e.g., <code>.card</code>, <code>.nav</code>).
+                </li>
+                <li>
+                    <strong>State Rules:</strong> Styles for different states or variations (e.g., <code>.is-active</code>, <code>.is-hidden</code>).
+                </li>
+                <li>
+                    <strong>Theme Rules:</strong> Visual design variations (e.g., <code>.theme-dark</code>, <code>.theme-light</code>).
+                </li>
+            </ul>
+            <div class="syntax-block">
+                <h3>SMACSS Rule Types</h3>
+                <pre><code>/* Base */
+body { font-family: sans-serif; }
+h1 { font-size: 2rem; }
+
+/* Layout */
+.layout-header { ... }
+.layout-sidebar { ... }
+
+/* Module */
+.card { ... }
+.card__title { ... }
+
+/* State */
+.is-active { ... }
+.is-hidden { ... }
+
+/* Theme */
+.theme-dark { ... }
+.theme-light { ... }
+                </code></pre>
+            </div>
+            <div class="tip-block">
+                <span class="tip-icon">💡</span>
+                <span>
+                    <strong>Tip:</strong> SMACSS is a guideline, not a rigid framework—adapt it to fit your project's needs!
+                </span>
+            </div>
+            <div class="note">
+                <strong>Best Practice:</strong> Keep modules independent and use state classes for dynamic changes.
+            </div>
+        </section>
+
+        <section class="examples-section">
+            <h2>Interactive Examples</h2>
+            <div class="example-grid">
+                <!-- Example 1: Layout and Module -->
+                <div class="example-card">
+                    <h3>Layout &amp; Module Example</h3>
+                    <div class="layout-header">
+                        <h4 class="site-title">Site Title</h4>
+                        <nav class="nav">
+                            <a href="#" class="nav__link is-active">Home</a>
+                            <a href="#" class="nav__link">About</a>
+                            <a href="#" class="nav__link">Contact</a>
+                        </nav>
+                    </div>
+                    <div class="card">
+                        <h5 class="card__title">Card Title</h5>
+                        <p class="card__desc">This is a reusable card module.</p>
+                        <button class="card__btn">Action</button>
+                    </div>
+                    <pre class="code-block" tabindex="0">
+/* Layout */
+.layout-header { ... }
+
+/* Module */
+.card { ... }
+.card__title { ... }
+.card__desc { ... }
+.card__btn { ... }
+                    </pre>
+                </div>
+                <!-- Example 2: State and Theme -->
+                <div class="example-card">
+                    <h3>State &amp; Theme Example</h3>
+                    <div class="card theme-dark is-active">
+                        <h5 class="card__title">Dark Card (Active)</h5>
+                        <p class="card__desc">This card uses <code>.theme-dark</code> and <code>.is-active</code> state.</p>
+                        <button class="card__btn">Action</button>
+                    </div>
+                    <pre class="code-block" tabindex="0">
+/* State */
+.is-active { ... }
+.is-hidden { ... }
+
+/* Theme */
+.theme-dark { ... }
+.theme-light { ... }
+                    </pre>
+                </div>
+            </div>
+            <div class="note">
+                <strong>Try it:</strong> Compare the cards and navigation above. Layout, module, state, and theme classes work together for scalable, maintainable CSS!
+            </div>
+        </section>
+
+        <section class="references-section">
+            <h2>References</h2>
+            <ul>
+                <li><a href="https://smacss.com/" target="_blank" rel="noopener">Official SMACSS Guide</a></li>
+                <li><a href="https://css-tricks.com/smacss-introduction/" target="_blank" rel="noopener">CSS-Tricks: SMACSS Introduction</a></li>
+                <li><a href="https://www.smashingmagazine.com/2011/12/an-introduction-to-object-oriented-css-oocss/" target="_blank" rel="noopener">Smashing Magazine: OOCSS vs. SMACSS</a></li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
