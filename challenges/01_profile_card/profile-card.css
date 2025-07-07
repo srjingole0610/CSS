@@ -8,7 +8,26 @@ body {
   justify-content: flex-start;
   align-items: center;
 }
-
+.back-button {
+  display: inline-block;
+  margin: 2rem 0 0.5rem 0;
+  padding: 0.5rem 1.2rem;
+  background: #f3f6fd;
+  color: #2a4d8f;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 1px 6px rgba(80, 112, 255, 0.08);
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  border: 1px solid #e0e7ff;
+}
+.back-button:hover, .back-button:focus {
+  background: #4f8cff;
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(80, 112, 255, 0.14);
+  outline: none;
+}
 .challenge-goal {
   background: #fff;
   border-radius: 1rem;
@@ -26,13 +45,6 @@ body {
   margin: 0 0 0.5rem 0;
   font-weight: 700;
 }
-
-/* .challenge-goal .goal-concepts {
-  color: #4f8cff;
-  font-size: 1rem;
-  display: block;
-  margin: 0.3rem 0;
-} */
 
 .challenge-goal .goal-bonus {
   color: #22c55e;
