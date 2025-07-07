@@ -58,6 +58,8 @@ Whether you're a beginner or an experienced developer, use this summary to quick
 - [CSS All Property](#45-css-all-property)
 - [CSS Appearance Property](#46-css-appearance-property)
 - [CSS Accent Color Property](#47-css-accent-color-property)
+- [CSS Scrollbar styling](#48-css-scrollbar-styling)
+- [CSS Clip path](#49-css-clip-path)
 
 ---
 
@@ -3514,3 +3516,159 @@ CSS
 -   CSS-Tricks: [Custom Scrollbars in WebKit](https://css-tricks.com/custom-scrollbars-in-webkit/)
     
 -   W3C Spec: [CSS Scrollbars Module Level 1](https://www.w3.org/TR/css-scrollbars-1/)
+
+
+## 49. CSS `clip-path`
+
+### What is CSS `clip-path`?
+
+The `clip-path` CSS property allows you to **clip an element to a basic shape or an SVG path**, making only the portion inside the shape visible. Anything outside the defined shape is clipped and therefore invisible. This property enables the creation of complex, non-rectangular layouts and visual effects directly in CSS, without the need for image editing software or complex masking techniques.
+
+It's similar in concept to cropping an image, but applies to any HTML element and can use various geometric shapes or even custom SVG paths for precise control.
+
+#### Example:
+
+Imagine you want to display an image or a `div` in a hexagonal shape:
+
+HTML
+
+```html
+<img src="your-image.jpg" alt="Hexagonal Image" class="hexagon-image">
+
+<div class="clipped-circle">
+  <p>This text is contained within a circle.</p>
+</div>
+
+```
+
+CSS
+
+```css
+/* CSS */
+.hexagon-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover; /* Ensures image fills the shape nicely */
+  /* Define a hexagon shape */
+  clip-path: polygon(
+    50% 0%,
+    100% 25%,
+    100% 75%,
+    50% 100%,
+    0% 75%,
+    0% 25%
+  );
+}
+
+.clipped-circle {
+  width: 250px;
+  height: 250px;
+  background-color: lightcoral;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+  /* Define a circle shape */
+  clip-path: circle(50%); /* A circle with a radius of 50% from the center */
+}
+
+```
+
+### `clip-path` Values and Functions:
+
+`clip-path` accepts several function values to define the clipping shape:
+
+1.  **Basic Shapes:**
+    
+    -   **`circle(<radius> at <position>)`**: Clips to a circle.
+        
+        -   `circle(50%)`: A circle with 50% radius, centered by default.
+            
+        -   `circle(80px at 20px 30px)`: 80px radius circle with its center at `(20px, 30px)`.
+            
+    -   **`ellipse(<radius-x> <radius-y> at <position>)`**: Clips to an ellipse.
+        
+        -   `ellipse(60% 40% at 50% 50%)`: An ellipse centered in the element.
+            
+    -   **`inset(<top> <right> <bottom> <left> round <border-radius>)`**: Clips to a rectangle with optional rounded corners. Similar to `border-radius`.
+        
+        -   `inset(10% 20% 30% 40%)`: Clips 10% from top, 20% from right, etc.
+            
+        -   `inset(20px round 10px)`: Clips 20px from all sides with 10px border-radius.
+            
+    -   **`polygon(<point1-x> <point1-y>, <point2-x> <point2-y>, ...)`**: Clips to a polygon defined by a series of points (x y coordinates). This is the most versatile for custom shapes.
+        
+        -   `polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)`: A rectangle (default, basically).
+            
+        -   `polygon(50% 0%, 100% 100%, 0% 100%)`: A triangle.
+            
+    -   **`path(<path-data>)`**: Clips to an SVG path using standard SVG path data (like `M 10 10 L 90 10 L 90 90 Z`). This offers the highest level of control for complex vector shapes.
+        
+2.  **Referencing SVG:**
+    
+    -   `url(#svg-clip-path-id)`: You can define an SVG `<clipPath>` element within your SVG and reference its ID. This is particularly useful for very complex or reusable clip paths.
+        
+    
+    HTML
+    
+    ```html
+    <svg width="0" height="0">
+      <clipPath id="myClipPath">
+        <circle cx="50" cy="50" r="40" />
+      </clipPath>
+    </svg>
+    <div style="clip-path: url(#myClipPath);">...</div>
+    
+    ```
+    
+
+### Vendor Prefixes:
+
+While modern browsers mostly support `clip-path` without prefixes, for broader compatibility, especially with older WebKit versions, you might still see or need:
+
+-   `-webkit-clip-path`
+    
+
+### 🔑 Key Points:
+
+-   **Non-Rectangular Layouts:** Enables creation of visually appealing, non-rectangular designs directly in CSS.
+    
+-   **Pure CSS Solution:** Reduces reliance on image editors for simple shape clipping.
+    
+-   **Interactive Effects:** Can be combined with `transition` or `animation` for stunning shape-morphing effects.
+    
+-   **Accessibility:** The clipped content is still part of the DOM, meaning it's readable by screen readers and selectable, unlike content clipped with `overflow: hidden` on a shaped container.
+    
+-   **Browser Support:** Good support across modern browsers.
+    
+
+### Best Practices
+
+-   **Clipping vs. Masking:** Understand the difference. `clip-path` clips content (makes it invisible). `mask-image` (and related `mask-*` properties) can apply transparency gradients or patterns.
+    
+-   **Use Visual Tools:** Creating complex `polygon` or `path` values by hand can be challenging. Use online `clip-path` generators (like `bennettfeely.com/clippy/`) or design tools that export CSS `clip-path` values.
+    
+-   **Consider Fallbacks:** For older browsers that don't support `clip-path`, the content will be displayed in its original rectangular form. Ensure your design gracefully degrades without the clipping effect.
+    
+-   **Animation:** When animating `clip-path`, ensure the start and end shapes have the same number of points for `polygon`, or similar structure for other shapes, for smooth transitions.
+    
+-   **Performance:** While generally performant, extremely complex SVG paths on many elements might have a minor performance impact. Test thoroughly.
+    
+
+### Compatibility
+
+-   **Excellent in modern browsers:** Widely supported in Chrome (24+, with prefix, 55+ without prefix), Edge (12+), Firefox (39+), Safari (8+, with prefix, 10.1+ without prefix).
+    
+-   No support in Internet Explorer.
+    
+-   Always include the `-webkit-clip-path` prefix for wider WebKit browser support.
+    
+
+### Further Reading
+
+-   MDN: [`clip-path`](https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path)
+-   CSS-Tricks: [`clip-path`](https://css-tricks.com/almanac/properties/c/clip-path/)
+-   Clippy [`Clip-path generator`](https://bennettfeely.com/clippy/)
+-   Smashing Magazine: [Powerful CSS With `clip-path`](https://www.smashingmagazine.com/2021/04/powerful-css-clip-path/)
