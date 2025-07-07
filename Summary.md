@@ -70,11 +70,8 @@ Whether you're a beginner or an experienced developer, use this summary to quick
 **CSS (Cascading Style Sheets)** is a style sheet language used to define the presentation and layout of HTML documents. It separates content (HTML) from design, enabling consistent styling across multiple web pages.
 
 ### 🔑 Key Concepts:
-
 - **Separation of Concerns:** Structure (HTML) vs. Style (CSS)
-
 - **Cascading Nature:** Multiple rules can apply to an element; the most specific one takes effect.
-
 - **Inheritance:** Certain properties (e.g., `color`, `font-family`) pass from parent to child elements.
 
 ### ✅ Example:
@@ -3366,44 +3363,42 @@ HTML
 CSS
 
 ```css
-/* CSS (for WebKit/Blink browsers like Chrome, Edge, Safari) */
 .custom-scroll-container {
   height: 300px;
   overflow: auto; /* Ensure scrollbars appear */
   border: 1px solid #eee;
   padding: 10px;
   background-color: #f9f9f9;
-
-  /* --- WebKit/Blink Scrollbar Styling --- */
-  /* Width of the vertical scrollbar */
-  &::-webkit-scrollbar {
-    width: 12px;
-    height: 12px; /* For horizontal scrollbar if present */
-  }
-
-  /* Track (the background of the scrollbar) */
-  &::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
-  }
-
-  /* Handle (the draggable part of the scrollbar) */
-  &::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 10px;
-  }
-
-  /* Handle on hover */
-  &::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
-
-  /* Corner (where vertical and horizontal scrollbars meet) */
-  &::-webkit-scrollbar-corner {
-    background: #f1f1f1;
-  }
 }
 
+/* --- WebKit/Blink Scrollbar Styling --- */
+/* Width of the vertical scrollbar */
+.custom-scroll-container::-webkit-scrollbar {
+  width: 12px;
+  height: 12px; /* For horizontal scrollbar if present */
+}
+
+/* Track (the background of the scrollbar) */
+.custom-scroll-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Handle (the draggable part of the scrollbar) */
+.custom-scroll-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.custom-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Corner (where vertical and horizontal scrollbars meet) */
+.custom-scroll-container::-webkit-scrollbar-corner {
+  background: #f1f1f1;
+}
 ```
 
 ### Key Properties for Scrollbar Styling:
@@ -3481,21 +3476,27 @@ CSS
     
 -   **Provide fallbacks:** Since support varies, it's common to include both WebKit/Blink and standard properties for wider coverage. Browsers will ignore properties they don't understand.
     
-    CSS
+CSS
     
-    ```css
-    .my-scrollable-div {
-      overflow: auto;
-      /* Standard */
-      scrollbar-width: thin;
-      scrollbar-color: #888 #f1f1f1;
-      /* WebKit/Blink */
-      &::-webkit-scrollbar { width: 8px; }
-      &::-webkit-scrollbar-track { background: #f1f1f1; }
-      &::-webkit-scrollbar-thumb { background: #888; border-radius: 4px; }
-    }
-    
-    ```
+```css
+.my-scrollable-div {
+  overflow: auto;
+  /* Standard */
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+  /* WebKit/Blink */
+}
+.my-scrollable-div::-webkit-scrollbar {
+  width: 8px;
+}
+.my-scrollable-div::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.my-scrollable-div::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+```
     
 -   **Test thoroughly:** Scrollbar appearance can vary greatly across operating systems and browser versions, even with custom styling. Test your implementation on different platforms.
     
