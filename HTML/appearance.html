@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="In-depth guide to the CSS appearance property with interactive examples and best practices.">
+    <meta name="keywords" content="css, appearance, css appearance, form controls, css demo">
+    <meta name="author" content="Suraj Ingole">
+    <meta name="robots" content="index, follow">
+    <link rel="shortcut icon" href="../images/css_favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/appearance.css">
+    <title>CSS Appearance – Theory & Interactive Examples</title>
+</head>
+<body>
+    <nav class="back-nav">
+        <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+    </nav>
+    <main class="appearance-main">
+        <header class="appearance-header">
+            <h1><span class="highlight">CSS <code>appearance</code></span></h1>
+            <p class="subtitle">Control the native look of form elements and create fully custom UI components!</p>
+        </header>
+        <section class="theory-section">
+            <h2>What is the <code>appearance</code> Property?</h2>
+            <p>
+                The <strong>CSS <code>appearance</code> property</strong> allows you to control whether and how an element uses the browser's native styling. By setting <code>appearance: none;</code>, you can remove the default look of form controls (like buttons, inputs, selects, checkboxes, and radios) and apply your own custom styles.
+            </p>
+            <ul class="theory-list">
+                <li>
+                    <strong>Remove Native Styles:</strong> Use <code>appearance: none;</code> to fully customize form controls.
+                </li>
+                <li>
+                    <strong>Cross-Browser:</strong> Some browsers require vendor prefixes (e.g., <code>-webkit-appearance</code>).
+                </li>
+                <li>
+                    <strong>Common Use Cases:</strong> Custom checkboxes, radio buttons, select dropdowns, and range sliders.
+                </li>
+            </ul>
+            <div class="syntax-block">
+                <h3>Syntax</h3>
+                <pre><code>selector {
+  appearance: none;
+  /* For better support: */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+                </code></pre>
+            </div>
+            <div class="tip-block">
+                <span class="tip-icon">💡</span>
+                <span>
+                    <strong>Tip:</strong> After removing native appearance, add your own styles for accessibility and usability!
+                </span>
+            </div>
+            <div class="note">
+                <strong>Browser Support:</strong> <code>appearance</code> is supported in all modern browsers, but always check for vendor prefix requirements.
+            </div>
+        </section>
+
+        <section class="examples-section">
+            <h2>Interactive Examples</h2>
+            <div class="example-grid">
+                <!-- Example 1: Custom Button -->
+                <div class="example-card">
+                    <h3>Custom Button</h3>
+                    <button class="custom-btn">Styled Button</button>
+                    <pre class="code-block" tabindex="0">
+.custom-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  background: #4f8cff;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.custom-btn:hover {
+  background: #2a4d8f;
+}
+                    </pre>
+                </div>
+                <!-- Example 2: Custom Checkbox -->
+                <div class="example-card">
+                    <h3>Custom Checkbox</h3>
+                    <label class="checkbox-label">
+                        <input type="checkbox" class="custom-checkbox">
+                        <span class="checkmark"></span>
+                        Custom Checkbox
+                    </label>
+                    <pre class="code-block" tabindex="0">
+.custom-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 2px solid #4f8cff;
+  border-radius: 0.3rem;
+  background: #fff;
+  cursor: pointer;
+  position: relative;
+}
+.custom-checkbox:checked {
+  background: #4f8cff;
+  border-color: #2a4d8f;
+}
+.checkmark {
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+.custom-checkbox:checked + .checkmark::after {
+  content: '';
+  display: block;
+  width: 0.6rem;
+  height: 0.6rem;
+  background: #fff;
+  border-radius: 0.15rem;
+  position: absolute;
+  left: 0.3rem;
+  top: 0.3rem;
+}
+                    </pre>
+                </div>
+                <!-- Example 3: Custom Select -->
+                <div class="example-card">
+                    <h3>Custom Select</h3>
+                    <select class="custom-select">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                    </select>
+                    <pre class="code-block" tabindex="0">
+.custom-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: #f0f4fa;
+  border: 2px solid #4f8cff;
+  border-radius: 0.5rem;
+  padding: 0.7rem 2.2rem 0.7rem 1rem;
+  font-size: 1.1rem;
+  color: #2a4d8f;
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='10' viewBox='0 0 16 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 2L8 8L14 2' stroke='%234f8cff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.2rem;
+  cursor: pointer;
+}
+                    </pre>
+                </div>
+            </div>
+            <div class="note">
+                <strong>Try it:</strong> Interact with the button, checkbox, and select above. All use <code>appearance: none</code> for full customization!
+            </div>
+        </section>
+
+        <section class="references-section">
+            <h2>References</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/appearance" target="_blank" rel="noopener">MDN: CSS appearance</a></li>
+                <li><a href="https://css-tricks.com/almanac/properties/a/appearance/" target="_blank" rel="noopener">CSS-Tricks: appearance</a></li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
