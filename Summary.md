@@ -4019,7 +4019,7 @@ SMACSS is a **methodology/architectural guide**, not a CSS feature. Therefore, i
 
 ### Further Reading
 
--   SMACSS Official Website: [http://smacss.com/](http://smacss.com/)
+-   SMACSS Official Website: [https://smacss.com/](https://smacss.com/)
 -   Jonathan Snook's Book: "SMACSS: Scalable and Modular Architecture for CSS"
 -   CSS-Tricks: [SMACSS](https://css-tricks.com/smacss/)
 -   MDN: [SMACSS](https://developer.mozilla.org/en-US/docs/Glossary/SMACSS)
