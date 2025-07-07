@@ -1,107 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="In-depth guide to the CSS accent-color property with interactive examples and best practices.">
-    <meta name="keywords" content="css, accent-color, form controls, css accent, css demo">
-    <meta name="author" content="Suraj Ingole">
-    <meta name="robots" content="index, follow">
-    <link rel="shortcut icon" href="../images/css_favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="../CSS/accent-color.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="In-depth guide to the CSS accent-color property with interactive examples and best practices."
+    />
+    <meta
+      name="keywords"
+      content="css, accent-color, form controls, css accent, css demo"
+    />
+    <meta name="author" content="Suraj Ingole" />
+    <meta name="robots" content="index, follow" />
+    <link
+      rel="shortcut icon"
+      href="../images/css_favicon.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../CSS/accent-color.css" />
     <title>CSS accent-color – Theory & Interactive Examples</title>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="back-nav">
-        <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+      <a href="../index.html" class="back-btn">&larr; Back to Home</a>
     </nav>
     <main class="accent-main">
-        <header class="accent-header">
-            <h1><span class="highlight">CSS <code>accent-color</code></span></h1>
-            <p class="subtitle">Easily customize the color of native form controls for a modern, branded UI!</p>
-        </header>
-        <section class="theory-section">
-            <h2>What is the <code>accent-color</code> Property?</h2>
-            <p>
-                The <strong>CSS <code>accent-color</code> property</strong> allows you to set the accent color for form controls such as checkboxes, radio buttons, range sliders, and progress bars. This makes it easy to match native controls to your site's color scheme without complex custom markup or JavaScript.
-            </p>
-            <ul class="theory-list">
-                <li>
-                    <strong>Simple Customization:</strong> Change the accent color of supported controls with a single line of CSS.
-                </li>
-                <li>
-                    <strong>Native Look & Feel:</strong> Controls remain accessible and keep their native behavior.
-                </li>
-                <li>
-                    <strong>Wide Support:</strong> Works in all modern browsers for checkboxes, radios, range, and progress.
-                </li>
-            </ul>
-            <div class="syntax-block">
-                <h3>Syntax</h3>
-                <pre><code>selector {
+      <header class="accent-header">
+        <h1>
+          <span class="highlight">CSS <code>accent-color</code></span>
+        </h1>
+        <p class="subtitle">
+          Easily customize the color of native form controls for a modern,
+          branded UI!
+        </p>
+      </header>
+      <section class="theory-section">
+        <h2>What is the <code>accent-color</code> Property?</h2>
+        <p>
+          The <strong>CSS <code>accent-color</code> property</strong> allows you
+          to set the accent color for form controls such as checkboxes, radio
+          buttons, range sliders, and progress bars. This makes it easy to match
+          native controls to your site's color scheme without complex custom
+          markup or JavaScript.
+        </p>
+        <ul class="theory-list">
+          <li>
+            <strong>Simple Customization:</strong> Change the accent color of
+            supported controls with a single line of CSS.
+          </li>
+          <li>
+            <strong>Native Look & Feel:</strong> Controls remain accessible and
+            keep their native behavior.
+          </li>
+          <li>
+            <strong>Wide Support:</strong> Works in all modern browsers for
+            checkboxes, radios, range, and progress.
+          </li>
+        </ul>
+        <div class="syntax-block">
+          <h3>Syntax</h3>
+          <pre><code>selector {
   accent-color: #4f8cff;
 }
                 </code></pre>
-            </div>
-            <div class="tip-block">
-                <span class="tip-icon">💡</span>
-                <span>
-                    <strong>Tip:</strong> Use CSS variables for easy theme switching and consistent branding!
-                </span>
-            </div>
-            <div class="note">
-                <strong>Browser Support:</strong> <code>accent-color</code> is supported in all modern browsers.
-            </div>
-        </section>
+        </div>
+        <div class="tip-block">
+          <span class="tip-icon">💡</span>
+          <span>
+            <strong>Tip:</strong> Use CSS variables for easy theme switching and
+            consistent branding!
+          </span>
+        </div>
+        <div class="note">
+          <strong>Browser Support:</strong> <code>accent-color</code> is
+          supported in all modern browsers.
+        </div>
+      </section>
 
-        <section class="examples-section">
-            <h2>Interactive Examples</h2>
-            <div class="example-grid">
-                <!-- Example 1: Checkbox and Radio -->
-                <div class="example-card">
-                    <h3>Custom Accent Checkbox & Radio</h3>
-                    <label>
-                        <input type="checkbox" class="accent-demo" checked>
-                        Checkbox
-                    </label>
-                    <label>
-                        <input type="radio" class="accent-demo" name="radio-demo" checked>
-                        Radio 1
-                    </label>
-                    <label>
-                        <input type="radio" class="accent-demo" name="radio-demo">
-                        Radio 2
-                    </label>
-                    <pre class="code-block" tabindex="0">
+      <section class="examples-section">
+        <h2>Interactive Examples</h2>
+        <div class="example-grid">
+          <!-- Example 1: Checkbox and Radio -->
+          <div class="example-card">
+            <h3>Custom Accent Checkbox & Radio</h3>
+            <label>
+              <input type="checkbox" class="accent-demo" checked />
+              Checkbox
+            </label>
+            <label>
+              <input
+                type="radio"
+                class="accent-demo"
+                name="radio-demo"
+                checked
+              />
+              Radio 1
+            </label>
+            <label>
+              <input type="radio" class="accent-demo" name="radio-demo" />
+              Radio 2
+            </label>
+            <pre class="code-block" tabindex="0">
 .accent-demo {
   accent-color: var(--color-accent, #4f8cff);
 }
-                    </pre>
-                </div>
-                <!-- Example 2: Range and Progress -->
-                <div class="example-card">
-                    <h3>Custom Accent Range & Progress</h3>
-                    <input type="range" class="accent-demo" min="0" max="100" value="60">
-                    <progress class="accent-demo" value="40" max="100"></progress>
-                    <pre class="code-block" tabindex="0">
+                    </pre
+            >
+          </div>
+          <!-- Example 2: Range and Progress -->
+          <div class="example-card">
+            <h3>Custom Accent Range & Progress</h3>
+            <label for="range-example">Custom Accent Range:</label>
+            <input
+              type="range"
+              class="accent-demo"
+              min="0"
+              max="100"
+              value="60"
+              id="range-example"
+            />
+            <label for="progress-example">Custom Accent Progress:</label>
+            <progress
+              class="accent-demo"
+              value="40"
+              max="100"
+              id="progress-example"
+            ></progress>
+            <pre class="code-block" tabindex="0">
 .accent-demo {
   accent-color: var(--color-accent, #4f8cff);
 }
-                    </pre>
-                </div>
-            </div>
-            <div class="note">
-                <strong>Try it:</strong> Interact with the controls above. The accent color is set using <code>accent-color</code> and can be easily themed!
-            </div>
-        </section>
+                    </pre
+            >
+          </div>
+        </div>
+        <div class="note">
+          <strong>Try it:</strong> Interact with the controls above. The accent
+          color is set using <code>accent-color</code> and can be easily themed!
+        </div>
+      </section>
 
-        <section class="references-section">
-            <h2>References</h2>
-            <ul>
-                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/accent-color" target="_blank" rel="noopener">MDN: CSS accent-color</a></li>
-                <li><a href="https://css-tricks.com/css-accent-color/" target="_blank" rel="noopener">CSS-Tricks: accent-color</a></li>
-            </ul>
-        </section>
+      <section class="references-section">
+        <h2>References</h2>
+        <ul>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/accent-color"
+              target="_blank"
+              rel="noopener"
+              >MDN: CSS accent-color</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://css-tricks.com/css-accent-color/"
+              target="_blank"
+              rel="noopener"
+              >CSS-Tricks: accent-color</a
+            >
+          </li>
+        </ul>
+      </section>
     </main>
-</body>
+  </body>
 </html>

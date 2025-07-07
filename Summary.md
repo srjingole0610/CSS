@@ -3215,11 +3215,11 @@ This property is a game-changer for theming and consistency, as it lets you styl
 HTML
 
 ```html
-<label><input type="checkbox" class="my-checkbox"> Remember Me</label><br>
-<label><input type="radio" name="option" value="a" class="my-radio"> Option A</label><br>
-<label><input type="radio" name="option" value="b" class="my-radio"> Option B</label><br>
-<input type="range" min="0" max="100" value="50" class="my-range"><br>
-<progress value="70" max="100" class="my-progress"></progress>
+<div><label for="my-checkbox">Remember Me</label><input type="checkbox" class="my-checkbox" id="my-checkbox"></div>
+<div><label for="option-a">Option A</label><input type="radio" name="option" value="a" class="my-radio" id="option-a"></div>
+<div><label for="option-b">Option B</label><input type="radio" name="option" value="b" class="my-radio" id="option-b"></div>
+<div><label for="my-range">Range:</label><input type="range" min="0" max="100" value="50" class="my-range" id="my-range"></div>
+<div><label for="my-progress">Progress:</label><progress value="70" max="100" class="my-progress" id="my-progress"></progress></div>
 
 ```
 

@@ -230,4 +230,6 @@ progress.accent-demo {
     }
     .example-grid {
         flex-direction: column;
-        gap: var(--
+        gap: var(--space-md);
+    }
+}
