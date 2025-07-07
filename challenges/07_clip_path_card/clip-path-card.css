@@ -1,0 +1,194 @@
+/* Theme Variables */
+:root {
+  --bg: #f7f9fc;
+  --text: #1a1a1a;
+  --card-bg: #fff;
+  --accent: #3366cc;
+  --btn-bg: #3366cc;
+  --btn-text: #fff;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+#theme-toggle:checked + .wrapper {
+  --bg: #121212;
+  --text: #eee;
+  --card-bg: #1e1e1e;
+  --accent: #4f8cff;
+  --btn-bg: #4f8cff;
+  --btn-text: #fff;
+  --shadow: 0 8px 20px rgba(255, 255, 255, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.4s, color 0.4s;
+  padding: 1rem;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+
+.back-button {
+  text-decoration: none;
+  background: var(--accent);
+  color: var(--btn-text);
+  padding: 6px 14px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  display: inline-block;
+}
+
+.theme-toggle {
+  float: right;
+  cursor: pointer;
+  background: var(--accent);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.desc {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.card-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.product-card {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.image-wrapper img {
+  width: 100%;
+  border-radius: 8px;
+  transition: all 0.4s ease;
+}
+
+/* Common */
+
+.price {
+  font-weight: bold;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--accent);
+}
+
+/* Card 1: Tilt */
+.card-tilt img {
+  clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+}
+
+.card-tilt:hover {
+  transform: scale(1.05) rotate(1deg);
+}
+
+.card-tilt:hover img {
+  transform: scale(1.03);
+  filter: brightness(1.1);
+}
+
+/* Card 2: Circle */
+.card-circle img {
+  clip-path: circle(50% at 50% 50%);
+}
+
+.card-circle:hover {
+  transform: scale(1.08);
+}
+
+.card-circle:hover img {
+  filter: drop-shadow(0 0 10px var(--accent));
+}
+
+/* Card 3: Zigzag */
+.card-zigzag img {
+  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+  filter: scale(1.2);
+}
+
+.card-zigzag:hover img {
+  filter: scale(1.2) drop-shadow(0 0 6px var(--accent));
+}
+
+/* Card 4: Wave */
+.card-wave img {
+  clip-path: ellipse(80% 60% at 50% 40%);
+}
+
+.card-wave:hover {
+  transform: translateY(-10px);
+}
+
+.card-wave:hover img {
+  filter: brightness(1.1);
+}
+
+/* Shape Divider */
+.shape-divider {
+  width: 100%;
+  height: 100px;
+  background: var(--accent);
+  clip-path: polygon(0% 50%, 100% 0, 100% 100%, 0% 100%);
+  margin-top: 3rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .desc {
+    font-size: 0.9rem;
+  }
+}
