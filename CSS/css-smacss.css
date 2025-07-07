@@ -68,7 +68,7 @@ body {
     background: var(--color-bg-btn-hover);
 }
 
-.bem-main {
+.smacss-main {
     max-width: 56rem;
     margin: var(--space-xl) auto;
     background: var(--color-bg-card);
@@ -77,16 +77,16 @@ body {
     padding: var(--space-xl) var(--space-lg) var(--space-lg) var(--space-lg);
 }
 
-.bem-header {
+.smacss-header {
     text-align: center;
     margin-bottom: var(--space-xl);
 }
-.bem-header h1 {
+.smacss-header h1 {
     font-size: var(--font-size-h1);
     font-weight: var(--font-weight-bold);
     margin: 0.2rem 0 0.1rem 0;
 }
-.bem-header .highlight {
+.smacss-header .highlight {
     color: var(--color-text-accent);
 }
 .subtitle {
@@ -178,6 +178,9 @@ body {
     cursor: pointer;
     transition: background-color 0.2s;
 }
+.code-block:active, .code-block:focus {
+    background: var(--color-bg-btn-hover);
+}
 .note {
     background: var(--color-note-bg);
     color: var(--color-note-text);
@@ -207,7 +210,46 @@ body {
     color: var(--color-text-secondary);
 }
 
-/* --- BEM Card Demo Styles --- */
+/* --- SMACSS Demo Styles --- */
+
+/* Layout */
+.layout-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--color-bg-section);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-card);
+    margin-bottom: var(--space-sm);
+    box-shadow: var(--shadow-1);
+    width: 100%;
+    max-width: 22rem;
+}
+.site-title {
+    font-size: 1.2rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-accent);
+    margin: 0;
+}
+.nav {
+    display: flex;
+    gap: var(--space-xs);
+}
+.nav__link {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    padding: 0.4rem 0.9rem;
+    border-radius: var(--radius-btn);
+    font-weight: var(--font-weight-semi);
+    transition: background 0.2s, color 0.2s;
+}
+.nav__link:hover,
+.nav__link.is-active {
+    background: var(--color-bg-btn);
+    color: #fff;
+}
+
+/* Module */
 .card {
     background: #fff;
     border-radius: var(--radius-card);
@@ -223,7 +265,7 @@ body {
     transition: box-shadow 0.2s, border-color 0.2s;
 }
 .card__title {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: var(--font-weight-bold);
     margin: 0 0 var(--space-xs) 0;
     color: var(--color-text-secondary);
@@ -235,7 +277,7 @@ body {
 }
 .card__btn {
     background: var(--color-bg-btn);
-    color: #ffffff;  /* Changed to white for better contrast */
+    color: var(--color-text-secondary);
     border: none;
     border-radius: var(--radius-btn);
     padding: 0.6rem 1.2rem;
@@ -249,30 +291,41 @@ body {
     background: var(--color-bg-btn-hover);
     color: #fff;
 }
-.card--featured {
-    border: 2px solid var(--color-text-accent);
-    background-color: var(--color-bg-card-secondary);
-    box-shadow: var(--shadow-4);
+
+/* State */
+.is-active {
+    border: 2px solid var(--color-text-accent) !important;
+    box-shadow: var(--shadow-4) !important;
 }
-.card--featured .card__title {
-    color: #ffffff;
+.is-hidden {
+    display: none !important;
 }
-.card__btn--primary {
+
+/* Theme */
+.theme-dark {
+    background: var(--color-bg-card-secondary);
+    color: #fff !important;
+    border-color: var(--color-text-accent) !important;
+}
+.theme-dark .card__title {
+    color:rgb(251, 227, 117) ;
+}
+.theme-dark .card__btn {
     background: var(--color-text-accent);
     color: #fff;
 }
-.card__btn--primary:hover,
-.card__btn--primary:focus {
-    background: var(--color-text-secondary);
-    color: #fff;
+.theme-dark .card__btn:hover,
+.theme-dark .card__btn:focus {
+    background: #222;
+     color:rgb(251, 227, 117) ;
 }
 
 @media (max-width: 56rem) {
-    .bem-main {
+    .smacss-main {
         padding: var(--space-lg) var(--space-md);
     }
-    .example-grid {
+    .example-grid{
         flex-direction: column;
-        gap: var(--space-md);
+        gap:var(--space-md);
     }
 }
