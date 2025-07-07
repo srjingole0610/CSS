@@ -57,6 +57,8 @@ Whether you're a beginner or an experienced developer, use this summary to quick
 - [CSS @Layer](#44-css-layer-cascade-layers)
 - [CSS All Property](#45-css-all-property)
 - [CSS Appearance Property](#46-css-appearance-property)
+- [CSS Accent Color Property](#47-css-accent-color-property)
+
 ---
 
 ## 1. What is CSS?
@@ -64,13 +66,15 @@ Whether you're a beginner or an experienced developer, use this summary to quick
 **CSS (Cascading Style Sheets)** is a style sheet language used to define the presentation and layout of HTML documents. It separates content (HTML) from design, enabling consistent styling across multiple web pages.
 
 ### 🔑 Key Concepts:
--
- **Separation of Concerns:** Structure (HTML) vs. Style (CSS)
+
+- **Separation of Concerns:** Structure (HTML) vs. Style (CSS)
+
 - **Cascading Nature:** Multiple rules can apply to an element; the most specific one takes effect.
+
 - **Inheritance:** Certain properties (e.g., `color`, `font-family`) pass from parent to child elements.
 
-
 ### ✅ Example:
+
 ```html
 <!-- index.html -->
 <!DOCTYPE html>
@@ -3196,3 +3200,138 @@ Always include the unprefixed `appearance` property as well for future compatibi
 -   CSS-Tricks: [`appearance`](https://css-tricks.com/almanac/properties/a/appearance/)
     
 -   Web.dev: [Customizing form controls](https://web.dev/customize-form-controls/) 
+
+
+## 47. CSS `accent-color` Property
+
+### What is the `accent-color` Property in CSS?
+
+The `accent-color` CSS property allows you to **tint the accent color of certain user-interface controls**, such as checkboxes, radio buttons, range sliders, and progress bars. Instead of relying on the browser's default blue or purple, `accent-color` provides a simple, direct way to match these native elements to your brand's color palette without resorting to complex custom styling.
+
+This property is a game-changer for theming and consistency, as it lets you style these elements with a single line of CSS, while still retaining their native accessibility and functionality.
+
+#### Example:
+
+HTML
+
+```html
+<div><label for="my-checkbox">Remember Me</label><input type="checkbox" class="my-checkbox" id="my-checkbox"></div>
+<div><label for="option-a">Option A</label><input type="radio" name="option" value="a" class="my-radio" id="option-a"></div>
+<div><label for="option-b">Option B</label><input type="radio" name="option" value="b" class="my-radio" id="option-b"></div>
+<div><label for="my-range">Range:</label><input type="range" min="0" max="100" value="50" class="my-range" id="my-range"></div>
+<div><label for="my-progress">Progress:</label><progress value="70" max="100" class="my-progress" id="my-progress"></progress></div>
+
+```
+
+CSS
+
+```css
+/* CSS */
+
+/* Global accent color for all supported controls */
+:root {
+  accent-color: #ff6347; /* Tomato red */
+}
+
+/* Or apply to specific elements or their parents */
+.my-checkbox {
+  accent-color: purple;
+}
+
+.my-radio {
+  accent-color: green;
+}
+
+.my-range {
+  accent-color: darkorange;
+}
+
+.my-progress {
+  accent-color: #007bff; /* Dodger Blue */
+}
+
+/* It also works with inherited values */
+.theme-container {
+  accent-color: #28a745; /* A green accent for everything inside */
+}
+
+```
+
+### How `accent-color` Works:
+
+The `accent-color` property accepts any valid CSS `<color>` value:
+
+-   Hex codes (e.g., `#ff6347`)
+    
+-   RGB/RGBA (e.g., `rgb(255, 99, 71)`)
+    
+-   HSL/HSLA (e.g., `hsl(9, 100%, 64%)`)
+    
+-   Named colors (e.g., `tomato`)
+    
+-   CSS Custom Properties (variables) (e.g., `var(--brand-color)`)
+    
+
+When applied, the browser takes this color and uses it to tint the relevant parts of the UI control, such as the checkmark of a checkbox, the dot of a radio button, the filled track of a range slider, or the progress bar fill. The browser often intelligently calculates a contrasting foreground color (e.g., white or black) for text or symbols that appear on top of the accent color to ensure readability.
+
+### Affected UI Elements:
+
+The `accent-color` property typically affects:
+
+-   `<input type="checkbox">`
+    
+-   `<input type="radio">`
+    
+-   `<input type="range">`
+    
+-   `<progress>`
+    
+-   `<input type="color">` (the color picker's selected color indicator)
+    
+-   `<input type="number">` (spinner arrows, though this can vary)
+    
+-   `<input type="date">`, `<input type="time">`, etc. (calendar/time picker highlight, again, browser dependent)
+    
+
+### 🔑 Key Points:
+
+-   **Simple Theming:** Provides an extremely easy way to brand native UI controls with just one line of CSS.
+    
+-   **Retains Native Behavior & Accessibility:** Unlike completely custom-styled controls (which often require `appearance: none;` and extensive manual styling), `accent-color` keeps the native interaction, keyboard navigation, and accessibility features of the elements.
+    
+-   **Automatic Contrast:** Browsers usually handle the contrast of text/symbols on top of the `accent-color` for you, improving accessibility.
+    
+-   **Inheritable:** Can be applied to parent elements (like `body` or `:root`) to apply a default accent color across many controls.
+    
+
+### Best Practices
+
+-   **Match Brand Colors:** Use your brand's primary or secondary colors for `accent-color` to maintain visual consistency.
+    
+-   **Consider Contrast:** While browsers try to ensure good contrast, always test your chosen `accent-color` against the default background colors of your controls to ensure readability for all users, especially those with low vision.
+    
+-   **Global vs. Specific:**
+    
+    -   Set a default on `:root` or `body` for site-wide consistency.
+        
+    -   Override it for specific components or sections if a different accent color is desired (e.g., an "error" form might use `red`).
+        
+-   **Progressive Enhancement:** `accent-color` is a modern feature. For older browsers, the native controls will simply revert to their default appearance, which is a graceful fallback. No complex fallbacks are typically needed.
+    
+
+### Compatibility
+
+-   **Excellent in modern browsers:** Widely supported in Chrome (93+), Edge (93+), Firefox (92+), Safari (15.5+).
+    
+-   No support in Internet Explorer.
+    
+-   Consider using it as a progressive enhancement, knowing that older browsers will simply show their default UI control colors.
+    
+
+### Further Reading
+
+-   MDN: [`accent-color`](https://developer.mozilla.org/en-US/docs/Web/CSS/accent-color)
+    
+-   Web.dev: [Tinting your forms with `accent-color`](https://web.dev/accent-color/)
+    
+-   CSS-Tricks: [`accent-color`](https://css-tricks.com/almanac/properties/a/accent-color/)
