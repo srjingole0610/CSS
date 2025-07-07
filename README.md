@@ -15,7 +15,7 @@ Whether you're a complete beginner or looking to enhance your existing skills, t
 - [Basic Concepts](#basic-concepts)
 - [Intermediate CSS](#intermediate-css)
 - [Advanced Topics](#advanced-topics)
-- [CSS Frameworks](#css-frameworks)
+- [CSS Reference & Interactive Directory](#css-reference--interactive-directory)
 - [Best Practices](#best-practices)
 - [Resources](#resources)
 - [Contributing](#contributing)
@@ -139,12 +139,66 @@ Every element is a rectangular box consisting of:
 
 ---
 
-## CSS Frameworks
+## CSS Reference & Interactive Directory
 
-- [Bootstrap](https://getbootstrap.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Bulma](https://bulma.io/)
-- [Foundation](https://get.foundation/)
+Explore the comprehensive, interactive CSS reference and examples included in this repository.  
+Each topic below links to a dedicated HTML page with in-depth theory, code samples, and live demos.
+
+### 📂 **CSS Files Directory** (see `index.html`)
+
+- What is CSS
+- CSS Stylesheet Types
+- CSS Selectors
+- CSS Colors
+- CSS Comments
+- CSS Background
+- CSS Units
+- CSS Fonts
+- CSS Text Properties
+- CSS Box Model
+- CSS Gradients
+- CSS Box Shadow
+- CSS Drop Shadow
+- CSS Filters
+- CSS Lists
+- CSS Display
+- CSS Anchor State
+- CSS Positioning
+- CSS Z-index
+- CSS Overflow
+- CSS Pseudo-elements
+- CSS Pseudo-classes
+- CSS Column Layout
+- CSS Float
+- CSS Flexbox
+- CSS Grid
+- CSS Transitions
+- CSS Transforms
+- CSS Animations
+- CSS Variables
+- CSS Specificity
+- CSS Media Queries
+- CSS Container Queries
+- CSS Inheritance & Cascade
+- CSS Backdrop Filter
+- CSS Writing Mode
+- CSS Aspect Ratio
+- CSS Object Fit & Object Position
+- CSS Logical Properties
+- CSS AOS Plugin
+- CSS Scroll Snap
+- CSS Reduced Motion Query
+- CSS Nesting
+- CSS @layer
+- CSS All Property
+- CSS Appearance
+- CSS Accent Color
+- CSS Scrollbar Styling
+- CSS Clip Path
+- CSS BEM
+- CSS SMACSS
+
+> Open `index.html` in your browser for a clickable, categorized directory of all topics.
 
 ---
 
@@ -156,6 +210,10 @@ Every element is a rectangular box consisting of:
 - Optimize for performance
 - Comment your code
 - Follow a consistent naming convention
+- Use external CSS files for scalability
+- Test styles across devices for responsiveness
+- Learn and apply Flexbox and Grid for advanced layouts
+- Use browser DevTools to debug and experiment
 
 ---
 

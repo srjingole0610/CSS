@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="In-depth guide to CSS Scrollbar Styling with interactive examples and best practices.">
+    <meta name="keywords" content="css, scrollbar, scrollbar styling, custom scrollbar, css demo">
+    <meta name="author" content="Suraj Ingole">
+    <meta name="robots" content="index, follow">
+    <link rel="shortcut icon" href="../images/css_favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/scrollbar-styling.css">
+    <title>CSS Scrollbar Styling – Theory & Interactive Examples</title>
+</head>
+<body>
+    <nav class="back-nav">
+        <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+    </nav>
+    <main class="scrollbar-main">
+        <header class="scrollbar-header">
+            <h1><span class="highlight">CSS Scrollbar Styling</span></h1>
+            <p class="subtitle">Create beautiful, branded, and accessible scrollbars with modern CSS!</p>
+        </header>
+        <section class="theory-section">
+            <h2>What is Scrollbar Styling?</h2>
+            <p>
+                <strong>CSS Scrollbar Styling</strong> lets you customize the look and feel of scrollbars in your web applications. You can change their color, width, border radius, and more, making them match your site's design and improving user experience.
+            </p>
+            <ul class="theory-list">
+                <li>
+                    <strong>WebKit Browsers:</strong> Use pseudo-elements like <code>::-webkit-scrollbar</code>, <code>::-webkit-scrollbar-thumb</code>, and <code>::-webkit-scrollbar-track</code>.
+                </li>
+                <li>
+                    <strong>Standard Properties:</strong> Use <code>scrollbar-color</code> and <code>scrollbar-width</code> for Firefox and modern browsers.
+                </li>
+                <li>
+                    <strong>Accessibility:</strong> Ensure good contrast and visible focus for usability.
+                </li>
+            </ul>
+            <div class="syntax-block">
+                <h3>Syntax</h3>
+                <pre><code>/* WebKit Browsers (Chrome, Edge, Safari) */
+.selector::-webkit-scrollbar {
+  width: 1rem;
+}
+.selector::-webkit-scrollbar-thumb {
+  background: #4f8cff;
+  border-radius: 0.5rem;
+}
+
+/* Firefox & Modern Browsers */
+.selector {
+  scrollbar-color: #4f8cff #f0f4fa;
+  scrollbar-width: thin;
+}
+                </code></pre>
+            </div>
+            <div class="tip-block">
+                <span class="tip-icon">💡</span>
+                <span>
+                    <strong>Tip:</strong> Always test your custom scrollbars for accessibility and cross-browser compatibility!
+                </span>
+            </div>
+            <div class="note">
+                <strong>Browser Support:</strong> <code>::-webkit-scrollbar</code> works in Chrome, Edge, Safari. <code>scrollbar-color</code> and <code>scrollbar-width</code> are supported in Firefox and Chromium-based browsers.
+            </div>
+        </section>
+
+        <section class="examples-section">
+            <h2>Interactive Examples</h2>
+            <div class="example-grid">
+                <!-- Example 1: Custom Scrollbar on a Box -->
+                <div class="example-card">
+                    <h3>Custom Scrollbar Box</h3>
+                    <div class="scrollbox custom-scrollbar">
+                        <div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque.</p>
+                            <p>Scroll to see the custom scrollbar in action! You can style the track, thumb, and even add hover effects.</p>
+                            <p>Vivamus dictum, urna at cursus dictum, enim erat dictum erat, at dictum urna erat at enim.</p>
+                            <p>Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque.</p>
+                            <p>More content... More content... More content... More content... More content...</p>
+                        </div>
+                    </div>
+                    <pre class="code-block" tabindex="0">
+.custom-scrollbar {
+  scrollbar-color: #4f8cff #f0f4fa;
+  scrollbar-width: thin;
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 1rem;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #4f8cff;
+  border-radius: 0.5rem;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f0f4fa;
+  border-radius: 0.5rem;
+}
+                    </pre>
+                </div>
+                <!-- Example 2: Thin & Minimal Scrollbar -->
+                <div class="example-card">
+                    <h3>Thin Minimal Scrollbar</h3>
+                    <div class="scrollbox thin-scrollbar">
+                        <div>
+                            <p>This box uses a very thin, minimal scrollbar for a subtle look.</p>
+                            <p>Perfect for sidebars or overlays where you want less visual distraction.</p>
+                            <p>Scroll to see the effect!</p>
+                        </div>
+                    </div>
+                    <pre class="code-block" tabindex="0">
+.thin-scrollbar {
+  scrollbar-color: #2a4d8f #e3e9f7;
+  scrollbar-width: thin;
+}
+.thin-scrollbar::-webkit-scrollbar {
+  width: 0.4rem;
+}
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background: #2a4d8f;
+  border-radius: 0.3rem;
+}
+.thin-scrollbar::-webkit-scrollbar-track {
+  background: #e3e9f7;
+}
+                    </pre>
+                </div>
+            </div>
+            <div class="note">
+                <strong>Try it:</strong> Scroll inside the boxes above to see the custom scrollbars in action. Resize your window to test responsiveness!
+            </div>
+        </section>
+
+        <section class="references-section">
+            <h2>References</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar" target="_blank" rel="noopener">MDN: ::-webkit-scrollbar</a></li>
+                <li><a href="https://css-tricks.com/the-current-state-of-styling-scrollbars/" target="_blank" rel="noopener">CSS-Tricks: Styling Scrollbars</a></li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
