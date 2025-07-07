@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="In-depth guide to CSS clip-path with interactive examples and best practices.">
+    <meta name="keywords" content="css, clip-path, css shapes, css masking, css demo">
+    <meta name="author" content="Suraj Ingole">
+    <meta name="robots" content="index, follow">
+    <link rel="shortcut icon" href="../images/css_favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/clip-path.css">
+    <title>CSS clip-path – Theory & Interactive Examples</title>
+</head>
+<body>
+    <nav class="back-nav">
+        <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+    </nav>
+    <main class="clip-main">
+        <header class="clip-header">
+            <h1><span class="highlight">CSS <code>clip-path</code></span></h1>
+            <p class="subtitle">Create visually engaging shapes and effects by clipping elements with CSS!</p>
+        </header>
+        <section class="theory-section">
+            <h2>What is the <code>clip-path</code> Property?</h2>
+            <p>
+                The <strong>CSS <code>clip-path</code> property</strong> allows you to define a visible region of an element, hiding everything outside of a specified shape. This enables creative layouts, image masks, and interactive effects without extra markup or images.
+            </p>
+            <ul class="theory-list">
+                <li>
+                    <strong>Shape Options:</strong> Use basic shapes (<code>circle()</code>, <code>ellipse()</code>, <code>polygon()</code>, <code>inset()</code>) or SVG paths.
+                </li>
+                <li>
+                    <strong>Animate & Transition:</strong> Animate between shapes for dynamic effects.
+                </li>
+                <li>
+                    <strong>Performance:</strong> Hardware-accelerated and efficient for modern browsers.
+                </li>
+            </ul>
+            <div class="syntax-block">
+                <h3>Syntax</h3>
+                <pre><code>selector {
+  clip-path: circle(50% at 50% 50%);
+  /* or */
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  /* or */
+  clip-path: path('M10,10 ...');
+}
+                </code></pre>
+            </div>
+            <div class="tip-block">
+                <span class="tip-icon">💡</span>
+                <span>
+                    <strong>Tip:</strong> Use <a href="https://bennettfeely.com/clippy/" target="_blank" rel="noopener">Clippy</a> to visually generate <code>clip-path</code> shapes!
+                </span>
+            </div>
+            <div class="note">
+                <strong>Browser Support:</strong> <code>clip-path</code> is supported in all modern browsers.
+            </div>
+        </section>
+
+        <section class="examples-section">
+            <h2>Interactive Examples</h2>
+            <div class="example-grid">
+                <!-- Example 1: Circle Clip -->
+                <div class="example-card">
+                    <h3>Circle Clip</h3>
+                    <div class="clip-demo clip-circle"></div>
+                    <pre class="code-block" tabindex="0">
+.clip-circle {
+  clip-path: circle(50% at 50% 50%);
+}
+                    </pre>
+                </div>
+                <!-- Example 2: Polygon Clip (Hexagon) -->
+                <div class="example-card">
+                    <h3>Polygon (Hexagon) Clip</h3>
+                    <div class="clip-demo clip-hex"></div>
+                    <pre class="code-block" tabindex="0">
+.clip-hex {
+  clip-path: polygon(
+    25% 5%, 75% 5%,
+    100% 50%, 75% 95%,
+    25% 95%, 0% 50%
+  );
+}
+                    </pre>
+                </div>
+                <!-- Example 3: Inset Clip -->
+                <div class="example-card">
+                    <h3>Inset Clip</h3>
+                    <div class="clip-demo clip-inset"></div>
+                    <pre class="code-block" tabindex="0">
+.clip-inset {
+  clip-path: inset(20% 10% 20% 10% round 2rem);
+}
+                    </pre>
+                </div>
+                <!-- Example 4: SVG Path Clip -->
+                <div class="example-card">
+                    <h3>SVG Path Clip</h3>
+                    <div class="clip-demo clip-svg"></div>
+                    <pre class="code-block" tabindex="0">
+.clip-svg {
+  clip-path: path('M50 0 L100 100 L0 100 Z');
+}
+                    </pre>
+                </div>               
+            </div>
+            <div class="note">
+                <strong>Try it:</strong> Each colored box above is clipped using a different <code>clip-path</code> shape. Resize your window to see the effect!
+            </div>
+        </section>
+
+        <section class="references-section">
+            <h2>References</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path" target="_blank" rel="noopener">MDN: CSS clip-path</a></li>
+                <li><a href="https://css-tricks.com/almanac/properties/c/clip-path/" target="_blank" rel="noopener">CSS-Tricks: clip-path</a></li>
+                <li><a href="https://bennettfeely.com/clippy/" target="_blank" rel="noopener">Clippy: CSS clip-path maker</a></li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
