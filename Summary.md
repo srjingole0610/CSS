@@ -3697,9 +3697,6 @@ BEM doesn't introduce new CSS properties; rather, it's a **methodology for writi
 Imagine a simple "Card" component:
 
 **HTML:**
-
-HTML
-
 ```html
 <div class="card">
   <img class="card__image" src="image.jpg" alt="Card image">
@@ -3718,13 +3715,9 @@ HTML
     <button class="card__button card__button--secondary">View Details</button>
   </div>
 </div>
-
 ```
 
 **CSS:**
-
-CSS
-
 ```css
 /* Block: card */
 .card {
@@ -3791,7 +3784,6 @@ CSS
   background-color: #6c757d;
   color: white;
 }
-
 ```
 
 ### Core Concepts:
@@ -3799,64 +3791,43 @@ CSS
 BEM revolves around three fundamental entities:
 
 1.  **Block (`.block`):**
-    
     -   A standalone, independent entity that can be reused. It has a meaning on its own.
-        
-    -   Examples: `header`, `menu`, `button`, `card`, `form`.
-        
+    -   Examples: `header`, `menu`, `button`, `card`, `form`.   
     -   **Naming:** Single word or words separated by hyphens (e.g., `.main-navigation`).
         
 2.  **Element (`.block__element`):**
-    
     -   A part of a block that has no standalone meaning and is semantically tied to its block.
-        
-    -   Examples: `menu__item`, `button__icon`, `card__image`, `form__input`.
-        
+    -   Examples: `menu__item`, `button__icon`, `card__image`, `form__input`.   
     -   **Naming:** Block name, followed by two underscores (`__`), followed by the element name (e.g., `.card__title`).
         
-3.  **Modifier (`.block--modifier` or `.block__element--modifier`):**
-    
+3.  **Modifier (`.block--modifier` or `.block__element--modifier`):** 
     -   Flags on blocks or elements. They are used to change the appearance, state, or behavior of a block or element.
-        
-    -   Examples: `button--disabled`, `card--dark`, `menu__item--active`.
-        
+    -   Examples: `button--disabled`, `card--dark`, `menu__item--active`.   
     -   **Naming:** Block or element name, followed by two hyphens (`--`), followed by the modifier name (e.g., `.card--dark`, `.card__button--primary`).
         
 
 ### Naming Convention Summary:
-
 -   **Block:** `.block-name`
-    
--   **Element:** `.block-name__element-name`
-    
+-   **Element:** `.block-name__element-name` 
 -   **Modifier:** `.block-name--modifier-name` or `.block-name__element-name--modifier-name`
     
 
 ### 🔑 Key Points:
 
 -   **Flat Specificity:** BEM promotes a relatively flat CSS specificity (mostly single class selectors), which makes it easier to override styles without resorting to `!important` or overly complex selectors.
-    
 -   **Modularity:** Each block and its elements are designed to be independent, preventing styles from leaking and affecting other parts of the page.
-    
 -   **Readability:** Class names are highly descriptive, making it clear what an element is and its relationship within a component.
-    
--   **Reusability:** Encourages the creation of reusable UI components, speeding up development.
-    
+-   **Reusability:** Encourages the creation of reusable UI components, speeding up development. 
 -   **No Cascading Issues:** By avoiding nested selectors in CSS (e.g., `.card h2`), BEM prevents unintended style inheritance and specificity problems.
     
 
 ### Best Practices
 
 -   **Strict Adherence:** For BEM to be effective, consistency in naming is key. Stick to the convention rigorously.
-    
 -   **Avoid Tag Selectors in CSS:** When using BEM, generally avoid styling elements directly by their HTML tag name (e.g., `h2`, `p`) within a BEM block's CSS. Instead, use BEM element classes (e.g., `.card__title`, `.card__text`) to ensure modularity.
-    
--   **One Block Per Component:** Each major UI component should be treated as a block.
-    
--   **Modifiers Don't Add Structure:** Modifiers should only change the appearance or state, not the underlying structure.
-    
+-   **One Block Per Component:** Each major UI component should be treated as a block. 
+-   **Modifiers Don't Add Structure:** Modifiers should only change the appearance or state, not the underlying structure. 
 -   **Combine with Preprocessors/PostCSS:** While BEM is a naming convention, it pairs very well with CSS preprocessors (like Sass/Less) or PostCSS plugins (like `postcss-nesting`) that allow you to nest your CSS rules, making the BEM structure even more visually apparent in your stylesheets.
-    
 -   **Consider Alternatives/Complements:** BEM is not the only methodology. Others include OOCSS, SMACSS, Utility-First CSS (like Tailwind CSS). Sometimes, a hybrid approach works best for a project.
     
 
@@ -3867,9 +3838,6 @@ BEM is a **naming convention**, not a CSS feature. Therefore, it has **100% comp
 ### Further Reading
 
 -   Get BEM: [https://getbem.com/](https://getbem.com/) (Official BEM website)
-    
--   CSS-Tricks: [BEM 101](https://css-tricks.com/bem-101/)
-    
--   Smashing Magazine: [MindBEMding – Getting Your Head Around BEM Syntax](https://www.smashingmagazine.com/2012/04/a-more-meaningful-style-sheets-with-bem/)
-    
+-   CSS-Tricks: [BEM 101](https://css-tricks.com/bem-101/) 
+-   Smashing Magazine: [MindBEMding – Getting Your Head Around BEM Syntax](https://www.smashingmagazine.com/2012/04/a-more-meaningful-style-sheets-with-bem/) 
 -   MDN: [BEM (Block Element Modifier)](https://developer.mozilla.org/en-US/docs/Glossary/BEM)

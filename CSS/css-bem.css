@@ -177,9 +177,6 @@ body {
     cursor: pointer;
     transition: background-color 0.2s;
 }
-.code-block:active, .code-block:focus {
-    background: var(--color-bg-btn-hover);
-}
 .note {
     background: var(--color-note-bg);
     color: var(--color-note-text);
@@ -237,7 +234,7 @@ body {
 }
 .card__btn {
     background: var(--color-bg-btn);
-    color: var(--color-text-secondary);
+    color: #ffffff;  /* Changed to white for better contrast */
     border: none;
     border-radius: var(--radius-btn);
     padding: 0.6rem 1.2rem;
@@ -257,7 +254,7 @@ body {
     box-shadow: var(--shadow-4);
 }
 .card--featured .card__title {
-    color: var(--color-text-accent);
+    color: #ffffff;
 }
 .card__btn--primary {
     background: var(--color-text-accent);
