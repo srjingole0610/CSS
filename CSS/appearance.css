@@ -247,7 +247,7 @@ body {
     cursor: pointer;
     position: absolute;
     left: 0;
-    top: 0;
+    top: calc(50% - 0.6rem);
     margin: 0;
 }
 .custom-checkbox:checked {
@@ -260,7 +260,7 @@ body {
     height: 1.2rem;
     position: absolute;
     left: 0;
-    top: 0;
+   top: calc(50% - 0.6rem);
     pointer-events: none;
 }
 .custom-checkbox:checked + .checkmark::after {
