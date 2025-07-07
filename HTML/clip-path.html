@@ -104,37 +104,7 @@
   clip-path: path('M50 0 L100 100 L0 100 Z');
 }
                     </pre>
-                </div>
-                <!-- Example 5: Multiple Clips -->
-                <div class="example-card">
-                    <h3>Multiple Clips</h3>
-                    <div class="clip-demo clip-multiple">
-                        <div class="clip-circle"></div>
-                        <div class="clip-hex"></div>
-                        <div class="clip-inset"></div>
-                        <div class="clip-svg"></div>
-                    </div>
-                    <pre class="code-block" tabindex="0">
-.clip-multiple {
-  position: relative;
-    width: 300px;
-    height: 300px;
-    clip-path: circle(50% at 50% 50%) polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-}
-.clip-multiple > div {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    clip-path: circle(50% at 50% 50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-}
-                    </pre>
-                </div>
+                </div>               
             </div>
             <div class="note">
                 <strong>Try it:</strong> Each colored box above is clipped using a different <code>clip-path</code> shape. Resize your window to see the effect!

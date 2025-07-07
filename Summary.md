@@ -3668,7 +3668,7 @@ While modern browsers mostly support `clip-path` without prefixes, for broader c
 
 ### Further Reading
 
--   MDN: [`clip-path`](https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path)
--   CSS-Tricks: [`clip-path`](https://css-tricks.com/almanac/properties/c/clip-path/)
--   Clippy [`Clip-path generator`](https://bennettfeely.com/clippy/)
--   Smashing Magazine: [Powerful CSS With `clip-path`](https://www.smashingmagazine.com/2021/04/powerful-css-clip-path/)
+-   MDN: [clip-path](https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path)
+-   CSS-Tricks: [clip-path](https://css-tricks.com/almanac/properties/c/clip-path/)
+-   Clippy [Clip-path generator](https://bennettfeely.com/clippy/)
+-   Smashing Magazine: [Powerful CSS With  clip-path](https://www.smashingmagazine.com/2021/04/powerful-css-clip-path/)
