@@ -1,0 +1,62 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9fafb;
+  color: #333;
+  padding: 1rem;
+  margin: 0;
+}
+
+.back-button {
+  display: inline-block;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.challenge-header {
+  padding: 0 2rem;
+  margin-bottom: 2rem;
+}
+
+.challenge-header h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.challenge-header p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.loader {
+  width: 60px;
+  height: 60px;
+  border: 8px solid #eee;
+  border-top-color: #333;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .loader {
+    animation: none;
+  }
+}
