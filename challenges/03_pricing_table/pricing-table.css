@@ -1,0 +1,160 @@
+/* Theme variables */
+:root {
+  --bg: #f0f4f8;
+  --card-bg: #fff;
+  --text: #333;
+  --accent: #007bff;
+  --button-hover: #0056b3;
+  --shadow: rgba(0,0,0,0.1);
+}
+body.dark {
+  --bg: #121212;
+  --card-bg: #1e1e1e;
+  --text: #e0e0e0;
+  --accent: #4f8cff;
+  --button-hover: #3a6fd9;
+  --shadow: rgba(0,0,0,0.5);
+}
+
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  padding: 40px 20px;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Challenge Box */
+.challenge-box {
+  background: var(--card-bg);
+  padding: 30px 20px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 12px var(--shadow);
+  transition: background 0.4s ease;
+}
+.challenge-box h1 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+.challenge-box p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+.toggle-mode {
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.toggle-mode:hover {
+  background: var(--button-hover);
+}
+
+/* Pricing Table */
+.pricing-table {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+.plan {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 30px 20px;
+  width: 280px;
+  box-shadow: 0 10px 20px var(--shadow);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+}
+.plan:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px var(--shadow);
+}
+.plan h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+.plan ul {
+  list-style: none;
+  margin-bottom: 20px;
+}
+.plan li {
+  margin: 8px 0;
+}
+.plan button {
+  padding: 10px 20px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.plan button:hover {
+  background: var(--button-hover);
+}
+
+/* Featured Plan */
+.plan.featured {
+  transform: scale(1.05);
+  background: linear-gradient(to bottom right, var(--accent), var(--button-hover));
+  color: white;
+}
+.plan.featured h2,
+.plan.featured .price,
+.plan.featured li {
+  color: white;
+}
+.plan.featured button {
+  background: #fff;
+  color: var(--accent);
+}
+.plan.featured button:hover {
+  background: #f1f1f1;
+}
+
+/* Back Button */
+.back-button {
+  display: inline-block;
+  margin-top: 40px;
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--accent);
+  padding: 10px 16px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+.back-button:hover {
+  background: var(--accent);
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .pricing-table {
+    flex-direction: column;
+    align-items: center;
+  }
+}
