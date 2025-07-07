@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="In-depth guide to CSS BEM (Block Element Modifier) methodology with interactive examples and best practices.">
+    <meta name="keywords" content="css, bem, block element modifier, css methodology, css demo">
+    <meta name="author" content="Suraj Ingole">
+    <meta name="robots" content="index, follow">
+    <link rel="shortcut icon" href="../images/css_favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/css-bem.css">
+    <title>CSS BEM – Theory & Interactive Examples</title>
+</head>
+<body>
+    <nav class="back-nav">
+        <a href="../index.html" class="back-btn">&larr; Back to Home</a>
+    </nav>
+    <main class="bem-main">
+        <header class="bem-header">
+            <h1><span class="highlight">CSS <code>BEM</code> Methodology</span></h1>
+            <p class="subtitle">Write scalable, maintainable, and readable CSS with Block Element Modifier!</p>
+        </header>
+        <section class="theory-section">
+            <h2>What is BEM?</h2>
+            <p>
+                <strong>BEM</strong> (<b>B</b>lock <b>E</b>lement <b>M</b>odifier) is a popular CSS naming convention that helps you write modular, reusable, and easy-to-understand styles. It breaks UI components into independent blocks, their child elements, and variations (modifiers).
+            </p>
+            <ul class="theory-list">
+                <li>
+                    <strong>Block:</strong> The standalone component (e.g., <code>card</code>, <code>menu</code>).
+                </li>
+                <li>
+                    <strong>Element:</strong> A part of the block, separated by <code>__</code> (e.g., <code>card__title</code>).
+                </li>
+                <li>
+                    <strong>Modifier:</strong> A variation or state, separated by <code>--</code> (e.g., <code>card--featured</code>).
+                </li>
+            </ul>
+            <div class="syntax-block">
+                <h3>BEM Naming Syntax</h3>
+                <pre><code>.block { }
+.block__element { }
+.block--modifier { }
+.block__element--modifier { }
+                </code></pre>
+            </div>
+            <div class="tip-block">
+                <span class="tip-icon">💡</span>
+                <span>
+                    <strong>Tip:</strong> BEM makes your CSS predictable and avoids selector conflicts in large projects!
+                </span>
+            </div>
+            <div class="note">
+                <strong>Best Practice:</strong> Use BEM with utility classes or frameworks for even more scalable CSS.
+            </div>
+        </section>
+
+        <section class="examples-section">
+            <h2>Interactive Examples</h2>
+            <div class="example-grid">
+                <!-- Example 1: Basic BEM Card -->
+                <div class="example-card">
+                    <h3>BEM Card Example</h3>
+                    <div class="card">
+                        <h4 class="card__title">Card Title</h4>
+                        <p class="card__desc">This is a card description using BEM naming.</p>
+                        <button class="card__btn">Action</button>
+                    </div>
+                    <pre class="code-block" tabindex="0">
+&lt;div class="card"&gt;
+  &lt;h4 class="card__title"&gt;Card Title&lt;/h4&gt;
+  &lt;p class="card__desc"&gt;...&lt;/p&gt;
+  &lt;button class="card__btn"&gt;Action&lt;/button&gt;
+&lt;/div&gt;
+
+.card { ... }
+.card__title { ... }
+.card__desc { ... }
+.card__btn { ... }
+                    </pre>
+                </div>
+                <!-- Example 2: Modifier Example -->
+                <div class="example-card">
+                    <h3>BEM Modifier Example</h3>
+                    <div class="card card--featured">
+                        <h4 class="card__title">Featured Card</h4>
+                        <p class="card__desc">This card uses a <code>--featured</code> modifier for a different style.</p>
+                        <button class="card__btn card__btn--primary">Primary Action</button>
+                    </div>
+                    <pre class="code-block" tabindex="0">
+&lt;div class="card card--featured"&gt;
+  &lt;h4 class="card__title"&gt;Featured Card&lt;/h4&gt;
+  &lt;p class="card__desc"&gt;...&lt;/p&gt;
+  &lt;button class="card__btn card__btn--primary"&gt;Primary Action&lt;/button&gt;
+&lt;/div&gt;
+
+.card--featured { ... }
+.card__btn--primary { ... }
+                    </pre>
+                </div>
+            </div>
+            <div class="note">
+                <strong>Try it:</strong> Compare the cards above. The <code>card--featured</code> and <code>card__btn--primary</code> modifiers change the appearance using BEM!
+            </div>
+        </section>
+
+        <section class="references-section">
+            <h2>References</h2>
+            <ul>
+                <li><a href="https://getbem.com/introduction/" target="_blank" rel="noopener">getbem.com: Introduction</a></li>
+                <li><a href="https://css-tricks.com/bem-101/" target="_blank" rel="noopener">CSS-Tricks: BEM 101</a></li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
