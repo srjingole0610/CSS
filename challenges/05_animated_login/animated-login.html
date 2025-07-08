@@ -1,0 +1,61 @@
+<!-- 5. Animated Login Form with Focus Effects
+Goal: Build a stylish login form with floating labels and smooth animations.
+
+✅ Concepts Covered:
+
+CSS Transitions
+
+Pseudo-elements (::before, ::after)
+
+:focus, :valid selectors
+
+CSS Variables
+
+💡 Bonus: Add backdrop-filter for frosted glass look. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Animated login form with CSS-only dark mode toggle and focus effects." />
+  <meta name="keywords" content="CSS login form, floating labels, dark mode, animation, responsive form" />
+  <meta name="author" content="Suraj Ingole" />
+  <title>Animated Login</title>
+  <link rel="stylesheet" href="animated-login.css" />
+  <link rel="shortcut icon" href="../../images/css_favicon.png" type="image/x-icon" />
+</head>
+<body>
+  <!-- Place the toggle input at the top of <body> -->
+  <input type="checkbox" id="theme-toggle" hidden />
+
+  <!-- Wrap the entire page in a div to apply dark mode styling -->
+  <div class="wrapper">
+    <div class="container">
+      <header>
+        <a href="../../index.html" class="back-button">← Back</a>
+        <label for="theme-toggle" class="theme-toggle" title="Toggle Dark Mode">🌓</label>
+        <h1 class="challenge-title">🔐 Challenge #5: Animated Login Form</h1>
+        <p class="challenge-desc">
+          Goal: Build a stylish login form with floating labels and smooth animations.<br />
+          ✅ Concepts: <strong>Transitions</strong>, <strong>:focus/:valid</strong>, <strong>Pseudo-elements</strong>, <strong>CSS Variables</strong><br />
+          💡 Bonus: Add <strong>backdrop-filter</strong> for frosted glass look.
+        </p>
+      </header>
+
+      <form class="login-form" novalidate>
+        <h2>Login</h2>
+        <div class="form-group">
+          <input type="text" id="username" required />
+          <label for="username">Username</label>
+        </div>
+        <div class="form-group">
+          <input type="password" id="password" required />
+          <label for="password">Password</label>
+        </div>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,180 @@
+/* ===============================
+   LIGHT THEME VARIABLES (default)
+   =============================== */
+:root {
+  --bg: linear-gradient(135deg, #f0f4f8, #d9e4f5);
+  --text: #1c1c1e;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --input-bg: #ffffff;
+  --label-color: #555;
+  --accent: #3366cc;
+  --btn-bg: #3366cc;
+  --btn-text: #fff;
+  --blur: blur(8px);
+}
+
+/* ===============================
+   DARK MODE VARIABLES (toggle)
+   =============================== */
+#theme-toggle:checked ~ .wrapper {
+  --bg: linear-gradient(135deg, #121212, #1c1c1e);
+  --text: #f1f1f1;
+  --card-bg: rgba(30, 30, 30, 0.9);
+  --input-bg: #2c2c2e;
+  --label-color: #ccc;
+  --accent: #4f8cff;
+  --btn-bg: #4f8cff;
+  --btn-text: #fff;
+}
+
+/* ===============================
+   RESET & BASE STYLES
+   =============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.4s ease, color 0.4s ease;
+  color: var(--text);
+  padding: 1rem;
+}
+.wrapper {
+  width: 100%;
+}
+
+/* ===============================
+   HEADER STYLES
+   =============================== */
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+header {
+  margin-bottom: 2rem;
+}
+.back-button {
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 6px 14px;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+.back-button:hover {
+  background: var(--accent);
+  color: #fff;
+}
+.theme-toggle {
+  float: right;
+  cursor: pointer;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  padding: 6px 10px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+.theme-toggle:hover {
+  background: var(--accent);
+  color: #fff;
+}
+.challenge-title {
+  font-size: 1.4rem;
+  margin-top: 0.5rem;
+}
+.challenge-desc {
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  border-left: 4px solid var(--accent);
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+/* ===============================
+   LOGIN FORM STYLES
+   =============================== */
+.login-form {
+  background: var(--card-bg);
+  backdrop-filter: var(--blur);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+}
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 500;
+  color: var(--text);
+}
+.form-group {
+  position: relative;
+  margin-bottom: 25px;
+}
+.login-form input {
+  width: 100%;
+  padding: 10px 10px;
+  background: var(--input-bg);
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  color: var(--text);
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+.login-form input:focus {
+  border-color: var(--accent);
+}
+.login-form label {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: var(--label-color);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+.login-form input:focus + label,
+.login-form input:valid + label {
+  top: -10px;
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+.login-form button {
+  width: 100%;
+  padding: 10px;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.login-form button:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+@media (max-width: 480px) {
+  .challenge-desc {
+    font-size: 0.85rem;
+  }
+  .login-form {
+    padding: 20px;
+  }
+}

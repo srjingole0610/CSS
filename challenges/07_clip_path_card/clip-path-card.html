@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Showcase of CSS Product Cards with clip-path, animations, and responsive layout." />
+  <meta name="keywords" content="CSS clip-path, product cards, responsive, dark mode, shape divider" />
+  <meta name="author" content="Suraj Ingole" />
+  <title>Product Cards Showcase</title>
+  <link rel="shortcut icon" href="../../images/css_favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="clip-path-card.css" />
+</head>
+
+
+
+<body>
+  <input type="checkbox" id="theme-toggle" hidden />
+  <div class="wrapper">
+    <header>
+      <a href="../../index.html" class="back-button">← Back</a>
+      <label for="theme-toggle" class="theme-toggle">🌓</label>
+      <h1 class="title">🧩 Product Card Gallery</h1>
+      <p class="desc">CSS-only product cards using <strong>clip-path</strong>, <strong>hover animation</strong>, and <strong>shape dividers</strong>.</p>
+    </header>
+
+    <main class="card-grid">
+      <div class="product-card card-tilt">
+        <div class="image-wrapper">
+          <img src="../../images/product.jpg" alt="Glossy Makeup Kit" />
+        </div>
+        <h2 class="product-name">Glossy Makeup Kit</h2>
+        <p class="price">$59.99</p>
+        <a href="#" class="btn">Buy Now</a>
+      </div>
+
+      <div class="product-card card-circle">
+        <div class="image-wrapper">
+          <img src="../../images/smart-ring.jpg" alt="Smart Ring" />
+        </div>
+        <h2 class="product-name">Smart Ring</h2>
+        <p class="price">$29.99</p>
+        <a href="#" class="btn">Add to Cart</a>
+      </div>
+
+      <div class="product-card card-zigzag">
+        <div class="image-wrapper">
+          <img src="../../images/headphone-pro.webp" alt="Headphones Pro" />
+        </div>
+        <h2 class="product-name">Headphones Pro</h2>
+        <p class="price">$89.99</p>
+        <a href="#" class="btn">Details</a>
+      </div>
+
+      <div class="product-card card-wave">
+        <div class="image-wrapper">
+          <img src="../../images/wave-speaker.jpg" alt="Wave Speaker" />
+        </div>
+        <h2 class="product-name">Wave Speaker</h2>
+        <p class="price">$79.99</p>
+        <a href="#" class="btn">Buy Now</a>
+      </div>
+    </main>
+
+    <div class="shape-divider"></div>
+  </div>
+</body>
+</html>

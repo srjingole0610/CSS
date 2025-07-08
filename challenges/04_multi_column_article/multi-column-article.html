@@ -1,0 +1,67 @@
+<!-- 4. Multi-Column Article Layout
+Goal: Design a newspaper-style article with 2–3 columns and a sidebar.
+
+✅ Concepts Covered:
+
+CSS Multi-Column Layout
+
+Float (sidebar), overflow
+
+Fonts & text formatting
+
+object-fit for images
+
+💡 Bonus: Use position: sticky on sidebar. -->
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn how to create a responsive multi-column layout with sidebar using modern CSS features like columns, float, and sticky positioning." />
+  <meta name="keywords" content="CSS, multi-column layout, sticky sidebar, float, object-fit, responsive design, HTML CSS challenge" />
+  <meta name="author" content="Suraj Ingole" />
+  <title>Multi-Column Article Layout</title>
+  <link rel="stylesheet" href="multi-column-article.css" />
+  <link rel="shortcut icon" href="../../images/css_favicon.png" type="image/x-icon">
+</head>
+<body>
+  <header class="page-header">
+    <div class="header-top">
+      <a href="../../index.html" class="back-button">← Back</a>
+      <button class="theme-toggle" aria-label="Toggle Dark Mode">🌓</button>
+    </div>
+    <h1 class="challenge-title">📰 Challenge #4: Multi-Column Article Layout</h1>
+    <p class="challenge-desc">
+      Goal: Design a newspaper-style article with 2–3 columns and a sidebar.<br />
+      ✅ Use: <strong>CSS Multi-Column Layout</strong>, <strong>Float</strong>, <strong>object-fit</strong>, and <strong>position: sticky</strong> for the sidebar.
+    </p>
+  </header>
+
+  <main class="container">
+    <aside class="sidebar">
+      <h2>Sidebar</h2>
+      <p>This sidebar uses <code>position: sticky</code> to stay visible while scrolling.</p>
+    </aside>
+
+    <article class="news">
+      <h2>CSS Multi-Column Layout</h2>
+      <img src="../../images/tech-image.jpeg" alt="Tech News" />
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac sapien sed sapien egestas accumsan. Sed dictum magna ut leo porttitor finibus.</p>
+      <p>Aliquam erat volutpat. Cras blandit, nisl eget consequat cursus, tellus sapien vehicula lorem, nec bibendum leo metus sed sapien.</p>
+      <p>Suspendisse potenti. Duis nec lorem eu magna volutpat porta. Phasellus non arcu id sapien tincidunt efficitur.</p>
+      <p>Praesent iaculis convallis pulvinar. Vivamus vestibulum libero ut massa tempor, sed faucibus velit volutpat. Suspendisse ultrices blandit mauris.</p>
+    </article>
+  </main>
+
+  <script>
+    const toggle = document.querySelector('.theme-toggle');
+    const html = document.documentElement;
+    toggle.addEventListener('click', () => {
+      html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
+  </script>
+</body>
+</html>

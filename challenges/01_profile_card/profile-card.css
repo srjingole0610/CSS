@@ -1,0 +1,137 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #e0e7ff 0%, #f5f5f5 100%);
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.back-button {
+  display: inline-block;
+  margin: 2rem 0 0.5rem 0;
+  padding: 0.5rem 1.2rem;
+  background: #f3f6fd;
+  color: #2a4d8f;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 1px 6px rgba(80, 112, 255, 0.08);
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  border: 1px solid #e0e7ff;
+}
+.back-button:hover, .back-button:focus {
+  background: #4f8cff;
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(80, 112, 255, 0.14), 0 0 0 3px rgba(79, 140, 255, 0.4);
+}
+.challenge-goal {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(80, 112, 255, 0.10);
+  margin: 2.5rem 0 1.5rem 0;
+  padding: 1.2rem 2rem 1.2rem 2rem;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+}
+
+.challenge-goal h1 {
+  font-size: 1.3rem;
+  color: #2a4d8f;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+
+.challenge-goal .goal-bonus {
+  color: #22c55e;
+  font-size: 1rem;
+  display: block;
+  margin-top: 0.4rem;
+}
+
+.profile-card {
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px rgba(80, 112, 255, 0.12), 0 1.5px 6px rgba(0,0,0,0.06);
+  text-align: center;
+  max-width: 340px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s;
+}
+
+.profile-card:hover {
+  box-shadow: 0 8px 32px rgba(80, 112, 255, 0.18), 0 3px 12px rgba(0,0,0,0.10);
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.2rem;
+  border: 3px solid #4f8cff;
+  box-shadow: 0 2px 8px rgba(80, 112, 255, 0.10);
+}
+
+.profile-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2a4d8f;
+  margin: 0.2rem 0 0.1rem 0;
+}
+
+.profile-role {
+  color: #4f8cff;
+  font-size: 1.05rem;
+  margin: 0 0 0.7rem 0;
+  font-weight: 500;
+}
+
+.profile-bio {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1.1rem;
+  justify-content: center;
+}
+
+.social-icons a {
+  color: #b3c6e0;
+  transition: color 0.2s, transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+}
+
+.social-icons a:hover,
+.social-icons a:focus {
+  color: #4f8cff;
+  transform: translateY(-2px) scale(1.12);
+  outline: none;
+}
+
+@media (max-width: 480px) {
+  .challenge-goal {
+    padding: 0.8rem 0.5rem;
+    max-width: 98vw;
+    font-size: 0.97rem;
+  }
+  .profile-card {
+    padding: 1.2rem 0.7rem;
+    max-width: 98vw;
+  }
+  .profile-bio {
+    font-size: 0.9rem;
+  }
+}

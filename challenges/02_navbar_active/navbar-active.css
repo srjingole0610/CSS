@@ -1,0 +1,85 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #e0e7ff 0%, #f5f5f5 100%);
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.back-button {
+  display: inline-block;
+  margin: 2rem 0 1rem 0;
+  padding: 0.5rem 1.2rem;
+  background: #f3f6fd;
+  color: #2a4d8f;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 1px 6px rgba(80, 112, 255, 0.08);
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  border: 1px solid #e0e7ff;
+}
+.back-button:hover, .back-button:focus {
+  background: #4f8cff;
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(80, 112, 255, 0.14);
+}
+.challenge-question {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(80, 112, 255, 0.10);
+  margin-bottom: 1.5rem;
+  padding: 1.2rem 2rem;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+}
+.challenge-question h1 {
+  font-size: 1.3rem;
+  color: #2a4d8f;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+.navbar {
+  display: flex;
+  gap: 20px;
+  background: #222;
+  padding: 10px 20px;
+  border-radius: 0.8rem;
+  box-shadow: 0 2px 8px rgba(80, 112, 255, 0.10);
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: background 0.3s, color 0.3s;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+}
+.navbar a:hover,
+.navbar a.active,
+.navbar a:focus-visible {
+  background: #fff;
+  color: #222;
+}
+@media (max-width: 500px) {
+  .challenge-question {
+    padding: 0.8rem 0.5rem;
+    max-width: 98vw;
+    font-size: 0.97rem;
+  }
+  .navbar {
+    padding: 8px 2vw;
+    gap: 10px;
+    max-width: 98vw;
+  }
+  .navbar a {
+    font-size: 0.95rem;
+    padding: 7px 8px;
+  }
+}

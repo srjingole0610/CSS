@@ -1,0 +1,148 @@
+:root {
+  /* Colors */
+  --bg: #f4f6f8;
+  --text: #1a1a1a;
+  --primary: #2c3e50;
+  --accent: #3498db;
+  --card-bg: #ffffff;
+  --secondary-text: #444; /* Added for the p tag in header */
+  --border-color: #ddd; /* Added for border */
+
+  /* Spacing - common rem values */
+  --spacing-xxs: 0.25rem; /* 4px */
+  --spacing-xs: 0.5rem;   /* 8px */
+  --spacing-sm: 1rem;    /* 16px */
+  --spacing-md: 1.5rem;  /* 24px */
+  --spacing-lg: 2rem;    /* 32px */
+
+  /* Font Sizes */
+  --font-size-base: 1rem; /* Equivalent to 16px if html font-size is 16px */
+  --font-size-sm: 0.95rem; /* Equivalent to 15.2px */
+  --font-size-lg: 1.5rem; /* Equivalent to 24px */
+
+  /* Component specific dimensions */
+  --sidebar-width: 13.75rem; /* 220px / 16 = 13.75rem */
+  --card-min-width: 15rem;   /* 240px / 16 = 15rem */
+  --card-max-width: 18.75rem; /* 300px / 16 = 18.75rem */
+  --card-border-radius: 0.625rem; /* 10px / 16 = 0.625rem */
+
+  /* Shadows */
+  --box-shadow-sm: 0 0.25rem 0.625rem rgba(0,0,0,0.05); /* 0 4px 10px */
+
+  /* Breakpoints */
+  --breakpoint-md: 48rem; /* 768px / 16 = 48rem */
+}
+
+/* Base HTML font-size for rem calculations */
+html {
+  font-size: 16px; /* You can adjust this base if needed */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  font-size: var(--font-size-base); /* Ensure body also uses rem for its base font */
+}
+
+.back-button {
+  display: inline-block;
+  margin: var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  border-radius: var(--card-border-radius); /* Using card radius for consistency */
+}
+
+.challenge-header {
+  padding: var(--spacing-sm) var(--spacing-lg);
+}
+
+.challenge-header h1 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-xs);
+}
+
+.challenge-header p {
+  font-size: var(--font-size-sm);
+  color: var(--secondary-text);
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  height: 100vh;
+}
+
+.sidebar {
+  background-color: var(--primary);
+  color: white;
+  padding: var(--spacing-lg) var(--spacing-sm); /* Adjusted padding to use variables */
+  position: relative;
+  z-index: 2;
+}
+
+.main-area {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background: var(--card-bg);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-bottom: 0.0625rem solid var(--border-color); /* 1px / 16 = 0.0625rem */
+  z-index: 1;
+  position: sticky;
+  top: 0;
+}
+
+.main-content {
+  padding: var(--spacing-md) var(--spacing-lg);
+  overflow-y: auto;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--box-shadow-sm);
+  padding: var(--spacing-md);
+  flex: 1 1 calc(50% - var(--spacing-md)); /* Uses the variable for gap */
+  min-width: var(--card-min-width);
+  max-width: var(--card-max-width);
+}
+
+/* Responsive for smaller screens */
+@media (max-width: var(--breakpoint-md)) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    grid-row: 1;
+    text-align: center;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 90%; /* Percentage units are fine as they are responsive by nature */
+  }
+}

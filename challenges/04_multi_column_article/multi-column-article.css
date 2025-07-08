@@ -1,0 +1,149 @@
+/* Base Variables (Light Theme) */
+:root {
+  --bg: #f5f5f5;
+  --text: #222;
+  --accent: #2196f3;
+  --card-bg: #fff;
+  --button-bg: #333;
+  --button-text: #fff;
+  --shadow: rgba(0, 0, 0, 0.06);
+}
+
+/* Dark Theme Overrides */
+html[data-theme='dark'] {
+  --bg: #1e1e1e;
+  --text: #ddd;
+  --accent: #64b5f6;
+  --card-bg: #2b2b2b;
+  --button-bg: #eee;
+  --button-text: #111;
+  --shadow: rgba(255, 255, 255, 0.05);
+}
+
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Georgia', serif;
+  line-height: 1.7;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  padding: 20px;
+}
+
+/* Header */
+.page-header {
+  margin-bottom: 2rem;
+}
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.back-button {
+  background: var(--button-bg);
+  color: var(--button-text);
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease, transform 0.3s;
+}
+.back-button:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+}
+.theme-toggle {
+  font-size: 1.2rem;
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.theme-toggle:hover {
+  background: var(--accent);
+}
+.challenge-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.challenge-desc {
+  background: rgba(33, 150, 243, 0.1);
+  padding: 12px 16px;
+  border-left: 4px solid var(--accent);
+  font-size: 0.95rem;
+  border-radius: 5px;
+}
+
+/* Layout */
+.container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Sidebar */
+.sidebar {
+  flex: 1;
+  background: var(--card-bg);
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+  box-shadow: 0 4px 8px var(--shadow);
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* Article */
+.news {
+  flex: 3;
+  column-count: 4;
+  column-gap: 40px;
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px var(--shadow);
+  transition: background 0.4s ease, color 0.4s ease;
+}
+.news h2 {
+  column-span: all;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+.news img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+.news img:hover {
+  transform: scale(1.01);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .news {
+    column-count: 1;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .sidebar {
+    position: static;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,108 @@
+/* ============ THEME VARIABLES ============ */
+:root {
+  --bg: #f7f9fc;
+  --text: #1a1a1a;
+  --accent: #3366cc;
+  --card-bg: #fff;
+  --hover-filter: brightness(0.9) blur(1px);
+  --scrollbar-track: #e0e0e0;
+  --scrollbar-thumb: #888;
+}
+
+/* ============ BASE STYLES ============ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ============ HEADER ============ */
+header {
+  margin-bottom: 2rem;
+}
+.back-button {
+  text-decoration: none;
+  padding: 6px 14px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  display: inline-block;
+  transition: background 0.3s;
+}
+.back-button:hover {
+  background: #264eaa;
+}
+.challenge-title {
+  font-size: 1.4rem;
+  margin-top: 1rem;
+}
+.challenge-desc {
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-left: 4px solid var(--accent);
+  padding: 10px 15px;
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
+  margin-top: 10px;
+}
+
+/* ============ GALLERY ============ */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 20px 0;
+}
+
+.gallery img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.gallery img:hover {
+  transform: scale(1.05);
+  filter: var(--hover-filter);
+}
+
+/* ============ SCROLLBAR STYLING ============ */
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 10px;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+  .challenge-desc {
+    font-size: 0.85rem;
+  }
+}
