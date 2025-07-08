@@ -25,8 +25,7 @@ body {
 .back-button:hover, .back-button:focus {
   background: #4f8cff;
   color: #fff;
-  box-shadow: 0 2px 12px rgba(80, 112, 255, 0.14);
-  outline: none;
+  box-shadow: 0 2px 12px rgba(80, 112, 255, 0.14), 0 0 0 3px rgba(79, 140, 255, 0.4);
 }
 .challenge-goal {
   background: #fff;

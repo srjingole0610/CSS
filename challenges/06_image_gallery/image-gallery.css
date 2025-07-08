@@ -9,21 +9,6 @@
   --scrollbar-thumb: #888;
 }
 
-/* ============ SCROLLBAR ============ */
-::-webkit-scrollbar {
-  width: 12px;
-}
-::-webkit-scrollbar-track {
-  background: var(--scrollbar-track);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--scrollbar-thumb);
-  border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
 /* ============ BASE STYLES ============ */
 * {
   box-sizing: border-box;
@@ -59,15 +44,6 @@ header {
 }
 .back-button:hover {
   background: #264eaa;
-}
-.theme-toggle {
-  float: right;
-  cursor: pointer;
-  background: var(--accent);
-  color: #fff;
-  padding: 6px 10px;
-  border-radius: 5px;
-  font-size: 1rem;
 }
 .challenge-title {
   font-size: 1.4rem;

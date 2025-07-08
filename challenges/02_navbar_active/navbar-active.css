@@ -25,7 +25,6 @@ body {
   background: #4f8cff;
   color: #fff;
   box-shadow: 0 2px 12px rgba(80, 112, 255, 0.14);
-  outline: none;
 }
 .challenge-question {
   background: #fff;
@@ -67,7 +66,6 @@ body {
 .navbar a:focus-visible {
   background: #fff;
   color: #222;
-  outline: none;
 }
 @media (max-width: 500px) {
   .challenge-question {

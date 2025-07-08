@@ -604,8 +604,3 @@ body {
 .section:has(.section__title) {
     padding-top: 2.5rem;
 }
-
-/* If a project card has a link, add a subtle border to the actions */
-.project-card:has(.project-card__link) .project-card__actions {
-    border-top: 1px solid var(--border-color);
-}
